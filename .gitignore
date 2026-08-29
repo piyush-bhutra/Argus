@@ -1,0 +1,77 @@
+# Environment variables
+.env
+.env.*
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Model artifacts
+models/
+checkpoints/
+
+# Dataset downloads
+data/
+datasets/
+fever_data/
+
+# React / Node
+node_modules/
+.next/
+out/
+coverage/
+
+# Generated frontend builds
+frontend/dist/
+
+# Secrets
+secrets/
+*.pem
+*.key
+
+# Antigravity / AI generated temp files
+*.tmp
+*.bak
