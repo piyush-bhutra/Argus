@@ -1,10 +1,20 @@
 # Argus: Formal Argumentation and Bayesian Logical Evaluation (FABLE)
 
-A multi-agent debate system for verified claims. This repo contains the FastAPI backend.
+A multi-agent debate system for verified claims. This repository contains both the FastAPI backend and the React (TanStack Start) frontend.
+
+## Project Structure
+
+The project is separated into backend and frontend as per the PRD requirements:
+
+- `app/`: FastAPI backend implementation of the debate system, APIs, and models.
+- `frontend/`: React dashboard (Vite + TanStack Start + Tailwind) for visualization.
+- `tests/`: Testing scaffolding for the backend.
 
 ## Setup Instructions
 
-1. Install dependencies:
+### Backend (FastAPI)
+
+1. Navigate to the root directory and install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -19,15 +29,34 @@ A multi-agent debate system for verified claims. This repo contains the FastAPI 
    ```
 4. Access the API documentation at `http://127.0.0.1:8000/docs`.
 
+### Frontend (React Dashboard)
+
+The frontend connects to the FastAPI backend running at `http://localhost:8000` by default.
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies (Node.js and npm required):
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
 ## Module Mapping to PRD
 
 | File/Module | PRD Section | Description |
 |---|---|---|
-| `app/models/schemas.py` | ยง8 Data Models | Pydantic models for API and data structures. |
-| `app/api/routes.py` | ยง9 API Contracts | FastAPI endpoint definitions. |
-| `app/services/orchestrator.py` | ยง5a Debate Orchestrator | Manages debate rounds. |
-| `app/services/grok_client.py` | ยง5b, ยง13 Grok API | LLM client stub for agents. |
-| `app/services/semantics_engine.py`| ยง5c Argument Graph | Dung's AF grounded-extension stub. |
-| `app/services/fact_checker.py` | ยง5d Fact-Checking | KB forward-chaining stub. |
-| `app/services/judge.py` | ยง5e Bayesian Judge | Calibration math stub. |
-| `tests/` | ยง12 Mitigations | Scaffolding for unit tests on semantics & calibration. |
+| `app/models/schemas.py` | ง8 Data Models | Pydantic models for API and data structures. |
+| `app/api/routes.py` | ง9 API Contracts | FastAPI endpoint definitions. |
+| `app/services/orchestrator.py` | ง5a Debate Orchestrator | Manages debate rounds. |
+| `app/services/grok_client.py` | ง5b, ง13 Grok API | LLM client stub for agents. |
+| `app/services/semantics_engine.py`| ง5c Argument Graph | Dung's AF grounded-extension stub. |
+| `app/services/fact_checker.py` | ง5d Fact-Checking | KB forward-chaining stub. |
+| `app/services/judge.py` | ง5e Bayesian Judge | Calibration math stub. |
+| `frontend/` | ง5h Frontend | React dashboard for transcript, graph viz, verdict. |
+| `tests/` | ง12 Mitigations | Scaffolding for unit tests on semantics & calibration. |
+
