@@ -75,3 +75,4 @@ secrets/
 # Antigravity / AI generated temp files
 *.tmp
 *.bak
+*.deleteme
