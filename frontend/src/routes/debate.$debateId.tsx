@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { ArrowLeft, Loader2, Radio } from "lucide-react";
-import { apiState, getGraph, getTranscript, getVerdict } from "@/lib/api";
+import { ArrowLeft, Loader2, Radio, TriangleAlert } from "lucide-react";
+import { ApiError, apiState, getGraph, getTranscript, getVerdict } from "@/lib/api";
 import { TranscriptView } from "@/components/debate/TranscriptView";
 import { ArgumentGraph } from "@/components/debate/ArgumentGraph";
 import { VerdictPanel } from "@/components/debate/VerdictPanel";
@@ -38,14 +38,26 @@ function DebateView() {
     queryKey: ["transcript", debateId],
     queryFn: () => getTranscript(debateId),
     refetchInterval: (q) => (q.state.data?.status === "in_progress" ? 3000 : false),
+    retry: (count, err) => !(err instanceof ApiError) && count < 2,
   });
 
-  const graph = useQuery({ queryKey: ["graph", debateId], queryFn: () => getGraph(debateId) });
+  const graph = useQuery({
+    queryKey: ["graph", debateId],
+    queryFn: () => getGraph(debateId),
+    retry: (count, err) => !(err instanceof ApiError) && count < 2,
+  });
   const verdict = useQuery({
     queryKey: ["verdict", debateId],
     queryFn: () => getVerdict(debateId),
     enabled: transcript.data?.status === "complete",
+    retry: (count, err) => !(err instanceof ApiError) && count < 2,
   });
+
+  const failed = transcript.isError;
+  const failureMessage =
+    transcript.error instanceof ApiError && transcript.error.message
+      ? transcript.error.message
+      : "The debate could not be completed — the LLM provider is rate-limited or out of quota.";
 
   const survivors = new Set([
     ...(verdict.data?.grounded_extension.advocate ?? []),
@@ -71,7 +83,11 @@ function DebateView() {
             </span>
           )}
           <div className="ml-auto flex items-center gap-3">
-            {inProgress ? (
+            {failed ? (
+              <span className="inline-flex items-center gap-1.5 rounded border border-skeptic/50 px-2 py-1 font-mono text-[11px] text-skeptic">
+                <TriangleAlert className="size-3" /> failed
+              </span>
+            ) : inProgress ? (
               <span className="inline-flex items-center gap-1.5 rounded border border-primary/40 px-2 py-1 font-mono text-[11px] text-primary">
                 <Radio className="size-3 animate-pulse" /> live · polling
               </span>
@@ -101,6 +117,22 @@ function DebateView() {
       </header>
 
       <div className="mx-auto max-w-6xl px-6 py-8">
+        {failed && (
+          <div className="mb-6 rounded-lg border border-skeptic/40 bg-skeptic/5 p-4">
+            <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-skeptic">
+              <TriangleAlert className="size-3.5" /> debate failed
+            </div>
+            <p className="mt-2 text-sm text-foreground/90">{failureMessage}</p>
+            <p className="mt-2 text-xs text-muted-foreground">
+              Start a new claim, or open a{" "}
+              <Link to="/" className="underline hover:text-foreground">
+                cached demo debate
+              </Link>{" "}
+              from the landing page — those need no API calls.
+            </p>
+          </div>
+        )}
+
         {verdict.data && (
           <p className="mb-6 border-l-2 border-primary pl-3 text-sm text-muted-foreground">
             <span className="font-mono text-[11px] uppercase tracking-[0.18em]">Claim</span>
@@ -110,8 +142,14 @@ function DebateView() {
         )}
 
         {tab === "transcript" &&
+          !failed &&
           (transcript.isLoading || !transcript.data ? (
             <Loading />
+          ) : transcript.data.arguments.length === 0 && inProgress ? (
+            <div className="flex items-center gap-2 py-16 text-sm text-muted-foreground">
+              <Loader2 className="size-4 animate-spin" /> Debate in progress — waiting for the
+              first argument…
+            </div>
           ) : (
             <TranscriptView
               transcript={transcript.data}
@@ -122,6 +160,7 @@ function DebateView() {
           ))}
 
         {tab === "graph" &&
+          !failed &&
           (graph.isLoading || !graph.data ? (
             <Loading />
           ) : (
@@ -148,6 +187,7 @@ function DebateView() {
           ))}
 
         {tab === "verdict" &&
+          !failed &&
           (verdict.data ? (
             <VerdictPanel verdict={verdict.data} />
           ) : (

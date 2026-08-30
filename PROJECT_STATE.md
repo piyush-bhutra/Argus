@@ -7,9 +7,10 @@ project progresses — don't let it drift out of sync with reality.
 
 **Last updated:** Review-1 wiring session (2026-08-30) — all components wired end-to-end,
 orchestrator bug fixed, LLM fact-checker, in-memory persistence, cached demo debates, docs
-refreshed. Provider switched Cerebras → Google Gemini (`gemini-3.6-flash`), live debate
-verified end-to-end through the API. Earlier automated analysis preserved as
-`status_report_2026-08-29.md`.
+refreshed. Provider: Google Gemini `gemini-3.5-flash-lite` (moved off `gemini-3.6-flash`
+after hitting its 20 req/day free cap). Retry policy tightened; frontend now shows an honest
+"debate failed" banner instead of masking failures as mock data. Live debate verified
+end-to-end. Earlier automated analysis preserved as `status_report_2026-08-29.md`.
 
 **Repo location:** `C:\AI-Project`
 **Full technical spec:** `debate_system_prd.md` at the project root.
@@ -41,11 +42,15 @@ calibration; Learning → calibration model. Planning is intentionally thin.
 ### LLM Provider — Google Gemini (current), Cerebras (fallback)
 Journey: xAI Grok (billing wall) → Groq (email-verification block) → Cerebras (free-tier
 quota hit HTTP 402 on 2026-08-30) → **Google Gemini (AI Studio)**.
-- **Current: Gemini.** Key from aistudio.google.com/apikey. Model `gemini-3.6-flash`
-  (`gemini-2.0-flash` is retired — the API returns a 404 pointing at the new id).
+- **Current: Gemini.** Key from aistudio.google.com/apikey. Model **`gemini-3.5-flash-lite`**.
   Base URL `https://generativelanguage.googleapis.com/v1beta/openai/` (OpenAI-SDK compatible).
-  Free tier is generous (~15 req/min) — live 2-round debate ≈ 50 s, verified end-to-end
-  through the API on 2026-08-30.
+  Live 2-round debate ≈ 5 calls, verified end-to-end 2026-08-30.
+- **Model-id churn / quota trap (learned the hard way):** the *newest* flash models have a
+  tiny free **daily** quota — `gemini-3.6-flash` = 20 requests/day (`quotaId:
+  GenerateRequestsPerDayPerProjectPerModel-FreeTier`), exhausted after ~4 debates. Use a
+  `*-flash-lite` model. Also `gemini-2.0-flash` and `gemini-2.5-flash-lite` return 404
+  ("no longer available", pointing at a newer id) — check `GET /v1beta/models` for what's
+  live. Quota is **per model**, so switching model = fresh bucket.
 - Provider is now fully env-configurable: `LLM_API_KEY` / `LLM_MODEL` / `LLM_BASE_URL`
   (see `app/core/config.py`). Swapping back to Cerebras is a 3-line `.env` change.
 - Context cap: keep debates short. **Default debate is 2 rounds, not 3.**
@@ -102,7 +107,8 @@ Skeptic Agent (LLM)  ─┴─→ Debate Orchestrator ─→ Argument Graph (Dun
 | **API routes — real data** | `app/api/routes.py` | ✅ **Wired to the real pipeline** (background task + polling); no more hardcoded JSON | End-to-end smoke test (`test_app.py`) |
 | CORS middleware | `app/main.py` | ✅ Present (`allow_origins=["*"]`) + lifespan demo seed | N/A |
 | **Cached demo debates** | `data/demo_debates.json`, `scripts/build_offline_demos.py`, `scripts/seed_demos.py` | ✅ 3 debates, committed, loaded at startup | Verified through the API |
-| Frontend | `frontend/` | ✅ Wired to live backend; 2-round default; cached-demo links; "backend offline" chip; typechecks clean | N/A (manual) |
+| Frontend | `frontend/` | ✅ Wired to live backend; 2-round default; cached-demo links. Distinguishes **backend-offline** (falls back to mock + chip) from **debate-failed** (shows an explicit "debate failed — rate limit" banner, no fake data); typechecks clean | N/A (manual) |
+| LLM retry policy | `app/services/grok_client.py` | ✅ SDK internal retries disabled; our loop = 2 short retries; **daily-quota 429s fail fast** instead of blocking ~2 min | 6 tests |
 | FEVER dataset | `data/` | ⬜ Review 2 | N/A |
 | Evaluation pipeline (ECE, baseline, reliability diagrams) | — | ⬜ Review 2 | N/A |
 | Trained calibrator | `data/calibrator.pkl` | ⬜ Review 2 — pipeline loads it if present, else calibrated = raw | N/A |

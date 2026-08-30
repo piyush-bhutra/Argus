@@ -151,4 +151,17 @@ def run_pipeline(debate_id: str) -> None:
         )
     except Exception as e:  # noqa: BLE001
         logger.exception(f"[{debate_id}] pipeline failed")
-        debate_store.set_error(debate_id, str(e))
+        debate_store.set_error(debate_id, _friendly_error(e))
+
+
+def _friendly_error(e: Exception) -> str:
+    text = str(e)
+    if "RateLimitError" in type(e).__name__ or "429" in text or "RESOURCE_EXHAUSTED" in text:
+        return (
+            "The LLM provider is rate-limited or the free-tier quota is exhausted. "
+            "Wait for the quota to reset, switch LLM_MODEL/provider in .env, or open a "
+            "cached demo debate (which needs no API calls)."
+        )
+    if "LLM_API_KEY" in text:
+        return "LLM_API_KEY / LLM_MODEL is not configured. Check your .env file."
+    return f"Debate pipeline failed: {text[:300]}"
