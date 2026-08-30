@@ -107,7 +107,7 @@ Skeptic Agent (LLM)  ─┴─→ Debate Orchestrator ─→ Argument Graph (Dun
 | **API routes — real data** | `app/api/routes.py` | ✅ **Wired to the real pipeline** (background task + polling); no more hardcoded JSON | End-to-end smoke test (`test_app.py`) |
 | CORS middleware | `app/main.py` | ✅ Present (`allow_origins=["*"]`) + lifespan demo seed | N/A |
 | **Cached demo debates** | `data/demo_debates.json`, `scripts/build_offline_demos.py`, `scripts/seed_demos.py` | ✅ 3 debates, committed, loaded at startup | Verified through the API |
-| Frontend | `frontend/` | ✅ Wired to live backend; 2-round default; cached-demo links. Distinguishes **backend-offline** (falls back to mock + chip) from **debate-failed** (shows an explicit "debate failed — rate limit" banner, no fake data); typechecks clean | N/A (manual) |
+| Frontend | `frontend/` | ✅ Wired to live backend; 2-round default; cached-demo links. **Live streaming:** arguments appear turn-by-turn as the debate runs (orchestrator `on_argument` callback → store → 1.5s poll), with per-turn "<Agent> is forming a rebuttal…" / "Scoring the argument graph…" cues. Distinguishes **backend-offline** (mock + chip) from **debate-failed** (explicit banner, no fake data); typechecks clean | N/A (manual) |
 | LLM retry policy | `app/services/grok_client.py` | ✅ SDK internal retries disabled; our loop = 2 short retries; **daily-quota 429s fail fast** instead of blocking ~2 min | 6 tests |
 | FEVER dataset | `data/` | ⬜ Review 2 | N/A |
 | Evaluation pipeline (ECE, baseline, reliability diagrams) | — | ⬜ Review 2 | N/A |
