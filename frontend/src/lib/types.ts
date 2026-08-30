@@ -12,6 +12,7 @@ export interface Argument {
 export interface Transcript {
   arguments: Argument[];
   status: "in_progress" | "complete";
+  rounds: number;
 }
 
 export interface GraphNode {

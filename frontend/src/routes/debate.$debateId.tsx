@@ -37,13 +37,18 @@ function DebateView() {
   const transcript = useQuery({
     queryKey: ["transcript", debateId],
     queryFn: () => getTranscript(debateId),
-    refetchInterval: (q) => (q.state.data?.status === "in_progress" ? 3000 : false),
+    // Poll quickly while the debate streams in so arguments appear turn by turn.
+    refetchInterval: (q) => (q.state.data?.status === "in_progress" ? 1500 : false),
     retry: (count, err) => !(err instanceof ApiError) && count < 2,
   });
+
+  const inProgress = transcript.data?.status === "in_progress";
 
   const graph = useQuery({
     queryKey: ["graph", debateId],
     queryFn: () => getGraph(debateId),
+    // Grow the attack graph live alongside the transcript.
+    refetchInterval: inProgress ? 1500 : false,
     retry: (count, err) => !(err instanceof ApiError) && count < 2,
   });
   const verdict = useQuery({
@@ -64,7 +69,11 @@ function DebateView() {
     ...(verdict.data?.grounded_extension.skeptic ?? []),
   ]);
 
-  const inProgress = transcript.data?.status === "in_progress";
+  const args = transcript.data?.arguments ?? [];
+  // Turns alternate advocate -> skeptic; guess who speaks next for the live cue.
+  const nextAgent = args.length % 2 === 0 ? "advocate" : "skeptic";
+  const expectedTurns = (transcript.data?.rounds ?? 0) * 2;
+  const awaitingNextTurn = inProgress && args.length > 0 && args.length < expectedTurns;
 
   return (
     <main className="min-h-screen">
@@ -151,12 +160,32 @@ function DebateView() {
               first argument…
             </div>
           ) : (
-            <TranscriptView
-              transcript={transcript.data}
-              survivors={survivors}
-              highlightId={selected}
-              onSelect={setSelected}
-            />
+            <div className="space-y-3">
+              <TranscriptView
+                transcript={transcript.data}
+                survivors={survivors}
+                highlightId={selected}
+                onSelect={setSelected}
+              />
+              {awaitingNextTurn && (
+                <div
+                  className={cn(
+                    "flex items-center gap-2 rounded-lg border border-dashed px-4 py-3 font-mono text-xs",
+                    nextAgent === "advocate"
+                      ? "border-advocate/40 text-advocate"
+                      : "border-skeptic/40 text-skeptic",
+                  )}
+                >
+                  <Loader2 className="size-3.5 animate-spin" />
+                  {nextAgent === "advocate" ? "Advocate" : "Skeptic"} is forming a rebuttal…
+                </div>
+              )}
+              {inProgress && !awaitingNextTurn && args.length > 0 && (
+                <div className="flex items-center gap-2 rounded-lg border border-dashed border-border px-4 py-3 font-mono text-xs text-muted-foreground">
+                  <Loader2 className="size-3.5 animate-spin" /> Scoring the argument graph…
+                </div>
+              )}
+            </div>
           ))}
 
         {tab === "graph" &&

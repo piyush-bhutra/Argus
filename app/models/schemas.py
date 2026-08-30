@@ -31,6 +31,7 @@ class StartDebateResponse(BaseModel):
 class TranscriptResponse(BaseModel):
     arguments: List[Argument]
     status: Literal["in_progress", "complete"]
+    rounds: int = 2
 
 class GraphNode(BaseModel):
     id: str

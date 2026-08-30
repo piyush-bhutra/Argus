@@ -7,6 +7,7 @@ export const MOCK_CLAIM =
 
 export const mockTranscript: Transcript = {
   status: "complete",
+  rounds: 3,
   arguments: [
     {
       id: "a1",

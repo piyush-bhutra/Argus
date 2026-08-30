@@ -138,7 +138,13 @@ def run_pipeline(debate_id: str) -> None:
 
     try:
         logger.info(f"[{debate_id}] starting debate on: {record.claim!r}")
-        transcript = run_debate(record.claim, record.rounds)
+        # Stream each argument into the store as it arrives so the frontend's
+        # transcript poll reveals the debate turn by turn.
+        transcript = run_debate(
+            record.claim,
+            record.rounds,
+            on_argument=lambda t: debate_store.set_transcript(debate_id, t),
+        )
         debate_store.set_transcript(debate_id, transcript)
 
         verdict = assemble_verdict(record.claim, transcript, _load_calibrator())
