@@ -37,7 +37,9 @@ def get_transcript(debate_id: str):
             status_code=500, detail=record.error or "debate pipeline failed"
         )
     status = "complete" if record.status == "complete" else "in_progress"
-    return TranscriptResponse(arguments=record.transcript, status=status)
+    return TranscriptResponse(
+        arguments=record.transcript, status=status, rounds=record.rounds
+    )
 
 
 @router.get("/debate/{debate_id}/verdict", response_model=Verdict)

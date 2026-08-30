@@ -58,6 +58,23 @@ def test_retries_exhausted_concede(mock_call_grok):
     assert mock_call_grok.call_count == 6
 
 @patch("app.services.orchestrator.call_grok")
+def test_on_argument_streams_each_turn(mock_call_grok):
+    mock_call_grok.side_effect = [
+        '{"argument_text": "A1", "attacks_argument_id": null, "confidence": 0.9, "concede": false}',
+        '{"argument_text": "S1", "attacks_argument_id": "arg_1", "confidence": 0.8, "concede": false}',
+    ]
+
+    snapshots = []
+    transcript = run_debate(
+        "Test claim", rounds=1, on_argument=lambda t: snapshots.append([a.id for a in t])
+    )
+
+    # Called once per argument, with a growing transcript each time.
+    assert snapshots == [["arg_1"], ["arg_1", "arg_2"]]
+    assert len(transcript) == 2
+
+
+@patch("app.services.orchestrator.call_grok")
 def test_advocate_concedes_turn_one_skeptic_still_speaks(mock_call_grok):
     """Regression: Advocate conceding on its very first turn must NOT skip the
     Skeptic's opening argument (PROJECT_STATE §5 Bug 1)."""

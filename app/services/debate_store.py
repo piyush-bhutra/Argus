@@ -48,7 +48,8 @@ def get(debate_id: str) -> Optional[DebateRecord]:
 def set_transcript(debate_id: str, transcript: List[Argument]) -> None:
     record = _store.get(debate_id)
     if record:
-        record.transcript = transcript
+        # Copy: the orchestrator mutates its list in place as the debate streams.
+        record.transcript = list(transcript)
 
 
 def set_result(debate_id: str, verdict: Verdict, graph: GraphResponse) -> None:

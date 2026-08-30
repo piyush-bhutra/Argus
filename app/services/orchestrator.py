@@ -2,10 +2,14 @@
 PRD §5a - Debate Orchestrator
 """
 import json
-from typing import List, Optional
+from typing import Callable, List, Optional
 from app.core.logger import logger
 from app.models.schemas import Argument
 from app.services.grok_client import call_grok
+
+# Called after each new argument is appended, with the transcript so far — lets
+# the caller stream partial progress (e.g. into the debate store for live polling).
+OnArgument = Callable[[List[Argument]], None]
 
 def _build_system_prompt(agent: str) -> str:
     if agent == "advocate":
@@ -41,9 +45,17 @@ Shape:
         
     return prompt
 
-def run_debate(claim: str, rounds: int = 3) -> List[Argument]:
+def run_debate(
+    claim: str,
+    rounds: int = 3,
+    on_argument: Optional[OnArgument] = None,
+) -> List[Argument]:
     """
     Run a debate between Advocate and Skeptic for N rounds.
+
+    If ``on_argument`` is given, it is called after every new argument with the
+    transcript so far, so callers can stream progress instead of waiting for the
+    whole debate to finish.
     """
     transcript: List[Argument] = []
     arg_counter = 1
@@ -107,6 +119,11 @@ def run_debate(claim: str, rounds: int = 3) -> List[Argument]:
                     )
                     transcript.append(arg)
                     arg_counter += 1
+                    if on_argument is not None:
+                        try:
+                            on_argument(transcript)
+                        except Exception as cb_err:  # noqa: BLE001
+                            logger.warning(f"on_argument callback failed: {cb_err}")
                     break
                     
                 except Exception as e:
