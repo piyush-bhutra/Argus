@@ -97,4 +97,26 @@ def test_call_grok_retries_on_429(mock_get_client, mock_sleep, mock_settings):
 
     assert result == "Success after 429"
     assert mock_get_client.return_value.chat.completions.create.call_count == 2
-    mock_sleep.assert_called_once_with(12)
+    mock_sleep.assert_called_once_with(8)
+
+
+@patch("app.services.grok_client.time.sleep")
+@patch("app.services.grok_client._get_client")
+def test_call_grok_daily_quota_fails_fast(mock_get_client, mock_sleep, mock_settings):
+    """A per-day quota error must NOT be retried."""
+    from app.services.grok_client import call_grok
+
+    fake_request = httpx.Request("POST", "https://example/v1/chat/completions")
+    fake_response = httpx.Response(429, request=fake_request)
+    err = RateLimitError(
+        "quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+        response=fake_response,
+        body=None,
+    )
+    mock_get_client.return_value.chat.completions.create.side_effect = err
+
+    with pytest.raises(RateLimitError):
+        call_grok("User prompt", "System prompt")
+
+    assert mock_get_client.return_value.chat.completions.create.call_count == 1
+    mock_sleep.assert_not_called()

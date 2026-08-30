@@ -45,7 +45,7 @@ cp .env.example .env      # then edit .env with a real key
 
 ```
 LLM_API_KEY=<your Gemini key>       # aistudio.google.com/apikey
-LLM_MODEL=gemini-3.6-flash
+LLM_MODEL=gemini-3.5-flash-lite     # newest flash models have a ~20 req/day free cap; use a *-lite
 LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
 LOG_DIR=./logs
 ```
