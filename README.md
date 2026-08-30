@@ -1,62 +1,101 @@
-# Argus: Formal Argumentation and Bayesian Logical Evaluation (FABLE)
+# Argus â€” Multi-Agent Debate System for Verified Claims
 
-A multi-agent debate system for verified claims. This repository contains both the FastAPI backend and the React (TanStack Start) frontend.
+*(working name: Verdikt)*
 
-## Project Structure
+Two LLM agents (Advocate, Skeptic) debate a factual claim across structured rounds. A formal
+argumentation engine (Dung's AF grounded extension), an LLM fact-check pass, and a Bayesian
+judge combine to produce a truth-probability verdict with a fully auditable trace â€” instead
+of asking one model to just answer.
 
-The project is separated into backend and frontend as per the PRD requirements:
+Course project for **BITE308L (AI theory) + BITE308P (AI Lab)**. See `debate_system_prd.md`
+for the full spec, `PROJECT_STATE.md` for current status, and `DEMO.md` for the review script.
 
-- `app/`: FastAPI backend implementation of the debate system, APIs, and models.
-- `frontend/`: React dashboard (Vite + TanStack Start + Tailwind) for visualization.
-- `tests/`: Testing scaffolding for the backend.
+## What works today (end-to-end)
 
-## Setup Instructions
+`claim â†’ debate orchestrator (LLM) â†’ argument attack graph â†’ grounded extension â†’
+LLM fact-check â†’ Bayesian judge â†’ verdict`, all rendered in the React dashboard.
 
-### Backend (FastAPI)
-
-1. Navigate to the root directory and install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-   Edit `.env` to include your `XAI_API_KEY`.
-3. Run the development server:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
-4. Access the API documentation at `http://127.0.0.1:8000/docs`.
-
-### Frontend (React Dashboard)
-
-The frontend connects to the FastAPI backend running at `http://localhost:8000` by default.
-
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies (Node.js and npm required):
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-## Module Mapping to PRD
-
-| File/Module | PRD Section | Description |
+| Module (syllabus) | Component | File |
 |---|---|---|
-| `app/models/schemas.py` | §8 Data Models | Pydantic models for API and data structures. |
-| `app/api/routes.py` | §9 API Contracts | FastAPI endpoint definitions. |
-| `app/services/orchestrator.py` | §5a Debate Orchestrator | Manages debate rounds. |
-| `app/services/grok_client.py` | §5b, §13 Grok API | LLM client stub for agents. |
-| `app/services/semantics_engine.py`| §5c Argument Graph | Dung's AF grounded-extension stub. |
-| `app/services/fact_checker.py` | §5d Fact-Checking | KB forward-chaining stub. |
-| `app/services/judge.py` | §5e Bayesian Judge | Calibration math stub. |
-| `frontend/` | §5h Frontend | React dashboard for transcript, graph viz, verdict. |
-| `tests/` | §12 Mitigations | Scaffolding for unit tests on semantics & calibration. |
+| M1 Agents | Advocate / Skeptic / Judge with a perceptâ€“action loop | `app/services/orchestrator.py` |
+| M2 Search (adversarial) | Argument-graph attack/defense evaluation | `app/services/semantics_engine.py` |
+| M3 Knowledge Representation | Dung's Abstract Argumentation Framework | `app/services/semantics_engine.py` |
+| M4 Reasoning | Fact-check pass over each argument's core assertion | `app/services/fact_checker.py` |
+| M5 Uncertainty | Bayesian aggregation of structural + fact-check + confidence signals | `app/services/judge.py` |
+| M7 Learning | Isotonic calibration (math built; trained on real labels in Review 2) | `app/services/judge.py` |
+| API | FastAPI endpoints + in-memory debate store | `app/api/routes.py`, `app/services/debate_store.py` |
+| Pipeline glue | Wires all components together | `app/services/pipeline.py` |
+| Frontend | Transcript, attack-graph viz, verdict panel | `frontend/` |
 
+**Deferred to Review 2:** FEVER dataset, BM25 retrieval + symbolic triple KB, calibrator
+training, ECE / baseline evaluation, reliability diagrams.
+
+## Setup
+
+### Backend (FastAPI, Python 3.11)
+
+```bash
+py -3.11 -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+cp .env.example .env      # then edit .env with a real key
+```
+
+`.env` (any OpenAI-SDK-compatible provider â€” currently Google Gemini):
+
+```
+LLM_API_KEY=<your Gemini key>       # aistudio.google.com/apikey
+LLM_MODEL=gemini-3.6-flash
+LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+LOG_DIR=./logs
+```
+
+Cerebras (`gpt-oss-120b`, base URL `https://api.cerebras.ai/v1`) also works â€” see
+`.env.example`.
+
+Run:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+API docs at `http://127.0.0.1:8000/docs`.
+
+### Frontend (React + TanStack Start)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Connects to `http://localhost:8000` by default. If the backend is unreachable it falls back
+to bundled mock data and shows a "demo data Â· backend offline" chip.
+
+## Cached demo debates
+
+A live 2-round debate is ~5 LLM calls and takes ~50 s. Three debates are also pre-computed
+and committed to `data/demo_debates.json`, loaded at startup so these ids resolve instantly
+with no API calls (useful if the provider is rate-limited or down):
+
+- `demo-sea-level` â€” sea level rise has accelerated *(advocate wins)*
+- `demo-rust-memory` â€” Rust eliminates all memory-safety bugs *(skeptic wins)*
+- `demo-llm-verify` â€” LLMs can verify facts without retrieval *(skeptic wins)*
+
+Open them from the landing page, or `GET /debate/demo-sea-level/verdict`.
+
+Regenerate them:
+
+```bash
+python -m scripts.build_offline_demos   # deterministic, no LLM
+python -m scripts.seed_demos            # from real live debates (needs API budget)
+```
+
+## Tests
+
+```bash
+python -m pytest -v
+```
+
+30 tests, 0 skipped â€” semantics, judge/calibration, LLM client, orchestrator, fact
+checker, pipeline, and an end-to-end API smoke test (LLM mocked).

@@ -118,10 +118,18 @@ def run_debate(claim: str, rounds: int = 3) -> List[Argument]:
             if conceded_this_turn:
                 round_concedes[agent] = True
                 opponent = "skeptic" if agent == "advocate" else "advocate"
-                opponent_args = [a for a in transcript if a.agent == opponent]
-                
-                # If BOTH agents concede in the same round (or an agent concedes and there's nothing left to attack)
-                if round_concedes[opponent] or not opponent_args:
+                opponent_spoke = any(a.agent == opponent for a in transcript)
+
+                # Guarantee at least one full round: never terminate in round 1
+                # before the opponent has even had its opening turn. "Opponent has
+                # zero arguments so far" in round 1 means "hasn't gone yet", not
+                # "has nothing left to say".
+                if round_num == 1 and not opponent_spoke:
+                    continue
+
+                # From here on, end early only on mutual concession in the same
+                # round — neither side has anything new to add.
+                if round_concedes[opponent]:
                     return transcript
-                    
+
     return transcript

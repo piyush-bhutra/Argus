@@ -46,15 +46,32 @@ def test_malformed_json_recovery(mock_call_grok):
 @patch("app.services.orchestrator.call_grok")
 def test_retries_exhausted_concede(mock_call_grok):
     mock_call_grok.side_effect = [
-        'bad json 1',
-        'bad json 2',
-        'bad json 3',
+        'bad json 1', 'bad json 2', 'bad json 3',   # advocate, round 1
+        'bad json 4', 'bad json 5', 'bad json 6',   # skeptic, round 1
     ]
-    
+
     transcript = run_debate("Test claim", rounds=1)
-    
-    # Advocate fails 3 times, treats as concede. Skeptic has 0 args, so terminates early.
+
+    # Both agents exhaust retries (treated as concession) -> empty transcript,
+    # but the skeptic is still given its turn first.
     assert len(transcript) == 0
+    assert mock_call_grok.call_count == 6
+
+@patch("app.services.orchestrator.call_grok")
+def test_advocate_concedes_turn_one_skeptic_still_speaks(mock_call_grok):
+    """Regression: Advocate conceding on its very first turn must NOT skip the
+    Skeptic's opening argument (PROJECT_STATE §5 Bug 1)."""
+    mock_call_grok.side_effect = [
+        '{"concede": true}',
+        '{"argument_text": "S1", "attacks_argument_id": null, "confidence": 0.7, "concede": false}',
+    ]
+
+    transcript = run_debate("Test claim", rounds=1)
+
+    assert len(transcript) == 1
+    assert transcript[0].agent == "skeptic"
+    assert transcript[0].text == "S1"
+
 
 @patch("app.services.orchestrator.call_grok")
 def test_early_termination_both_concede(mock_call_grok):

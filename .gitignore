@@ -1,6 +1,7 @@
 # Environment variables
 .env
 .env.*
+!.env.example
 
 # Python virtual environments
 .venv/
@@ -49,12 +50,15 @@ Thumbs.db
 *.sqlite
 *.sqlite3
 
-# Model artifacts
-models/
+# Model artifacts (top-level only — NOT the app/models package)
+/models/
 checkpoints/
+!app/models/
 
-# Dataset downloads
-data/
+# Dataset downloads (but keep the small committed demo/eval artifacts)
+data/*
+!data/demo_debates.json
+!data/calibrator.pkl
 datasets/
 fever_data/
 

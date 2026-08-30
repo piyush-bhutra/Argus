@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Loader2, Network, Scale, ShieldCheck, Swords } from "lucide-react";
 import { startDebate } from "@/lib/api";
@@ -30,6 +30,16 @@ const EXAMPLES = [
   "Rust eliminates all classes of memory-safety bugs in production systems.",
 ];
 
+// Pre-cached debates seeded into the backend (data/demo_debates.json). These
+// render instantly with no LLM calls — use them when the rate limit bites.
+const CACHED_DEMOS = [
+  { id: "demo-sea-level", label: "Sea level rise has accelerated (advocate wins)" },
+  { id: "demo-rust-memory", label: "Rust eliminates all memory-safety bugs (skeptic wins)" },
+  { id: "demo-llm-verify", label: "LLMs can verify facts without retrieval (skeptic wins)" },
+];
+
+const ROUNDS = 2;
+
 function ClaimScreen() {
   const navigate = useNavigate();
   const [claim, setClaim] = useState("");
@@ -40,7 +50,7 @@ function ClaimScreen() {
     if (!claim.trim() || pending) return;
     setPending(true);
     try {
-      const { debate_id } = await startDebate(claim.trim(), 3);
+      const { debate_id } = await startDebate(claim.trim(), ROUNDS);
       navigate({ to: "/debate/$debateId", params: { debateId: debate_id } });
     } finally {
       setPending(false);
@@ -58,7 +68,7 @@ function ClaimScreen() {
             Debate-based fact verification
           </h1>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Two agents argue a claim across three rounds. Attacks form an argumentation
+            Two agents argue a claim across structured rounds. Attacks form an argumentation
             framework; the grounded extension and a calibrated probability form the verdict.
           </p>
         </div>
@@ -79,7 +89,7 @@ function ClaimScreen() {
             className="mt-2 w-full resize-none rounded-lg border border-input bg-surface px-3 py-2.5 text-sm outline-none placeholder:text-muted-foreground/70 focus:border-ring"
           />
           <div className="mt-4 flex items-center justify-between gap-4">
-            <span className="font-mono text-[11px] text-muted-foreground">rounds = 3</span>
+            <span className="font-mono text-[11px] text-muted-foreground">rounds = {ROUNDS}</span>
             <button
               type="submit"
               disabled={!claim.trim() || pending}
@@ -105,6 +115,24 @@ function ClaimScreen() {
               >
                 {ex}
               </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            Or open a cached debate (instant, no rate limit)
+          </div>
+          <div className="mt-2 space-y-2">
+            {CACHED_DEMOS.map((d) => (
+              <Link
+                key={d.id}
+                to="/debate/$debateId"
+                params={{ debateId: d.id }}
+                className="block w-full rounded-lg border border-border bg-surface px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:border-ring hover:text-foreground"
+              >
+                {d.label}
+              </Link>
             ))}
           </div>
         </div>

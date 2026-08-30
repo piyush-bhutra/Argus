@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { ArrowLeft, Loader2, Radio } from "lucide-react";
-import { getGraph, getTranscript, getVerdict } from "@/lib/api";
+import { apiState, getGraph, getTranscript, getVerdict } from "@/lib/api";
 import { TranscriptView } from "@/components/debate/TranscriptView";
 import { ArgumentGraph } from "@/components/debate/ArgumentGraph";
 import { VerdictPanel } from "@/components/debate/VerdictPanel";
@@ -65,6 +65,11 @@ function DebateView() {
             <ArrowLeft className="size-3.5" /> new claim
           </Link>
           <span className="font-mono text-xs text-muted-foreground">debate/{debateId}</span>
+          {apiState.usingMock && (
+            <span className="rounded border border-skeptic/50 px-2 py-1 font-mono text-[11px] text-skeptic">
+              demo data · backend offline
+            </span>
+          )}
           <div className="ml-auto flex items-center gap-3">
             {inProgress ? (
               <span className="inline-flex items-center gap-1.5 rounded border border-primary/40 px-2 py-1 font-mono text-[11px] text-primary">
