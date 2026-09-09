@@ -7,13 +7,13 @@ import { MOCK_CLAIM } from "@/lib/mock-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dialectic — Debate-Based Fact Verification" },
+      { title: "Argus" },
       {
         name: "description",
         content:
           "Run adversarial advocate-vs-skeptic debates over a claim, inspect the argument attack graph, and read a calibrated verdict.",
       },
-      { property: "og:title", content: "Dialectic — Debate-Based Fact Verification" },
+      { property: "og:title", content: "Argus — Debate-Based Fact Verification" },
       {
         property: "og:description",
         content:
@@ -62,7 +62,7 @@ function ClaimScreen() {
       <div className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
         <div className="mb-10">
           <div className="mb-4 inline-flex items-center gap-2 rounded border border-border bg-surface px-2 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            <Scale className="size-3" /> Dialectic · academic demo
+            <Scale className="size-3" /> Argus · academic demo
           </div>
           <h1 className="text-4xl font-semibold tracking-tight">
             Debate-based fact verification

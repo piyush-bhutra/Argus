@@ -11,13 +11,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/debate/$debateId")({
   head: () => ({
     meta: [
-      { title: "Debate transcript — Dialectic" },
+      { title: "Argus — Debate" },
       {
         name: "description",
         content:
           "Live advocate-vs-skeptic transcript, argument attack graph, and calibrated verdict for a single claim.",
       },
-      { property: "og:title", content: "Debate transcript — Dialectic" },
+      { property: "og:title", content: "Argus — Debate" },
       {
         property: "og:description",
         content: "Transcript, attack graph, and calibrated verdict for a verified claim.",
