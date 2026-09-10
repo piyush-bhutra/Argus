@@ -1,8 +1,8 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Loader2, Network, Scale, ShieldCheck, Swords } from "lucide-react";
-import { startDebate } from "@/lib/api";
 import { MOCK_CLAIM } from "@/lib/mock-data";
+import { DEFAULT_ROUNDS, Mono, primaryButton, useStartDebate } from "@/components/debate/paper";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,117 +38,79 @@ const CACHED_DEMOS = [
   { id: "demo-llm-verify", label: "LLMs can verify facts without retrieval (skeptic wins)" },
 ];
 
-const ROUNDS = 2;
+const listItem =
+  "block w-full rounded-paper border border-dashed border-hairline-dashed bg-paper-card/80 px-3 py-2 text-left text-body-sm text-ink-soft transition-colors hover:border-ink-strong hover:text-ink-strong";
 
 function ClaimScreen() {
-  const navigate = useNavigate();
   const [claim, setClaim] = useState("");
-  const [pending, setPending] = useState(false);
-
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!claim.trim() || pending) return;
-    setPending(true);
-    try {
-      const { debate_id } = await startDebate(claim.trim(), ROUNDS);
-      navigate({ to: "/debate/$debateId", params: { debateId: debate_id } });
-    } finally {
-      setPending(false);
-    }
-  }
+  const { start, pending } = useStartDebate();
 
   return (
-    <main className="grid-backdrop min-h-screen">
-      <div className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
-        <div className="mb-10">
-          <div className="mb-4 inline-flex items-center gap-2 rounded border border-border bg-surface px-2 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            <Scale className="size-3" /> Argus · academic demo
-          </div>
-          <h1 className="text-4xl font-semibold tracking-tight">
-            Debate-based fact verification
-          </h1>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Two agents argue a claim across structured rounds. Attacks form an argumentation
-            framework; the grounded extension and a calibrated probability form the verdict.
+    <main className="paper-ruled min-h-screen font-hand text-ink">
+      <div className="mx-auto max-w-shell px-5">
+        <div className="max-w-[820px] py-[74px]">
+          <Mono className="tracking-data-wide">
+            MULTI-AGENT DEBATE · GROUNDED EXTENSION · CALIBRATED P(TRUE)
+          </Mono>
+          <h1 className="mt-2.5 mb-1.5 font-marker text-hero tracking-[1px] text-ink-strong">Argus</h1>
+          <p className="mb-7 max-w-[640px] text-lead text-pretty text-ink-soft">
+            An Advocate and a Skeptic argue your claim across rounds. An argumentation engine
+            decides which arguments structurally survive — then the judge hands back a calibrated
+            probability.
           </p>
-        </div>
 
-        <form onSubmit={submit} className="rounded-xl border border-border bg-card p-5">
-          <label
-            htmlFor="claim"
-            className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground"
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              void start(claim);
+            }}
+            className="relative rounded-paper border-[1.5px] border-ink-strong bg-paper-card p-4 shadow-card"
           >
-            Claim
-          </label>
-          <textarea
-            id="claim"
-            value={claim}
-            onChange={(e) => setClaim(e.target.value)}
-            rows={3}
-            placeholder="Enter a factual claim to put under adversarial scrutiny…"
-            className="mt-2 w-full resize-none rounded-lg border border-input bg-surface px-3 py-2.5 text-sm outline-none placeholder:text-muted-foreground/70 focus:border-ring"
-          />
-          <div className="mt-4 flex items-center justify-between gap-4">
-            <span className="font-mono text-[11px] text-muted-foreground">rounds = {ROUNDS}</span>
-            <button
-              type="submit"
-              disabled={!claim.trim() || pending}
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-40"
-            >
-              {pending ? <Loader2 className="size-4 animate-spin" /> : <ArrowRight className="size-4" />}
-              Start Debate
-            </button>
-          </div>
-        </form>
-
-        <div className="mt-5">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            Try one
-          </div>
-          <div className="mt-2 space-y-2">
-            {EXAMPLES.map((ex) => (
+            <label htmlFor="claim" className="mb-2 block">
+              <Mono>CLAIM UNDER EXAMINATION</Mono>
+            </label>
+            <textarea
+              id="claim"
+              rows={3}
+              value={claim}
+              onChange={(e) => setClaim(e.target.value)}
+              placeholder="Type a factual claim to verify…"
+              className="claim-lines w-full resize-y border-0 bg-transparent p-0 font-hand text-claim text-ink outline-none placeholder:text-ink-ghost"
+            />
+            <div className="mt-3.5 flex flex-wrap items-center gap-4">
               <button
-                key={ex}
-                type="button"
-                onClick={() => setClaim(ex)}
-                className="block w-full rounded-lg border border-border bg-surface px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:border-ring hover:text-foreground"
+                type="submit"
+                disabled={!claim.trim() || pending}
+                className={cn(primaryButton, "px-6 pt-2.5 text-[29px]")}
               >
-                {ex}
+                {pending ? "Starting…" : "Start Debate"}
               </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-5">
-          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            Or open a cached debate (instant, no rate limit)
-          </div>
-          <div className="mt-2 space-y-2">
-            {CACHED_DEMOS.map((d) => (
-              <Link
-                key={d.id}
-                to="/debate/$debateId"
-                params={{ debateId: d.id }}
-                className="block w-full rounded-lg border border-border bg-surface px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:border-ring hover:text-foreground"
-              >
-                {d.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
-          {[
-            { icon: ShieldCheck, label: "Advocate", desc: "Builds the case for the claim" },
-            { icon: Swords, label: "Skeptic", desc: "Attacks weak premises each round" },
-            { icon: Network, label: "Attack graph", desc: "Grounded extension decides survivors" },
-          ].map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="rounded-lg border border-border bg-card p-3">
-              <Icon className="size-4 text-primary" />
-              <div className="mt-2 text-sm font-medium">{label}</div>
-              <div className="text-xs text-muted-foreground">{desc}</div>
+              <Mono>{DEFAULT_ROUNDS} ROUNDS · ADVOCATE VS SKEPTIC · ATTACK GRAPH</Mono>
             </div>
-          ))}
+          </form>
+
+          <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-6">
+            <div>
+              <Mono className="tracking-[.16em]">TRY ONE</Mono>
+              <div className="mt-2 flex flex-col gap-2">
+                {EXAMPLES.map((ex) => (
+                  <button key={ex} type="button" onClick={() => setClaim(ex)} className={listItem}>
+                    {ex}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <Mono className="tracking-[.16em]">OR OPEN A CACHED DEBATE · INSTANT, NO RATE LIMIT</Mono>
+              <div className="mt-2 flex flex-col gap-2">
+                {CACHED_DEMOS.map((d) => (
+                  <Link key={d.id} to="/debate/$debateId" params={{ debateId: d.id }} className={listItem}>
+                    {d.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>

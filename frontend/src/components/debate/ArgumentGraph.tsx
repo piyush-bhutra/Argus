@@ -1,203 +1,270 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import type { DebateGraph } from "@/lib/types";
+import { useEffect, useRef, useState } from "react";
+import type { DebateGraph, GraphNode } from "@/lib/types";
+import { LockedPanel, Mono, SectionHeader, Stamp, postitStyle } from "./paper";
 
 interface Props {
-  graph: DebateGraph;
+  graph: DebateGraph | undefined;
   survivors: Set<string>;
-  selectedId?: string | null | undefined;
-  onSelect?: ((id: string) => void) | undefined;
+  /** Verdict is in: stamps land, defeated nodes cross out, survivors glow. */
+  resolved: boolean;
+  /** Debate still streaming — graph grows as nodes arrive. */
+  live: boolean;
+  /** Planned round count, so future columns are drawn before their nodes arrive. */
+  rounds: number;
+  /** Argument text by id (from the transcript) for the node gist. */
+  texts: Map<string, string>;
 }
 
-const WIDTH = 640;
-const HEIGHT = 420;
+// Deterministic layout: one column per round, Advocate row on top.
+// ponytail: one node per agent per round (what the orchestrator emits); stack cells if that changes.
+const COL = 233;
+const NODE_W = 206;
+const NODE_H = 104;
+const HEIGHT = 392;
+const colX = (round: number) => 13 + (round - 1) * COL;
+const rowY = (agent: GraphNode["agent"]) => (agent === "advocate" ? 40 : 214);
 
-interface Sim {
-  id: string;
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
+const STEP_MS = 620; // one reveal step per debate round
+
+/** Replay: hides everything, reveals one round per step, then re-applies the marks. */
+function useReplay(cols: number) {
+  const [stage, setStage] = useState(Infinity); // highest round revealed
+  const [marksOn, setMarksOn] = useState(true);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const clear = () => {
+    timers.current.forEach(clearTimeout);
+    timers.current = [];
+  };
+  useEffect(() => clear, []);
+
+  function replay() {
+    clear();
+    setStage(0);
+    setMarksOn(false);
+    for (let r = 1; r <= cols; r++) {
+      timers.current.push(setTimeout(() => setStage(r), 260 + (r - 1) * STEP_MS));
+    }
+    timers.current.push(
+      setTimeout(() => {
+        setStage(Infinity);
+        setMarksOn(true);
+      }, 260 + (cols - 1) * STEP_MS + 740),
+    );
+  }
+
+  return { stage, marksOn, replay };
 }
 
-/** Deterministic seeded layout so SSR and client agree, then relaxed with a
- *  small force simulation on the client. */
-function seedPositions(ids: string[]): Sim[] {
-  return ids.map((id, i) => {
-    const angle = (i / Math.max(ids.length, 1)) * Math.PI * 2;
-    return {
-      id,
-      x: WIDTH / 2 + Math.cos(angle) * 150,
-      y: HEIGHT / 2 + Math.sin(angle) * 130,
-      vx: 0,
-      vy: 0,
-    };
-  });
+function Node({
+  node,
+  text,
+  visible,
+  marked,
+  survives,
+}: {
+  node: GraphNode;
+  text: string | undefined;
+  visible: boolean;
+  marked: boolean;
+  survives: boolean;
+}) {
+  const crossed = marked && !survives;
+  const advocate = node.agent === "advocate";
+  return (
+    <div
+      title={text}
+      style={{
+        ...postitStyle(node.agent, node.round),
+        left: colX(node.round),
+        top: rowY(node.agent),
+        width: NODE_W,
+        height: NODE_H,
+        opacity: visible ? 1 : 0,
+        filter: crossed ? "grayscale(1) opacity(.6)" : "none",
+        // Swapping the animation restarts it — that's what makes replay work without remounting.
+        animation: !visible ? "none" : marked && survives ? "var(--animate-glow)" : "var(--animate-pop-in)",
+      }}
+      className="postit-sheen absolute z-[3] rounded-postit px-3 pt-2.5 pb-2.5 shadow-postit-sm transition-[opacity,filter] duration-(--duration-fade)"
+    >
+      <div className="mb-1 flex items-center justify-between gap-2">
+        <span className="truncate font-mono text-[9.5px] font-semibold tracking-[.14em] text-ink">
+          {node.label ?? node.id} · {advocate ? "ADVOCATE" : "SKEPTIC"}
+        </span>
+        <span className="rounded-paper border border-ink/35 px-1.5 py-px font-mono text-[8.5px] tracking-[.1em] text-ink-soft">
+          R{node.round}
+        </span>
+      </div>
+      <div className="line-clamp-3 text-body-sm text-pretty text-[#3a3732]">{text}</div>
+
+      {marked && (
+        <Stamp
+          tone={survives ? "in" : "out"}
+          rotate={advocate ? -6 : 5}
+          size="text-stamp-sm"
+          className="absolute -right-2 -bottom-2.5 bg-paper"
+        >
+          {survives ? "IN" : "OUT"}
+        </Stamp>
+      )}
+      {/* red X — reserved for the graph section only */}
+      {crossed && (
+        <span className="pointer-events-none absolute inset-0">
+          <span className="absolute inset-x-[4%] top-1/2 h-[2.5px] rotate-[9deg] bg-mark-out" />
+          <span className="absolute inset-x-[4%] top-1/2 h-[2.5px] -rotate-[9deg] bg-mark-out" />
+        </span>
+      )}
+    </div>
+  );
 }
 
-export function ArgumentGraph({ graph, survivors, selectedId, onSelect }: Props) {
-  const ids = useMemo(() => graph.nodes.map((n) => n.id), [graph.nodes]);
-  const [nodes, setNodes] = useState<Sim[]>(() => seedPositions(ids));
-  const frame = useRef<number | null>(null);
+export function ArgumentGraph({ graph, survivors, resolved, live, rounds, texts }: Props) {
+  const nodes = graph?.nodes ?? [];
+  const cols = Math.max(rounds, ...nodes.map((n) => n.round), 1);
+  const width = cols * COL + 1;
+  const { stage, marksOn, replay } = useReplay(cols);
+  const marked = resolved && marksOn;
+  const byId = new Map(nodes.map((n) => [n.id, n]));
+  const inCount = nodes.filter((n) => survivors.has(n.id)).length;
 
-  useEffect(() => {
-    setNodes(seedPositions(ids));
-  }, [ids]);
-
-  useEffect(() => {
-    let alpha = 1;
-    const step = () => {
-      setNodes((prev) => {
-        const next = prev.map((n) => ({ ...n }));
-        const byId = new Map(next.map((n) => [n.id, n]));
-        // repulsion
-        for (let i = 0; i < next.length; i++) {
-          for (let j = i + 1; j < next.length; j++) {
-            const a = next[i]!;
-            const b = next[j]!;
-            let dx = b.x - a.x;
-            let dy = b.y - a.y;
-            let d2 = dx * dx + dy * dy || 0.01;
-            const f = 9000 / d2;
-            const d = Math.sqrt(d2);
-            dx /= d;
-            dy /= d;
-            a.vx -= dx * f;
-            a.vy -= dy * f;
-            b.vx += dx * f;
-            b.vy += dy * f;
-          }
-        }
-        // spring along edges
-        for (const e of graph.edges) {
-          const a = byId.get(e.source);
-          const b = byId.get(e.target);
-          if (!a || !b) continue;
-          const dx = b.x - a.x;
-          const dy = b.y - a.y;
-          const d = Math.hypot(dx, dy) || 0.01;
-          const f = (d - 140) * 0.02;
-          a.vx += (dx / d) * f;
-          a.vy += (dy / d) * f;
-          b.vx -= (dx / d) * f;
-          b.vy -= (dy / d) * f;
-        }
-        for (const n of next) {
-          // gentle centering
-          n.vx += (WIDTH / 2 - n.x) * 0.006;
-          n.vy += (HEIGHT / 2 - n.y) * 0.006;
-          n.vx *= 0.82;
-          n.vy *= 0.82;
-          n.x = Math.min(WIDTH - 40, Math.max(40, n.x + n.vx * alpha));
-          n.y = Math.min(HEIGHT - 40, Math.max(40, n.y + n.vy * alpha));
-        }
-        return next;
-      });
-      alpha *= 0.985;
-      if (alpha > 0.02) frame.current = requestAnimationFrame(step);
-    };
-    frame.current = requestAnimationFrame(step);
-    return () => {
-      if (frame.current) cancelAnimationFrame(frame.current);
-    };
-  }, [graph.edges, ids]);
-
-  const pos = new Map(nodes.map((n) => [n.id, n]));
+  const status = resolved
+    ? `GROUNDED EXTENSION · ${inCount} IN / ${nodes.length - inCount} OUT`
+    : live && nodes.length
+      ? "GROWING · LIVE"
+      : "PENDING";
 
   return (
-    <svg
-      viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-      className="grid-backdrop h-[420px] w-full rounded-lg border border-border bg-surface"
-      role="img"
-      aria-label="Argument attack graph"
-    >
-      <defs>
-        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M0,0 L10,5 L0,10 z" fill="currentColor" className="text-muted-foreground" />
-        </marker>
-      </defs>
-
-      {graph.edges.map((e, i) => {
-        const a = pos.get(e.source);
-        const b = pos.get(e.target);
-        if (!a || !b) return null;
-        const dx = b.x - a.x;
-        const dy = b.y - a.y;
-        const d = Math.hypot(dx, dy) || 1;
-        const ox = (dx / d) * 22;
-        const oy = (dy / d) * 22;
-        return (
-          <line
-            key={i}
-            x1={a.x + ox}
-            y1={a.y + oy}
-            x2={b.x - ox}
-            y2={b.y - oy}
-            stroke="currentColor"
-            className="text-border"
-            strokeWidth={1.5}
-            markerEnd="url(#arrow)"
-          />
-        );
-      })}
-
-      {graph.nodes.map((n) => {
-        const p = pos.get(n.id);
-        if (!p) return null;
-        const advocate = n.agent === "advocate";
-        const color = advocate ? "var(--advocate)" : "var(--skeptic)";
-        const survived = survivors.has(n.id);
-        return (
-          <g
-            key={n.id}
-            transform={`translate(${p.x}, ${p.y})`}
-            onClick={() => onSelect?.(n.id)}
-            className="cursor-pointer"
+    <section id="sec-graph" className="mx-auto max-w-shell scroll-mt-[120px] px-5 pb-2">
+      <SectionHeader title="Argument Graph" status={status}>
+        {resolved && nodes.length > 0 && (
+          <button
+            onClick={replay}
+            className="rounded-paper border-[1.5px] border-ink-strong px-2.5 py-1 font-mono text-data tracking-[.12em] text-ink-strong hover:bg-ink-strong hover:text-paper"
           >
-            {advocate ? (
-              <circle
-                r={20}
-                fill={color}
-                fillOpacity={0.16}
-                stroke={color}
-                strokeWidth={selectedId === n.id ? 3 : 1.6}
-              />
-            ) : (
-              <rect
-                x={-18}
-                y={-18}
-                width={36}
-                height={36}
-                rx={4}
-                fill={color}
-                fillOpacity={0.16}
-                stroke={color}
-                strokeWidth={selectedId === n.id ? 3 : 1.6}
-              />
-            )}
-            {survived && (
-              <circle r={26} fill="none" stroke="var(--survived)" strokeWidth={1} strokeDasharray="3 3" />
-            )}
-            <text
-              textAnchor="middle"
-              dy="4"
-              fontSize="11"
-              fontFamily="var(--font-mono)"
-              fill={color}
+            ↻ REPLAY
+          </button>
+        )}
+      </SectionHeader>
+
+      {nodes.length === 0 ? (
+        <LockedPanel reason="the attack map draws itself as arguments arrive" />
+      ) : (
+        <div className="mt-2.5 flex flex-col gap-4.5">
+          <div className="overflow-x-auto rounded-paper border-[1.5px] border-ink-strong bg-paper-card p-4.5 shadow-card">
+            <div
+              className="relative mx-auto"
+              style={{ width, height: HEIGHT }}
+              role="img"
+              aria-label="Argument attack graph"
             >
-              {n.label ?? n.id}
-            </text>
-            <text
-              textAnchor="middle"
-              dy="34"
-              fontSize="9"
-              fontFamily="var(--font-mono)"
-              fill="var(--muted-foreground)"
-            >
-              r{n.round}
-            </text>
-          </g>
-        );
-      })}
-    </svg>
+              <div
+                className="absolute inset-0 z-[1] grid"
+                style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+              >
+                {Array.from({ length: cols }, (_, i) => (
+                  <div key={i} className="flex justify-center border-l border-dashed border-[#ded8ca] pt-0.5">
+                    <Mono className="tracking-[.16em] text-ink-ghost">ROUND {i + 1}</Mono>
+                  </div>
+                ))}
+              </div>
+
+              <svg
+                width={width}
+                height={HEIGHT}
+                className="pointer-events-none absolute inset-0 z-[2] overflow-visible"
+              >
+                <defs>
+                  <marker
+                    id="argus-arrow"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="7"
+                    markerHeight="7"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--color-ink-muted)" />
+                  </marker>
+                </defs>
+                {graph?.edges.map((e) => {
+                  const a = byId.get(e.source);
+                  const b = byId.get(e.target);
+                  if (!a || !b) return null;
+                  // Edges leave/enter on the side facing the other row.
+                  const x1 = colX(a.round) + NODE_W / 2;
+                  const x2 = colX(b.round) + NODE_W / 2;
+                  const y1 = rowY(a.agent) + (a.agent === "advocate" ? NODE_H : 0);
+                  const y2 = rowY(b.agent) + (b.agent === "advocate" ? NODE_H + 2 : -4);
+                  const sameRow = a.agent === b.agent;
+                  const mx = (x1 + x2) / 2 + (x1 === x2 ? 34 : 0);
+                  const my = (y1 + y2) / 2 + (sameRow ? (a.agent === "advocate" ? 40 : -40) : 0);
+                  const shown = Math.max(a.round, b.round) <= stage;
+                  const dim = marked && !survivors.has(b.id); // edges into defeated nodes collapse
+                  return (
+                    <path
+                      key={`${e.source}-${e.target}`}
+                      d={`M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`}
+                      fill="none"
+                      stroke={dim ? "#bdb7aa" : "var(--color-ink-muted)"}
+                      strokeWidth={1.8}
+                      strokeDasharray="7 5"
+                      strokeLinecap="round"
+                      markerEnd="url(#argus-arrow)"
+                      style={{
+                        opacity: shown ? (dim ? 0.45 : 1) : 0,
+                        transition: "opacity var(--duration-fade) ease, stroke var(--duration-fade) ease",
+                      }}
+                    />
+                  );
+                })}
+              </svg>
+
+              {nodes.map((n) => (
+                <Node
+                  key={n.id}
+                  node={n}
+                  text={texts.get(n.id)}
+                  visible={n.round <= stage}
+                  marked={marked}
+                  survives={survivors.has(n.id)}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(270px,1fr))] items-start gap-4">
+            <div className="rounded-paper border-[1.5px] border-ink-strong bg-white p-3.5 shadow-card-sm">
+              <Mono className="tracking-[.16em]">LEGEND</Mono>
+              <div className="mt-2.5 flex flex-col gap-2.5 text-body-sm text-[#3a3732]">
+                <div className="flex items-center gap-2">
+                  <span className="size-4 rounded-paper bg-mark-in" />
+                  survives — in the grounded extension
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="size-4 rounded-paper bg-mark-out" />
+                  defeated — crossed out, greyed
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-6.5 border-t-2 border-dashed border-ink-muted" />
+                  attack direction
+                </div>
+              </div>
+            </div>
+            <div className="postit-sheen rotate-[1.2deg] bg-postit-note p-3.5 shadow-postit-sm">
+              <Mono className="tracking-[.16em] text-ink-muted">FIXPOINT</Mono>
+              <div className="mt-2 text-[16px] leading-[23px] text-pretty text-[#3a3732]">
+                Unattacked arguments are accepted, everything they attack is rejected, and the rest
+                is recomputed until nothing changes.
+              </div>
+              {resolved && (
+                <div className="mt-2.5 font-mono text-[11px] text-ink">
+                  IN {`{${nodes.filter((n) => survivors.has(n.id)).map((n) => n.label ?? n.id).join(", ")}}`} · OUT{" "}
+                  {`{${nodes.filter((n) => !survivors.has(n.id)).map((n) => n.label ?? n.id).join(", ")}}`}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
