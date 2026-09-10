@@ -5,7 +5,7 @@
 mid-build has full context without re-deriving decisions already made. Update it as the
 project progresses — don't let it drift out of sync with reality.
 
-**Last updated:** Review-1 wiring session (2026-08-30) — all components wired end-to-end,
+**Last updated:** Measurement fixes (2026-09-10) — balanced n=50 FEVER sample, stratified `--limit`, config-keyed + corruption-safe eval cache; the n=8 numbers are now marked invalid (§4). 2026-09-09: evaluation harness built. Earlier the same day: FEVER sample integrated (§4, §8). Prior: Review-1 wiring session (2026-08-30) — all components wired end-to-end,
 orchestrator bug fixed, LLM fact-checker, in-memory persistence, cached demo debates, docs
 refreshed. Provider: Google Gemini `gemini-3.5-flash-lite` (moved off `gemini-3.6-flash`
 after hitting its 20 req/day free cap). Retry policy tightened; frontend now shows an honest
@@ -109,11 +109,46 @@ Skeptic Agent (LLM)  ─┴─→ Debate Orchestrator ─→ Argument Graph (Dun
 | **Cached demo debates** | `data/demo_debates.json`, `scripts/build_offline_demos.py`, `scripts/seed_demos.py` | ✅ 3 debates, committed, loaded at startup | Verified through the API |
 | Frontend | `frontend/` | ✅ Wired to live backend; 2-round default; cached-demo links. **Live streaming:** arguments appear turn-by-turn as the debate runs (orchestrator `on_argument` callback → store → 1.5s poll), with per-turn "<Agent> is forming a rebuttal…" / "Scoring the argument graph…" cues. Distinguishes **backend-offline** (mock + chip) from **debate-failed** (explicit banner, no fake data); typechecks clean | N/A (manual) |
 | LLM retry policy | `app/services/grok_client.py` | ✅ SDK internal retries disabled; our loop = 2 short retries; **daily-quota 429s fail fast** instead of blocking ~2 min | 6 tests |
-| FEVER dataset | `data/` | ⬜ Review 2 | N/A |
-| Evaluation pipeline (ECE, baseline, reliability diagrams) | — | ⬜ Review 2 | N/A |
+| **FEVER dataset** | `scripts/prepare_fever.py`, `data/fever_sample.json` | ✅ **n=50, exactly 25 SUPPORTED / 25 REFUTED** (seed 42; `--n` for more). Claims de-duplicated, ambiguous ones dropped; if a class runs short both are capped to match, never padded; counts printed on generation. Offline only; **not wired into the live pipeline** | 6 balance tests (`tests/test_prepare_fever.py`) + on-disk shape & balance checks (`tests/test_fever_sample.py`, skip if not generated) |
+| **Evaluation harness** (accuracy, ECE, single-LLM baseline, reliability diagrams) | `scripts/evaluate.py`, `scripts/reliability_diagram.py` | ✅ Built — calls the existing services, never the live API; cache keyed per claim **and** per half, each half stamped with its config (see §8 item 4); atomic writes; corrupt file moved aside, corrupt rows re-scored; `--limit` draws a **class-balanced** subset; `--seed` / `--rounds` / `--bins` / `--delay` / `--llm-timeout`; writes `data/eval_results.json` (cache), `data/eval_summary.json` (per-run record incl. the exact scored claims), `data/reliability_*.png` | 5 metric tests (`tests/test_eval_metrics.py`) + 7 cache/resume tests (`tests/test_eval_resume.py`, LLM fully mocked) |
 | Trained calibrator | `data/calibrator.pkl` | ⬜ Review 2 — pipeline loads it if present, else calibrated = raw | N/A |
 
-**Test suite: 30 passed, 0 skipped** (`python -m pytest`).
+**Test suite: 52 passed, 0 skipped** (`python -m pytest`).
+
+### ~~First evaluation run (2026-09-09) — smoke subset, n=8~~ — ⚠️ INVALID, kept for the record
+
+> **Do not cite these numbers.** The `--limit 8` draw was a plain `random.sample` over the
+> balanced file and came out 6 REFUTED / 2 SUPPORTED, so an "always false" system scores well
+> for free — which is exactly what Argus nearly is. The sampling was fixed on 2026-09-10
+> (stratified `--limit`, n=50 balanced sample). The skeptic-bias *hypothesis* below still
+> stands and is what the next real run should test; the accuracy/ECE figures do not.
+> `data/eval_summary.json` and `data/reliability_*.png` on disk are still from this run until
+> the next `scripts.evaluate` overwrites them.
+
+`python -m scripts.evaluate --limit 8 --delay 2 --llm-timeout 240`, seed 42, 2 rounds,
+10 ECE bins, `gemini-3.5-flash-lite`, no calibrator (so Argus calibrated = raw).
+
+| System | n | Accuracy @0.5 | ECE | mean P(true) |
+|---|---|---|---|---|
+| **Argus** (debate → grounded extension → fact-check → judge) | 8 | **0.750** | **0.175** | 0.094 |
+| **Baseline** (one direct LLM call) | 8 | **1.000** | **0.013** | 0.237 |
+
+**The baseline currently beats Argus.** This is the honest starting number, not a bug in the
+harness — read it as the "before" measurement:
+
+- **Argus has a strong skeptic bias.** Mean predicted P(true) is 0.094; it assigns ≤0.15 to
+  seven of eight claims. Both of its errors are *true* claims scored as false (0.42 and 0.15);
+  it got every false claim right. Suspect the judge's structural term — surviving-argument
+  counts favour whoever attacks last, and the Skeptic always speaks last in a 2-round debate.
+- **This subset is not balanced.** Seed 42 drew 6 REFUTED / 2 SUPPORTED out of the then
+  150-claim sample, so accuracy figures here are dominated by the false claims and the
+  baseline's 1.000 is very likely optimistic. n=8 is directional only.
+- Both fixes queued below (real fact-checker, trained calibrator) target exactly this. The
+  calibrator in particular should absorb a monotone bias like this one.
+
+**Reproduce:** `data/eval_results.json` (per claim) and `data/eval_summary.json` (metrics +
+the exact config used) are written by the harness; `data/reliability_argus.png` and
+`data/reliability_baseline.png` by `python -m scripts.reliability_diagram`.
 
 ---
 
@@ -132,7 +167,12 @@ round. Regression test:
 - **LLM access — RESOLVED (2026-08-30):** switched to Google Gemini (`gemini-3.6-flash`),
   live debates verified end-to-end. Cerebras key still in `.env` (commented) as a fallback.
 - **Planning (M6) coverage** — debate-strategy planner still only floated, not committed.
-- **Calibrator not trained** — needs labels (FEVER), Review 2. Until then calibrated = raw
+- **Calibrator not trained** — FEVER labels now exist (`data/fever_sample.json`) and the eval
+  harness produces the raw probabilities to fit on; fitting and pickling is still outstanding.
+- **n=8 smoke run is invalid** (class-imbalanced draw — see §4). The skeptic-bias hypothesis
+  it raised is untested until a balanced run exists: `python -m scripts.evaluate` on the n=50
+  sample (≈300 LLM calls).
+- **Calibrator not applied yet** — until `data/calibrator.pkl` exists, Argus calibrated = raw
   and the verdict explanation says so.
 
 ---
@@ -178,12 +218,40 @@ Review-1 items 1–8 from the previous roadmap are **done** (orchestrator bug, C
 wiring, in-memory persistence, routes real data, frontend↔backend, end-to-end runs, cached
 demos). Remaining:
 
-1. **Build the real fact-checker** — BM25 retrieval + triple extraction + forward chaining
+1. ~~**Download + integrate FEVER**~~ — ✅ done. `python -m scripts.prepare_fever --n 50 --seed 42`
+   pulls from `copenlu/fever_gold_evidence` (the canonical `fever` repo is script-based and
+   no longer loadable by `datasets>=4`), drops NOTENOUGHINFO, balances the classes, and writes
+   `data/fever_sample.json` as `[{claim, label}]` (`label: true` = SUPPORTED). Reproducible via
+   `--seed`; falls back to a small built-in claim set if every public source fails.
+
+2. **Build the real fact-checker** — BM25 retrieval + triple extraction + forward chaining
    against FEVER evidence (PRD §5d).
-2. **Download + integrate FEVER** — HuggingFace `datasets`, filtered to the eval sample.
-3. **Train the calibrator** on a held-out FEVER split → `data/calibrator.pkl`.
-4. **Evaluation** — baseline (single LLM call) vs full system: accuracy + ECE + reliability
-   diagrams (PRD §11).
+3. **Train the calibrator** on `data/fever_sample.json` → `data/calibrator.pkl`.
+4. ~~**Evaluation**~~ — ✅ harness built (PRD §11):
+
+   ```powershell
+   python -m scripts.evaluate --limit 10      # smoke run first; resumes if interrupted
+   python -m scripts.evaluate                 # full n=50 balanced sample
+   python -m scripts.reliability_diagram      # PNGs into data/
+   ```
+
+   Runs each claim through the real pipeline (`run_debate` → `assemble_verdict`) and, for
+   the same claim, a single direct LLM call as the baseline; reports accuracy @0.5 and ECE
+   for both. Every claim is written to `data/eval_results.json` the moment it is scored, at
+   **sub-claim granularity** — if the daily quota dies mid-run, rerunning re-scores only the
+   half that is actually missing. **A full n=50 run is ~300 LLM calls (≈6 per claim) and, at the
+   provider latency observed on 2026-09-09 (~45 s/call), takes several hours** — start it and
+   let it resume across quota resets. `--llm-timeout` raises the request timeout for the
+   batch run only; `grok_client`'s live 60 s default is deliberately untouched.
+
+   **Cache key.** An entry is unique on *(claim text, half, that half's config)*:
+   Argus = `{rounds, llm_model, llm_base_url}`; baseline = `{llm_model, llm_base_url,
+   sha256(baseline prompt)[:16]}`. A half is reused only if its score is a valid probability
+   in [0,1] **and** its stamp equals the current config; metrics count only halves stamped with
+   the current config. Argus caches the **raw** probability and calibrates at read time, so
+   training a calibrator never forces debates to re-run. The label is always taken from the
+   sample file, never the cache. **Not in the key: code.** Editing the debate / fact-check /
+   judge code does not invalidate cached scores — run with `--refresh` after such changes.
 5. **Demo/viva prep** — see `DEMO.md`; be ready to hand-run the grounded-extension fixpoint
    and the calibration math.
 6. Optionally add the debate-strategy planner for explicit M6 coverage.

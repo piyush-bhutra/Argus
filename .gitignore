@@ -59,6 +59,8 @@ checkpoints/
 data/*
 !data/demo_debates.json
 !data/calibrator.pkl
+!data/eval_summary.json
+!data/reliability_*.png
 datasets/
 fever_data/
 

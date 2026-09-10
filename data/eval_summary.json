@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-09-09T14:19:48+00:00",
+  "config": {
+    "sample_file": "data\\fever_sample.json",
+    "n_claims_requested": 8,
+    "rounds": 2,
+    "bins": 10,
+    "seed": 42,
+    "limit": 8,
+    "llm_model": "gemini-3.5-flash-lite",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "calibrator_loaded": false,
+    "baseline_enabled": true
+  },
+  "n_claims_scored": 8,
+  "n_claims_failed": 0,
+  "argus": {
+    "n": 8,
+    "accuracy": 0.75,
+    "ece": 0.17540229955727338,
+    "mean_probability": 0.09429789445205682,
+    "bins": [
+      {
+        "lo": 0.0,
+        "hi": 0.1,
+        "count": 5,
+        "confidence": 0.01576015520746416,
+        "accuracy": 0.0
+      },
+      {
+        "lo": 0.1,
+        "hi": 0.2,
+        "count": 2,
+        "confidence": 0.12836667193426388,
+        "accuracy": 0.5
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.3,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.3,
+        "hi": 0.4,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.5,
+        "count": 1,
+        "confidence": 0.41884903571060617,
+        "accuracy": 1.0
+      },
+      {
+        "lo": 0.5,
+        "hi": 0.6,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.7,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.7,
+        "hi": 0.8,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.9,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.9,
+        "hi": 1.0,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      }
+    ]
+  },
+  "baseline": {
+    "n": 8,
+    "accuracy": 1.0,
+    "ece": 0.012500000000000011,
+    "mean_probability": 0.2375,
+    "bins": [
+      {
+        "lo": 0.0,
+        "hi": 0.1,
+        "count": 6,
+        "confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "lo": 0.1,
+        "hi": 0.2,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.3,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.3,
+        "hi": 0.4,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.5,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.5,
+        "hi": 0.6,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.7,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.7,
+        "hi": 0.8,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.9,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.9,
+        "hi": 1.0,
+        "count": 2,
+        "confidence": 0.95,
+        "accuracy": 1.0
+      }
+    ]
+  }
+}
