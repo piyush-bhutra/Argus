@@ -1,117 +1,239 @@
 @import "tailwindcss" source(none);
 @source "../src";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 
 /*
- * Design system: dark analytical dashboard.
- * Advocate = cyan, Skeptic = amber. All colors are oklch tokens.
+ * Argus — notebook / pencil design system.
+ * Everything in @theme is emitted as a CSS custom property AND generates
+ * utilities (bg-paper, text-ink, font-marker, animate-slide-in …).
+ * Fonts are loaded via <link> in routes/__root.tsx.
+ * `static`: always emit every token — post-it stock and rotations are referenced
+ * only from inline var() strings, which Tailwind's usage scan can't see.
  */
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-surface-raised: var(--surface-raised);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-advocate: var(--advocate);
-  --color-advocate-soft: var(--advocate-soft);
-  --color-skeptic: var(--skeptic);
-  --color-skeptic-soft: var(--skeptic-soft);
-  --color-survived: var(--survived);
-  --color-chart-1: var(--advocate);
-  --color-chart-2: var(--skeptic);
-  --color-chart-3: var(--survived);
-  --color-chart-4: var(--muted-foreground);
-  --color-chart-5: var(--primary);
-  --color-sidebar: var(--surface);
-  --color-sidebar-foreground: var(--foreground);
-  --color-sidebar-primary: var(--primary);
-  --color-sidebar-primary-foreground: var(--primary-foreground);
-  --color-sidebar-accent: var(--accent);
-  --color-sidebar-accent-foreground: var(--accent-foreground);
-  --color-sidebar-border: var(--border);
-  --color-sidebar-ring: var(--ring);
+@theme static {
+  /* ---------- Type ---------- */
+  --font-marker: "Just Another Hand", cursive; /* loud chrome only: hero, stamps */
+  --font-hand: "Architects Daughter", ui-rounded, sans-serif; /* body + section headers */
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace; /* all data chrome */
+
+  --text-hero: 104px;
+  --text-hero--line-height: 0.84;
+  --text-stamp-xl: 52px;
+  --text-stamp-xl--line-height: 1;
+  --text-stamp: 36px;
+  --text-stamp--line-height: 1;
+  --text-stamp-sm: 26px;
+  --text-stamp-sm--line-height: 1;
+  --text-display: 82px;
+  --text-display--line-height: 0.8;
+  --text-brand: 30px;
+  --text-brand--line-height: 1;
+  --text-h2: 29px;
+  --text-h2--line-height: 1.15;
+  --text-lead: 21px;
+  --text-lead--line-height: 31px;
+  --text-claim: 19px;
+  --text-claim--line-height: 29px;
+  --text-body: 17.5px;
+  --text-body--line-height: 27px;
+  --text-body-sm: 15.5px;
+  --text-body-sm--line-height: 21px;
+  --text-data: 10px;
+  --text-data--line-height: 1.4;
+  --text-data-sm: 9px;
+  --text-data-sm--line-height: 1.4;
+
+  --tracking-data: 0.14em;
+  --tracking-data-wide: 0.22em;
+
+  /* ---------- Paper & ink ---------- */
+  --color-paper: #fffefb;
+  --color-paper-card: #ffffff;
+  --color-ink: #2f2c28;
+  --color-ink-strong: #33312e;
+  --color-ink-soft: #4a4640;
+  --color-ink-muted: #6d675d;
+  --color-ink-faint: #8a8479;
+  --color-ink-ghost: #a49d90;
+  --color-rule: rgba(40, 38, 34, 0.26);
+  --color-rule-margin: rgba(198, 52, 44, 0.55);
+  --color-hairline: #e2ddd0;
+  --color-hairline-dashed: #d8d2c3;
+  --color-locked-border: #c4bdac;
+  --color-chip-bg: #f3efe3;
+
+  /* ---------- Grading ink (red reserved for marks only) ---------- */
+  --color-mark-in: #2f7d4f;
+  --color-mark-out: #b8352c;
+  --color-mark-warn: #d8a13a;
+  --color-survivor-chip-bg: #d9f2e2;
+  --color-survivor-chip-ink: #1f5b39;
+
+  /* ---------- Post-it stock: Advocate = warm, Skeptic = cool ---------- */
+  --color-postit-canary: #ffe712;
+  --color-postit-orange: #ff9f1a;
+  --color-postit-gold: #ffcf00;
+  --color-postit-pink: #ff5fa2;
+  --color-postit-cyan: #4fd8ff;
+  --color-postit-lime: #9cf53f;
+  --color-postit-note: #fff9c4;
+
+  /* ---------- Elevation ---------- */
+  --shadow-postit: 0 1px 1px rgba(51, 49, 46, 0.18), 6px 8px 14px -6px rgba(51, 49, 46, 0.35);
+  --shadow-postit-sm: 0 1px 1px rgba(51, 49, 46, 0.18), 5px 7px 12px -6px rgba(51, 49, 46, 0.35);
+  --shadow-card: 5px 5px 0 rgba(51, 49, 46, 0.1);
+  --shadow-card-lg: 6px 6px 0 rgba(51, 49, 46, 0.1);
+  --shadow-card-sm: 4px 4px 0 rgba(51, 49, 46, 0.08);
+  --shadow-button: 3px 3px 0 rgba(51, 49, 46, 0.22);
+  --shadow-bar: 0 2px 0 rgba(51, 49, 46, 0.12);
+
+  /* ---------- Geometry ---------- */
+  --radius-paper: 2px;
+  --radius-postit: 1px;
+  --container-shell: 1140px; /* max-w-shell */
+  --spacing-rail-offset: 47px; /* progress rail sticks below the claim bar */
+
+  --rotate-advocate: -1.4deg;
+  --rotate-skeptic: 1.4deg;
+
+  /* ---------- Motion ---------- */
+  --ease-paper: cubic-bezier(0.2, 0.8, 0.3, 1);
+  --duration-card: 420ms;
+  --duration-stamp: 300ms;
+  --duration-node: 450ms;
+  --duration-fade: 500ms;
+  --duration-glow: 1200ms;
+
+  --animate-slide-in: argus-slide var(--duration-card) var(--ease-paper) both;
+  --animate-pop-in: argus-pop var(--duration-node) var(--ease-paper) both;
+  --animate-stamp: argus-stamp var(--duration-stamp) ease-out both;
+  --animate-glow: argus-glow var(--duration-glow) ease-out 100ms both;
+  --animate-cue: argus-dash 700ms linear infinite;
 }
 
-:root {
-  --radius: 0.5rem;
-  --background: oklch(0.17 0.014 260);
-  --foreground: oklch(0.95 0.006 260);
-  --surface: oklch(0.21 0.016 260);
-  --surface-raised: oklch(0.25 0.018 260);
-  --card: oklch(0.21 0.016 260);
-  --card-foreground: oklch(0.95 0.006 260);
-  --popover: oklch(0.23 0.017 260);
-  --popover-foreground: oklch(0.95 0.006 260);
-  --primary: oklch(0.78 0.13 197);
-  --primary-foreground: oklch(0.18 0.02 250);
-  --secondary: oklch(0.27 0.018 260);
-  --secondary-foreground: oklch(0.93 0.006 260);
-  --muted: oklch(0.26 0.016 260);
-  --muted-foreground: oklch(0.68 0.017 260);
-  --accent: oklch(0.3 0.03 240);
-  --accent-foreground: oklch(0.95 0.006 260);
-  --destructive: oklch(0.62 0.2 22);
-  --destructive-foreground: oklch(0.97 0.01 22);
-  --border: oklch(0.31 0.017 260);
-  --input: oklch(0.29 0.017 260);
-  --ring: oklch(0.7 0.11 197);
-  --advocate: oklch(0.79 0.13 197);
-  --advocate-soft: oklch(0.28 0.05 210);
-  --skeptic: oklch(0.81 0.14 76);
-  --skeptic-soft: oklch(0.3 0.05 78);
-  --survived: oklch(0.78 0.16 152);
+@keyframes argus-slide {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.dark {
-  color-scheme: dark;
+@keyframes argus-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes argus-stamp {
+  from {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes argus-glow {
+  0% {
+    box-shadow: 0 1px 1px rgba(51, 49, 46, 0.2), 0 0 0 0 rgba(47, 125, 79, 0);
+  }
+  35% {
+    box-shadow: 0 1px 1px rgba(51, 49, 46, 0.2), 0 0 22px 7px rgba(47, 125, 79, 0.5);
+  }
+  100% {
+    box-shadow: 0 1px 1px rgba(51, 49, 46, 0.2), 0 0 0 0 rgba(47, 125, 79, 0);
+  }
+}
+@keyframes argus-dash {
+  to {
+    background-position: 22px 0;
+  }
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  html {
-    color-scheme: dark;
-  }
-
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-hand);
     -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
 
-@utility grid-backdrop {
-  background-image:
-    linear-gradient(to right, oklch(1 0 0 / 3%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 3%) 1px, transparent 1px);
-  background-size: 44px 44px;
+/* ---------- Composite surfaces (not expressible as single tokens) ---------- */
+@layer components {
+  /* Ruled notebook page: graphite rules every 31px + red margin at 71px */
+  .paper-ruled {
+    background-color: var(--color-paper);
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 30px,
+        var(--color-rule) 30px,
+        var(--color-rule) 31px
+      ),
+      linear-gradient(
+        to right,
+        transparent 0,
+        transparent 71px,
+        var(--color-rule-margin) 71px,
+        var(--color-rule-margin) 73px,
+        transparent 73px
+      );
+  }
+  /* Light-source gradient over the flat post-it stock color */
+  .postit-sheen {
+    background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.55), rgba(0, 0, 0, 0.05));
+  }
+  /* Pending/locked panel hatching */
+  .paper-hatched {
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0,
+      rgba(255, 255, 255, 0.9) 9px,
+      rgba(232, 227, 214, 0.55) 9px,
+      rgba(232, 227, 214, 0.55) 18px
+    );
+  }
+  /* Marching-dash pill on the live cue row */
+  .cue-dashes {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--color-ink-faint) 0,
+      var(--color-ink-faint) 5px,
+      transparent 5px,
+      transparent 11px
+    );
+    background-size: 22px 6px;
+    animation: var(--animate-cue);
+  }
+  /* Ruled lines inside the claim textarea (28px rhythm, blue-grey) */
+  .claim-lines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 28px,
+      #d3e3f2 28px,
+      #d3e3f2 29px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
 }
