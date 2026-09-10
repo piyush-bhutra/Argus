@@ -1,73 +1,87 @@
 {
-  "generated_at": "2026-09-09T14:19:48+00:00",
+  "generated_at": "2026-09-10T08:50:57+00:00",
   "config": {
     "sample_file": "data\\fever_sample.json",
-    "n_claims_requested": 8,
+    "n_claims_requested": 50,
+    "n_true": 25,
+    "n_false": 25,
     "rounds": 2,
     "bins": 10,
     "seed": 42,
-    "limit": 8,
+    "limit": null,
     "llm_model": "gemini-3.5-flash-lite",
     "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
     "calibrator_loaded": false,
-    "baseline_enabled": true
+    "baseline_enabled": true,
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/"
+    },
+    "baseline_key": {
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "prompt_sha256": "2c37cfdd1b1a23f7"
+    }
   },
-  "n_claims_scored": 8,
-  "n_claims_failed": 0,
+  "n_claims_scored": 50,
+  "n_claims_failed": 4,
   "argus": {
-    "n": 8,
-    "accuracy": 0.75,
-    "ece": 0.17540229955727338,
-    "mean_probability": 0.09429789445205682,
+    "n": 49,
+    "n_true": 24,
+    "n_false": 25,
+    "accuracy": 0.6326530612244898,
+    "ece": 0.28273460801110517,
+    "mean_probability": 0.23306256727380834,
     "bins": [
       {
         "lo": 0.0,
         "hi": 0.1,
-        "count": 5,
-        "confidence": 0.01576015520746416,
-        "accuracy": 0.0
+        "count": 16,
+        "confidence": 0.03152539731730903,
+        "accuracy": 0.125
       },
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 2,
-        "confidence": 0.12836667193426388,
+        "count": 12,
+        "confidence": 0.1368276269188101,
         "accuracy": 0.5
       },
       {
         "lo": 0.2,
         "hi": 0.3,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 7,
+        "confidence": 0.283469427387555,
+        "accuracy": 0.7142857142857143
       },
       {
         "lo": 0.3,
         "hi": 0.4,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.3711001618483768,
+        "accuracy": 1.0
       },
       {
         "lo": 0.4,
         "hi": 0.5,
         "count": 1,
-        "confidence": 0.41884903571060617,
+        "confidence": 0.4091452475454058,
         "accuracy": 1.0
       },
       {
         "lo": 0.5,
         "hi": 0.6,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 11,
+        "confidence": 0.5338332473388087,
+        "accuracy": 0.8181818181818182
       },
       {
         "lo": 0.6,
         "hi": 0.7,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.6370307944803831,
+        "accuracy": 0.0
       },
       {
         "lo": 0.7,
@@ -93,24 +107,26 @@
     ]
   },
   "baseline": {
-    "n": 8,
-    "accuracy": 1.0,
-    "ece": 0.012500000000000011,
-    "mean_probability": 0.2375,
+    "n": 46,
+    "n_true": 22,
+    "n_false": 24,
+    "accuracy": 0.8478260869565217,
+    "ece": 0.15000000000000002,
+    "mean_probability": 0.5021739130434782,
     "bins": [
       {
         "lo": 0.0,
         "hi": 0.1,
-        "count": 6,
+        "count": 22,
         "confidence": 0.0,
-        "accuracy": 0.0
+        "accuracy": 0.09090909090909091
       },
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.1,
+        "accuracy": 1.0
       },
       {
         "lo": 0.2,
@@ -164,10 +180,312 @@
       {
         "lo": 0.9,
         "hi": 1.0,
-        "count": 2,
-        "confidence": 0.95,
-        "accuracy": 1.0
+        "count": 23,
+        "confidence": 1.0,
+        "accuracy": 0.8260869565217391
       }
     ]
-  }
+  },
+  "claims": [
+    {
+      "claim": "The Columbia River undergoes drainage.",
+      "label": true,
+      "argus_probability": 0.28343218544228543,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Bea Arthur died in 2009.",
+      "label": true,
+      "argus_probability": 0.5732197726798348,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Fidel Castro lost all elections for President of Cuba.",
+      "label": false,
+      "argus_probability": 0.12319674481141464,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Brazzers is a pornographic production company based in Montreal.",
+      "label": true,
+      "argus_probability": 0.27587822922918137,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Excuse My French is a speech by French Montana.",
+      "label": false,
+      "argus_probability": 0.04576021243849697,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Marcus Bentley is a British voice-over artist.",
+      "label": false,
+      "argus_probability": 0.5336988354329009,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Danger UXB is from 1981.",
+      "label": false,
+      "argus_probability": 0.07175754226375133,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Advertising is an sound-based manner of marketing communication.",
+      "label": true,
+      "argus_probability": 0.027922573784073024,
+      "baseline_probability": 0.1
+    },
+    {
+      "claim": "The World Trade Center is still standing.",
+      "label": false,
+      "argus_probability": 0.11920292202211755,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Edmund H. North co-wrote the script for Twilight.",
+      "label": false,
+      "argus_probability": 0.01798620996209156,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "The website Glee.com was first launched in 2010.",
+      "label": false,
+      "argus_probability": 0.028263869611542956,
+      "baseline_probability": null
+    },
+    {
+      "claim": "Brubaker is a 2007 drama.",
+      "label": false,
+      "argus_probability": 0.015519756578408886,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Meteora is by Linkin Park.",
+      "label": true,
+      "argus_probability": 0.5436386872370789,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "The Palace of Caserta is near Naples.",
+      "label": true,
+      "argus_probability": 0.13267629268781858,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Blade Runner 2049 stars the actor Ryan Gosling.",
+      "label": true,
+      "argus_probability": 0.5683199834782481,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Miracle at St. Anna is set primarily in France.",
+      "label": false,
+      "argus_probability": 0.28648853245736305,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Homer Hickman has written science fiction novels.",
+      "label": false,
+      "argus_probability": 0.502499979166875,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Excuse My French is an American rapper's album.",
+      "label": true,
+      "argus_probability": 0.286488532457363,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Eric Church is an artist.",
+      "label": true,
+      "argus_probability": 0.28140560742914383,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Psych takes place in the United States.",
+      "label": true,
+      "argus_probability": 0.13883499354730713,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Kellogg's products are marketed in only one country.",
+      "label": false,
+      "argus_probability": 0.18467338639691713,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Topman has outlets in one Irish city.",
+      "label": true,
+      "argus_probability": 0.5,
+      "baseline_probability": null
+    },
+    {
+      "claim": "Fist of Legend is a remake of Fist of Fury.",
+      "label": true,
+      "argus_probability": 0.18808525450024158,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "One of the founders of San Diego Comic-Con was not Richard Alf.",
+      "label": false,
+      "argus_probability": 0.12185285076961805,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Tom Baker has narrated commercials.",
+      "label": true,
+      "argus_probability": 0.1242810144077767,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Miranda Otto is the son of Barry Otto.",
+      "label": false,
+      "argus_probability": 0.02627528158971787,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Topman sells clothing.",
+      "label": true,
+      "argus_probability": 0.4091452475454058,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Victoria Palace Theatre is outside of Victoria Street.",
+      "label": false,
+      "argus_probability": 0.01691491326672651,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Damon Albarn has refused to ever work with Brian Eno.",
+      "label": false,
+      "argus_probability": 0.04576021243849697,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "The Endless River is an album by Danny Devito.",
+      "label": false,
+      "argus_probability": 0.016708303595388257,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Swordfish (film) is a television show that is about an ex-convict.",
+      "label": false,
+      "argus_probability": 0.11405238127979088,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Boyhood was carved from 2002 to 2013.",
+      "label": false,
+      "argus_probability": 0.29421497216298875,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Stanley Williams was executed in 2005.",
+      "label": true,
+      "argus_probability": 0.5646362918030292,
+      "baseline_probability": null
+    },
+    {
+      "claim": "Juventus F.C. competes at Juventus Stadium in Lisbon, Portugal.",
+      "label": false,
+      "argus_probability": 0.017124033315727736,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Herculaneum's ruins are near Naples.",
+      "label": true,
+      "argus_probability": 0.5330766223661046,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Sancho Panza is a fictional character in a novel written by a Spanish writer born in the 17th century.",
+      "label": true,
+      "argus_probability": 0.11920292202211755,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Veeru Devgan is only a dance choreographer.",
+      "label": false,
+      "argus_probability": 0.041189898255749986,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Aarhus is in the geographical center of Denmark.",
+      "label": true,
+      "argus_probability": 0.05612035936316442,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Bethany Hamilton's autobiography was adapted into a film.",
+      "label": true,
+      "argus_probability": 0.5187412158785352,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "A Milli is by Mos Def.",
+      "label": false,
+      "argus_probability": 0.02564317830599567,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Frozen is a film from 2013.",
+      "label": true,
+      "argus_probability": 0.3711001618483768,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Shane Black was born on December 16th, 1961.",
+      "label": true,
+      "argus_probability": 0.5031249593105316,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Cheese in the Trap (TV series) comes from South Korea",
+      "label": true,
+      "argus_probability": 0.5312093733737563,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Homer Hickman is illiterate.",
+      "label": false,
+      "argus_probability": 0.03732688734412946,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Shadowhunters premiered in 2018.",
+      "label": false,
+      "argus_probability": 0.01413312496348281,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "AMGTV is a television network that is family-oriented.",
+      "label": true,
+      "argus_probability": 0.2763779325345598,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
+      "label": true,
+      "argus_probability": null,
+      "baseline_probability": null
+    },
+    {
+      "claim": "The Washington Wizards have won zero division titles.",
+      "label": false,
+      "argus_probability": 0.14773215233584763,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Brazzers is based in Quebec.",
+      "label": false,
+      "argus_probability": 0.6370307944803831,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Syracuse, New York, had a metropolitan area with a population of more than 600,000 residents according to the 2010 Census.",
+      "label": true,
+      "argus_probability": 0.12814060824475368,
+      "baseline_probability": 1.0
+    }
+  ]
 }

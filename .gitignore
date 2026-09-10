@@ -55,23 +55,29 @@ Thumbs.db
 checkpoints/
 !app/models/
 
-# Dataset downloads (but keep the small committed demo/eval artifacts)
+# Data: everything under data/ stays local by default. The exceptions below
+# are small artifacts that someone cloning the repo needs.
+# (gitignore has no inline comments - each note sits on its own line.)
 data/*
+# cached demo debates, loaded at API startup (no LLM needed)
 !data/demo_debates.json
+# trained calibrator, once it exists
 !data/calibrator.pkl
+# latest eval run: metrics, config, and per-claim scores
 !data/eval_summary.json
+# reliability diagrams for that same run
 !data/reliability_*.png
+# Deliberately NOT committed, both regenerable:
+#   data/fever_sample.json - python -m scripts.prepare_fever (seeded)
+#   data/eval_results.json - the eval harness's resumable LLM-score cache
+#                            (plus its .tmp / .corrupt-* siblings)
 datasets/
 fever_data/
 
-# React / Node
+# Node (frontend/.gitignore covers Vite / TanStack / Wrangler outputs:
+# dist, .output, .tanstack, .nitro, .wrangler, .dev.vars)
 node_modules/
-.next/
-out/
 coverage/
-
-# Generated frontend builds
-frontend/dist/
 
 # Secrets
 secrets/
