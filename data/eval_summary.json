@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T08:50:57+00:00",
+  "generated_at": "2026-09-15T12:24:29+00:00",
   "config": {
     "sample_file": "data\\fever_sample.json",
     "n_claims_requested": 50,
@@ -25,14 +25,14 @@
     }
   },
   "n_claims_scored": 50,
-  "n_claims_failed": 4,
+  "n_claims_failed": 0,
   "argus": {
-    "n": 49,
-    "n_true": 24,
+    "n": 50,
+    "n_true": 25,
     "n_false": 25,
-    "accuracy": 0.6326530612244898,
-    "ece": 0.28273460801110517,
-    "mean_probability": 0.23306256727380834,
+    "accuracy": 0.62,
+    "ece": 0.28918544652638006,
+    "mean_probability": 0.23629578525283526,
     "bins": [
       {
         "lo": 0.0,
@@ -58,8 +58,8 @@
       {
         "lo": 0.3,
         "hi": 0.4,
-        "count": 1,
-        "confidence": 0.3711001618483768,
+        "count": 2,
+        "confidence": 0.38291181403676616,
         "accuracy": 1.0
       },
       {
@@ -107,19 +107,19 @@
     ]
   },
   "baseline": {
-    "n": 46,
-    "n_true": 22,
-    "n_false": 24,
-    "accuracy": 0.8478260869565217,
-    "ece": 0.15000000000000002,
-    "mean_probability": 0.5021739130434782,
+    "n": 50,
+    "n_true": 25,
+    "n_false": 25,
+    "accuracy": 0.86,
+    "ece": 0.13599999999999995,
+    "mean_probability": 0.52,
     "bins": [
       {
         "lo": 0.0,
         "hi": 0.1,
-        "count": 22,
+        "count": 23,
         "confidence": 0.0,
-        "accuracy": 0.09090909090909091
+        "accuracy": 0.08695652173913043
       },
       {
         "lo": 0.1,
@@ -180,9 +180,9 @@
       {
         "lo": 0.9,
         "hi": 1.0,
-        "count": 23,
-        "confidence": 1.0,
-        "accuracy": 0.8260869565217391
+        "count": 26,
+        "confidence": 0.9961538461538461,
+        "accuracy": 0.8461538461538461
       }
     ]
   },
@@ -251,7 +251,7 @@
       "claim": "The website Glee.com was first launched in 2010.",
       "label": false,
       "argus_probability": 0.028263869611542956,
-      "baseline_probability": null
+      "baseline_probability": 0.0
     },
     {
       "claim": "Brubaker is a 2007 drama.",
@@ -317,7 +317,7 @@
       "claim": "Topman has outlets in one Irish city.",
       "label": true,
       "argus_probability": 0.5,
-      "baseline_probability": null
+      "baseline_probability": 0.9
     },
     {
       "claim": "Fist of Legend is a remake of Fist of Fury.",
@@ -383,7 +383,7 @@
       "claim": "Stanley Williams was executed in 2005.",
       "label": true,
       "argus_probability": 0.5646362918030292,
-      "baseline_probability": null
+      "baseline_probability": 1.0
     },
     {
       "claim": "Juventus F.C. competes at Juventus Stadium in Lisbon, Portugal.",
@@ -466,8 +466,8 @@
     {
       "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
       "label": true,
-      "argus_probability": null,
-      "baseline_probability": null
+      "argus_probability": 0.39472346622515553,
+      "baseline_probability": 1.0
     },
     {
       "claim": "The Washington Wizards have won zero division titles.",
