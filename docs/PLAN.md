@@ -18,10 +18,10 @@ path; F onwards run against cached artifacts.
 | B | FEVER evidence retained + pooled corpus (spec §4.1) | none | **done** 2026-09-20 |
 | C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | **done** 2026-09-20 |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | **done** 2026-09-20 |
-| E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | not started |
+| E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | cache done; smoke run in progress |
 | F | **Full scoring run, background** (§5.6) | ~1050 | not started |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
-| H | `scripts/rescore.py` + no-network test (§5.2) | none | not started |
+| H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
 | I | Calibrator fit on disjoint split + overlap assertion (§5.5) | none | not started |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | not started |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | not started |
@@ -108,3 +108,30 @@ can be iterated while the run is still going.
   bounded in [-1,1]. **Spec §4.5 needs amending to match** (tracked in Phase M).
 - 2026-09-20 — Pipeline order changed: fact-check now runs BEFORE the semantics
   engine, since the graph is gated on evidence.
+
+## Findings from the first v2 debates (2-claim run, 2026-09-20)
+
+1. **Multi-argument turns work.** Debates now produce 4-9 arguments instead of
+   always 4, with genuine branching — one argument attacked both `arg_1` and
+   `arg_5`, reaching back past the most recent turn. The chain is broken.
+2. **The constant is gone.** A debate where nothing retrieved evidence scored
+   P=0.503 instead of the old 0.12. Survivors with no evidence now contribute
+   zero, exactly as §4.5 intended.
+3. **Symbolic coverage varies meaningfully**: 0.00 on "The Columbia River
+   undergoes drainage" (a definitional dispute with no factual triple to check)
+   and 0.75 on "Brubaker is a 2007 drama". Abstention is behaving as designed.
+4. **Last-speaker effect persists structurally.** Both debates still ended with
+   advocate-0 survivors, because whoever speaks last is unattacked. The evidence
+   weighting neutralises its *numeric* effect but not its *structural* presence.
+   Worth stating honestly in the write-up rather than claiming it is solved.
+5. **OPEN — the concession bug.** In the Brubaker debate the advocate argued
+   *"the release year is 1980 rather than 2007, making the claim false"* — it
+   conceded. That argument is factually TRUE, so it scored +1.00 support, which
+   the fact-check term credits to the **advocate** side, pushing P toward true on
+   a false claim. The fact-check signal measures whether an argument's assertion
+   is true, **not whether it supports the claim**, and agents do argue off
+   position. This is a genuine design flaw, not noise.
+   *Resolution:* do not guess. The `no structural term` and `structural only`
+   ablations in `scripts/rescore.py` measure exactly this — if the fact-check
+   term is hurting, the ablation will show it and the term can be dropped or
+   re-signed on evidence. Decide after the full run.

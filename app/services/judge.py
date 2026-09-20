@@ -19,6 +19,7 @@ def sigmoid(x: float) -> float:
 def structural_signal(
     grounded_extension: dict[str, list[str]],
     fact_check_results: list[FactCheckResult],
+    mode: str = "weighted",
 ) -> float:
     """Surviving arguments weighted by their evidence support, in [-1, 1].
 
@@ -40,11 +41,20 @@ def structural_signal(
     "maximal signal from nothing" failure this function exists to remove. Divided
     by count, the term tracks absolute evidence strength and still cannot leave
     [-1, 1], since every support already lies there.
-    """
-    support = {r.argument_id: r.support_score for r in fact_check_results}
 
-    advocate = [support.get(i, 0.0) for i in grounded_extension.get("advocate", [])]
-    skeptic = [support.get(i, 0.0) for i in grounded_extension.get("skeptic", [])]
+    ``mode="count"`` restores the original unweighted survivor difference. It
+    exists only so the ablation can reproduce the bug deliberately and show that
+    it was the bug; nothing in the live pipeline uses it.
+    """
+    adv_ids = grounded_extension.get("advocate", [])
+    skp_ids = grounded_extension.get("skeptic", [])
+
+    if mode == "count":
+        return float(len(adv_ids) - len(skp_ids))
+
+    support = {r.argument_id: r.support_score for r in fact_check_results}
+    advocate = [support.get(i, 0.0) for i in adv_ids]
+    skeptic = [support.get(i, 0.0) for i in skp_ids]
 
     n_survivors = len(advocate) + len(skeptic)
     if not n_survivors:
