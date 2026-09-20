@@ -23,7 +23,7 @@ path; F onwards run against cached artifacts.
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
 | I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | tooling **done**; scoring run pending |
-| J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | ablations **done**; sweeps pending |
+| J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | **done** 2026-09-20 |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | not started |
 | L | Hosting + demo corpus export (§6) | none | not started |
 | M | Write-up, PRD amendments (§9), PROJECT_STATE consolidation (§8) | none | not started |
@@ -231,3 +231,39 @@ survivors 2.66, symbolic coverage 0.31.
   accuracy gap from significant (p=0.0213) to not (p=0.0574). The difference is
   2 claims across 23 gated edges, so it is within noise — but it is the opposite
   of what spec §4.4 predicted and must be reported as such, not buried.
+
+## Sensitivity sweeps, n=50 (2026-09-20)
+
+Run with `scripts/sweep.py`, entirely off cached artifacts. Reported as
+sensitivity; the operating point is **not** selected from it, which would be
+fitting on the evaluation set.
+
+- **Structural weight 0.0 -> 2.0: AUROC 0.737 to 0.761, spread 0.024.** Flat. The
+  conclusion does not balance on the weight, which is exactly what the sweep is
+  there to show.
+- **tau:** ungated (-1.0) is best on accuracy/AUROC (0.700 / 0.775); higher tau is
+  better on ECE (0.063 at 0.25). Gating trades ranking for calibration.
+- **Confidence weight 1.0** scores better than the chosen 0.5 (0.700 / 0.775).
+
+### The concession bug now has evidence
+
+Setting the **fact-check weight to 0.0** gives accuracy **0.740** and AUROC
+**0.838**, against 0.660 / 0.746 at the chosen weight of 1.0. Removing the term
+entirely is the best setting in its sweep.
+
+This is *not* an argmax to be chased. It matters because the mechanism was
+identified independently and earlier, by reading a single debate transcript
+before this sweep existed: the Advocate argued *"the release year is 1980 rather
+than 2007, making the claim false"* — conceding — and that true statement scored
++1.00 and was credited to the Advocate. The fact-check term measures whether an
+argument's assertion is **true**, not whether it **supports the claim**.
+
+The sweep confirms the direction that mechanism predicts. That is a hypothesis
+tested, not a parameter tuned.
+
+**Next step, and the reason it is not acted on yet:** the 100-claim calibration
+split is disjoint from this evaluation set. Once it finishes scoring, the same
+comparison can be run there. If dropping the fact-check term also helps on data
+that was never used to find the effect, the finding is confirmed and the change
+is principled. If it does not, this was overfitting and the term stays. **Do not
+change the weight before that check.**

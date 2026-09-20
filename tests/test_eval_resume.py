@@ -187,3 +187,27 @@ def test_fake_argus_matches_the_real_artifact_contract():
     resuming."""
     produced = set(FakeLLM().argus("c", 2, legacy_factcheck=False)) - {"raw_probability"}
     assert produced == set(ev.ARTIFACT_FIELDS)
+
+
+def test_relative_sample_path_does_not_crash_the_run(tmp_path, monkeypatch):
+    """Regression: --sample took a relative path, and the config block reported
+    SAMPLE.relative_to(ROOT), which raises on one. The run died before scoring a
+    single claim."""
+    sample = tmp_path / "calib.json"
+    sample.write_text(json.dumps(CLAIMS), encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(ev, "RESULTS", tmp_path / "r.json")
+    monkeypatch.setattr(ev, "SUMMARY", tmp_path / "s.json")
+    monkeypatch.setattr(ev, "_load_calibrator", lambda: None)
+    fake = FakeLLM()
+    monkeypatch.setattr(ev, "run_argus", fake.argus)
+    monkeypatch.setattr(ev, "run_baseline", fake.baseline)
+
+    ev.main(["--delay", "0", "--sample", "calib.json",
+             "--results", "r.json", "--summary", "s.json"])
+    assert len(fake.argus_calls) == 4
+
+
+def test_out_of_repo_sample_is_reported_by_full_path(tmp_path):
+    assert ev._relative_or_absolute(tmp_path / "x.json") == str(tmp_path / "x.json")
+    assert ev._relative_or_absolute(ev.ROOT / "data" / "x.json") in ("data/x.json", r"data\x.json")

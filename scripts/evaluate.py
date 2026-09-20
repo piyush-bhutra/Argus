@@ -161,6 +161,13 @@ def baseline_key() -> dict:
             "prompt_sha256": hashlib.sha256(_BASELINE_SYSTEM.encode()).hexdigest()[:16]}
 
 
+def _relative_or_absolute(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def _is_prob(x) -> bool:
     return (isinstance(x, (int, float)) and not isinstance(x, bool)
             and math.isfinite(x) and 0.0 <= x <= 1.0)
@@ -295,13 +302,15 @@ def main(argv=None) -> None:
 
     # A calibration run must not write into the held-out set's cache, or the two
     # populations silently merge and the split stops meaning anything.
+    # Resolved to absolute: the config block reports SAMPLE.relative_to(ROOT),
+    # which raises on a relative path handed in on the command line.
     global SAMPLE, RESULTS, SUMMARY
     if args.sample:
-        SAMPLE = args.sample
+        SAMPLE = args.sample.resolve()
     if args.results:
-        RESULTS = args.results
+        RESULTS = args.results.resolve()
     if args.summary:
-        SUMMARY = args.summary
+        SUMMARY = args.summary.resolve()
 
     # ponytail: harness-local override of the client's 60s request timeout. A
     # batch run tolerates a slow provider far better than an interactive debate
@@ -326,7 +335,9 @@ def main(argv=None) -> None:
     a_key, b_key = argus_key(args.rounds), baseline_key()
     n_true = sum(1 for r in claims if r["label"])
     config = {
-        "sample_file": str(SAMPLE.relative_to(ROOT)),
+        # A sample outside the repo (an ad-hoc file elsewhere) is reported by its
+        # full path rather than crashing the run before a single claim is scored.
+        "sample_file": str(_relative_or_absolute(SAMPLE)),
         "n_claims_requested": len(claims),
         "n_true": n_true,
         "n_false": len(claims) - n_true,
