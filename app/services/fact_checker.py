@@ -99,7 +99,7 @@ def _parse_triples(raw: str) -> dict:
     return by_source
 
 
-def _neutral(argument: Argument, evidence=()) -> FactCheckResult:
+def _neutral(argument: Argument, evidence=(), triples=()) -> FactCheckResult:
     return FactCheckResult(
         argument_id=argument.id,
         evidence_sentences=[e["text"] for e in evidence],
@@ -107,6 +107,7 @@ def _neutral(argument: Argument, evidence=()) -> FactCheckResult:
         method="none",
         rules_fired=[],
         evidence_ids=[e["id"] for e in evidence],
+        triples=list(triples),
     )
 
 
@@ -129,10 +130,23 @@ def check_transcript(
         logger.warning("fact_checker: no evidence corpus, abstaining on every argument")
         return [_neutral(a) for a in arguments]
 
-    # Retrieve per argument, then extract over the DEDUPLICATED union so a
-    # sentence shared by several arguments is parsed once.
+    # Retrieve on the CLAIM as well as per argument, and pool everything into one
+    # KB for the debate.
+    #
+    # Querying with "claim + argument text" alone was a bug: an argument's prose
+    # dominates BM25 and pulls evidence about whatever entities it mentions in
+    # passing. On "The Columbia River undergoes drainage" that retrieved British
+    # Columbia, the Tualatin River and the River Mersey, sharing not one subject
+    # with the argument's own triples — so the rules had nothing to match and
+    # abstained. It also meant the measured recall@5 of 0.836, taken on the claim
+    # alone, did not describe the query actually being issued.
+    claim_evidence = retriever.retrieve(claim, k=k)
     evidence_by_arg = {a.id: retriever.retrieve(f"{claim} {a.text}", k=k) for a in arguments}
-    unique_evidence = {e["id"]: e for hits in evidence_by_arg.values() for e in hits}
+
+    unique_evidence = {e["id"]: e for e in claim_evidence}
+    for hits in evidence_by_arg.values():
+        for e in hits:
+            unique_evidence.setdefault(e["id"], e)
 
     items = [(a.id, a.text) for a in arguments]
     items += [(eid, e["text"]) for eid, e in unique_evidence.items()]
@@ -145,15 +159,19 @@ def check_transcript(
 
     triples_by_source = _parse_triples(raw)
 
+    # One KB for the whole debate, over every retrieved sentence. Scoping the KB
+    # to each argument's own hits starved arguments whose retrieval went astray,
+    # even when the claim's evidence had been fetched for a sibling argument.
+    kb = derive_closure([t for eid in unique_evidence for t in triples_by_source.get(eid, [])])
+
     results = []
     for a in arguments:
-        evidence = evidence_by_arg[a.id]
-        kb = derive_closure([
-            t for e in evidence for t in triples_by_source.get(e["id"], [])
-        ])
+        # Provenance still shows this argument's own hits; the KB is shared.
+        evidence = evidence_by_arg[a.id] or claim_evidence
 
+        arg_triples = triples_by_source.get(a.id, [])
         scores, rules, sources = [], [], []
-        for t in triples_by_source.get(a.id, []):
+        for t in arg_triples:
             score, rule, fired = score_triple(t, kb)
             if rule == "no_symbolic_match":
                 continue
@@ -161,8 +179,10 @@ def check_transcript(
             rules.append(rule)
             sources.extend(fired)
 
+        shown = [f"{t.subject} | {t.predicate} | {t.object}" for t in arg_triples]
+
         if not scores:
-            results.append(_neutral(a, evidence))
+            results.append(_neutral(a, evidence, shown))
             continue
 
         results.append(
@@ -175,6 +195,7 @@ def check_transcript(
                 # Only the evidence that actually fired a rule, not everything
                 # retrieved — this is the audit trail for THIS score.
                 evidence_ids=sorted(set(sources)),
+                triples=shown,
             )
         )
     return results

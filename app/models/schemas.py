@@ -19,6 +19,10 @@ class FactCheckResult(BaseModel):
     method: Literal["symbolic", "none"] = "none"
     rules_fired: List[str] = []
     evidence_ids: List[str] = []
+    # The argument's extracted triples, "subject | predicate | object".
+    # Cached so a low coverage rate can be diagnosed from the artifact
+    # instead of costing another LLM call to reproduce.
+    triples: List[str] = []
 
 class Verdict(BaseModel):
     claim: str

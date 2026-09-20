@@ -3242,7 +3242,7 @@
   {
     "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
     "label": true,
-    "argus_raw_probability": 0.39472346622515553,
+    "argus_raw_probability": 0.5087491068802403,
     "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
@@ -3254,7 +3254,8 @@
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
-      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/"
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 2
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -3262,7 +3263,150 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.39472346622515553
+    "argus_probability": 0.5087491068802403,
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Following the unification of French colonial territories in Southeast Asia in October 1887 (which initially included Cochinchina, Annam, Tonkin, and Cambodia, with Laos added later in 1893), the federation was formally established and officially designated as the Indochinese Union (Union indochinoise).",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The claim that the federation was officially known as the Indochinese Union *immediately* after 1887 is false, because the decree establishing the 'Union indochinoise' was actually enacted in October 1887 as a loose administrative grouping, but the term and formal structure evolved significantly over the following decade, meaning the formal consolidation into a cohesive union did not fully crystallize right at that exact starting point.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The skeptic's objection relies on a false premise about the timing of the official naming. The decree of October 1887 explicitly established the 'Union indochinoise' as the formal administrative umbrella for the constituent territories, and subsequent territorial additions like Laos in 1893 merely expanded the Union rather than changing its official designation, proving the claim true.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The advocate ignores that the 1887 decree merely cobbled together disparate colonial administrations on paper; the reality on the ground and subsequent French administrative reorganizations in the 1890s demonstrate that the 'Indochinese Union' was not a functioning, cohesive officially recognized administrative entity until the reforms of Paul Doumer at the end of the decade.",
+        "attacks": [
+          "arg_3",
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "819a0d5344736eef",
+          "c2e9a440ecf7ba7a",
+          "9fa23d96d74ab50f",
+          "a8f2fb304999bfdc",
+          "facafd5cb9e0bfee"
+        ],
+        "evidence_sentences": [
+          "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "A grouping of the three Vietnamese regions of Tonkin ( north ) , Annam ( centre ) , and Cochinchina ( south ) with Cambodia was formed in 1887 .",
+          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
+          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century ."
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "819a0d5344736eef",
+          "55c96f60a57e0f37",
+          "53b2cabf1f01f0d7",
+          "27efc254eb190b6a",
+          "bbfaafd5439793d3"
+        ],
+        "evidence_sentences": [
+          "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
+          "It became a member of the United Nations in 1993 , but , as a result of an ongoing dispute with Greece over the use of the name `` Macedonia '' , was admitted under the provisional description the former Yugoslav Republic of Macedonia ( sometimes abbreviated as FYROM and FYR Macedonia ) , a term that is also used by international organizations such as the European Union , the Council of Europe and NATO .",
+          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
+          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today ."
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "819a0d5344736eef",
+          "e8d667f187be68e5",
+          "facafd5cb9e0bfee",
+          "27efc254eb190b6a",
+          "bbfaafd5439793d3"
+        ],
+        "evidence_sentences": [
+          "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
+          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
+          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
+          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today ."
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "819a0d5344736eef",
+          "8e3f20dca4a4a402",
+          "4a665cc1752c720f",
+          "a8f2fb304999bfdc",
+          "facafd5cb9e0bfee"
+        ],
+        "evidence_sentences": [
+          "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
+          "The Mountain States ( also known as the Mountain West and the Interior West ) form one of the nine geographic divisions of the United States that are officially recognized by the United States Census Bureau .",
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
+          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century ."
+        ]
+      }
+    ],
+    "fact_checks_llm": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 1.0
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": -1.0
+      }
+    ]
   },
   {
     "claim": "The Washington Wizards have won zero division titles.",

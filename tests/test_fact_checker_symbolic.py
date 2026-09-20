@@ -217,3 +217,44 @@ def test_coverage_reports_the_decided_fraction():
     ]
     assert fact_checker.symbolic_coverage(results) == pytest.approx(2 / 3)
     assert fact_checker.symbolic_coverage([]) is None
+
+
+def test_claim_evidence_reaches_arguments_whose_own_retrieval_misses(monkeypatch, retriever):
+    """Regression: querying with "claim + argument text" alone let the argument's
+    prose dominate BM25 and pull evidence about incidental entities. On a real
+    debate that retrieved British Columbia and the River Mersey for a claim about
+    the Columbia River, sharing no subject with the argument's triples, so the
+    rules abstained on everything.
+
+    The claim is now retrieved on too, and the KB is pooled across the debate.
+    Here the argument text steers retrieval to Pink Floyd while the CLAIM is
+    about Jackie; the Jackie evidence must still reach the KB.
+    """
+    monkeypatch.setattr(fact_checker, "call_grok", lambda *a, **k: _extraction({
+        "arg_1": [("Jackie", "directed_by", "Pablo Larrain", False)],
+        "e1": [("Jackie", "directed_by", "Pablo Larrain", False)],
+    }))
+    [r] = fact_checker.check_transcript(
+        "Jackie is a 2016 film directed by Pablo Larrain",
+        _args("Pink Floyd were an English rock band formed in London."),
+        retriever=retriever,
+    )
+    assert r.method == "symbolic"
+    assert r.support_score == 1.0
+
+
+def test_kb_is_shared_across_arguments_in_the_debate(monkeypatch, retriever):
+    """An argument with no usable retrieval of its own can still be judged from
+    evidence fetched for a sibling argument."""
+    monkeypatch.setattr(fact_checker, "call_grok", lambda *a, **k: _extraction({
+        "arg_2": [("Jackie", "directed_by", "Peter Jackson", False)],
+        "e1": [("Jackie", "directed_by", "Pablo Larrain", False)],
+    }))
+    results = fact_checker.check_transcript(
+        "Jackie directed by Pablo Larrain",
+        _args("Jackie is a film.", "Jackie was directed by Peter Jackson."),
+        retriever=retriever,
+    )
+    second = [r for r in results if r.argument_id == "arg_2"][0]
+    assert second.support_score == -1.0
+    assert second.rules_fired == ["functional_contradiction"]

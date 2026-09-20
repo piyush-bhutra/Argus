@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-20T11:41:19+00:00",
+  "generated_at": "2026-09-20T11:46:45+00:00",
   "config": {
     "sample_file": "data\\fever_sample.json",
-    "n_claims_requested": 2,
-    "n_true": 1,
-    "n_false": 1,
+    "n_claims_requested": 10,
+    "n_true": 5,
+    "n_false": 5,
     "rounds": 2,
     "bins": 10,
     "seed": 42,
-    "limit": 2,
+    "limit": 10,
     "llm_model": "gemini-3.5-flash-lite",
     "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
     "calibrator_loaded": false,
@@ -25,17 +25,17 @@
       "prompt_sha256": "2c37cfdd1b1a23f7"
     }
   },
-  "n_claims_scored": 2,
+  "n_claims_scored": 10,
   "n_claims_failed": 0,
   "argus": {
-    "n": 2,
-    "n_true": 1,
-    "n_false": 1,
-    "accuracy": 1.0,
-    "ece": 0.49259488301991505,
-    "auroc": 1.0,
-    "brier": 0.2426696786808616,
-    "mean_probability": 0.49553234922383216,
+    "n": 10,
+    "n_true": 5,
+    "n_false": 5,
+    "accuracy": 0.9,
+    "ece": 0.41845515041454784,
+    "auroc": 0.84,
+    "brier": 0.24724762513983284,
+    "mean_probability": 0.52333380948779,
     "bins": [
       {
         "lo": 0.0,
@@ -68,23 +68,23 @@
       {
         "lo": 0.4,
         "hi": 0.5,
-        "count": 1,
-        "confidence": 0.4881272322437472,
+        "count": 4,
+        "confidence": 0.49200636664369346,
         "accuracy": 0.0
       },
       {
         "lo": 0.5,
         "hi": 0.6,
-        "count": 1,
-        "confidence": 0.5029374662039171,
+        "count": 4,
+        "confidence": 0.5060983238415528,
         "accuracy": 1.0
       },
       {
         "lo": 0.6,
         "hi": 0.7,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 2,
+        "confidence": 0.6204596664684576,
+        "accuracy": 0.5
       },
       {
         "lo": 0.7,
@@ -151,7 +151,7 @@
       },
       {
         "threshold": 0.5,
-        "accuracy": 1.0
+        "accuracy": 0.9
       },
       {
         "threshold": 0.55,
@@ -196,19 +196,19 @@
     ]
   },
   "baseline": {
-    "n": 2,
-    "n_true": 1,
-    "n_false": 1,
+    "n": 10,
+    "n_true": 5,
+    "n_false": 5,
     "accuracy": 1.0,
-    "ece": 0.0,
+    "ece": 0.009999999999999953,
     "auroc": 1.0,
-    "brier": 0.0,
-    "mean_probability": 0.5,
+    "brier": 0.0009999999999999996,
+    "mean_probability": 0.49000000000000005,
     "bins": [
       {
         "lo": 0.0,
         "hi": 0.1,
-        "count": 1,
+        "count": 5,
         "confidence": 0.0,
         "accuracy": 0.0
       },
@@ -271,8 +271,8 @@
       {
         "lo": 0.9,
         "hi": 1.0,
-        "count": 1,
-        "confidence": 1.0,
+        "count": 5,
+        "confidence": 0.9800000000000001,
         "accuracy": 1.0
       }
     ],
@@ -355,25 +355,55 @@
       },
       {
         "threshold": 0.9500000000000001,
-        "accuracy": 1.0
+        "accuracy": 0.9
       },
       {
         "threshold": 1.0,
-        "accuracy": 1.0
+        "accuracy": 0.9
       }
     ]
   },
   "mcnemar_argus_vs_baseline": {
     "a_only": 0,
-    "b_only": 0,
-    "n_discordant": 0,
+    "b_only": 1,
+    "n_discordant": 1,
     "p_value": 1.0
   },
   "claims": [
     {
-      "claim": "Brubaker is a 2007 drama.",
+      "claim": "Topman has outlets in one Irish city.",
+      "label": true,
+      "argus_probability": 0.5020833212770899,
+      "baseline_probability": 0.9
+    },
+    {
+      "claim": "AMGTV is a television network that is family-oriented.",
+      "label": true,
+      "argus_probability": 0.5106234010049637,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Cheese in the Trap (TV series) comes from South Korea",
+      "label": true,
+      "argus_probability": 0.6208129005938251,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "The World Trade Center is still standing.",
       "label": false,
-      "argus_probability": 0.4881272322437472,
+      "argus_probability": 0.49906250109863126,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Excuse My French is a speech by French Montana.",
+      "label": false,
+      "argus_probability": 0.6201064323430902,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Veeru Devgan is only a dance choreographer.",
+      "label": false,
+      "argus_probability": 0.4912508931197597,
       "baseline_probability": 0.0
     },
     {
@@ -381,6 +411,24 @@
       "label": true,
       "argus_probability": 0.5029374662039171,
       "baseline_probability": 1.0
+    },
+    {
+      "claim": "Damon Albarn has refused to ever work with Brian Eno.",
+      "label": false,
+      "argus_probability": 0.48958484011263537,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
+      "label": true,
+      "argus_probability": 0.5087491068802403,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Brubaker is a 2007 drama.",
+      "label": false,
+      "argus_probability": 0.4881272322437472,
+      "baseline_probability": 0.0
     }
   ]
 }

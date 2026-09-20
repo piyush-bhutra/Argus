@@ -106,7 +106,8 @@ def run_argus(claim: str, rounds: int) -> dict:
             {"argument_id": r.argument_id, "support_score": r.support_score,
              "method": r.method, "rules_fired": r.rules_fired,
              "evidence_ids": r.evidence_ids,
-             "evidence_sentences": r.evidence_sentences}
+             "evidence_sentences": r.evidence_sentences,
+             "triples": r.triples}
             for r in fact_results
         ],
         "fact_checks_llm": [
@@ -134,9 +135,13 @@ def run_baseline(claim: str) -> float:
 
 # Bumped when a change makes a cached Argus half incomparable with a fresh one.
 # v2 = multi-argument turns, retrieval + symbolic fact-check, evidence-gated
-# edges, evidence-weighted judge. v1 entries stay readable but never mix into
-# the metrics, because the key no longer matches.
-ARTIFACT_SCHEMA = 2
+# edges, evidence-weighted judge.
+# v3 = claim-level retrieval pooled into one KB per debate, and extracted
+# triples cached. v2 scored against per-argument evidence only, which made
+# the rules abstain on 88% of arguments.
+# Older entries stay readable but never mix into the metrics, because the
+# key no longer matches.
+ARTIFACT_SCHEMA = 3
 
 
 def argus_key(rounds: int) -> dict:
