@@ -51,3 +51,22 @@ def test_answer_key_is_not_exported():
     rec = ed.to_record(ROWS[0], set())
     assert "label" not in rec
     assert "label" not in json.dumps(rec["verdict"])
+
+
+def test_keep_existing_is_idempotent(tmp_path, monkeypatch):
+    """Running the export twice must not duplicate the corpus. Deduplication was
+    keyed on debate_id, so a second run re-exported everything under a '-2'
+    suffix and doubled the file."""
+    import json as _json
+
+    out = tmp_path / "demos.json"
+    monkeypatch.setattr(ed, "load_artifacts", lambda *a, **k: ROWS)
+
+    ed.main(["--out", str(out), "--keep-existing"])
+    first = _json.loads(out.read_text(encoding="utf-8"))
+    ed.main(["--out", str(out), "--keep-existing"])
+    second = _json.loads(out.read_text(encoding="utf-8"))
+
+    assert len(first) == len(ROWS)
+    assert len(second) == len(first)
+    assert [r["debate_id"] for r in second] == [r["debate_id"] for r in first]

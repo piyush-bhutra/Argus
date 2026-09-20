@@ -37,6 +37,11 @@ class Verdict(BaseModel):
     # Fraction of arguments the symbolic rules could actually decide. Reported
     # honestly; the rest abstained rather than being guessed at.
     symbolic_coverage: Optional[float] = None
+    # Per-argument evidence, extracted triples and the rules that fired. Shipped
+    # with the verdict because the auditable trace is the claim the whole system
+    # rests on, and a score a reader cannot follow back to a source sentence is
+    # an assertion rather than evidence.
+    fact_checks: List[FactCheckResult] = []
 
 class StartDebateRequest(BaseModel):
     claim: str

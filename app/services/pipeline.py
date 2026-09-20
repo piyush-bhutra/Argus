@@ -149,6 +149,7 @@ def assemble_verdict(
         ),
         dropped_edges=[[s, t] for s, t in dropped],
         symbolic_coverage=symbolic_coverage(fact_results),
+        fact_checks=fact_results,
     )
 
 

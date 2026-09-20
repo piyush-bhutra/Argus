@@ -61,6 +61,7 @@ def to_record(row: dict, taken: set, tau: float = DEFAULT_TAU) -> dict:
         ),
         dropped_edges=[[s, t] for s, t in dropped],
         symbolic_coverage=row.get("symbolic_coverage"),
+        fact_checks=facts,
     )
 
     # The graph is built over the GATED arguments so the rendered edges are the
@@ -94,19 +95,28 @@ def main(argv=None) -> None:
     if args.limit:
         rows = rows[:args.limit]
 
-    taken, records = set(), []
+    taken, records, kept_claims = set(), [], set()
     if args.keep_existing and args.out.exists():
         existing = json.loads(args.out.read_text(encoding="utf-8"))
         for r in existing:
             taken.add(r["debate_id"])
+            kept_claims.add(r["claim"])
             records.append(r)
 
-    for row in rows:
+    # Deduplicated by CLAIM, not by id. Keying on id alone meant a second
+    # --keep-existing run re-exported every debate under a "-2" suffix and
+    # doubled the corpus.
+    fresh = [row for row in rows if row["claim"] not in kept_claims]
+    skipped = len(rows) - len(fresh)
+    if skipped:
+        print(f"skipping {skipped} debate(s) already present in {args.out.name}")
+
+    for row in fresh:
         records.append(to_record(row, taken, args.tau))
 
     args.out.write_text(json.dumps(records, indent=2), encoding="utf-8")
     print(f"wrote {len(records)} demo debate(s) -> {args.out}")
-    for r in records[-len(rows):]:
+    for r in records[len(records) - len(fresh):]:
         v = r["verdict"]
         print(f"  {r['debate_id']:52} P={v['raw_probability']:.2f} "
               f"coverage={v['symbolic_coverage']}")
