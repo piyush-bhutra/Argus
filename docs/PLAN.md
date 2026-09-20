@@ -17,7 +17,7 @@ path; F onwards run against cached artifacts.
 | A | Extended metrics: AUROC, Brier, threshold sweep, McNemar | none | **done** 2026-09-20 |
 | B | FEVER evidence retained + pooled corpus (spec §4.1) | none | **done** 2026-09-20 |
 | C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | **done** 2026-09-20 |
-| D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | not started |
+| D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | **done** 2026-09-20 |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | not started |
 | F | **Full scoring run, background** (§5.6) | ~1050 | not started |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | not started |
@@ -85,3 +85,14 @@ can be iterated while the run is still going.
 - 2026-09-20 — Testing gotcha: `check_transcript` wraps the LLM call in
   `except Exception`, which swallows a test's `AssertionError` guard. "Must not
   call the model" tests count invocations instead of raising.
+- 2026-09-20 — Phase D landed. **Important finding while testing:** multi-argument
+  turns and free targeting alone do *not* guarantee the grounded extension varies.
+  Whoever speaks last is still never attacked, so a debate where both sides only
+  rebut the most recent argument still yields skeptic-2 / advocate-0. The protocol
+  makes other outcomes *reachable* (covered by a test), but the residual
+  last-speaker bias is removed by the evidence weighting in spec §4.5, not by the
+  protocol. This raises the stakes on the Phase E smoke-run gate: the survivor
+  distribution must be checked empirically before spending the full run.
+- 2026-09-20 — Turn parsing accepts both the new multi-argument shape and the old
+  single-argument one. Models do ignore the requested shape, and salvaging beats
+  burning one of the three retries.
