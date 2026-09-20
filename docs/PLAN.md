@@ -22,7 +22,7 @@ path; F onwards run against cached artifacts.
 | F | **Full scoring run, background** (§5.6) | 240 | **done** 2026-09-20, 50/50, 0 failures |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
-| I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | tooling **done**; scoring run pending |
+| I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | **BLOCKED — daily quota exhausted** (3/100 scored) |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | **done** 2026-09-20 |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | not started |
 | L | Hosting + demo corpus export (§6) | none | not started |
@@ -267,3 +267,33 @@ comparison can be run there. If dropping the fact-check term also helps on data
 that was never used to find the effect, the finding is confirmed and the change
 is principled. If it does not, this was overfitting and the term stays. **Do not
 change the weight before that check.**
+
+## BLOCKED on quota (2026-09-20)
+
+The calibration run hit the free tier's **daily** quota after 3 of 100 claims.
+Everything requiring the LLM is stopped until the quota resets.
+
+**Nothing already earned is lost.** The held-out n=50 result is complete,
+committed, and is the project's main finding. `data/calib_results.json` holds the
+3 scored claims and `scripts/evaluate.py` resumes from it.
+
+### To resume (single command, no setup)
+
+```
+python -m scripts.evaluate --sample data/fever_calib.json   --results data/calib_results.json --summary data/calib_summary.json   --no-baseline --no-legacy-factcheck --delay 3
+```
+
+Then: `python -m scripts.fit_calibrator` (refuses below 20 points), then
+`python -m scripts.evaluate` to re-score the held-out set with the calibrator
+loaded — the pipeline picks up `data/calibrator.pkl` automatically.
+
+### Also waiting on that data
+
+The disjoint check on the concession bug (§ sweeps above). **Do not drop the
+fact-check term until it is run on the calibration split**, which was not used to
+discover the effect.
+
+### Everything remaining is zero-quota
+
+Demo corpus export, frontend, deployment and the write-up all run off cached
+artifacts and need no API access.
