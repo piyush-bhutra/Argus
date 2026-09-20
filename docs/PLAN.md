@@ -20,7 +20,7 @@ path; F onwards run against cached artifacts.
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | **done** 2026-09-20 |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | not started |
 | F | **Full scoring run, background** (§5.6) | ~1050 | not started |
-| G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | not started |
+| G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | not started |
 | I | Calibrator fit on disjoint split + overlap assertion (§5.5) | none | not started |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | not started |
@@ -96,3 +96,15 @@ can be iterated while the run is still going.
 - 2026-09-20 — Turn parsing accepts both the new multi-argument shape and the old
   single-argument one. Models do ignore the requested shape, and salvaging beats
   burning one of the three retries.
+- 2026-09-20 — **Phase G moved ahead of E/F.** The spec sequenced it after the
+  full run because it costs no API calls, but the Phase D finding showed the judge
+  is what removes the last-speaker bias — so the smoke run cannot tell us whether
+  the system works unless G is already in. Reordered.
+- 2026-09-20 — **Judge formula corrected by a failing test.** Spec §4.5 divided
+  the structural term by total support *magnitude*. That makes it purely relative:
+  a lone survivor backed by support 0.01 scores a full ±1.0 — the same "maximal
+  signal from nothing" failure the term exists to remove. Denominator is now the
+  survivor *count*, so the term tracks absolute evidence strength and is still
+  bounded in [-1,1]. **Spec §4.5 needs amending to match** (tracked in Phase M).
+- 2026-09-20 — Pipeline order changed: fact-check now runs BEFORE the semantics
+  engine, since the graph is gated on evidence.

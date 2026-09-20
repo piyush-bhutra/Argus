@@ -26,6 +26,13 @@ class Verdict(BaseModel):
     calibrated_probability: float
     grounded_extension: Dict[str, List[str]]   # side -> surviving argument ids
     explanation: str
+    # Attacks the agents asserted but could not back with evidence, so they never
+    # entered the argumentation framework. Surfaced rather than dropped silently:
+    # "attacked but had nothing behind it" is part of the audit trail.
+    dropped_edges: List[List[str]] = []
+    # Fraction of arguments the symbolic rules could actually decide. Reported
+    # honestly; the rest abstained rather than being guessed at.
+    symbolic_coverage: Optional[float] = None
 
 class StartDebateRequest(BaseModel):
     claim: str

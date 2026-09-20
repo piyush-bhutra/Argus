@@ -2,11 +2,15 @@
 End-to-end debate pipeline: glue that runs a claim through every built component.
 
     run_debate (orchestrator, LLM)
-        -> compute_grounded_extension (semantics engine)
-        -> check_transcript (fact-checker, LLM)
-        -> compute_raw_probability (Bayesian judge)
+        -> check_transcript (retrieval + LLM triple extraction + symbolic rules)
+        -> gate_attacks (evidence-gated attack edges)
+        -> compute_grounded_extension (semantics engine, over the GATED graph)
+        -> compute_raw_probability (Bayesian judge, evidence-weighted)
         -> [optional] apply_calibration
         -> Verdict + argument graph
+
+The fact-check step runs BEFORE the semantics engine, not after: the graph is
+gated on evidence, so the scores have to exist before the extension is computed.
 """
 import pickle
 from pathlib import Path
@@ -15,7 +19,8 @@ from typing import List, Optional
 from app.core.logger import logger
 from app.models.schemas import Argument, GraphEdge, GraphNode, GraphResponse, Verdict
 from app.services import debate_store
-from app.services.fact_checker import check_transcript
+from app.services.fact_checker import check_transcript, symbolic_coverage
+from app.services.gating import gate_attacks
 from app.services.judge import apply_calibration, compute_raw_probability
 from app.services.orchestrator import run_debate
 from app.services.semantics_engine import compute_grounded_extension
@@ -55,6 +60,7 @@ def _build_explanation(
     raw: float,
     calibrated: float,
     calibrated_applied: bool,
+    dropped: list = (),
 ) -> str:
     adv = grounded.get("advocate", [])
     skp = grounded.get("skeptic", [])
@@ -90,8 +96,15 @@ def _build_explanation(
         )
     )
 
+    gate_note = (
+        f" {len(dropped)} asserted attack(s) were excluded from the graph because "
+        f"no retrieved evidence supported the attacking argument."
+        if dropped
+        else ""
+    )
+
     return (
-        f"Verdict for: \"{claim}\". {structural} Combining that structural signal "
+        f"Verdict for: \"{claim}\". {structural}{gate_note} Combining that structural signal "
         f"with the fact-check scores and the agents' self-reported confidence, the "
         f"Bayesian judge produces P(claim true) = {raw:.2f}. {calib_note}"
     )
@@ -107,9 +120,17 @@ def assemble_verdict(
 
     Pass ``fact_results`` to skip the LLM fact-check call (used by the offline
     demo builder)."""
-    grounded = compute_grounded_extension(transcript)
+    # Order matters: gating needs the fact-check scores, and the grounded
+    # extension must be computed over the GATED graph. Computing it first would
+    # let an attack no evidence supports defeat a well-supported argument.
     if fact_results is None:
         fact_results = check_transcript(claim, transcript)
+
+    gated, dropped = gate_attacks(transcript, fact_results)
+    grounded = compute_grounded_extension(gated)
+
+    # The judge scores over the full transcript: an argument that died in the
+    # graph still carries evidence that belongs in the fact-check signal.
     raw = compute_raw_probability(grounded, fact_results, transcript)
 
     calibrated_applied = calibrator is not None
@@ -124,8 +145,10 @@ def assemble_verdict(
             "skeptic": grounded.get("skeptic", []),
         },
         explanation=_build_explanation(
-            claim, grounded, raw, calibrated, calibrated_applied
+            claim, grounded, raw, calibrated, calibrated_applied, dropped
         ),
+        dropped_edges=[[s, t] for s, t in dropped],
+        symbolic_coverage=symbolic_coverage(fact_results),
     )
 
 

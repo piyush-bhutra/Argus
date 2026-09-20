@@ -21,8 +21,12 @@ def test_compute_raw_probability_worked_example():
     
     raw_prob = compute_raw_probability(grounded_extension, fact_check_results, arguments)
     
-    # expected raw_probability = sigmoid(2 + 1.0 + 0.1) = sigmoid(3.1) ≈ 0.9569
-    assert raw_prob == pytest.approx(0.9569, abs=0.001)
+    # Structural is now evidence-weighted rather than a raw survivor count
+    # (spec §4.5): survivors a1 (support 0.5) and a2 (unscored, 0.0), no skeptic
+    # survivor, so structural = (0.5 + 0.0 - 0) / 2 survivors = 0.25.
+    # factcheck = 0.5 - (-0.5) = 1.0; confidence = (0.8 - 0.6) * 0.5 = 0.1.
+    # sigmoid(0.25 + 1.0 + 0.1) = sigmoid(1.35) ≈ 0.7942
+    assert raw_prob == pytest.approx(0.7942, abs=0.001)
 
 def test_compute_raw_probability_zero_signal():
     grounded_extension = {
