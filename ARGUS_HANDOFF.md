@@ -1,0 +1,237 @@
+# ARGUS — Current State & Plan of Action
+*Handoff document. Written 2026-09-20 from a full read of the repo at `master` @ `8ee974f`.*
+
+**Purpose:** drop this into the repo root (next to `PROJECT_STATE.md`) and open a Claude Code
+session on the repo with it. It is the single source of truth for *where the project is* and
+*what to do next*. It supersedes nothing — `PROJECT_STATE.md` remains the architecture/decision
+record, `debate_system_prd.md` the spec. This file is the **work queue**.
+
+---
+
+## 0. Thirty-second summary
+
+Argus is functionally complete end-to-end: two LLM agents debate, a Dung argumentation engine
+computes the grounded extension, an LLM fact-checker scores assertions, a Bayesian judge emits a
+probability, a React dashboard renders it live. 52 tests pass. An offline FEVER evaluation
+harness exists and has produced one complete, valid n=50 run.
+
+**The problem:** on that run the single-LLM baseline beats Argus on accuracy (0.86 vs 0.62) and
+ECE (0.136 vs 0.289). The project's entire thesis — that structured debate is better calibrated
+than one model call — currently measures as false.
+
+**The finding this document adds:** that gap is *not* a signal problem, it is a **scale and
+symmetry bug in the judge**. Argus's AUROC is 0.807 against the baseline's 0.874 — the ranking
+is nearly as good. The scores are simply parked in the wrong half of the number line. Fixing the
+judge, not rebuilding the fact-checker, is the highest-value work left.
+
+---
+
+## 1. What is built and working
+
+| Component | File | State |
+|---|---|---|
+| Data models / API contracts | `app/models/schemas.py` | Done |
+| Argumentation semantics (Dung's AF, grounded extension) | `app/services/semantics_engine.py` (73 ln) | Done, 3 tests |
+| Bayesian judge + isotonic calibration math | `app/services/judge.py` (63 ln) | Done but **biased — see §3** |
+| LLM client (env-configurable, Gemini) | `app/services/grok_client.py` (96 ln) | Done, 5 tests, quota-aware retries |
+| Debate orchestrator | `app/services/orchestrator.py` (152 ln) | Done, early-termination bug fixed |
+| Fact-checker (LLM, batched) | `app/services/fact_checker.py` (115 ln) | Done — Review-1 scope, not the PRD's symbolic version |
+| Pipeline glue | `app/services/pipeline.py` (173 ln) | Done, 5 tests |
+| In-memory debate store + demo seed | `app/services/debate_store.py` | Done |
+| API routes (background task + polling) | `app/api/routes.py` (67 ln) | Done, wired to real pipeline |
+| Frontend (notebook/paper redesign) | `frontend/` | Done — single scrolling page, sticky claim bar, live streaming transcript, round-column graph with survive/die + replay |
+| FEVER sample prep | `scripts/prepare_fever.py` (158 ln) | Done — balanced 25/25, seeded, 6 tests |
+| Evaluation harness | `scripts/evaluate.py` (374 ln) | Done — per-half config-stamped cache, resumable, `--limit` stratified |
+| Reliability diagrams | `scripts/reliability_diagram.py` | Done |
+| Trained calibrator (`data/calibrator.pkl`) | — | **Not built.** Pipeline loads it if present, else calibrated = raw |
+
+**Test suite:** 52 passed, 0 skipped (`python -m pytest`).
+
+**Provider:** Google Gemini `gemini-3.5-flash-lite` via the OpenAI-compatible endpoint. Default
+debate = **2 rounds**. Free-tier daily quota is per-model; a full n=50 eval run is ~300 calls at
+~45 s each — hours, designed to resume across quota resets.
+
+---
+
+## 2. The evaluation result, read properly
+
+Complete run, 2026-09-15, n=50 (25 true / 25 false), seed 42, 2 rounds, no calibrator.
+Source of truth: `data/eval_summary.json`.
+
+| Metric | Argus | Baseline | Note |
+|---|---|---|---|
+| Accuracy @ 0.5 | 0.620 | 0.860 | as reported by the harness |
+| ECE (10 bins) | 0.289 | 0.136 | as reported |
+| mean P(true) | 0.236 | 0.520 | on a 50/50 set |
+| **AUROC** | **0.807** | **0.874** | *computed here, not in the harness* |
+| **Brier** | **0.263** | **0.136** | *computed here* |
+| Accuracy @ 0.25 threshold | **0.740** | — | *computed here* |
+| Leave-one-out isotonic accuracy | **0.760** (Brier 0.209) | — | *computed here* |
+
+Four things follow, and every one of them is a talking point for the write-up:
+
+1. **The separation is already there.** AUROC 0.807 vs 0.874 is a much smaller gap than
+   0.62 vs 0.86 accuracy suggests. Argus ranks true above false almost as well as the baseline;
+   it just puts the decision boundary in the wrong place. Simply moving the threshold from 0.5
+   to 0.25 buys 12 accuracy points with zero code change.
+2. **The error is one-directional.** 19 errors total: **16 are true claims called false**, only
+   3 are false claims called true. This is a systematic monotone shift, not noise — exactly the
+   shape isotonic calibration is built to absorb (LOO-isotonic already recovers 0.76).
+3. **The baseline is a degenerate probability estimator.** Look at its bins: 23 claims at ~0.0,
+   26 claims at ~1.0, and *nothing in between*. Its good ECE is bought by being frequently
+   correct, not by being calibrated. When it is wrong, it is wrong at 100% confidence. Argus
+   produces a graded, auditable distribution. That is a real and defensible advantage — but it
+   is only arguable once Argus's own numbers are respectable. Do not lead with it yet.
+4. **n=50 is small.** 95% CI on each accuracy is roughly ±0.13. No paired significance test has
+   been run. Any claim of difference is currently unsupported by statistics.
+
+---
+
+## 3. Root cause — read this before touching anything
+
+`app/services/judge.py`:
+
+```python
+structural_signal = len(survivors_advocate) - len(survivors_skeptic)
+factcheck_signal  = adv_fc_avg - skp_fc_avg        # each avg in [-1, 1]
+confidence_signal = adv_conf_avg - skp_conf_avg    # each avg in [0, 1]
+
+raw = sigmoid(1.0*structural + 1.0*factcheck + 0.5*confidence)
+```
+
+Two defects:
+
+**(a) Scale mismatch.** `structural_signal` is a raw integer count difference. The other two
+terms are bounded in [-2, 2] and [-0.5, 0.5]. One extra surviving argument moves the sigmoid
+input by 1.0 — an e-fold odds swing that no amount of fact-check evidence can counteract. The
+structural term effectively *is* the verdict.
+
+**(b) A built-in skeptic bonus.** In a 2-round debate the Skeptic always speaks last. Its final
+argument is therefore never attacked, so under the grounded extension it is **guaranteed** to be
+IN. Every debate starts the skeptic +1 on the structural count, for reasons of turn order rather
+than argument quality. Combined with (a): a permanent thumb on the scale toward "false". Mean
+P(true) = 0.236 is the direct consequence.
+
+This is the bug. It is roughly twenty lines of change.
+
+---
+
+## 4. The blocker that shapes everything else
+
+`data/eval_results.json` caches **only the final probability per claim per half**. So any change
+to the judge invalidates the cache and costs a full ~300-call, multi-hour, quota-gated re-run.
+That makes iteration on the judge effectively impossible — one guess per day.
+
+Therefore **Phase 0 is not optional and comes first.** Once debate artifacts are cached, judge
+changes re-score in seconds for zero API cost, and you can sweep weights instead of guessing.
+
+---
+
+## 5. Plan of action
+
+### Phase 0 — Make iteration free *(no LLM calls; do this first)*
+
+- **0.1 Cache debate artifacts, not just scores.** Extend the eval cache to persist, per claim:
+  arguments (`id`, `agent`, `round`, `text`, `self_confidence`), the attack edges, and the
+  fact-check scores. Bump the cache schema version; leave existing probability entries readable.
+- **0.2 Write `scripts/rescore.py`.** Reads cached artifacts → re-runs semantics + judge only →
+  writes a summary in the same shape as `evaluate.py`. Must never call the LLM. Add a test that
+  asserts that (mock `call_grok` to raise).
+- **0.3 Extend the metrics.** Add to `scripts/evaluate.py` / the summary: **AUROC**, **Brier**,
+  accuracy across a threshold sweep, and a **McNemar paired test** vs the baseline. The paired
+  test matters: at n=50 unpaired CIs are ±0.13 and prove nothing, but both systems score the
+  *same* claims, so the paired comparison is far tighter and is the first thing a reviewer asks
+  for.
+- **0.4** Backfill artifacts for the existing 50 claims. This *does* cost a re-run — but it is
+  the last one you pay for, and it can resume across quota resets. Start it running in the
+  background while you do Phase 1 against mocked data.
+
+*Skills to use:* `engineering:architecture` for the cache-schema decision (write it as an ADR —
+it is a genuine trade-off: disk size and schema churn vs iteration speed), then
+`engineering:testing-strategy` for 0.2/0.3.
+
+### Phase 1 — Fix the judge *(no new LLM calls once Phase 0 lands)*
+
+- **1.1 Normalise the structural term:**
+  `(|S_adv| − |S_skp|) / max(1, |S_adv| + |S_skp|)` → bounded in [-1, 1], same scale as the
+  other two signals.
+- **1.2 Remove the last-speaker advantage.** Pick one and document why:
+  - *(preferred)* exclude an unattacked final-turn argument from the structural count — it
+    survived by schedule, not by merit; or
+  - alternate which agent opens per debate, so the advantage cancels across the sample.
+  Write the rationale into the PRD. This is a clean, defensible design decision and good viva
+  material.
+- **1.3 Sweep the three weights** on cached artifacts and plot the surface.
+  **Do not pick the argmax** — that is fitting on your evaluation set and invalidates the
+  result. Choose a principled setting (e.g. all three normalised, equal weight) and present the
+  sweep as a *sensitivity analysis* showing the conclusion is not knife-edge.
+- **1.4 Re-score and record.** Expected landing zone: accuracy **0.74–0.80**, since AUROC says
+  the information is already present. If it lands below 0.70, the diagnosis in §3 is incomplete
+  — go back to the artifacts and inspect individual debates before changing anything else.
+
+*Skills to use:* `engineering:debug` for 1.4 if the numbers don't move as predicted;
+`engineering:code-review` on the judge diff before committing — it is the most correctness-
+critical file in the repo and it has no defence against regressions of this kind today.
+
+### Phase 2 — Train the calibrator *(the real "learning" component, M7)*
+
+- **2.1 Generate a larger FEVER sample:** `python -m scripts.prepare_fever --n 200 --seed <not 42>`.
+- **2.2 Split strictly.** ~100 claims to **fit** the calibrator; the existing seed-42 n=50 stays
+  **held out** as the eval set. Fitting on evaluation claims is the one mistake that would
+  invalidate the entire result — enforce it in code (assert zero claim-text overlap) and in a
+  test, not just in discipline.
+- **2.3 Fit isotonic → `data/calibrator.pkl`.** The pipeline already loads it if present.
+- **2.4 Re-evaluate held-out.** LOO-isotonic on current data gives 0.76 / Brier 0.209, so a
+  clean fit should land near there without leakage.
+
+**Budget warning:** scoring 100 new claims is ~600 LLM calls at ~45 s each. That is a multi-day
+background job across quota resets, not a sitting. Kick it off the moment Phase 1's shape is
+settled.
+
+### Phase 3 — Write-up and hygiene
+
+- Regenerate `data/reliability_*.png`.
+- Update `PROJECT_STATE.md` §4 — its "Last updated" header still says 2026-09-10 though the
+  complete run landed 2026-09-15.
+- Draft the results section around the honest story: *structured debate matches single-call
+  ranking performance (AUROC 0.81 vs 0.87) while producing a graded, auditable probability with
+  a full argument-graph trace; the baseline's apparent advantage is a thresholding artefact
+  plus a degenerate all-or-nothing output distribution.*
+- `PROJECT_SNAPSHOT.md` (37 KB) and `PROJECT_STATE.md` (19 KB) overlap heavily and are drifting
+  apart. Consolidate — `engineering:tech-debt` is the right lens for deciding what to merge and
+  what to delete.
+
+### Deferred (explicitly out of scope for now)
+
+- **Symbolic fact-checker** (BM25 + triple extraction + forward chaining, PRD §5d). This is the
+  largest remaining piece and the biggest syllabus win — the current fact-checker asks the same
+  model that is already in the loop, so it adds little independent signal. But it is a
+  multi-day build and Phases 0–2 are cheaper and fix the actual measured problem. Park it.
+- **M6 planning / debate-strategy planner.** Still only floated. Optional.
+
+---
+
+## 6. Suggested order of attack in the Claude Code session
+
+1. Open with **`engineering:architecture`** on the Phase 0 cache schema → produce an ADR.
+2. Implement 0.1–0.3 with **`engineering:testing-strategy`** driving the test plan.
+3. Kick off the 0.4 backfill run in a terminal and leave it.
+4. While it runs, implement 1.1–1.2 against mocked artifacts.
+5. **`engineering:code-review`** on the judge diff.
+6. Re-score, sweep, record. **`engineering:debug`** if reality disagrees with §3.
+7. Phase 2 once Phase 1 is committed.
+
+**Guardrail for any agent picking this up:** `frontend/AGENTS.md` notes the repo is connected to
+Lovable. Do not force-push or rewrite published history on the connected branch — it breaks
+Lovable's synced project history.
+
+---
+
+## 7. Open questions to resolve early
+
+- Is there a hard Review-2 date, and does the professor require the *symbolic* fact-checker
+  specifically, or does a well-defended judge fix plus trained calibration satisfy M4/M7
+  coverage? This decides whether the deferred item in §5 is optional or mandatory, and it
+  changes the whole schedule.
+- Is 2 rounds fixed, or is 3 affordable on the current quota? Round count interacts directly
+  with the last-speaker bug in §3(b) — an odd number of rounds flips which side speaks last.
