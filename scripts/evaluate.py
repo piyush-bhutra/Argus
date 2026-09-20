@@ -47,55 +47,13 @@ _BASELINE_SYSTEM = (
 
 
 # --- metrics ---------------------------------------------------------------
-# Shared with scripts/reliability_diagram.py - keep the binning in one place.
+# Defined in scripts/metrics.py so rescore.py can import them without pulling in
+# the LLM client. Re-exported here because reliability_diagram.py and the existing
+# tests import them from this module.
 
-def accuracy(probs, labels, threshold=0.5):
-    if not probs:
-        return None
-    hits = sum((p >= threshold) == lb for p, lb in zip(probs, labels))
-    return hits / len(probs)
-
-
-def bin_stats(probs, labels, bins=10):
-    """Equal-width bins over [0,1] -> list of {lo, hi, count, confidence, accuracy}.
-
-    Bin i covers [i/bins, (i+1)/bins); p == 1.0 falls in the last bin.
-    """
-    out = []
-    for i in range(bins):
-        lo, hi = i / bins, (i + 1) / bins
-        members = [
-            (p, lb)
-            for p, lb in zip(probs, labels)
-            if (lo <= p < hi) or (i == bins - 1 and p == 1.0)
-        ]
-        out.append(
-            {
-                "lo": lo,
-                "hi": hi,
-                "count": len(members),
-                "confidence": sum(p for p, _ in members) / len(members) if members else None,
-                "accuracy": sum(1 for _, lb in members if lb) / len(members) if members else None,
-            }
-        )
-    return out
-
-
-def ece(probs, labels, bins=10):
-    """Expected Calibration Error: sum over bins of (n_bin/N) * |acc - conf|.
-
-    This is the standard confidence-vs-frequency ECE for a probability of the
-    positive class: within a bin, mean predicted P(true) is compared against the
-    observed fraction of genuinely true claims.
-    """
-    if not probs:
-        return None
-    n = len(probs)
-    return sum(
-        (b["count"] / n) * abs(b["accuracy"] - b["confidence"])
-        for b in bin_stats(probs, labels, bins)
-        if b["count"]
-    )
+from scripts.metrics import (  # noqa: E402
+    accuracy, auroc, bin_stats, brier, ece, mcnemar, threshold_sweep,
+)
 
 
 # --- systems under test ----------------------------------------------------
@@ -209,9 +167,29 @@ def summarise(rows, bins, config) -> dict:
             "n_false": len(labels) - sum(labels),
             "accuracy": accuracy(probs, labels),
             "ece": ece(probs, labels, bins),
+            "auroc": auroc(probs, labels),
+            "brier": brier(probs, labels),
             "mean_probability": sum(probs) / len(probs) if probs else None,
             "bins": bin_stats(probs, labels, bins),
+            "threshold_sweep": threshold_sweep(probs, labels),
         }
+
+    # Paired comparison needs the claims BOTH systems scored — a claim only one
+    # side managed is not a pair and silently dropping it from one vector would
+    # misalign the two.
+    paired = [
+        r for r in rows
+        if r.get("argus_probability") is not None
+        and r.get("baseline_probability") is not None
+    ]
+    mcnemar_result = (
+        mcnemar(
+            [(r["argus_probability"] >= 0.5) == r["label"] for r in paired],
+            [(r["baseline_probability"] >= 0.5) == r["label"] for r in paired],
+        )
+        if paired
+        else None
+    )
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -220,6 +198,7 @@ def summarise(rows, bins, config) -> dict:
         "n_claims_failed": sum(1 for r in rows if r.get("error")),
         "argus": side("argus_probability"),
         "baseline": side("baseline_probability"),
+        "mcnemar_argus_vs_baseline": mcnemar_result,
         # Exactly the scores the metrics above were computed from. The results
         # file is a multi-config cache; this is the per-run record, and what
         # scripts/reliability_diagram.py plots.
@@ -363,9 +342,16 @@ def main(argv=None) -> None:
         if not s["n"]:
             print(f"{name:9} no scored claims")
             continue
+        auc = f"{s['auroc']:.3f}" if s["auroc"] is not None else "  n/a"
         print(f"{name:9} n={s['n']:<4} ({s['n_true']}T/{s['n_false']}F)  "
               f"accuracy={s['accuracy']:.3f}  ECE={s['ece']:.3f}  "
+              f"AUROC={auc}  Brier={s['brier']:.3f}  "
               f"mean P={s['mean_probability']:.3f}")
+    mc = summary.get("mcnemar_argus_vs_baseline")
+    if mc:
+        verdict = "significant" if mc["p_value"] < 0.05 else "NOT significant"
+        print(f"{'mcnemar':9} argus-only={mc['a_only']} baseline-only={mc['b_only']} "
+              f"discordant={mc['n_discordant']}  p={mc['p_value']:.4f}  ({verdict} at 0.05)")
     print("=" * 60)
     print(f"per-claim -> {RESULTS}\nsummary   -> {SUMMARY}")
 
