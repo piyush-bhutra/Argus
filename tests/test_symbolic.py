@@ -49,8 +49,9 @@ def test_closure_derives_inverse_predicates():
 
 
 def test_closure_derives_symmetric_predicates_both_ways():
+    # "married_to" is an alias, so it canonicalises to "spouse_of".
     kb = derive_closure([t("Alice", "married_to", "Bob")])
-    pairs = {(x.subject, x.object) for x in kb if x.predicate == "married_to"}
+    pairs = {(x.subject, x.object) for x in kb if x.predicate == "spouse_of"}
     assert ("alice", "bob") in pairs and ("bob", "alice") in pairs
 
 
@@ -175,3 +176,32 @@ def test_triple_with_missing_parts_abstains():
     for bad in (t("", "directed_by", "B"), t("A", "", "B"), t("A", "directed_by", "")):
         score, rule, _ = score_triple(bad, kb)
         assert score == 0.0 and rule == "no_symbolic_match"
+
+
+# --- predicate aliasing -----------------------------------------------------
+
+def test_aliases_fold_onto_the_canonical_predicate():
+    """Argument and evidence triples only match on identical predicates, and a
+    free-form extractor names the same relation differently each time."""
+    from app.services.symbolic import normalise_predicate
+
+    assert normalise_predicate("release_date") == "released_in"
+    assert normalise_predicate("Occupation") == "profession"
+    assert normalise_predicate("married to") == "spouse_of"
+
+
+def test_an_alias_on_one_side_still_matches_the_canonical_on_the_other():
+    kb = derive_closure([t("Jackie", "release_date", "2016")])
+    score, rule, _ = score_triple(t("Jackie", "released_in", "2016"), kb)
+    assert score == SUPPORT and rule == "entailment"
+
+
+def test_no_alias_shadows_a_derived_inverse_predicate():
+    """Aliasing 'directed' back to 'directed_by' would make derive_closure fold
+    its own derived facts away, silently killing forward chaining."""
+    from app.services.symbolic import INVERSE_PREDICATES, PREDICATE_ALIASES
+
+    derived = set(INVERSE_PREDICATES.values())
+    assert derived.isdisjoint(PREDICATE_ALIASES), (
+        f"these derived predicates are also aliases: {derived & set(PREDICATE_ALIASES)}"
+    )

@@ -22,17 +22,29 @@ from app.core.logger import logger
 from app.models.schemas import Argument, FactCheckResult
 from app.services.grok_client import call_grok
 from app.services.retrieval import load_retriever
-from app.services.symbolic import Triple, derive_closure, score_triple
+from app.services.symbolic import (
+    CANONICAL_PREDICATES, Triple, derive_closure, score_triple,
+)
 
 DEFAULT_K = 5
 
 _SYSTEM_PROMPT = (
     "You extract structured facts from text. You do not evaluate, rate, or judge "
     "anything — you only convert each sentence into (subject, predicate, object) "
-    "triples. Use short, canonical predicates with underscores, such as "
-    "directed_by, born_in, capital_of, located_in, height, released_in. Set "
-    "negated to true when the sentence denies the relation. Respond ONLY with "
-    "valid JSON, no prose wrapper, no markdown fences."
+    "triples. Set negated to true when the sentence denies the relation. Respond "
+    "ONLY with valid JSON, no prose wrapper, no markdown fences."
+)
+
+# The predicate vocabulary goes in the USER prompt, next to the texts, because a
+# free-form extractor names the same relation differently in different calls and
+# the rules can only match identical predicates.
+_PREDICATE_INSTRUCTION = (
+    "Use ONLY these predicates:\n  "
+    + ", ".join(CANONICAL_PREDICATES)
+    + "\n\nPick the closest one. If a fact fits none of them, omit that fact "
+      "rather than inventing a predicate. Write subjects and objects as the "
+      "specific named entity, not a pronoun or a generic noun ('Jackie', not "
+      "'the film'; 'Pablo Larrain', not 'the director')."
 )
 
 
@@ -50,6 +62,8 @@ def _clean_json(text: str) -> str:
 def _build_prompt(items: List[tuple]) -> str:
     lines = "\n".join(f'  {{"id": "{sid}", "text": {json.dumps(text)}}},' for sid, text in items)
     return f"""Extract factual triples from each numbered text below.
+
+{_PREDICATE_INSTRUCTION}
 
 Texts:
 [

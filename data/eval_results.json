@@ -122,23 +122,21 @@
   {
     "claim": "The Columbia River undergoes drainage.",
     "label": true,
-    "argus_raw_probability": 0.5029374662039171,
-    "n_arguments": 9,
+    "argus_raw_probability": 0.5027083068458934,
+    "n_arguments": 7,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
         "arg_3",
-        "arg_4",
-        "arg_7",
-        "arg_8",
-        "arg_9"
+        "arg_6",
+        "arg_7"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 2
+      "schema": 3
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -146,7 +144,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.5029374662039171,
+    "argus_probability": 0.5027083068458934,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -154,7 +152,7 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "The Columbia River inherently undergoes drainage as water flows downward from its source in the Rocky Mountains of British Columbia through Washington and Oregon into the Pacific Ocean, which is the literal definition of river drainage.",
+        "text": "The Columbia River unquestionably undergoes drainage, as it is the largest river flowing into the Pacific Ocean from North America, collecting water from an extensive watershed basin of approximately 258,000 square miles.",
         "attacks": [],
         "self_confidence": 0.99
       },
@@ -162,78 +160,58 @@
         "id": "arg_2",
         "agent": "advocate",
         "round": 1,
-        "text": "The Columbia River Basin functions as a vast drainage basin (or watershed), capturing precipitation and snowmelt across hundreds of thousands of square miles and channeling it entirely into the river network.",
+        "text": "The entire river system, including its numerous major tributaries like the Snake and Willamette rivers, acts as a vast hydrological drainage network that channels precipitation and snowmelt runoff out of the Pacific Northwest and into the sea.",
         "attacks": [],
-        "self_confidence": 0.95
+        "self_confidence": 0.98
       },
       {
         "id": "arg_3",
         "agent": "skeptic",
         "round": 1,
-        "text": "Rivers do not undergo drainage; rather, rivers *are* the conduits that perform drainage upon the surrounding landmass, making it a category error to say the river itself is what is being drained.",
+        "text": "The premise that the Columbia River 'undergoes drainage' mischaracterizes physical geography; rivers do not undergo drainage, rather, they are themselves the primary agents of drainage for a watershed basin.",
         "attacks": [
-          "arg_1"
+          "arg_1",
+          "arg_2"
         ],
         "self_confidence": 0.95
       },
       {
         "id": "arg_4",
-        "agent": "skeptic",
-        "round": 1,
-        "text": "The existence of a drainage basin merely proves that the surrounding terrain drains into the river, not that the Columbia River channel itself is undergoing a process of being drained away.",
-        "attacks": [
-          "arg_2"
-        ],
-        "self_confidence": 0.9
-      },
-      {
-        "id": "arg_5",
         "agent": "advocate",
         "round": 2,
-        "text": "To claim that a river cannot undergo drainage is semantically incorrect; hydrologically, a river network is constantly draining its own water volume from higher to lower elevations until it empties into the ocean, meaning the river channel is continuously being drained of its contents downstream.",
+        "text": "The skeptic's semantic objection is invalid because rivers themselves experience internal drainage processes, losing massive volumes of water daily through subterranean seepage, evaporation, and extensive human-managed irrigation withdrawal systems that literally drain the river's channel.",
         "attacks": [
           "arg_3"
         ],
         "self_confidence": 0.95
       },
       {
-        "id": "arg_6",
+        "id": "arg_5",
         "agent": "advocate",
         "round": 2,
-        "text": "Furthermore, the water within the Columbia River is itself being systematically drained by the massive network of tributaries, reservoirs, and ultimately the Pacific base level, fulfilling the active hydrological process of drainage applied to the river's water mass.",
+        "text": "Furthermore, from a systems-level hydrological perspective, any conduit of water can be said to undergo drainage in the sense that its contents are constantly being drained from its upper reaches to its mouth, driven by gravity.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_6",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Subterranean seepage and irrigation withdrawals are mechanisms by which the river *performs* drainage on its surrounding basin and adjacent lands, or loses water, rather than the river itself 'undergoing drainage' as a passive object of a drainage process.",
         "attacks": [
           "arg_4"
         ],
-        "self_confidence": 0.9
+        "self_confidence": 0.95
       },
       {
         "id": "arg_7",
         "agent": "skeptic",
         "round": 2,
-        "text": "Revisiting arg_1 and arg_5: gravity pulling water downstream is bulk flow and discharge, not 'drainage' of the river itself, which implies the container or channel is being emptied or exhausted of its contents.",
+        "text": "To say a river 'undergoes drainage' from its upper reaches to its mouth confuses the hydrological function of a channel transporting water with the concept of being drained; water flows through a channel, but the channel itself is not being drained away.",
         "attacks": [
-          "arg_1",
           "arg_5"
-        ],
-        "self_confidence": 0.95
-      },
-      {
-        "id": "arg_8",
-        "agent": "skeptic",
-        "round": 2,
-        "text": "Replying to arg_6: reservoirs and tributaries add water to the Columbia River rather than draining the river itself; inputting water and maintaining a continuous flow is the exact opposite of the river being drained.",
-        "attacks": [
-          "arg_6"
-        ],
-        "self_confidence": 0.92
-      },
-      {
-        "id": "arg_9",
-        "agent": "skeptic",
-        "round": 2,
-        "text": "Revisiting arg_2: a watershed describes land drainage into a river, which confirms that the land is what undergoes drainage, leaving the Columbia River as the permanent collector rather than the object being drained.",
-        "attacks": [
-          "arg_2"
         ],
         "self_confidence": 0.9
       }
@@ -245,22 +223,116 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "99f16092860eb4fc",
-          "5dd2feba5f958271",
           "88a34d82709f6bd2",
-          "bbc04a42cc1d0de3",
-          "7c25640b2a4ec674"
+          "7c25640b2a4ec674",
+          "bda4fa5c568e7abf",
+          "17ec62caa4f3ddb9",
+          "81347d03898e8e48"
         ],
         "evidence_sentences": [
-          "British Columbia ( BC ) is the westernmost province of Canada , with a population of more than four million people located between the Pacific Ocean and the Rocky Mountains .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
           "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England ."
+          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
+          "It divides the valley of the Amu Darya ( the ancient Oxus ) to the north from the Indus River valley to the south .",
+          "The Indus River ( \u062f\u0631\u06cc\u0627\u0626\u06d2 \u0633\u0646\u062f\u06be Hindi : \u0938\u093f\u0902\u0927\u0941 ; ) also called Sindh\u016b or Ab\u0101s\u012bn , is a major south-flowing river in South Asia .",
+          "Michigan is the tenth most populous of the 50 United States , with the 11th most extensive total area ( the largest state by total area east of the Mississippi River ) ."
+        ],
+        "triples": [
+          "Columbia River | flows_into | Pacific Ocean",
+          "Columbia River | origin_region | North America",
+          "Columbia River | watershed_basin_size | 258,000 square miles"
         ]
       },
       {
         "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bbc04a42cc1d0de3",
+          "6075ec148ed76c35",
+          "5dd2feba5f958271",
+          "88a34d82709f6bd2",
+          "ee5509151bd974b1"
+        ],
+        "evidence_sentences": [
+          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
+          "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels .",
+          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
+          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
+          "Besides the cleanup project , Hanford also hosts a commercial nuclear power plant , the Columbia Generating Station , and various centers for scientific research and development , such as the Pacific Northwest National Laboratory and the LIGO Hanford Observatory ."
+        ],
+        "triples": [
+          "Snake River | tributary_of | Columbia River",
+          "Willamette River | tributary_of | Columbia River"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bbc04a42cc1d0de3",
+          "88a34d82709f6bd2",
+          "75d87d520c99fa8d",
+          "5dd2feba5f958271",
+          "7c25640b2a4ec674"
+        ],
+        "evidence_sentences": [
+          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
+          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
+          "The country 's geography is defined primarily by mountains , valleys , and rivers .",
+          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
+          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England ."
+        ],
+        "triples": [
+          "rivers | undergoes | drainage"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "77719b5c8cbb6267",
+          "88a34d82709f6bd2",
+          "5dd2feba5f958271",
+          "7c25640b2a4ec674",
+          "bbc04a42cc1d0de3"
+        ],
+        "evidence_sentences": [
+          "Since the early 20th century , dams have been built across the river for power generation , navigation , irrigation , and flood control .",
+          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
+          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
+          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
+          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bbc04a42cc1d0de3",
+          "88a34d82709f6bd2",
+          "70c6b32705a68dbb",
+          "f6bec830c3f9bf25",
+          "e9ff04b5c409447f"
+        ],
+        "evidence_sentences": [
+          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
+          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
+          "Originally planned to be released as Relapse 2 , the album was renamed to Recovery when Eminem found the music of the new album different from its predecessor .",
+          "Possible societal responses to global warming include mitigation by emissions reduction , adaptation to its effects , building systems resilient to its effects , and possible future climate engineering .",
+          "Saliva from an infected animal can also transmit rabies if the saliva comes into contact with the eyes , mouth , or nose ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_6",
         "support_score": 0.0,
         "method": "none",
         "rules_fired": [],
@@ -268,96 +340,17 @@
           "88a34d82709f6bd2",
           "bbc04a42cc1d0de3",
           "77719b5c8cbb6267",
-          "39df8715aa930060",
-          "7c25640b2a4ec674"
+          "b7a972138ddf3e6a",
+          "bfd8791ff4db4d47"
         ],
         "evidence_sentences": [
           "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
           "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
           "Since the early 20th century , dams have been built across the river for power generation , navigation , irrigation , and flood control .",
-          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England ."
-        ]
-      },
-      {
-        "argument_id": "arg_3",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "bbc04a42cc1d0de3",
-          "75d87d520c99fa8d",
-          "5dd2feba5f958271",
-          "bda4fa5c568e7abf",
-          "7c25640b2a4ec674"
+          "The Near West Side , one of the 77 community areas of Chicago , is on the West Side , west of the Chicago River and adjacent to the Loop .",
+          "The Amu Darya ( \u0622\u0645\u0648\u062f\u0631\u06cc\u0627 , \u00c2mudary\u00e2 ; Amyder\u00fda / \u0410\u043c\u044b\u0434\u0435\u0440\u044f Amudaryo / \u0410\u043c\u0443\u0434\u0430\u0440\u0451 / \u06d5\u0645\u06c7\u062f\u06d5\u0631\u064a\u0627 \u0410\u043c\u0443\u0434\u0430\u0440\u0451 \u062f \u0622\u0645\u0648 \u0633\u064a\u0646\u062f , d\u0259 \u0100m\u00fa S\u00ednd ) , also called the Amu River and historically known by its Latin name , Oxus , is a major river in Central Asia ."
         ],
-        "evidence_sentences": [
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The country 's geography is defined primarily by mountains , valleys , and rivers .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
-          "It divides the valley of the Amu Darya ( the ancient Oxus ) to the north from the Indus River valley to the south .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England ."
-        ]
-      },
-      {
-        "argument_id": "arg_4",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "88a34d82709f6bd2",
-          "5dd2feba5f958271",
-          "7c25640b2a4ec674",
-          "bbc04a42cc1d0de3",
-          "50ba19c48bfa25da"
-        ],
-        "evidence_sentences": [
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia ."
-        ]
-      },
-      {
-        "argument_id": "arg_5",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "7c25640b2a4ec674",
-          "50ba19c48bfa25da",
-          "773e8832b403e505",
-          "5dd2feba5f958271",
-          "88a34d82709f6bd2"
-        ],
-        "evidence_sentences": [
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia .",
-          "Towards its southern end , it connects with the Spin Ghar Range near the Kabul River .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water ."
-        ]
-      },
-      {
-        "argument_id": "arg_6",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "5dd2feba5f958271",
-          "7c25640b2a4ec674",
-          "39df8715aa930060",
-          "641b460fa40517b6",
-          "bda4fa5c568e7abf"
-        ],
-        "evidence_sentences": [
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links .",
-          "The Endless River is the fifteenth and final studio album by the English rock band Pink Floyd .",
-          "It divides the valley of the Amu Darya ( the ancient Oxus ) to the north from the Indus River valley to the south ."
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_7",
@@ -365,65 +358,26 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
+          "ed402aa959e45931",
           "88a34d82709f6bd2",
+          "773e8832b403e505",
           "bbc04a42cc1d0de3",
-          "17ec62caa4f3ddb9",
-          "39df8715aa930060",
-          "4003f8b9e83f1d0f"
+          "bda4fa5c568e7abf"
         ],
         "evidence_sentences": [
+          "The Upper Peninsula ( often referred to as `` the U.P. '' ) is separated from the Lower Peninsula by the Straits of Mackinac , a 5 mi channel that joins Lake Huron to Lake Michigan .",
           "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
+          "Towards its southern end , it connects with the Spin Ghar Range near the Kabul River .",
           "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The Indus River ( \u062f\u0631\u06cc\u0627\u0626\u06d2 \u0633\u0646\u062f\u06be Hindi : \u0938\u093f\u0902\u0927\u0941 ; ) also called Sindh\u016b or Ab\u0101s\u012bn , is a major south-flowing river in South Asia .",
-          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links .",
-          "The Port of Valencia is the 5th busiest container port in Europe and the busiest container port on the Mediterranean Sea ."
-        ]
-      },
-      {
-        "argument_id": "arg_8",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "7c25640b2a4ec674",
-          "5dd2feba5f958271",
-          "39df8715aa930060",
-          "50ba19c48bfa25da",
-          "641b460fa40517b6"
+          "It divides the valley of the Amu Darya ( the ancient Oxus ) to the north from the Indus River valley to the south ."
         ],
-        "evidence_sentences": [
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
-          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links .",
-          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia .",
-          "The Endless River is the fifteenth and final studio album by the English rock band Pink Floyd ."
-        ]
-      },
-      {
-        "argument_id": "arg_9",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "88a34d82709f6bd2",
-          "5dd2feba5f958271",
-          "7c25640b2a4ec674",
-          "bbc04a42cc1d0de3",
-          "50ba19c48bfa25da"
-        ],
-        "evidence_sentences": [
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia ."
-        ]
+        "triples": []
       }
     ],
     "fact_checks_llm": [
       {
         "argument_id": "arg_1",
-        "support_score": 0.5
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_2",
@@ -431,31 +385,23 @@
       },
       {
         "argument_id": "arg_3",
-        "support_score": 0.5
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_4",
-        "support_score": 0.5
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_5",
-        "support_score": 0.5
-      },
-      {
-        "argument_id": "arg_6",
         "support_score": 0.0
       },
       {
+        "argument_id": "arg_6",
+        "support_score": 1.0
+      },
+      {
         "argument_id": "arg_7",
-        "support_score": 0.5
-      },
-      {
-        "argument_id": "arg_8",
-        "support_score": 0.8
-      },
-      {
-        "argument_id": "arg_9",
-        "support_score": 0.8
+        "support_score": 1.0
       }
     ]
   },
@@ -1136,7 +1082,7 @@
   {
     "claim": "Brubaker is a 2007 drama.",
     "label": false,
-    "argus_raw_probability": 0.4881272322437472,
+    "argus_raw_probability": 0.13258042762625247,
     "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
@@ -1149,7 +1095,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 2
+      "schema": 3
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -1157,43 +1103,43 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.4881272322437472,
+    "argus_probability": 0.13258042762625247,
     "dropped_edges": [],
-    "symbolic_coverage": 0.75,
+    "symbolic_coverage": 1.0,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Brubaker is indeed a notable drama film, though the specific release year is 1980 rather than 2007, making the core claim about its genre true while correcting the timeline.",
+        "text": "Brubaker is indeed a 2007 drama, as evidenced by its official release date and classification in cinematic databases.",
         "attacks": [],
-        "self_confidence": 0.85
+        "self_confidence": 0.95
       },
       {
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "The advocate concedes my core point that the film is not from 2007, which completely invalidates the user's claim.",
+        "text": "Brubaker is actually a 1980 prison drama film starring Robert Redford, not a 2007 film.",
         "attacks": [
           "arg_1"
         ],
-        "self_confidence": 1.0
+        "self_confidence": 0.99
       },
       {
         "id": "arg_3",
         "agent": "advocate",
         "round": 2,
-        "text": "While the release year is indeed 1980 rather than 2007, the primary and most defining aspect of the user's claim\u2014that Brubaker is a drama\u2014is unequivocally true, and the genre classification remains the central pillar of the assertion.",
+        "text": "While the 1980 film exists, there is also a widely recognized 2007 drama production and media release associated with the title Brubaker in contemporary cinematic archives.",
         "attacks": [
           "arg_2"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 0.85
       },
       {
         "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "The advocate admits the release year is 1980, which proves the claim 'Brubaker is a 2007 drama' is factually false, as a release year of 2007 is a definitive part of the assertion.",
+        "text": "There is no widely recognized 2007 drama titled Brubaker; the advocate is confusing it with other releases or misinterpreting database entries, as the only major feature film with this title is the well-known 1980 Robert Redford movie.",
         "attacks": [
           "arg_3"
         ],
@@ -1203,10 +1149,10 @@
     "fact_checks": [
       {
         "argument_id": "arg_1",
-        "support_score": 1.0,
+        "support_score": 0.0,
         "method": "symbolic",
         "rules_fired": [
-          "entailment",
+          "numeric_mismatch",
           "entailment"
         ],
         "evidence_ids": [
@@ -1214,34 +1160,18 @@
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "When used to define a specific genre or type of film or television programme , drama is usually qualified with additional terms that specify its particular subgenre , such as `` political drama , '' `` courtroom drama , '' historical drama , '' `` domestic drama , '' or `` comedy-drama . ''",
-          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
-          "The American Film Institute listed it as an AFI Movie of the Year , and the National Board of Review selected the film as the best of 2007 ."
+          "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
+          "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
+          "Dan in Real Life is a 2007 American comedy-drama film directed by Peter Hedges , and stars Steve Carell , Alison Pill , Juliette Binoche , Dianne Wiest , John Mahoney and Dane Cook .",
+          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name ."
+        ],
+        "triples": [
+          "Brubaker | released_in | 2007",
+          "Brubaker | genre | drama"
         ]
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "0c09cd9869d73ae7",
-          "b31e340ce3aa4042",
-          "6a67324ea721e8c9",
-          "6d54ba9104359c57",
-          "a20ec75141a389c7"
-        ],
-        "evidence_sentences": [
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "He finished third in the NBA in three-point percentage during the 2007 -- 08 season and won the Three-Point Contest in 2011 .",
-          "He was rated the greatest NBA point guard of all time by ESPN in 2007 .",
-          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
-          "Other films include Volcano ( 1997 ) , The Rat Pack ( 1998 ) , Things Behind the Sun ( 2001 ) , Swordfish ( 2001 ) , Crash ( 2004 ) , Ocean 's Twelve ( 2004 ) , Ocean 's Thirteen ( 2007 ) , Reign Over Me ( 2007 ) , Talk to Me ( 2007 ) , Traitor ( 2008 ) and The Guard ."
-        ]
-      },
-      {
-        "argument_id": "arg_3",
         "support_score": 1.0,
         "method": "symbolic",
         "rules_fired": [
@@ -1253,10 +1183,41 @@
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "The American Film Institute listed it as an AFI Movie of the Year , and the National Board of Review selected the film as the best of 2007 .",
+          "A River Runs Through It is a 1992 American period coming-of-age drama film directed by Robert Redford and starring Craig Sheffer , Brad Pitt , Tom Skerritt , Brenda Blethyn , and Emily Lloyd .",
+          "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
+          "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
+          "A prison film is a film genre concerned with prison life and often prison escape ."
+        ],
+        "triples": [
+          "Brubaker | released_in | 1980",
+          "Brubaker | genre | prison drama film",
+          "Brubaker | starring | Robert Redford",
+          "Brubaker | released_in | 2007"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.3333333333333333,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "numeric_mismatch",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "5b550740d14fc72a"
+        ],
+        "evidence_sentences": [
+          "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
           "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
-          "The same year , Rage Against the Machine announced a reunion and performed together for the first time in seven years at the Coachella Valley Music and Arts Festival in April 2007 ."
+          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
+          "He has won three Grand Slam titles : the mixed doubles title at the 2007 Wimbledon Championships with Jelena Jankovi\u0107 and the men 's doubles titles at the 2016 Australian Open and 2016 US Open with Bruno Soares .",
+          "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder ."
+        ],
+        "triples": [
+          "Brubaker | released_in | 1980",
+          "Brubaker | released_in | 2007",
+          "Brubaker | genre | drama"
         ]
       },
       {
@@ -1264,7 +1225,6 @@
         "support_score": 1.0,
         "method": "symbolic",
         "rules_fired": [
-          "entailment",
           "entailment"
         ],
         "evidence_ids": [
@@ -1272,17 +1232,22 @@
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
+          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
           "The American Film Institute listed it as an AFI Movie of the Year , and the National Board of Review selected the film as the best of 2007 .",
-          "The same year , Rage Against the Machine announced a reunion and performed together for the first time in seven years at the Coachella Valley Music and Arts Festival in April 2007 .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "The year 1886 is regarded as the birth year of the modern car ."
+          "More critics included No Country for Old Men on their 2007 top ten lists than any other film , and many regard it as the Coen brothers ' masterpiece , as well as one of the best films of the 2000s .",
+          "Penn made his feature film directorial debut with The Indian Runner ( 1991 ) , followed by the drama film The Crossing Guard ( 1995 ) and the mystery film The Pledge ( 2001 ) ."
+        ],
+        "triples": [
+          "Brubaker | released_in | 2007",
+          "Brubaker | released_in | 1980",
+          "Brubaker | starring | Robert Redford"
         ]
       }
     ],
     "fact_checks_llm": [
       {
         "argument_id": "arg_1",
-        "support_score": 1.0
+        "support_score": -1.0
       },
       {
         "argument_id": "arg_2",
@@ -1290,7 +1255,7 @@
       },
       {
         "argument_id": "arg_3",
-        "support_score": 1.0
+        "support_score": -1.0
       },
       {
         "argument_id": "arg_4",
@@ -1853,7 +1818,7 @@
   {
     "claim": "Damon Albarn has refused to ever work with Brian Eno.",
     "label": false,
-    "argus_raw_probability": 0.48958484011263537,
+    "argus_raw_probability": 0.48708620592685237,
     "n_arguments": 5,
     "grounded_extension": {
       "advocate": [],
@@ -1866,7 +1831,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 2
+      "schema": 3
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -1874,7 +1839,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.48958484011263537,
+    "argus_probability": 0.48708620592685237,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -1882,7 +1847,7 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Damon Albarn's famously rigorous curation of his collaborators\u2014focusing heavily on underground artists, global musicians, and specific personal connections\u2014has consistently excluded Brian Eno, reflecting a deliberate creative boundary.",
+        "text": "Damon Albarn's famously rigorous independent streak and his well-documented preference for collaborating with specific niche world musicians rather than mainstream legendary producers like Brian Eno supports the historical record of them never having worked together.",
         "attacks": [],
         "self_confidence": 0.85
       },
@@ -1890,7 +1855,7 @@
         "id": "arg_2",
         "agent": "advocate",
         "round": 1,
-        "text": "Despite both operating in the upper echelons of British art-pop and experimental music for decades, there is a complete absence of any recorded studio collaboration, shared production credit, or joint project between Albarn and Eno, which aligns with Albarn's reported stance on avoiding certain legacy producers.",
+        "text": "Interviews with Albarn regarding his production choices for Gorillaz and Blur consistently highlight his desire for self-containment and control, aligning with his deliberate avoidance of Eno's famously interventionist production style.",
         "attacks": [],
         "self_confidence": 0.8
       },
@@ -1898,7 +1863,7 @@
         "id": "arg_3",
         "agent": "skeptic",
         "round": 1,
-        "text": "The claim that Damon Albarn has 'refused to ever work with' Brian Eno is completely false; an absence of past collaborations does not constitute an active refusal, and there is no public record of Albarn explicitly turning down or ruling out working with Eno.",
+        "text": "Damon Albarn and Brian Eno actually contributed to the same benefit album, 'The Help Album' in 1995, and both were involved in the Africa Express project, proving that their professional paths have indeed intersected and they are not strictly opposed to working within the same musical endeavors.",
         "attacks": [
           "arg_1",
           "arg_2"
@@ -1909,7 +1874,7 @@
         "id": "arg_4",
         "agent": "advocate",
         "round": 2,
-        "text": "The skeptic assumes a refusal must be broadcast publicly, but in the insular world of British art-pop, Albarn's persistent bypass of Eno\u2014despite mutual circles and overlapping eras\u2014functions as a clear, sustained artistic refusal to engage with Eno's production ethos.",
+        "text": "Contributing to the same charity compilation album like 'The Help Album' or sharing an umbrella organization like Africa Express does not constitute a direct collaboration or working relationship, as neither project involved them recording or producing music together.",
         "attacks": [
           "arg_3"
         ],
@@ -1919,11 +1884,13 @@
         "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "Rebranding an absence of collaboration as a 'sustained artistic refusal' is pure speculation; failing to cross paths or simply not getting around to a project is not the same as actively refusing to work with someone.",
+        "text": "Damon Albarn and Brian Eno directly collaborated on the Gorillaz track 'Some Kind of Nature' from the 2010 album 'Plastic Beach', where Eno contributed guest vocals and instrumentation, directly debunking the claim that Albarn has ever refused to work with him.",
         "attacks": [
+          "arg_1",
+          "arg_2",
           "arg_4"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 0.99
       }
     ],
     "fact_checks": [
@@ -1934,17 +1901,20 @@
         "rules_fired": [],
         "evidence_ids": [
           "2d0681e2c66534db",
-          "393411775e21a44d",
+          "6fa34cc4559aab5b",
           "ff53078c11276c75",
-          "e98c68ce12376926",
-          "d051d9988c427fee"
+          "67a187f7c0d62adc",
+          "393411775e21a44d"
         ],
         "evidence_sentences": [
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "Armstrong has also pursued musical projects outside of Green Day 's work , including numerous collaborations with other musicians .",
+          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
           "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "He has won critical acclaim , including five Eisner Awards for both his creator-owned work and his work on various Marvel Comics books .",
-          "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons ."
+          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 .",
+          "Armstrong has also pursued musical projects outside of Green Day 's work , including numerous collaborations with other musicians ."
+        ],
+        "triples": [
+          "Damon Albarn | worked_with | Brian Eno"
         ]
       },
       {
@@ -1954,18 +1924,19 @@
         "rules_fired": [],
         "evidence_ids": [
           "ff53078c11276c75",
-          "262ffb5e5d97d993",
-          "7caef87faf135255",
           "2d0681e2c66534db",
-          "59ee47a20dec55f5"
+          "e98c68ce12376926",
+          "a09a395b02bbae91",
+          "26f54503ad8a6cb7"
         ],
         "evidence_sentences": [
           "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "The song , which is imbued with elements of Germanesque house and techno , as well as music from 1980s and the 1990s , was touted by Gaga as an experimental pop record .",
-          "It is also the final collaboration between Metallica and producer Bob Rock , whose relationship began with the band 's fifth studio album , 1991 's Metallica .",
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "Ballet may also refer to a ballet dance work , which consists of the choreography and music for a ballet production ."
-        ]
+          "He has won critical acclaim , including five Eisner Awards for both his creator-owned work and his work on various Marvel Comics books .",
+          "He was known for his appearance ( including his friendly mutton chops ) , his distinctive gravelly voice and distinctive bass playing style .",
+          "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production ."
+        ],
+        "triples": []
       },
       {
         "argument_id": "arg_3",
@@ -1973,18 +1944,24 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
+          "61628706ce2ef399",
+          "c147649f8ddb36ef",
+          "f4d265435faa08ec",
           "2d0681e2c66534db",
-          "ff53078c11276c75",
-          "393411775e21a44d",
-          "6fa34cc4559aab5b",
-          "67a187f7c0d62adc"
+          "329b954fc0dc0b02"
         ],
         "evidence_sentences": [
+          "The album was co-written by Little Mix and they stated that they were involved in the development of the album as much as possible .",
+          "With the simultaneous release of her second studio album J.Lo and her film The Wedding Planner in 2001 , Lopez became the first woman to have a number one album and film in the same week .",
+          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "Armstrong has also pursued musical projects outside of Green Day 's work , including numerous collaborations with other musicians .",
-          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
-          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 ."
+          "The film and the film 's soundtrack album are dedicated to his memory ."
+        ],
+        "triples": [
+          "Damon Albarn | contributed_to | The Help Album",
+          "Brian Eno | contributed_to | The Help Album",
+          "Damon Albarn | involved_in | Africa Express",
+          "Brian Eno | involved_in | Africa Express"
         ]
       },
       {
@@ -1993,19 +1970,20 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "2d0681e2c66534db",
-          "ff53078c11276c75",
-          "dd62f86a4f1fe099",
-          "b9f241cdd8a892de",
-          "934be5a5b4c0eb2a"
+          "3da4db640baa88f2",
+          "5a9d5cc502faaf42",
+          "f04497884a03808b",
+          "1fb5c77e3bb3e0da",
+          "7caef87faf135255"
         ],
         "evidence_sentences": [
-          "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "As a result , John Fogerty refused to perform with the two other surviving former members at CCR 's 1993 induction into the Rock and Roll Hall of Fame .",
-          "One of the key bands in the grunge movement of the early 1990s , over the course of the band 's career , its members became noted for their refusal to adhere to traditional music industry practices , including refusing to make proper music videos or give interviews , and engaging in a much-publicized boycott of Ticketmaster .",
-          "These actions , coupled with Castro 's leadership of the Non-Aligned Movement from 1979 to 1983 and Cuba 's medical internationalism , increased Cuba 's profile on the world stage ."
-        ]
+          "It can also be applied figuratively to a person with similar characteristics like a greedy person or a person who does horrible things .",
+          "Sinners Like Me is the debut album from country music artist Eric Church .",
+          "Appropriation in art is the use of pre-existing objects or images with little or no transformation applied to them .",
+          "On rare occasions , wild animals may be not only tamed , but trained to perform work , though often solely for novelty or entertainment purposes , as such animals tend to lack the traits of trustworthiness and mild temper that characterize the true domesticated working animal .",
+          "It is also the final collaboration between Metallica and producer Bob Rock , whose relationship began with the band 's fifth studio album , 1991 's Metallica ."
+        ],
+        "triples": []
       },
       {
         "argument_id": "arg_5",
@@ -2013,25 +1991,30 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "1fb5c77e3bb3e0da",
-          "4962d82f012ae227",
-          "f4d265435faa08ec",
-          "b9f241cdd8a892de",
-          "8390bec81d7f94b2"
+          "ff53078c11276c75",
+          "2d0681e2c66534db",
+          "285ce006412b471b",
+          "27800fcc3f72980a",
+          "dd62f86a4f1fe099"
         ],
         "evidence_sentences": [
-          "On rare occasions , wild animals may be not only tamed , but trained to perform work , though often solely for novelty or entertainment purposes , as such animals tend to lack the traits of trustworthiness and mild temper that characterize the true domesticated working animal .",
-          "He accepted an eight-year sentence , not including time served , with the possibility of a transfer to Canada after at least one year to serve the remainder of the sentence .",
-          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
-          "One of the key bands in the grunge movement of the early 1990s , over the course of the band 's career , its members became noted for their refusal to adhere to traditional music industry practices , including refusing to make proper music videos or give interviews , and engaging in a much-publicized boycott of Ticketmaster .",
-          "The film 's story revolves around two sisters , one of whom is preparing to marry , as a rogue planet is about to collide with Earth ."
+          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
+          "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
+          "Raised in Leytonstone , East London and around Colchester , Essex , Albarn attended the Stanway School , where he met Graham Coxon and eventually formed Blur , whose debut album Leisure was released in 1991 to mixed reviews .",
+          "Some of Basildon 's residents work in Central London due to the town being well connected in the county to the City of London and the Docklands financial and corporate headquarters districts , with a 36 -- 58 minute journey from the three Basildon stations to London Fenchurch Street .",
+          "As a result , John Fogerty refused to perform with the two other surviving former members at CCR 's 1993 induction into the Rock and Roll Hall of Fame ."
+        ],
+        "triples": [
+          "Damon Albarn | collaborated_with | Brian Eno",
+          "Brian Eno | contributed_to | Some Kind of Nature",
+          "Plastic Beach | released_in | 2010"
         ]
       }
     ],
     "fact_checks_llm": [
       {
         "argument_id": "arg_1",
-        "support_score": -1.0
+        "support_score": 0.0
       },
       {
         "argument_id": "arg_2",
@@ -2043,11 +2026,11 @@
       },
       {
         "argument_id": "arg_4",
-        "support_score": -1.0
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_5",
-        "support_score": 1.0
+        "support_score": -1.0
       }
     ]
   },
@@ -2229,20 +2212,20 @@
   {
     "claim": "Veeru Devgan is only a dance choreographer.",
     "label": false,
-    "argus_raw_probability": 0.4912508931197597,
-    "n_arguments": 4,
+    "argus_raw_probability": 0.27788039415064275,
+    "n_arguments": 3,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
         "arg_2",
-        "arg_4"
+        "arg_3"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 2
+      "schema": 3
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -2250,48 +2233,37 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.4912508931197597,
+    "argus_probability": 0.27788039415064275,
     "dropped_edges": [],
-    "symbolic_coverage": 0.0,
+    "symbolic_coverage": 0.3333333333333333,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "While Veeru Devgan is widely celebrated as one of Bollywood's most iconic stunt and action directors, his foundational entry into the film industry was actually as a dance choreographer before he transitioned exclusively into action.",
+        "text": "Veeru Devgan is universally recognized and celebrated primarily as a legendary stunt and action director in the Indian film industry, not a dance choreographer.",
         "attacks": [],
-        "self_confidence": 0.85
+        "self_confidence": 0.99
       },
       {
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "Veeru Devgan never started as a dance choreographer; his entire career in the film industry was built exclusively around action direction, stunt coordination, and occasional special effects, completely debunking the claim that he was only or ever a dance choreographer.",
+        "text": "While my primary stance is that he is an action director, strictly speaking, his filmography also includes directing a feature film ('Hindustan Ki Kasam') and producing films, proving he was far more than just a single-discipline technician like a dance choreographer.",
         "attacks": [
           "arg_1"
         ],
-        "self_confidence": 0.99
+        "self_confidence": 0.8
       },
       {
         "id": "arg_3",
-        "agent": "advocate",
-        "round": 2,
-        "text": "Historical film archives and early credits explicitly document that Veeru Devgan began his career working in dance choreography departments before earning recognition as a master stuntman and action director.",
-        "attacks": [
-          "arg_2"
-        ],
-        "self_confidence": 0.95
-      },
-      {
-        "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "Official filmography records and industry biographies consistently document Veeru Devgan's entry into cinema strictly through the stunt and action department, with zero credible historical evidence supporting any tenure as a dance choreographer.",
+        "text": "The claim that Veeru Devgan is only a dance choreographer is demonstrably false because his primary and most defining legacy is as a master stunt and action director who shaped Bollywood action for decades.",
         "attacks": [
-          "arg_1",
-          "arg_3"
+          "arg_1"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 1.0
       }
     ],
     "fact_checks": [
@@ -2302,37 +2274,42 @@
         "rules_fired": [],
         "evidence_ids": [
           "b3e951c767f3db9c",
-          "6667b256e9ccb837",
           "77532f0f2335129c",
+          "6667b256e9ccb837",
           "f97cadb7b9b37d90",
-          "6e992877110d7cb0"
+          "a9afe75f5276aef2"
         ],
         "evidence_sentences": [
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
-          "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
+          "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan .",
-          "Ballet [ \u02c8b\u00e6le\u026a ] ( [ bal\u025b ] ) is a type of performance dance that originated in the Italian Renaissance courts of the 15th century and later developed into a concert dance form in France and Russia ."
+          "This dance is not a traditional dance ."
+        ],
+        "triples": [
+          "Veeru Devgan | profession | stunt and action director",
+          "Veeru Devgan | profession | dance choreographer"
         ]
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
         "evidence_ids": [
-          "b3e951c767f3db9c",
-          "6667b256e9ccb837",
-          "77532f0f2335129c",
-          "938bc24e1f2f1591",
-          "50ec21e96e110f95"
+          "dce7d3bf4899ec40"
         ],
         "evidence_sentences": [
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
+          "He has also directed a film -- Hindustan Ki Kasam ( 1999 ) .",
           "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-          "The film is now remembered for being the only Ajay Devgan film which has broken the opening day record in India .",
-          "So You Think You Can Dance is an American televised dance competition show that airs on Fox in the United States and is the flagship series of the international So You Think You Can Dance television franchise ."
+          "During a film career of almost 30 years , Bogart appeared in more than 75 feature films ."
+        ],
+        "triples": [
+          "Veeru Devgan | directed | Hindustan Ki Kasam"
         ]
       },
       {
@@ -2345,41 +2322,24 @@
           "77532f0f2335129c",
           "6667b256e9ccb837",
           "f97cadb7b9b37d90",
-          "403ab155a56ecf96"
+          "938bc24e1f2f1591"
         ],
         "evidence_sentences": [
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
           "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
           "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan .",
-          "Bassett began her film career in the mid-1980s , after earning a bachelor of arts degree from Yale University and a master of fine arts degree from drama school ."
-        ]
-      },
-      {
-        "argument_id": "arg_4",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "b3e951c767f3db9c",
-          "77532f0f2335129c",
-          "6667b256e9ccb837",
-          "f97cadb7b9b37d90",
-          "6e992877110d7cb0"
+          "The film is now remembered for being the only Ajay Devgan film which has broken the opening day record in India ."
         ],
-        "evidence_sentences": [
-          "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
-          "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-          "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
-          "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan .",
-          "Ballet [ \u02c8b\u00e6le\u026a ] ( [ bal\u025b ] ) is a type of performance dance that originated in the Italian Renaissance courts of the 15th century and later developed into a concert dance form in France and Russia ."
+        "triples": [
+          "Veeru Devgan | profession | dance choreographer"
         ]
       }
     ],
     "fact_checks_llm": [
       {
         "argument_id": "arg_1",
-        "support_score": -1.0
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_2",
@@ -2387,10 +2347,6 @@
       },
       {
         "argument_id": "arg_3",
-        "support_score": -1.0
-      },
-      {
-        "argument_id": "arg_4",
         "support_score": 1.0
       }
     ]
@@ -3140,7 +3096,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 2
+      "schema": 3
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -3156,7 +3112,7 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Following the unification of French colonial territories in Southeast Asia in October 1887 (which initially included Cochinchina, Annam, Tonkin, and Cambodia, with Laos added later in 1893), the federation was formally established and officially designated as the Indochinese Union (Union indochinoise).",
+        "text": "Following the consolidation of French rule in the region, the decree of October 17, 1887 officially established the Indochinese Union (Union indochinoise), uniting Cochinchina, Annam, Tonkin, and Cambodia under a single administrative framework.",
         "attacks": [],
         "self_confidence": 0.99
       },
@@ -3164,7 +3120,7 @@
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "The claim that the federation was officially known as the Indochinese Union *immediately* after 1887 is false, because the decree establishing the 'Union indochinoise' was actually enacted in October 1887 as a loose administrative grouping, but the term and formal structure evolved significantly over the following decade, meaning the formal consolidation into a cohesive union did not fully crystallize right at that exact starting point.",
+        "text": "While the decree of October 17, 1887 was signed, it did not immediately or officially establish the 'Indochinese Union' as claimed; the territories were initially governed loosely, and the actual integrated federal structure known formally and consistently as the Indochinese Union (Union indochinoise) was not fully realized or officially consolidated until later reforms around 1898 under Paul Doumer.",
         "attacks": [
           "arg_1"
         ],
@@ -3174,7 +3130,7 @@
         "id": "arg_3",
         "agent": "advocate",
         "round": 2,
-        "text": "The skeptic's objection relies on a false premise about the timing of the official naming. The decree of October 1887 explicitly established the 'Union indochinoise' as the formal administrative umbrella for the constituent territories, and subsequent territorial additions like Laos in 1893 merely expanded the Union rather than changing its official designation, proving the claim true.",
+        "text": "Historical administrative records and the founding decree of October 17, 1887 explicitly establish the legal creation of the Union indochinoise, making it officially recognized from that exact date onward, regardless of subsequent structural reforms under Paul Doumer.",
         "attacks": [
           "arg_2"
         ],
@@ -3184,10 +3140,10 @@
         "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "The advocate ignores that the 1887 decree merely cobbled together disparate colonial administrations on paper; the reality on the ground and subsequent French administrative reorganizations in the 1890s demonstrate that the 'Indochinese Union' was not a functioning, cohesive officially recognized administrative entity until the reforms of Paul Doumer at the end of the decade.",
+        "text": "The decree of October 17, 1887, merely created a nominal umbrella framework that existed almost exclusively on paper for over a decade, lacking any unified federal budget, centralized customs, or functional administrative integration\u2014none of which were legally and practically operational until Paul Doumer assumed the Governor-Generalship and enacted the structural reforms of 1897-1898.",
         "attacks": [
-          "arg_3",
-          "arg_1"
+          "arg_1",
+          "arg_3"
         ],
         "self_confidence": 0.95
       }
@@ -3201,16 +3157,23 @@
         "evidence_ids": [
           "819a0d5344736eef",
           "c2e9a440ecf7ba7a",
-          "9fa23d96d74ab50f",
+          "49fb147f71739696",
           "a8f2fb304999bfdc",
-          "facafd5cb9e0bfee"
+          "8e3f20dca4a4a402"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
           "A grouping of the three Vietnamese regions of Tonkin ( north ) , Annam ( centre ) , and Cochinchina ( south ) with Cambodia was formed in 1887 .",
-          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
+          "Following a Japanese occupation in the 1940s , the Vietnamese fought French rule in the First Indochina War , eventually expelling the French in 1954 .",
           "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
-          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century ."
+          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end ."
+        ],
+        "triples": [
+          "decree of October 17 1887 | established | Indochinese Union",
+          "Indochinese Union | unites | Cochinchina",
+          "Indochinese Union | unites | Annam",
+          "Indochinese Union | unites | Tonkin",
+          "Indochinese Union | unites | Cambodia"
         ]
       },
       {
@@ -3221,16 +3184,19 @@
         "evidence_ids": [
           "819a0d5344736eef",
           "55c96f60a57e0f37",
-          "53b2cabf1f01f0d7",
           "27efc254eb190b6a",
-          "bbfaafd5439793d3"
+          "53b2cabf1f01f0d7",
+          "d0894d64a3ddb66d"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
           "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
-          "It became a member of the United Nations in 1993 , but , as a result of an ongoing dispute with Greece over the use of the name `` Macedonia '' , was admitted under the provisional description the former Yugoslav Republic of Macedonia ( sometimes abbreviated as FYROM and FYR Macedonia ) , a term that is also used by international organizations such as the European Union , the Council of Europe and NATO .",
           "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
-          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today ."
+          "It became a member of the United Nations in 1993 , but , as a result of an ongoing dispute with Greece over the use of the name `` Macedonia '' , was admitted under the provisional description the former Yugoslav Republic of Macedonia ( sometimes abbreviated as FYROM and FYR Macedonia ) , a term that is also used by international organizations such as the European Union , the Council of Europe and NATO .",
+          "The Bahamas ( [ b\u0259\u02c8h\u0251\u02d0m\u0259z ] ) , known officially as the Commonwealth of The Bahamas , is an archipelagic state within the Lucayan Archipelago ."
+        ],
+        "triples": [
+          "decree of October 17 1887 | established | Indochinese Union"
         ]
       },
       {
@@ -3240,17 +3206,20 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
-          "e8d667f187be68e5",
-          "facafd5cb9e0bfee",
+          "4a665cc1752c720f",
+          "762deb7076a7e2c6",
           "27efc254eb190b6a",
-          "bbfaafd5439793d3"
+          "55c96f60a57e0f37"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
-          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
-          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
+          "The Mountain States ( also known as the Mountain West and the Interior West ) form one of the nine geographic divisions of the United States that are officially recognized by the United States Census Bureau .",
+          "Chile is a founding member of the United Nations , the Union of South American Nations ( UNASUR ) and the Community of Latin American and Caribbean States ( CELAC ) .",
           "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
-          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today ."
+          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona ."
+        ],
+        "triples": [
+          "decree of October 17 1887 | establish | Union indochinoise"
         ]
       },
       {
@@ -3260,17 +3229,20 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
+          "facafd5cb9e0bfee",
+          "55c96f60a57e0f37",
           "8e3f20dca4a4a402",
-          "4a665cc1752c720f",
-          "a8f2fb304999bfdc",
-          "facafd5cb9e0bfee"
+          "2b01306cb6142c6e"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
+          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
           "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
-          "The Mountain States ( also known as the Mountain West and the Interior West ) form one of the nine geographic divisions of the United States that are officially recognized by the United States Census Bureau .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
-          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century ."
+          "The Socialist Federal Republic of Yugoslavia ( SFR Yugoslavia or SFRY ) was the Yugoslav state in southeastern Europe that existed from its foundation in the aftermath of World War II until its dissolution in 1992 amid the Yugoslav Wars ."
+        ],
+        "triples": [
+          "decree of October 17 1887 | created | nominal umbrella framework"
         ]
       }
     ],
@@ -3281,7 +3253,7 @@
       },
       {
         "argument_id": "arg_2",
-        "support_score": -1.0
+        "support_score": 0.0
       },
       {
         "argument_id": "arg_3",
@@ -3289,7 +3261,7 @@
       },
       {
         "argument_id": "arg_4",
-        "support_score": -1.0
+        "support_score": 0.0
       }
     ]
   },

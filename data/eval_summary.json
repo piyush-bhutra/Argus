@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T11:46:45+00:00",
+  "generated_at": "2026-09-20T11:54:34+00:00",
   "config": {
     "sample_file": "data\\fever_sample.json",
     "n_claims_requested": 10,
@@ -17,7 +17,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 2
+      "schema": 3
     },
     "baseline_key": {
       "llm_model": "gemini-3.5-flash-lite",
@@ -32,10 +32,10 @@
     "n_true": 5,
     "n_false": 5,
     "accuracy": 0.9,
-    "ece": 0.41845515041454784,
+    "ece": 0.4124967636460941,
     "auroc": 0.84,
-    "brier": 0.24724762513983284,
-    "mean_probability": 0.52333380948779,
+    "brier": 0.19206983604768685,
+    "mean_probability": 0.4786742309802084,
     "bins": [
       {
         "lo": 0.0,
@@ -47,16 +47,16 @@
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.13258042762625247,
+        "accuracy": 0.0
       },
       {
         "lo": 0.2,
         "hi": 0.3,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.27788039415064275,
+        "accuracy": 0.0
       },
       {
         "lo": 0.3,
@@ -68,23 +68,23 @@
       {
         "lo": 0.4,
         "hi": 0.5,
-        "count": 4,
-        "confidence": 0.49200636664369346,
+        "count": 2,
+        "confidence": 0.46117374549400036,
         "accuracy": 0.0
       },
       {
         "lo": 0.5,
         "hi": 0.6,
         "count": 4,
-        "confidence": 0.5060983238415528,
+        "confidence": 0.5070305620282523,
         "accuracy": 1.0
       },
       {
         "lo": 0.6,
         "hi": 0.7,
-        "count": 2,
-        "confidence": 0.6204596664684576,
-        "accuracy": 0.5
+        "count": 1,
+        "confidence": 0.6230466603666162,
+        "accuracy": 0.0
       },
       {
         "lo": 0.7,
@@ -96,9 +96,9 @@
       {
         "lo": 0.8,
         "hi": 0.9,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.8027650885575622,
+        "accuracy": 1.0
       },
       {
         "lo": 0.9,
@@ -123,31 +123,31 @@
       },
       {
         "threshold": 0.15000000000000002,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.2,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.25,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.30000000000000004,
-        "accuracy": 0.5
+        "accuracy": 0.7
       },
       {
         "threshold": 0.35000000000000003,
-        "accuracy": 0.5
+        "accuracy": 0.7
       },
       {
         "threshold": 0.4,
-        "accuracy": 0.5
+        "accuracy": 0.7
       },
       {
         "threshold": 0.45,
-        "accuracy": 0.5
+        "accuracy": 0.8
       },
       {
         "threshold": 0.5,
@@ -163,19 +163,19 @@
       },
       {
         "threshold": 0.65,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.7000000000000001,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.75,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.8,
-        "accuracy": 0.5
+        "accuracy": 0.6
       },
       {
         "threshold": 0.8500000000000001,
@@ -373,49 +373,49 @@
     {
       "claim": "Topman has outlets in one Irish city.",
       "label": true,
-      "argus_probability": 0.5020833212770899,
+      "argus_probability": 0.5062496744995104,
       "baseline_probability": 0.9
     },
     {
       "claim": "AMGTV is a television network that is family-oriented.",
       "label": true,
-      "argus_probability": 0.5106234010049637,
+      "argus_probability": 0.5104151598873646,
       "baseline_probability": 1.0
     },
     {
       "claim": "Cheese in the Trap (TV series) comes from South Korea",
       "label": true,
-      "argus_probability": 0.6208129005938251,
+      "argus_probability": 0.8027650885575622,
       "baseline_probability": 1.0
     },
     {
       "claim": "The World Trade Center is still standing.",
       "label": false,
-      "argus_probability": 0.49906250109863126,
+      "argus_probability": 0.4352612850611484,
       "baseline_probability": 0.0
     },
     {
       "claim": "Excuse My French is a speech by French Montana.",
       "label": false,
-      "argus_probability": 0.6201064323430902,
+      "argus_probability": 0.6230466603666162,
       "baseline_probability": 0.0
     },
     {
       "claim": "Veeru Devgan is only a dance choreographer.",
       "label": false,
-      "argus_probability": 0.4912508931197597,
+      "argus_probability": 0.27788039415064275,
       "baseline_probability": 0.0
     },
     {
       "claim": "The Columbia River undergoes drainage.",
       "label": true,
-      "argus_probability": 0.5029374662039171,
+      "argus_probability": 0.5027083068458934,
       "baseline_probability": 1.0
     },
     {
       "claim": "Damon Albarn has refused to ever work with Brian Eno.",
       "label": false,
-      "argus_probability": 0.48958484011263537,
+      "argus_probability": 0.48708620592685237,
       "baseline_probability": 0.0
     },
     {
@@ -427,7 +427,7 @@
     {
       "claim": "Brubaker is a 2007 drama.",
       "label": false,
-      "argus_probability": 0.4881272322437472,
+      "argus_probability": 0.13258042762625247,
       "baseline_probability": 0.0
     }
   ]

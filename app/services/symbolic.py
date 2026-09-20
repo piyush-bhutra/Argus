@@ -7,8 +7,9 @@ produces is reproducible and every step of it can be shown to a reader.
 
 It abstains rather than guesses. Strict triple matching has poor recall on
 natural language, so an argument the rules cannot decide scores 0.0 with
-`no_symbolic_match` and the caller falls back to a weaker lexical signal. The
-abstention rate is reported as a metric, not hidden.
+`no_symbolic_match` and contributes nothing, rather than being assigned a
+fabricated score. The abstention rate is reported as symbolic coverage, as a
+metric rather than a footnote.
 """
 import re
 from typing import List, NamedTuple, Tuple
@@ -26,6 +27,46 @@ FUNCTIONAL_PREDICATES = {
     "directed_by", "born_in", "born_on", "died_in", "died_on", "capital_of",
     "located_in", "height", "width", "length", "population", "released_in",
     "founded_in", "written_by", "produced_by", "nationality", "spouse_of",
+    "country_of_origin", "tributary_of",
+}
+
+# The closed vocabulary the extractor is told to choose from. Argument triples
+# and evidence triples only match when their predicates are identical after
+# normalisation, and a free-form extractor names the same relation differently
+# each time ("released_in" here, "release_date" there), so almost nothing
+# matched: symbolic coverage measured 0.22 with 79 argument triples spread over
+# dozens of ad-hoc predicates. Constraining the vocabulary makes both sides
+# agree by construction.
+CANONICAL_PREDICATES = [
+    "is_a", "type", "genre", "part_of", "member_of", "includes",
+    "directed_by", "written_by", "produced_by", "starring", "record_label",
+    "born_in", "born_on", "died_in", "died_on", "nationality", "profession",
+    "spouse_of", "sibling_of", "employer",
+    "located_in", "capital_of", "country_of_origin", "tributary_of", "adjacent_to",
+    "released_in", "founded_in", "height", "width", "length", "population",
+    "language", "award", "role", "based_on",
+]
+
+# Drift the model produces anyway, folded onto the canonical name. Cheap
+# insurance: a prompt constrains, it does not guarantee.
+PREDICATE_ALIASES = {
+    "release_date": "released_in", "released": "released_in", "release_year": "released_in",
+    "year": "released_in", "premiered_in": "released_in",
+    # NB: never alias a predicate that INVERSE_PREDICATES derives ("directed",
+    # "wrote", "produced", "birthplace_of"), or the closure folds its own
+    # derived facts back into the source predicate and chaining silently stops.
+    "director": "directed_by", "writer": "written_by",
+    "producer": "produced_by", "stars": "starring", "cast": "starring",
+    "actor": "starring", "features": "starring",
+    "birthplace": "born_in", "birth_date": "born_on", "birthdate": "born_on",
+    "death_date": "died_on", "deathplace": "died_in",
+    "occupation": "profession", "job": "profession", "works_as": "profession",
+    "location": "located_in", "place": "located_in", "situated_in": "located_in",
+    "country": "country_of_origin", "origin": "country_of_origin",
+    "from": "country_of_origin", "nation": "nationality",
+    "label": "record_label", "founded": "founded_in", "established_in": "founded_in",
+    "kind": "type", "category": "genre", "belongs_to": "part_of",
+    "married_to": "spouse_of",
 }
 
 # (film, directed_by, person) entails (person, directed, film). Deriving these
@@ -38,7 +79,9 @@ INVERSE_PREDICATES = {
     "born_in": "birthplace_of",
 }
 
-SYMMETRIC_PREDICATES = {"married_to", "spouse_of", "sibling_of", "adjacent_to"}
+# Canonical names only: "married_to" normalises to "spouse_of" via the alias
+# map, so listing it here too would be dead weight.
+SYMMETRIC_PREDICATES = {"spouse_of", "sibling_of", "adjacent_to"}
 
 _ARTICLES = {"the", "a", "an"}
 _NUMBER = re.compile(r"-?\d+(?:[.,]\d+)?")
@@ -65,7 +108,13 @@ def normalise_entity(text) -> str:
 
 
 def normalise_predicate(text) -> str:
-    return normalise_entity(text).replace(" ", "_")
+    """Predicate surface form -> canonical name, folding known aliases.
+
+    Both sides of a match go through this, so "release_date" on the evidence
+    side and "released_in" on the argument side become the same predicate.
+    """
+    key = normalise_entity(text).replace(" ", "_")
+    return PREDICATE_ALIASES.get(key, key)
 
 
 def _key(triple: Triple) -> tuple:

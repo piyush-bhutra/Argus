@@ -84,3 +84,9 @@ def load_demos() -> int:
     except Exception as e:  # noqa: BLE001
         logger.warning(f"Failed to load demo debates: {e}")
         return 0
+
+
+def count() -> int:
+    """How many debates are loaded. Used by the health probe to confirm the
+    demo corpus actually landed in the deployed image."""
+    return len(_store)

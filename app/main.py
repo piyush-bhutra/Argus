@@ -4,8 +4,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import router
+from app.core.config import settings
 from app.core.logger import setup_logging
 from app.services import debate_store
+from app.services.retrieval import load_retriever
 
 setup_logging()
 
@@ -22,10 +24,17 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+_origins = settings.cors_origin_list
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allowing all for local development, adjust as needed
-    allow_credentials=True,
+    allow_origins=_origins,
+    # Wildcard origins and credentials are mutually exclusive: browsers reject
+    # "Access-Control-Allow-Origin: *" on a credentialed request, so the previous
+    # combination of both silently failed cross-origin. The API is stateless and
+    # uses no cookies or auth headers, so credentials are simply off unless an
+    # explicit origin list is configured.
+    allow_credentials="*" not in _origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -36,3 +45,16 @@ app.include_router(router)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Argus API"}
+
+
+@app.get("/health")
+def health():
+    """Liveness probe for the host, and a quick check that the deployment has
+    what it needs: hosts expect a cheap endpoint, and a missing evidence corpus
+    or LLM key should be visible here rather than at the first request."""
+    return {
+        "status": "ok",
+        "llm_configured": bool(settings.llm_api_key and settings.llm_model),
+        "evidence_corpus": load_retriever() is not None,
+        "demo_debates": debate_store.count(),
+    }
