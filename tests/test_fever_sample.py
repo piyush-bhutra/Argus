@@ -15,9 +15,26 @@ def test_fever_sample_shape():
     rows = json.loads(SAMPLE.read_text(encoding="utf-8"))
     assert isinstance(rows, list) and rows
     for row in rows:
-        assert set(row) == {"claim", "label"}
+        assert set(row) == {"claim", "label", "evidence_ids"}
         assert isinstance(row["claim"], str) and row["claim"].strip()
         assert isinstance(row["label"], bool)
+        # Gold evidence ids exist to MEASURE retrieval (recall@k). They are never
+        # handed to the retriever, which would be oracle retrieval.
+        assert isinstance(row["evidence_ids"], list)
+        assert all(isinstance(e, str) and e for e in row["evidence_ids"])
+
+
+def test_sample_gold_evidence_resolves_against_the_corpus():
+    """Every gold id must exist in the corpus, or recall@k silently measures
+    against ids that can never be retrieved and always reports 0."""
+    corpus_file = SAMPLE.parent / "evidence_corpus.json"
+    if not (SAMPLE.exists() and corpus_file.exists()):
+        pytest.skip("sample or corpus not generated (run scripts/prepare_fever.py)")
+
+    rows = json.loads(SAMPLE.read_text(encoding="utf-8"))
+    corpus_ids = {r["id"] for r in json.loads(corpus_file.read_text(encoding="utf-8"))}
+    dangling = {e for row in rows for e in row["evidence_ids"] if e not in corpus_ids}
+    assert not dangling, f"{len(dangling)} gold evidence ids are not in the corpus"
 
 
 def test_fever_sample_is_class_balanced():

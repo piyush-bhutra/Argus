@@ -1,0 +1,396 @@
+[
+  {
+    "claim": "The Columbia River undergoes drainage.",
+    "label": true,
+    "evidence_ids": [
+      "bbc04a42cc1d0de3",
+      "88a34d82709f6bd2"
+    ]
+  },
+  {
+    "claim": "Bea Arthur died in 2009.",
+    "label": true,
+    "evidence_ids": [
+      "8227bc288cf546c8"
+    ]
+  },
+  {
+    "claim": "Fidel Castro lost all elections for President of Cuba.",
+    "label": false,
+    "evidence_ids": [
+      "9d13bd306cc23341"
+    ]
+  },
+  {
+    "claim": "Brazzers is a pornographic production company based in Montreal.",
+    "label": true,
+    "evidence_ids": [
+      "bded2c27ab2e4ec3"
+    ]
+  },
+  {
+    "claim": "Excuse My French is a speech by French Montana.",
+    "label": false,
+    "evidence_ids": [
+      "d7f0aea08c833bf7"
+    ]
+  },
+  {
+    "claim": "Marcus Bentley is a British voice-over artist.",
+    "label": false,
+    "evidence_ids": [
+      "de7dcbf248cc746c"
+    ]
+  },
+  {
+    "claim": "Danger UXB is from 1981.",
+    "label": false,
+    "evidence_ids": [
+      "45fbd892a0d42829"
+    ]
+  },
+  {
+    "claim": "Advertising is an sound-based manner of marketing communication.",
+    "label": true,
+    "evidence_ids": [
+      "f4e92aa35324e831"
+    ]
+  },
+  {
+    "claim": "The World Trade Center is still standing.",
+    "label": false,
+    "evidence_ids": [
+      "f3c3de4363c6a025"
+    ]
+  },
+  {
+    "claim": "Edmund H. North co-wrote the script for Twilight.",
+    "label": false,
+    "evidence_ids": [
+      "73891e43448e0739",
+      "504e28d05b8e93d4"
+    ]
+  },
+  {
+    "claim": "The website Glee.com was first launched in 2010.",
+    "label": false,
+    "evidence_ids": [
+      "c96fab3aa78f8bdd"
+    ]
+  },
+  {
+    "claim": "Brubaker is a 2007 drama.",
+    "label": false,
+    "evidence_ids": [
+      "5b550740d14fc72a"
+    ]
+  },
+  {
+    "claim": "Meteora is by Linkin Park.",
+    "label": true,
+    "evidence_ids": [
+      "71e080b5879cea2f",
+      "cc15fd82d9703eac",
+      "4a3e0acfbe1bb4c6",
+      "2f7290af083f5d18",
+      "33a827645b6c2a4c",
+      "6c50a15aeedf8449"
+    ]
+  },
+  {
+    "claim": "The Palace of Caserta is near Naples.",
+    "label": true,
+    "evidence_ids": [
+      "4e31e916d9b45de9"
+    ]
+  },
+  {
+    "claim": "Blade Runner 2049 stars the actor Ryan Gosling.",
+    "label": true,
+    "evidence_ids": [
+      "e7ea369f74c713d4",
+      "85b5ed58a4aa8c63"
+    ]
+  },
+  {
+    "claim": "Miracle at St. Anna is set primarily in France.",
+    "label": false,
+    "evidence_ids": [
+      "b4d2f9d14425ea6e",
+      "65c544b62aa2a39b"
+    ]
+  },
+  {
+    "claim": "Homer Hickman has written science fiction novels.",
+    "label": false,
+    "evidence_ids": [
+      "db96eb60c516243f"
+    ]
+  },
+  {
+    "claim": "Excuse My French is an American rapper's album.",
+    "label": true,
+    "evidence_ids": [
+      "d7f0aea08c833bf7"
+    ]
+  },
+  {
+    "claim": "Eric Church is an artist.",
+    "label": true,
+    "evidence_ids": [
+      "505c6dbe1a771029",
+      "41c413486a75b5ef",
+      "bda8dfc6bde5c9e1",
+      "3c55887ce58ea6b1",
+      "94da145011f514fa",
+      "5840aefbd49f0f8e",
+      "db4f52ebe889c5ba",
+      "a2c8c51bf6f1795e",
+      "f7feecaa89d502e1",
+      "bcedc60698105fc2",
+      "e81e4eed75054ca5",
+      "5a9d5cc502faaf42",
+      "04ee56943ac3737c",
+      "0e61806a6a243d3c",
+      "4547f18a5d91c4e4",
+      "05a1d63b48d6636c",
+      "b2e7587f09d7c6f3",
+      "1b70158f3e2c4053",
+      "796578e5a4405cec",
+      "1c8c0bfbe82590b0",
+      "f794a96c80541f3b",
+      "7757f699c5e83fc4"
+    ]
+  },
+  {
+    "claim": "Psych takes place in the United States.",
+    "label": true,
+    "evidence_ids": [
+      "e233660767e6bd13",
+      "085a2b4c749295d9"
+    ]
+  },
+  {
+    "claim": "Kellogg's products are marketed in only one country.",
+    "label": false,
+    "evidence_ids": [
+      "d010a1153aa510b7"
+    ]
+  },
+  {
+    "claim": "Topman has outlets in one Irish city.",
+    "label": true,
+    "evidence_ids": [
+      "b947861cd2559533"
+    ]
+  },
+  {
+    "claim": "Fist of Legend is a remake of Fist of Fury.",
+    "label": true,
+    "evidence_ids": [
+      "e887500412d1834b"
+    ]
+  },
+  {
+    "claim": "One of the founders of San Diego Comic-Con was not Richard Alf.",
+    "label": false,
+    "evidence_ids": [
+      "1eea310d71cf263e"
+    ]
+  },
+  {
+    "claim": "Tom Baker has narrated commercials.",
+    "label": true,
+    "evidence_ids": [
+      "a5092cdd65ae4687"
+    ]
+  },
+  {
+    "claim": "Miranda Otto is the son of Barry Otto.",
+    "label": false,
+    "evidence_ids": [
+      "15bcf39e8ea42fb7",
+      "5d544e3f78be46aa",
+      "19643976950c77cc",
+      "6f08df84253e0253"
+    ]
+  },
+  {
+    "claim": "Topman sells clothing.",
+    "label": true,
+    "evidence_ids": [
+      "b947861cd2559533",
+      "c6be2063dcd2ecd6",
+      "b6020d09dcea7871"
+    ]
+  },
+  {
+    "claim": "Victoria Palace Theatre is outside of Victoria Street.",
+    "label": false,
+    "evidence_ids": [
+      "dd9d816e8eec9dd1"
+    ]
+  },
+  {
+    "claim": "Damon Albarn has refused to ever work with Brian Eno.",
+    "label": false,
+    "evidence_ids": [
+      "2d0681e2c66534db"
+    ]
+  },
+  {
+    "claim": "The Endless River is an album by Danny Devito.",
+    "label": false,
+    "evidence_ids": [
+      "641b460fa40517b6"
+    ]
+  },
+  {
+    "claim": "Swordfish (film) is a television show that is about an ex-convict.",
+    "label": false,
+    "evidence_ids": [
+      "86c497ecc5704a30",
+      "716076e0cfb8dfe3"
+    ]
+  },
+  {
+    "claim": "Boyhood was carved from 2002 to 2013.",
+    "label": false,
+    "evidence_ids": [
+      "90b1b9ae5f63348e"
+    ]
+  },
+  {
+    "claim": "Stanley Williams was executed in 2005.",
+    "label": true,
+    "evidence_ids": [
+      "11bfbd030656d472",
+      "4471475cad296062"
+    ]
+  },
+  {
+    "claim": "Juventus F.C. competes at Juventus Stadium in Lisbon, Portugal.",
+    "label": false,
+    "evidence_ids": [
+      "f6efd1a8872586f0",
+      "ba223b35c38b0f01"
+    ]
+  },
+  {
+    "claim": "Herculaneum's ruins are near Naples.",
+    "label": true,
+    "evidence_ids": [
+      "4e31e916d9b45de9"
+    ]
+  },
+  {
+    "claim": "Sancho Panza is a fictional character in a novel written by a Spanish writer born in the 17th century.",
+    "label": true,
+    "evidence_ids": [
+      "a836bffd0c5b7933"
+    ]
+  },
+  {
+    "claim": "Veeru Devgan is only a dance choreographer.",
+    "label": false,
+    "evidence_ids": [
+      "b3e951c767f3db9c"
+    ]
+  },
+  {
+    "claim": "Aarhus is in the geographical center of Denmark.",
+    "label": true,
+    "evidence_ids": [
+      "79824ddb38958480"
+    ]
+  },
+  {
+    "claim": "Bethany Hamilton's autobiography was adapted into a film.",
+    "label": true,
+    "evidence_ids": [
+      "6506dc62dfe9bc2c",
+      "29ed932bfbfab58b"
+    ]
+  },
+  {
+    "claim": "A Milli is by Mos Def.",
+    "label": false,
+    "evidence_ids": [
+      "dcdf138e3a252e2c"
+    ]
+  },
+  {
+    "claim": "Frozen is a film from 2013.",
+    "label": true,
+    "evidence_ids": [
+      "cc51767bad64e63e",
+      "1c3886a107dee23e"
+    ]
+  },
+  {
+    "claim": "Shane Black was born on December 16th, 1961.",
+    "label": true,
+    "evidence_ids": [
+      "922a8082faab0f4f"
+    ]
+  },
+  {
+    "claim": "Cheese in the Trap (TV series) comes from South Korea",
+    "label": true,
+    "evidence_ids": [
+      "e9efc8486e7931af"
+    ]
+  },
+  {
+    "claim": "Homer Hickman is illiterate.",
+    "label": false,
+    "evidence_ids": [
+      "94bb31f800a42b4f",
+      "ef1f23be11083bad",
+      "6917c55255037751",
+      "db96eb60c516243f"
+    ]
+  },
+  {
+    "claim": "Shadowhunters premiered in 2018.",
+    "label": false,
+    "evidence_ids": [
+      "017265e64dcc5333"
+    ]
+  },
+  {
+    "claim": "AMGTV is a television network that is family-oriented.",
+    "label": true,
+    "evidence_ids": [
+      "4a5f65ae4fee2e62"
+    ]
+  },
+  {
+    "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
+    "label": true,
+    "evidence_ids": [
+      "819a0d5344736eef"
+    ]
+  },
+  {
+    "claim": "The Washington Wizards have won zero division titles.",
+    "label": false,
+    "evidence_ids": [
+      "5272e43b34baa58d"
+    ]
+  },
+  {
+    "claim": "Brazzers is based in Quebec.",
+    "label": false,
+    "evidence_ids": [
+      "bded2c27ab2e4ec3"
+    ]
+  },
+  {
+    "claim": "Syracuse, New York, had a metropolitan area with a population of more than 600,000 residents according to the 2010 Census.",
+    "label": true,
+    "evidence_ids": [
+      "e80da77af9dfeeec"
+    ]
+  }
+]

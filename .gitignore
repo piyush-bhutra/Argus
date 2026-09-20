@@ -67,10 +67,19 @@ data/*
 !data/eval_summary.json
 # reliability diagrams for that same run
 !data/reliability_*.png
-# Deliberately NOT committed, both regenerable:
-#   data/fever_sample.json - python -m scripts.prepare_fever (seeded)
-#   data/eval_results.json - the eval harness's resumable LLM-score cache
-#                            (plus its .tmp / .corrupt-* siblings)
+# The held-out evaluation set. Committed because the eval cache is keyed on
+# claim text: if this file is ever regenerated differently, every cached score
+# silently detaches from its claim.
+!data/fever_sample.json
+# Pooled BM25 evidence corpus. Regenerable, but required by retrieval, by the
+# symbolic fact-checker and by the deployed demo.
+!data/evidence_corpus.json
+# The debate artifact cache. Hours of quota-gated API time and the input to
+# every rescore and every ablation - too expensive to live on one machine.
+# Its .tmp / .corrupt-* siblings stay ignored.
+!data/eval_results.json
+data/eval_results.json.tmp
+data/eval_results.corrupt-*
 datasets/
 fever_data/
 

@@ -15,7 +15,7 @@ path; F onwards run against cached artifacts.
 | # | Phase | LLM calls | Status |
 |---|---|---|---|
 | A | Extended metrics: AUROC, Brier, threshold sweep, McNemar | none | **done** 2026-09-20 |
-| B | FEVER evidence retained + pooled corpus (spec §4.1) | none | not started |
+| B | FEVER evidence retained + pooled corpus (spec §4.1) | none | **done** 2026-09-20 |
 | C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | not started |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | not started |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | not started |
@@ -50,3 +50,13 @@ can be iterated while the run is still going.
   significant**, correcting `ARGUS_HANDOFF.md` §2.4 which claimed the difference was
   unsupported by statistics. The gap is real and must be fixed, not reframed.
   AUROC 0.807 / Brier 0.263 reproduce the handoff's hand-computed values exactly.
+- 2026-09-20 — Phase B landed. `copenlu/fever_gold_evidence` evidence is
+  `[page, sent_id, text]` with FEVER wiki markup (`-LRB-` etc), now normalised.
+  Corpus is 3,493 unique sentences pooled from 6,506 claims — smaller than the
+  spec's ~5,000-claim estimate because the split shares evidence heavily. Gold
+  density for the held-out 50 is ~1-in-37, judged adequate; **recall@k will be
+  measured in Phase C and the pool enlarged across splits only if retrieval turns
+  out to be saturated.** Regenerating the seed-42 sample produced byte-identical
+  claims/labels/order, so the existing eval cache remains valid.
+- 2026-09-20 — `.gitignore` amended: `fever_sample.json`, `evidence_corpus.json`
+  and `eval_results.json` are now committed (spec §8).
