@@ -13,6 +13,12 @@ class FactCheckResult(BaseModel):
     argument_id: str
     evidence_sentences: List[str]
     support_score: float      # -1 (contradicts) to 1 (supports)
+    # Provenance: what decided this score, so a verdict can be audited rather
+    # than taken on trust. method "none" means the rules could not decide and the
+    # argument abstained — counted in the reported symbolic-coverage metric.
+    method: Literal["symbolic", "none"] = "none"
+    rules_fired: List[str] = []
+    evidence_ids: List[str] = []
 
 class Verdict(BaseModel):
     claim: str

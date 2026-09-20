@@ -16,7 +16,7 @@ path; F onwards run against cached artifacts.
 |---|---|---|---|
 | A | Extended metrics: AUROC, Brier, threshold sweep, McNemar | none | **done** 2026-09-20 |
 | B | FEVER evidence retained + pooled corpus (spec §4.1) | none | **done** 2026-09-20 |
-| C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | in progress — retrieval + reasoner done, LLM extraction next |
+| C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | **done** 2026-09-20 |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | not started |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | not started |
 | F | **Full scoring run, background** (§5.6) | ~1050 | not started |
@@ -71,3 +71,17 @@ can be iterated while the run is still going.
   so it is not rediscovered as a bug.
 - 2026-09-20 — KB triples are stored canonical (normalised) by `derive_closure`;
   surface forms are recovered through the evidence id, not kept on the triple.
+- 2026-09-20 — **Deviation from spec §4.2.** The spec said arguments the rules
+  cannot decide fall back to "a lexical BM25 overlap score". Dropped: lexical
+  overlap measures *relevance*, not *polarity*, so it cannot tell support from
+  contradiction and a signed score derived from it would be fabricated. The
+  fact-checker now abstains at 0.0 with `method="none"` instead, and symbolic
+  coverage is reported. The legacy LLM score is still cached per §5.1, so the
+  ablation can show whether an LLM fallback on abstention actually helps — if it
+  does, it gets added on evidence rather than assumption.
+- 2026-09-20 — Phase C landed. `tests/test_fact_checker.py` deleted: it encoded
+  the LLM-as-judge contract that was deliberately replaced. Coverage moved to
+  `tests/test_fact_checker_symbolic.py`.
+- 2026-09-20 — Testing gotcha: `check_transcript` wraps the LLM call in
+  `except Exception`, which swallows a test's `AssertionError` guard. "Must not
+  call the model" tests count invocations instead of raising.
