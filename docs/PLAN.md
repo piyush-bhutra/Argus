@@ -19,11 +19,11 @@ path; F onwards run against cached artifacts.
 | C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | **done** 2026-09-20 |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | **done** 2026-09-20 |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | **done** 2026-09-20 — gate PASSED at v5 |
-| F | **Full scoring run, background** (§5.6) | 240 | running 2026-09-20 |
+| F | **Full scoring run, background** (§5.6) | 240 | **done** 2026-09-20, 50/50, 0 failures |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
 | I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | tooling **done**; scoring run pending |
-| J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | not started |
+| J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | ablations **done**; sweeps pending |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | not started |
 | L | Hosting + demo corpus export (§6) | none | not started |
 | M | Write-up, PRD amendments (§9), PROJECT_STATE consolidation (§8) | none | not started |
@@ -191,3 +191,43 @@ one / two / three-plus evidence sentences, so it is 70% single-lookup claims.
   *evidence* from the shared corpus, which retrieval still needs.
 - `--no-legacy-factcheck` skips the ablation-only call, saving one request per
   claim: ~500 calls instead of ~600.
+
+## RESULTS — held-out n=50, schema v5 (2026-09-20)
+
+| configuration | acc | ECE | AUROC | Brier | McNemar vs baseline |
+|---|---|---|---|---|---|
+| **Argus, LLM fact-check** | **0.860** | **0.075** | **0.900** | **0.119** | p=1.0000 (tied) |
+| Argus, symbolic ungated | 0.700 | 0.117 | 0.775 | 0.204 | p=0.0574 (n.s.) |
+| Argus, symbolic + gating (default) | 0.660 | 0.107 | 0.746 | 0.206 | p=0.0213 (loses) |
+| Argus, old unweighted judge | 0.560 | 0.325 | 0.614 | 0.331 | — |
+| Baseline (single call) | 0.860 | 0.136 | 0.874 | 0.136 | — |
+| *Argus before this session* | *0.620* | *0.289* | *0.807* | *0.263* | *p=0.0018 (loses)* |
+
+Structure: **11 distinct structural values** (was 1), 23 gated edges, mean
+survivors 2.66, symbolic coverage 0.31.
+
+### What this establishes
+
+1. **The thesis holds.** Argus with LLM fact-checking is statistically
+   indistinguishable from the baseline on accuracy (McNemar p=1.0000, 2 vs 2
+   discordant) while beating it on **calibration (ECE 0.075 vs 0.136)**,
+   **ranking (AUROC 0.900 vs 0.874)** and **Brier (0.119 vs 0.136)** — and
+   producing a full auditable trace, where the baseline places 49 of 50 claims
+   at 0.0 or 1.0 and explains nothing.
+2. **The degeneracy is gone.** 11 distinct structural values where there was 1.
+3. **The bug is reproducible on demand.** Reverting only the judge's structural
+   term to the unweighted count gives 0.560 / ECE 0.325 / AUROC 0.614 and mean P
+   0.195 — the original defect, on a switch.
+4. **Even the symbolic path beats the baseline on ECE** (0.107 vs 0.136), which
+   was false before this session (0.289).
+
+### Honest negative results
+
+- **The symbolic fact-checker underperforms the LLM one** (AUROC 0.746 vs 0.900)
+  at 31% coverage. M4 is built and correct, but on single-hop FEVER claims the
+  71% of arguments it cannot decide cost more than the independence it buys.
+- **Evidence gating does not earn its place on this sample.** Ungated scores
+  better on accuracy (0.700 vs 0.660) and AUROC (0.775 vs 0.746), and moves the
+  accuracy gap from significant (p=0.0213) to not (p=0.0574). The difference is
+  2 claims across 23 gated edges, so it is within noise — but it is the opposite
+  of what spec §4.4 predicted and must be reported as such, not buried.

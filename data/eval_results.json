@@ -11404,7 +11404,7 @@
   {
     "claim": "Syracuse, New York, had a metropolitan area with a population of more than 600,000 residents according to the 2010 Census.",
     "label": true,
-    "argus_raw_probability": 0.12814060824475368,
+    "argus_raw_probability": 0.5174928576663897,
     "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
@@ -11416,7 +11416,8 @@
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
-      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/"
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -11424,6 +11425,158 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.12814060824475368
+    "argus_probability": 0.5174928576663897,
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "According to the official 2010 United States Census data, the Syracuse metropolitan statistical area (MSA), which encompasses Onondaga, Oswego, and Madison counties, recorded a total population of 650,154 residents, clearly exceeding the 600,000 threshold.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The advocate relies on a broader Metropolitan Statistical Area (MSA) definition, but the actual city-proper and immediate urban core of Syracuse fall far short of that figure, making the claim about the metropolitan area's population misleadingly inflated.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The skeptic's objection is entirely misplaced because the original claim explicitly specifies the 'metropolitan area' rather than the city-proper, meaning the Syracuse Metropolitan Statistical Area is the correct and precise geographic unit required by the claim.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The advocate conveniently ignores that even within the broader regional discussion, core economic indicators and demographic shifts since 2010 show that utilizing the tri-county MSA inflates the true urban agglomeration of Syracuse, as significant portions of Oswego and Madison counties are rural and not functionally integrated into the metropolitan core.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.85
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "e80da77af9dfeeec",
+          "2a90a5141ba669ae",
+          "ed87804e8facdd0f",
+          "6a8b5a00104208d6",
+          "b12be86f3331d36a"
+        ],
+        "evidence_sentences": [
+          "At the 2010 census , the city population was 145,170 , and its metropolitan area had a population of 662,577 .",
+          "According to the 2010 Census , the population of the city is 39,843 .",
+          "At the 2010 United States Census , the city had a population of 77,344 .",
+          "As of the 2010 census , the city 's total resident population is 64,403 .",
+          "Aarhus is the central city in the East Jutland metropolitan area , which had a total population of 1.378 million in 2016 ."
+        ],
+        "triples": [
+          "Syracuse metropolitan statistical area | population | 650,154",
+          "Syracuse metropolitan statistical area | includes | Onondaga county",
+          "Syracuse metropolitan statistical area | includes | Oswego county",
+          "Syracuse metropolitan statistical area | includes | Madison county"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "e80da77af9dfeeec",
+          "359c1c909a10de85",
+          "b12be86f3331d36a",
+          "078e29c97d4a39d1",
+          "bc0a983c3f38d858"
+        ],
+        "evidence_sentences": [
+          "At the 2010 census , the city population was 145,170 , and its metropolitan area had a population of 662,577 .",
+          "With about 1.4 million people living in the area it represents approximately 25 % of the population of Denmark and is the second largest Metropolitan area after Greater Copenhagen .",
+          "Aarhus is the central city in the East Jutland metropolitan area , which had a total population of 1.378 million in 2016 .",
+          "The New York Jets are a professional American football team located in the New York metropolitan area .",
+          "Tijuana ( [ ti\u02d0\u02c8w\u0251\u02d0n\u0259 ] ; [ ti\u02c8xwana ] ) is the largest city in Baja California and on the Baja California Peninsula and center of the Tijuana metropolitan area , part of the international San Diego -- Tijuana metropolitan area ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "e80da77af9dfeeec",
+          "078e29c97d4a39d1",
+          "a4482244419af117",
+          "bc0a983c3f38d858",
+          "b12be86f3331d36a"
+        ],
+        "evidence_sentences": [
+          "At the 2010 census , the city population was 145,170 , and its metropolitan area had a population of 662,577 .",
+          "The New York Jets are a professional American football team located in the New York metropolitan area .",
+          "Prescott is the center of the Prescott Metropolitan Area , defined by the U.S. Census Bureau as all of Yavapai County .",
+          "Tijuana ( [ ti\u02d0\u02c8w\u0251\u02d0n\u0259 ] ; [ ti\u02c8xwana ] ) is the largest city in Baja California and on the Baja California Peninsula and center of the Tijuana metropolitan area , part of the international San Diego -- Tijuana metropolitan area .",
+          "Aarhus is the central city in the East Jutland metropolitan area , which had a total population of 1.378 million in 2016 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "e80da77af9dfeeec",
+          "2a90a5141ba669ae",
+          "078e29c97d4a39d1",
+          "dcdb0e4b0923841e",
+          "a4482244419af117"
+        ],
+        "evidence_sentences": [
+          "At the 2010 census , the city population was 145,170 , and its metropolitan area had a population of 662,577 .",
+          "According to the 2010 Census , the population of the city is 39,843 .",
+          "The New York Jets are a professional American football team located in the New York metropolitan area .",
+          "Today Aarhus is at the cultural and economic core of the region and the largest centre for trade , services and industry in Jutland .",
+          "Prescott is the center of the Prescott Metropolitan Area , defined by the U.S. Census Bureau as all of Yavapai County ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 1.0
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0
+      }
+    ]
   }
 ]

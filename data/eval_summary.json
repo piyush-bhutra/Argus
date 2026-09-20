@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-20T12:07:09+00:00",
+  "generated_at": "2026-09-20T12:24:04+00:00",
   "config": {
     "sample_file": "data\\fever_sample.json",
-    "n_claims_requested": 10,
-    "n_true": 5,
-    "n_false": 5,
+    "n_claims_requested": 50,
+    "n_true": 25,
+    "n_false": 25,
     "rounds": 2,
     "bins": 10,
     "seed": 42,
-    "limit": 10,
+    "limit": null,
     "llm_model": "gemini-3.5-flash-lite",
     "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
     "calibrator_loaded": false,
@@ -25,17 +25,17 @@
       "prompt_sha256": "2c37cfdd1b1a23f7"
     }
   },
-  "n_claims_scored": 10,
+  "n_claims_scored": 50,
   "n_claims_failed": 0,
   "argus": {
-    "n": 10,
-    "n_true": 5,
-    "n_false": 5,
-    "accuracy": 0.8,
-    "ece": 0.2758822079898348,
-    "auroc": 0.76,
-    "brier": 0.21935078410090075,
-    "mean_probability": 0.4664651826097844,
+    "n": 50,
+    "n_true": 25,
+    "n_false": 25,
+    "accuracy": 0.66,
+    "ece": 0.10664744796425367,
+    "auroc": 0.7464,
+    "brier": 0.2062455450827841,
+    "mean_probability": 0.514629888876943,
     "bins": [
       {
         "lo": 0.0,
@@ -47,51 +47,51 @@
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 2,
+        "confidence": 0.11415354527895127,
+        "accuracy": 0.0
       },
       {
         "lo": 0.2,
         "hi": 0.3,
-        "count": 1,
-        "confidence": 0.2288175544441832,
+        "count": 2,
+        "confidence": 0.24282477291585103,
         "accuracy": 0.0
       },
       {
         "lo": 0.3,
         "hi": 0.4,
-        "count": 2,
-        "confidence": 0.37636709716485806,
-        "accuracy": 0.5
+        "count": 5,
+        "confidence": 0.36700712349536396,
+        "accuracy": 0.4
       },
       {
         "lo": 0.4,
         "hi": 0.5,
-        "count": 2,
-        "confidence": 0.49145969927695654,
-        "accuracy": 0.0
+        "count": 9,
+        "confidence": 0.46438336321858553,
+        "accuracy": 0.3333333333333333
       },
       {
         "lo": 0.5,
         "hi": 0.6,
-        "count": 4,
-        "confidence": 0.5153543759052975,
-        "accuracy": 0.75
+        "count": 20,
+        "confidence": 0.5224508347825416,
+        "accuracy": 0.6
       },
       {
         "lo": 0.6,
         "hi": 0.7,
-        "count": 1,
-        "confidence": 0.6387631751488418,
-        "accuracy": 1.0
+        "count": 8,
+        "confidence": 0.6423158144591302,
+        "accuracy": 0.5
       },
       {
         "lo": 0.7,
         "hi": 0.8,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 2,
+        "confidence": 0.7635294975845857,
+        "accuracy": 1.0
       },
       {
         "lo": 0.8,
@@ -103,9 +103,9 @@
       {
         "lo": 0.9,
         "hi": 1.0,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 2,
+        "confidence": 0.9442248572602044,
+        "accuracy": 1.0
       }
     ],
     "threshold_sweep": [
@@ -123,23 +123,23 @@
       },
       {
         "threshold": 0.15000000000000002,
-        "accuracy": 0.5
+        "accuracy": 0.54
       },
       {
         "threshold": 0.2,
-        "accuracy": 0.5
+        "accuracy": 0.54
       },
       {
         "threshold": 0.25,
-        "accuracy": 0.6
+        "accuracy": 0.56
       },
       {
         "threshold": 0.30000000000000004,
-        "accuracy": 0.6
+        "accuracy": 0.58
       },
       {
         "threshold": 0.35000000000000003,
-        "accuracy": 0.6
+        "accuracy": 0.56
       },
       {
         "threshold": 0.4,
@@ -147,47 +147,47 @@
       },
       {
         "threshold": 0.45,
-        "accuracy": 0.6
+        "accuracy": 0.66
       },
       {
         "threshold": 0.5,
-        "accuracy": 0.8
+        "accuracy": 0.66
       },
       {
         "threshold": 0.55,
-        "accuracy": 0.6
+        "accuracy": 0.64
       },
       {
         "threshold": 0.6000000000000001,
-        "accuracy": 0.6
+        "accuracy": 0.58
       },
       {
         "threshold": 0.65,
-        "accuracy": 0.5
+        "accuracy": 0.58
       },
       {
         "threshold": 0.7000000000000001,
-        "accuracy": 0.5
+        "accuracy": 0.58
       },
       {
         "threshold": 0.75,
-        "accuracy": 0.5
+        "accuracy": 0.56
       },
       {
         "threshold": 0.8,
-        "accuracy": 0.5
+        "accuracy": 0.54
       },
       {
         "threshold": 0.8500000000000001,
-        "accuracy": 0.5
+        "accuracy": 0.54
       },
       {
         "threshold": 0.9,
-        "accuracy": 0.5
+        "accuracy": 0.54
       },
       {
         "threshold": 0.9500000000000001,
-        "accuracy": 0.5
+        "accuracy": 0.52
       },
       {
         "threshold": 1.0,
@@ -196,28 +196,28 @@
     ]
   },
   "baseline": {
-    "n": 10,
-    "n_true": 5,
-    "n_false": 5,
-    "accuracy": 1.0,
-    "ece": 0.009999999999999953,
-    "auroc": 1.0,
-    "brier": 0.0009999999999999996,
-    "mean_probability": 0.49000000000000005,
+    "n": 50,
+    "n_true": 25,
+    "n_false": 25,
+    "accuracy": 0.86,
+    "ece": 0.13599999999999995,
+    "auroc": 0.8736,
+    "brier": 0.1364,
+    "mean_probability": 0.52,
     "bins": [
       {
         "lo": 0.0,
         "hi": 0.1,
-        "count": 5,
+        "count": 23,
         "confidence": 0.0,
-        "accuracy": 0.0
+        "accuracy": 0.08695652173913043
       },
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 1,
+        "confidence": 0.1,
+        "accuracy": 1.0
       },
       {
         "lo": 0.2,
@@ -271,9 +271,9 @@
       {
         "lo": 0.9,
         "hi": 1.0,
-        "count": 5,
-        "confidence": 0.9800000000000001,
-        "accuracy": 1.0
+        "count": 26,
+        "confidence": 0.9961538461538461,
+        "accuracy": 0.8461538461538461
       }
     ],
     "threshold_sweep": [
@@ -283,110 +283,140 @@
       },
       {
         "threshold": 0.05,
-        "accuracy": 1.0
+        "accuracy": 0.88
       },
       {
         "threshold": 0.1,
-        "accuracy": 1.0
+        "accuracy": 0.88
       },
       {
         "threshold": 0.15000000000000002,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.2,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.25,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.30000000000000004,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.35000000000000003,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.4,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.45,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.5,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.55,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.6000000000000001,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.65,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.7000000000000001,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.75,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.8,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.8500000000000001,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.9,
-        "accuracy": 1.0
+        "accuracy": 0.86
       },
       {
         "threshold": 0.9500000000000001,
-        "accuracy": 0.9
+        "accuracy": 0.84
       },
       {
         "threshold": 1.0,
-        "accuracy": 0.9
+        "accuracy": 0.84
       }
     ]
   },
   "mcnemar_argus_vs_baseline": {
-    "a_only": 0,
-    "b_only": 2,
-    "n_discordant": 2,
-    "p_value": 0.5
+    "a_only": 3,
+    "b_only": 13,
+    "n_discordant": 16,
+    "p_value": 0.021270751953125
   },
   "claims": [
     {
-      "claim": "Topman has outlets in one Irish city.",
+      "claim": "The Columbia River undergoes drainage.",
       "label": true,
-      "argus_probability": 0.3775406687981454,
-      "baseline_probability": 0.9
-    },
-    {
-      "claim": "AMGTV is a television network that is family-oriented.",
-      "label": true,
-      "argus_probability": 0.5095821599910887,
+      "argus_probability": 0.5079160051782152,
       "baseline_probability": 1.0
     },
     {
-      "claim": "Cheese in the Trap (TV series) comes from South Korea",
+      "claim": "Bea Arthur died in 2009.",
       "label": true,
-      "argus_probability": 0.6387631751488418,
+      "argus_probability": 0.645084137572727,
       "baseline_probability": 1.0
+    },
+    {
+      "claim": "Fidel Castro lost all elections for President of Cuba.",
+      "label": false,
+      "argus_probability": 0.5016666604938546,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Brazzers is a pornographic production company based in Montreal.",
+      "label": true,
+      "argus_probability": 0.7991248038881325,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Excuse My French is a speech by French Montana.",
+      "label": false,
+      "argus_probability": 0.3751935255315707,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Marcus Bentley is a British voice-over artist.",
+      "label": false,
+      "argus_probability": 0.5181170650431814,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Danger UXB is from 1981.",
+      "label": false,
+      "argus_probability": 0.11204703855699032,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Advertising is an sound-based manner of marketing communication.",
+      "label": true,
+      "argus_probability": 0.496250070310918,
+      "baseline_probability": 0.1
     },
     {
       "claim": "The World Trade Center is still standing.",
@@ -395,9 +425,165 @@
       "baseline_probability": 0.0
     },
     {
-      "claim": "Excuse My French is a speech by French Montana.",
+      "claim": "Edmund H. North co-wrote the script for Twilight.",
       "label": false,
-      "argus_probability": 0.3751935255315707,
+      "argus_probability": 0.5049998333399998,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "The website Glee.com was first launched in 2010.",
+      "label": false,
+      "argus_probability": 0.5,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Brubaker is a 2007 drama.",
+      "label": false,
+      "argus_probability": 0.2288175544441832,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Meteora is by Linkin Park.",
+      "label": true,
+      "argus_probability": 0.34940248907974447,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "The Palace of Caserta is near Naples.",
+      "label": true,
+      "argus_probability": 0.5589742145184536,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Blade Runner 2049 stars the actor Ryan Gosling.",
+      "label": true,
+      "argus_probability": 0.5218610539716015,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Miracle at St. Anna is set primarily in France.",
+      "label": false,
+      "argus_probability": 0.6136070778047783,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Homer Hickman has written science fiction novels.",
+      "label": false,
+      "argus_probability": 0.6267579613895167,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Excuse My French is an American rapper's album.",
+      "label": true,
+      "argus_probability": 0.5942750196933935,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Eric Church is an artist.",
+      "label": true,
+      "argus_probability": 0.5914589784327801,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Psych takes place in the United States.",
+      "label": true,
+      "argus_probability": 0.5196773318673079,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Kellogg's products are marketed in only one country.",
+      "label": false,
+      "argus_probability": 0.5218610539716015,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Topman has outlets in one Irish city.",
+      "label": true,
+      "argus_probability": 0.3775406687981454,
+      "baseline_probability": 0.9
+    },
+    {
+      "claim": "Fist of Legend is a remake of Fist of Fury.",
+      "label": true,
+      "argus_probability": 0.49350036614191545,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "One of the founders of San Diego Comic-Con was not Richard Alf.",
+      "label": false,
+      "argus_probability": 0.4145954308705349,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Tom Baker has narrated commercials.",
+      "label": true,
+      "argus_probability": 0.5010833316381205,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Miranda Otto is the son of Barry Otto.",
+      "label": false,
+      "argus_probability": 0.36354745971843366,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Topman sells clothing.",
+      "label": true,
+      "argus_probability": 0.5058330686872481,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Victoria Palace Theatre is outside of Victoria Street.",
+      "label": false,
+      "argus_probability": 0.36935147434892557,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Damon Albarn has refused to ever work with Brian Eno.",
+      "label": false,
+      "argus_probability": 0.4875026035157896,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "The Endless River is an album by Danny Devito.",
+      "label": false,
+      "argus_probability": 0.4931254332354657,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Swordfish (film) is a television show that is about an ex-convict.",
+      "label": false,
+      "argus_probability": 0.6171573626529722,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Boyhood was carved from 2002 to 2013.",
+      "label": false,
+      "argus_probability": 0.5090615077394385,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Stanley Williams was executed in 2005.",
+      "label": true,
+      "argus_probability": 0.5212372149662741,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Juventus F.C. competes at Juventus Stadium in Lisbon, Portugal.",
+      "label": false,
+      "argus_probability": 0.4169029933072693,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Herculaneum's ruins are near Naples.",
+      "label": true,
+      "argus_probability": 0.6928193622042029,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Sancho Panza is a fictional character in a novel written by a Spanish writer born in the 17th century.",
+      "label": true,
+      "argus_probability": 0.7279341912810388,
       "baseline_probability": 0.0
     },
     {
@@ -407,16 +593,58 @@
       "baseline_probability": 0.0
     },
     {
-      "claim": "The Columbia River undergoes drainage.",
+      "claim": "Aarhus is in the geographical center of Denmark.",
       "label": true,
-      "argus_probability": 0.5079160051782152,
+      "argus_probability": 0.6430209020776431,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Bethany Hamilton's autobiography was adapted into a film.",
+      "label": true,
+      "argus_probability": 0.9349801890351404,
       "baseline_probability": 1.0
     },
     {
-      "claim": "Damon Albarn has refused to ever work with Brian Eno.",
+      "claim": "A Milli is by Mos Def.",
       "label": false,
-      "argus_probability": 0.4875026035157896,
+      "argus_probability": 0.6613165368223594,
       "baseline_probability": 0.0
+    },
+    {
+      "claim": "Frozen is a film from 2013.",
+      "label": true,
+      "argus_probability": 0.4798026629659886,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Shane Black was born on December 16th, 1961.",
+      "label": true,
+      "argus_probability": 0.9534695254852685,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Cheese in the Trap (TV series) comes from South Korea",
+      "label": true,
+      "argus_probability": 0.6387631751488418,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Homer Hickman is illiterate.",
+      "label": false,
+      "argus_probability": 0.25683199138751883,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "Shadowhunters premiered in 2018.",
+      "label": false,
+      "argus_probability": 0.5,
+      "baseline_probability": 0.0
+    },
+    {
+      "claim": "AMGTV is a television network that is family-oriented.",
+      "label": true,
+      "argus_probability": 0.5095821599910887,
+      "baseline_probability": 1.0
     },
     {
       "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
@@ -425,10 +653,22 @@
       "baseline_probability": 1.0
     },
     {
-      "claim": "Brubaker is a 2007 drama.",
+      "claim": "The Washington Wizards have won zero division titles.",
       "label": false,
-      "argus_probability": 0.2288175544441832,
+      "argus_probability": 0.11626005200091223,
       "baseline_probability": 0.0
+    },
+    {
+      "claim": "Brazzers is based in Quebec.",
+      "label": false,
+      "argus_probability": 0.40235391358126477,
+      "baseline_probability": 1.0
+    },
+    {
+      "claim": "Syracuse, New York, had a metropolitan area with a population of more than 600,000 residents according to the 2010 Census.",
+      "label": true,
+      "argus_probability": 0.5174928576663897,
+      "baseline_probability": 1.0
     }
   ]
 }
