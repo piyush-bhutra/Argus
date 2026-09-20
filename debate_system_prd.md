@@ -211,3 +211,137 @@ response = client.chat.completions.create(
 3. **Google AI Studio — worth reconsidering.** Google shipped GitHub bi-directional sync to AI Studio's Build mode in mid-to-late August 2026 (previously it was export-only, hence the copy-paste friction you remember). Now you can import the repo Antigravity/Codex built, iterate visually with Gemini's UI-generation strengths, and push straight back to the same repo. Good fit for: fast visual iteration on the argument-graph viz, or as a prompt-behavior sandbox before wiring prompts into your real agent code. Not a great fit for the core Python backend logic — it's optimized for React/Next.js/web-stack projects, and the argument-semantics/calibration math wants a real IDE with a debugger, not a chat-driven builder.
 
 **Suggested order:** Antigravity/Codex for backend skeleton → stabilize the API contract → Lovable for frontend shell → optionally pull into AI Studio via GitHub for visual polish on the graph viz → back to Antigravity/Codex for final integration + eval script.
+
+---
+
+# Appendix A — Amendments (2026-09-20)
+
+The sections above are the original specification and are left unchanged as a
+record. Where the implementation now deviates, this appendix is authoritative.
+Rationale and evidence:
+`docs/superpowers/specs/2026-09-20-argus-evidence-grounded-redesign.md`.
+
+## A.1 Why these amendments exist
+
+The first complete FEVER run (n=50, 2026-09-15) lost to the single-LLM baseline
+on accuracy (0.620 vs 0.860) and ECE (0.289 vs 0.136). A paired McNemar test
+added later gives **p = 0.0018**, so that loss was real rather than small-sample
+noise.
+
+The cause was not tuning. Across 57 of 58 cached debates the grounded extension
+was **skeptic 2, advocate 0** — identical every time, because a strictly
+alternating one-argument-per-turn debate always produces the same attack chain,
+whose grounded extension depends only on its length. The structural signal was a
+constant −2 on the logit and carried no information. Separately, §5d's symbolic
+fact-checker had never been built; the module asked the same model that generated
+the arguments whether they were true. **M3 was decorative and M4 was absent.**
+
+## A.2 §5a Debate protocol — multi-argument turns
+
+A turn may put forward up to **3** arguments (hard cap 12 per debate), each
+attacking **any number** of the opposing side's earlier arguments rather than
+implicitly the previous one. Self-attacks, forward references and same-side
+attacks are rejected.
+
+*Rationale:* free targeting is what allows the attack graph to be anything other
+than a path. LLM call count is unchanged, so there is no quota cost.
+
+*Known limit, stated rather than claimed away:* this makes non-degenerate graphs
+reachable, not guaranteed. Whoever speaks last is still never attacked and so
+always survives. A.4's evidence weighting removes that bias's effect on the
+verdict, but not its presence in the graph.
+
+## A.3 §5c/§5d coupling — evidence-gated attack edges
+
+The original design treats the argumentation engine and the fact-checker as
+independent inputs to the judge. They are now chained: an asserted attack becomes
+an edge in the argumentation framework **only if the attacking argument is
+supported by retrieved evidence** (threshold `tau`, default 0.0 as a floor).
+
+Rejected attacks are recorded as `asserted_unsupported` and shown in the trace.
+
+*Rationale:* this is what makes M3 load-bearing. Without it the graph records who
+said what, and its extension is decided by turn order rather than by whether
+anything said was true.
+
+## A.4 §5e Judge — evidence-weighted structural term
+
+The structural signal was `len(advocate survivors) - len(skeptic survivors)`. It
+is now those survivors weighted by their evidence support:
+
+    structural = ( sum support(advocate survivors) - sum support(skeptic survivors) )
+                 / (number of survivors)
+
+bounded in [-1, 1].
+
+*Rationale:* the old term was unbounded while the other two signals sat in
+[-1, 1], so one extra survivor swung the logit by a full e-fold; and a survivor
+that survived only by speaking last received full credit. An argument with no
+evidence behind it now contributes zero.
+
+*Note the denominator.* The design document originally divided by total support
+*magnitude*. A failing test showed that makes the term purely relative — a lone
+survivor backed by support 0.01 would score a full ±1.0, reproducing the exact
+"maximal signal from nothing" failure being fixed. Survivor count is used
+instead.
+
+**Ablation evidence** (`scripts/rescore.py --ablations`, n=10): reverting only
+this term to the unweighted count drops accuracy to 0.500, AUROC to 0.240 and
+mean P(true) to 0.083 — reproducing the original defect on demand.
+
+## A.5 §5e — the three signals are no longer independent
+
+§5e assumes three independent signals. The structural and fact-check terms now
+both read evidence, so they are correlated. They remain distinct (one is "what
+survived, weighted by evidence", the other "evidence balance across all
+arguments, including those that died"), all three are retained because M5 asks
+for three, and the weight sweep is reported as a sensitivity analysis.
+
+**Open issue (unresolved, tracked in `docs/PLAN.md`).** The fact-check term
+measures whether an argument's assertion is *true*, not whether it *supports the
+claim*. Observed in a real debate: the Advocate argued "the release year is 1980
+rather than 2007, making the claim false" — conceding. That statement is true,
+scored +1.00, and the fact-check term credited it to the Advocate, pushing P
+toward true on a false claim. To be resolved by the `structural only` and
+`no structural term` ablations rather than by guesswork.
+
+## A.6 §5d — the LLM parses, the rules judge
+
+§5d is now implemented as specified (BM25 retrieval + triples + forward
+chaining), with the LLM's role narrowed to **triple extraction only**. It is
+never asked to rate or judge. Forward chaining derives inverse and symmetric
+predicates to a fixpoint before matching, so facts not literally present in the
+evidence can still be used.
+
+Retrieval runs over a pooled corpus of 3,493 FEVER gold-evidence sentences drawn
+from 6,506 claims — far more than are scored — so a claim's evidence sits among
+realistic distractors. Measured **recall@5 = 0.836** on the held-out 50.
+
+**Honest limitations, reported as results rather than hidden:**
+
+- This is retrieval over a pooled gold-evidence corpus, **not** open-domain
+  retrieval over Wikipedia.
+- Strict triple matching has poor recall on natural language. The module
+  **abstains** (`no_symbolic_match`) rather than guessing, and **symbolic
+  coverage** — the fraction of arguments the rules could decide — is reported as
+  a first-class metric.
+- The functional-predicate list is curated by hand. Inferring functionality from
+  data is a research problem of its own, and a wrong entry manufactures false
+  contradictions, which is this module's worst failure mode.
+
+## A.7 Evaluation additions
+
+- Metrics extended with AUROC, Brier, a threshold sweep and **McNemar's exact
+  paired test**. At n=50 an unpaired CI is roughly ±0.13 and establishes nothing;
+  both systems score the same claims, so the paired test is the meaningful one.
+- The evaluation cache stores the **full debate artifact** — arguments, edges,
+  retrieved evidence, extracted triples, rules fired, and both the symbolic and
+  the legacy LLM fact-check scores. Everything downstream of the LLM re-scores
+  offline in seconds via `scripts/rescore.py`, which has no network path.
+- A six-configuration **ablation table** isolates each component's contribution.
+- The seed-42 n=50 set is held out permanently; the calibrator is fitted on a
+  disjoint draw, with zero claim-text overlap asserted in code and in a test.
+
+## A.8 Deferred
+
+- **M6 debate-strategy planner.** Out of scope, unchanged.
