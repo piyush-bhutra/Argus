@@ -16,7 +16,7 @@ path; F onwards run against cached artifacts.
 |---|---|---|---|
 | A | Extended metrics: AUROC, Brier, threshold sweep, McNemar | none | **done** 2026-09-20 |
 | B | FEVER evidence retained + pooled corpus (spec §4.1) | none | **done** 2026-09-20 |
-| C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | not started |
+| C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | in progress — retrieval + reasoner done, LLM extraction next |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | not started |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | not started |
 | F | **Full scoring run, background** (§5.6) | ~1050 | not started |
@@ -60,3 +60,14 @@ can be iterated while the run is still going.
   claims/labels/order, so the existing eval cache remains valid.
 - 2026-09-20 — `.gitignore` amended: `fever_sample.json`, `evidence_corpus.json`
   and `eval_results.json` are now committed (spec §8).
+- 2026-09-20 — Retrieval measured on the held-out 50: recall@1 0.641,
+  **recall@5 0.836**, recall@10 0.866, recall@20 0.893. Not saturated, so the
+  3,493-sentence pool is *not* too easy and stays as-is — the Phase B question is
+  closed. k=5 adopted as the default (k=10 buys 0.03 recall for twice the noise
+  into the rule engine). 5 of 50 claims retrieve no usable evidence at k=5, which
+  is what the §4.2 abstention path exists for.
+- 2026-09-20 — BM25 note: Okapi IDF is <=0 for terms in more than half the corpus,
+  so such queries retrieve nothing. Harmless at 3,493 sentences; covered by a test
+  so it is not rediscovered as a bug.
+- 2026-09-20 — KB triples are stored canonical (normalised) by `derive_closure`;
+  surface forms are recovered through the evidence id, not kept on the triple.
