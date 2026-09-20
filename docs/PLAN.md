@@ -375,3 +375,33 @@ LLM prompt. Output is rendered as text (React-escaped, no `innerHTML`), attack
 ids are validated against the transcript, and the model never drives code, so the
 impact is confined to influencing generated text. Worth stating in the write-up
 rather than claiming the system is injection-proof.
+
+## Unattended overnight collection (2026-09-20)
+
+`scripts/overnight.py` completes the M7 calibration split without a live
+session. It runs the calibration scoring run and, when the provider's **daily**
+quota is exhausted, sleeps and retries instead of giving up.
+
+```bash
+python -m scripts.overnight > overnight.log 2>&1
+```
+
+Safe to kill at any point — the harness caches after every claim, so a restart
+resumes from `data/calib_results.json` and no claim is paid for twice. Only the
+calibration split is written; the held-out evaluation set is never touched.
+
+**Realistic yield.** The held-out run consumed ~240 calls before the daily quota
+died, so the tier appears to allow roughly 250 calls/day. At ~5 calls per claim
+that is **~50 claims per quota day**, and 97 remain. One night should clear the
+20-point minimum comfortably and may reach ~50; the full 100 needs two resets.
+
+A calibrator fitted on ~50 points is usable — isotonic regression is
+non-parametric, so more points give a smoother mapping, but 50 is well past the
+floor where it starts interpolating noise.
+
+**After it finishes:**
+```bash
+python -m scripts.fit_calibrator      # refuses on leakage, or under 20 points
+python -m scripts.evaluate            # re-score held-out WITH the calibrator
+python -m scripts.rescore --ablations # concession-bug check on disjoint data
+```
