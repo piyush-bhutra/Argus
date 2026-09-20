@@ -72,6 +72,63 @@ function SurvivorChips({ label, ids }: { label: string; ids: string[] }) {
   );
 }
 
+/**
+ * How much of the verdict the symbolic rules could actually account for, and
+ * which asserted attacks were refused.
+ *
+ * Both numbers are deliberately prominent rather than tucked away. Coverage is
+ * usually well under half — the rules cannot decide argumentative prose — and a
+ * system that reports an auditable probability while hiding how much of it was
+ * audited would be overstating itself.
+ */
+function EvidenceAudit({ verdict: v }: { verdict: Verdict }) {
+  const coverage = v.symbolic_coverage;
+  const dropped = v.dropped_edges ?? [];
+  if (coverage == null && dropped.length === 0) return null;
+
+  return (
+    <div className="mt-4 border-t border-hairline pt-3.5">
+      <div className="mb-2">
+        <Mono className="tracking-data-wide">EVIDENCE AUDIT</Mono>
+      </div>
+
+      {coverage != null && (
+        <div className="flex flex-wrap items-baseline gap-2 font-mono text-data text-ink-muted">
+          <span className="font-semibold text-ink-strong">
+            {Math.round(coverage * 100)}%
+          </span>
+          <span>of arguments decided by the symbolic rules</span>
+          {coverage < 1 && (
+            <span className="text-ink-faint">
+              — the rest abstained and contributed nothing
+            </span>
+          )}
+        </div>
+      )}
+
+      {dropped.length > 0 && (
+        <div className="mt-2.5">
+          <div className="mb-1.5 font-mono text-data text-ink-muted">
+            {dropped.length} asserted attack{dropped.length === 1 ? "" : "s"} refused
+            — no evidence backed the attacker, so {dropped.length === 1 ? "it" : "they"}{" "}
+            never entered the graph:
+          </div>
+          <div className="flex flex-wrap gap-[7px]">
+            {dropped.map(([source, target]) => (
+              <span
+                key={`${source}->${target}`}
+                className="rounded-paper border border-dashed border-mark-out px-2 py-0.5 font-mono text-data text-mark-out line-through"
+              >
+                {source} → {target}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function VerdictPanel({
   verdict,
   pendingReason = "the report card is graded after the debate closes",
@@ -131,6 +188,7 @@ function RulingCard({ verdict: v }: { verdict: Verdict }) {
             <span className="h-4 w-px bg-hairline" />
             <SurvivorChips label="SKP" ids={v.grounded_extension.skeptic} />
           </div>
+          <EvidenceAudit verdict={v} />
         </div>
 
         <div className="min-w-0">

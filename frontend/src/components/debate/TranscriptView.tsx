@@ -1,4 +1,4 @@
-import type { Argument, Transcript } from "@/lib/types";
+import type { Argument, FactCheck, Transcript } from "@/lib/types";
 import { Mono, Stamp, postitStyle } from "./paper";
 
 interface Props {
@@ -6,9 +6,79 @@ interface Props {
   survivors: Set<string>;
   /** True once the verdict is in — IN/OUT stamps land on every post-it. */
   resolved: boolean;
+  /** Per-argument evidence, keyed by argument id. Absent while a debate runs. */
+  factChecks?: Record<string, FactCheck> | undefined;
 }
 
-function PostIt({ arg, resolved, survived }: { arg: Argument; resolved: boolean; survived: boolean }) {
+/**
+ * The evidence behind one argument's score.
+ *
+ * This is the part of the page that earns the word "auditable": a reader can
+ * follow a number back to the Wikipedia sentence it came from and the rule that
+ * fired. Abstention is shown just as plainly as a decision — the rules cannot
+ * decide most argumentative prose, and hiding that would overstate the system.
+ */
+function Evidence({ fc }: { fc: FactCheck }) {
+  const decided = fc.method === "symbolic";
+  const tone = !decided
+    ? "text-ink-faint"
+    : fc.support_score > 0
+      ? "text-mark-in"
+      : fc.support_score < 0
+        ? "text-mark-out"
+        : "text-ink-muted";
+
+  return (
+    <div className="mt-3 border-t border-dashed border-ink/20 pt-2.5">
+      <div className="flex flex-wrap items-center gap-2">
+        <Mono className="tracking-[.12em] text-ink-muted">EVIDENCE</Mono>
+        <span className={`font-mono text-data-sm font-semibold ${tone}`}>
+          {decided ? `${fc.support_score > 0 ? "+" : ""}${fc.support_score.toFixed(2)}` : "ABSTAINED"}
+        </span>
+        {fc.rules_fired.length > 0 && (
+          <span className="font-mono text-data-sm text-ink-muted">
+            {[...new Set(fc.rules_fired)].join(", ").replace(/_/g, " ")}
+          </span>
+        )}
+      </div>
+
+      {fc.triples.length > 0 && (
+        <ul className="mt-1.5 mb-0 list-none space-y-0.5 p-0">
+          {fc.triples.slice(0, 3).map((t) => (
+            <li key={t} className="font-mono text-data-sm text-ink-soft">
+              ({t})
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {decided && fc.evidence_sentences.length > 0 ? (
+        <p className="mt-1.5 mb-0 border-l-2 border-ink/25 pl-2.5 text-[14px] leading-[20px] text-pretty text-ink-soft">
+          {fc.evidence_sentences[0]}
+        </p>
+      ) : (
+        !decided && (
+          <p className="mt-1.5 mb-0 text-[13.5px] leading-[19px] text-ink-faint">
+            No retrieved evidence matched this argument, so the rules abstained
+            rather than guessing. It contributes nothing to the verdict.
+          </p>
+        )
+      )}
+    </div>
+  );
+}
+
+function PostIt({
+  arg,
+  resolved,
+  survived,
+  factCheck,
+}: {
+  arg: Argument;
+  resolved: boolean;
+  survived: boolean;
+  factCheck?: FactCheck | undefined;
+}) {
   const advocate = arg.agent === "advocate";
   return (
     <div
@@ -29,6 +99,7 @@ function PostIt({ arg, resolved, survived }: { arg: Argument; resolved: boolean;
         )}
       </div>
       <p className="m-0 pr-14 text-body text-pretty text-ink">{arg.text}</p>
+      {factCheck && <Evidence fc={factCheck} />}
       {resolved && (
         <Stamp
           tone={survived ? "in" : "out"}
@@ -56,7 +127,7 @@ function AgentBadge({ agent }: { agent: Argument["agent"] }) {
   );
 }
 
-export function TranscriptView({ transcript, survivors, resolved }: Props) {
+export function TranscriptView({ transcript, survivors, resolved, factChecks }: Props) {
   const rounds = [...new Set(transcript.arguments.map((a) => a.round))].sort((a, b) => a - b);
 
   return (
@@ -77,7 +148,13 @@ export function TranscriptView({ transcript, survivors, resolved }: Props) {
                 {transcript.arguments
                   .filter((a) => a.round === round && a.agent === agent)
                   .map((a) => (
-                    <PostIt key={a.id} arg={a} resolved={resolved} survived={survivors.has(a.id)} />
+                    <PostIt
+                      key={a.id}
+                      arg={a}
+                      resolved={resolved}
+                      survived={survivors.has(a.id)}
+                      factCheck={factChecks?.[a.id]}
+                    />
                   ))}
               </div>
             ))}

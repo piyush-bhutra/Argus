@@ -149,3 +149,34 @@ def test_summary_includes_paired_mcnemar_against_the_baseline():
     out = rs.summarise(scored, ROWS, {})
     assert out["mcnemar_argus_vs_baseline"]["n_discordant"] == 0
     assert out["baseline"]["n"] == 2
+
+
+def test_fact_results_carry_extracted_triples():
+    """The exported demo trace renders these as the facts behind a score.
+    Dropping them left the UI showing a verdict with no visible derivation."""
+    row = dict(ROWS[0])
+    row["fact_checks"] = [dict(f, triples=["jackie | directed_by | pablo larrain"])
+                          for f in row["fact_checks"]]
+    results = rs._fact_results(row, "symbolic")
+    assert results[0].triples == ["jackie | directed_by | pablo larrain"]
+
+
+def test_provenance_resolves_the_firing_evidence_not_the_retrieved_list(monkeypatch):
+    """A decided score must be shown beside the sentence that fired the rule.
+    The cache stored every retrieved sentence, so a contradiction was rendered
+    against an unrelated sentence about journalism."""
+    monkeypatch.setattr(rs, "_corpus_by_id", lambda: {"e1": "the firing sentence"})
+    row = dict(ROWS[0])
+    row["fact_checks"] = [
+        dict(row["fact_checks"][0], evidence_ids=["e1"],
+             evidence_sentences=["unrelated top hit", "another unrelated one"]),
+    ]
+    assert rs._fact_results(row, "symbolic")[0].evidence_sentences == ["the firing sentence"]
+
+
+def test_provenance_falls_back_when_the_corpus_cannot_resolve_it(monkeypatch):
+    monkeypatch.setattr(rs, "_corpus_by_id", lambda: {})
+    row = dict(ROWS[0])
+    row["fact_checks"] = [dict(row["fact_checks"][0], evidence_ids=["missing"],
+                               evidence_sentences=["cached text"])]
+    assert rs._fact_results(row, "symbolic")[0].evidence_sentences == ["cached text"]

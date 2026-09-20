@@ -204,10 +204,20 @@ def check_transcript(
             results.append(_neutral(a, evidence, shown))
             continue
 
+        # The sentences that actually FIRED a rule, not merely the top-k that
+        # were retrieved. Showing retrieved-but-unused evidence beside a score
+        # makes the trace misleading: a real debate rendered a contradiction
+        # against a sentence about journalism that had nothing to do with it.
+        fired_texts = [
+            unique_evidence[eid]["text"]
+            for eid in sorted(set(sources))
+            if eid in unique_evidence
+        ]
+
         results.append(
             FactCheckResult(
                 argument_id=a.id,
-                evidence_sentences=[e["text"] for e in evidence],
+                evidence_sentences=fired_texts or [e["text"] for e in evidence],
                 support_score=sum(scores) / len(scores),
                 method="symbolic",
                 rules_fired=rules,

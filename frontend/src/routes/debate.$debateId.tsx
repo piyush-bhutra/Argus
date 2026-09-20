@@ -79,6 +79,12 @@ function DebateView() {
     ...(verdict.data?.grounded_extension.skeptic ?? []),
   ]);
 
+  // Evidence arrives with the verdict, not the transcript, so post-its show it
+  // only once the debate has closed.
+  const factChecks = Object.fromEntries(
+    (verdict.data?.fact_checks ?? []).map((fc) => [fc.argument_id, fc]),
+  );
+
   const args = transcript.data?.arguments ?? [];
   const complete = transcript.data?.status === "complete";
   // Turns alternate advocate -> skeptic; guess who speaks next for the live cue.
@@ -143,7 +149,12 @@ function DebateView() {
           <CueRow>Debate in progress — waiting for the first argument…</CueRow>
         ) : (
           <>
-            <TranscriptView transcript={transcript.data} survivors={survivors} resolved={!!verdict.data} />
+            <TranscriptView
+              transcript={transcript.data}
+              survivors={survivors}
+              resolved={!!verdict.data}
+              factChecks={factChecks}
+            />
             {awaitingNextTurn && <CueRow>{nextAgent} is forming a rebuttal…</CueRow>}
             {inProgress && !awaitingNextTurn && args.length > 0 && (
               <CueRow>Judge is scoring the argument graph…</CueRow>

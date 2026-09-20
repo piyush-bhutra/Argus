@@ -48,6 +48,18 @@ def _arguments(row: dict) -> list:
     return [Argument(**a) for a in row["arguments"]]
 
 
+def _corpus_by_id() -> dict:
+    """evidence id -> sentence text, for resolving cached provenance.
+
+    Returns {} when the corpus is absent; callers fall back to whatever the
+    cache recorded rather than failing.
+    """
+    corpus_file = ROOT / "data" / "evidence_corpus.json"
+    if not corpus_file.exists():
+        return {}
+    return {r["id"]: r["text"] for r in json.loads(corpus_file.read_text(encoding="utf-8"))}
+
+
 def _fact_results(row: dict, source: str) -> list:
     """Fact-check results from the cache, from either scorer.
 
@@ -55,14 +67,30 @@ def _fact_results(row: dict, source: str) -> list:
     symbolic ones, which is what makes that ablation free.
     """
     field = "fact_checks_llm" if source == "llm" else "fact_checks"
+    by_id = _corpus_by_id()
+
+    def provenance(f):
+        """Sentences that FIRED a rule, resolved from the corpus by id.
+
+        Older cache entries stored every retrieved sentence here, so a decided
+        score could be shown beside evidence that had nothing to do with it.
+        Falls back to what the cache holds when the corpus cannot resolve it.
+        """
+        fired = [by_id[e] for e in f.get("evidence_ids", []) if e in by_id]
+        return fired or f.get("evidence_sentences", [])
+
     return [
         FactCheckResult(
             argument_id=f["argument_id"],
-            evidence_sentences=f.get("evidence_sentences", []),
+            evidence_sentences=provenance(f),
             support_score=f["support_score"],
             method=f.get("method", "none"),
             rules_fired=f.get("rules_fired", []),
             evidence_ids=f.get("evidence_ids", []),
+            # Carried through, not dropped: the exported demos render these as
+            # the extracted facts behind a score, and without them the trace
+            # shows a verdict with no visible derivation.
+            triples=f.get("triples", []),
         )
         for f in row.get(field, [])
     ]

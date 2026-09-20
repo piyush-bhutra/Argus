@@ -414,7 +414,9 @@
             "bbc04a42cc1d0de3",
             "77719b5c8cbb6267"
           ],
-          "triples": []
+          "triples": [
+            "The Columbia River | is_a | primary hydrological outlet"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -456,7 +458,9 @@
             "50ba19c48bfa25da",
             "39df8715aa930060"
           ],
-          "triples": []
+          "triples": [
+            "The Columbia River | is_a | permanent, flowing watercourse"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -618,11 +622,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Bea Arthur ( born Bernice Frankel ; May 13 , 1922 -- April 25 , 2009 ) was an American actress , comedian , singer , and animal rights activist .",
-            "Augustus died in AD 14 at the age of 75 .",
-            "In 2013 , she died of another stroke in London , at the age of 87 .",
-            "Raised in Rodeo , California , Armstrong developed an interest in music at a young age , and recorded his first song at the age of five .",
-            "Her recent film roles have included the eponymous character in Coraline ( 2009 ) , Cherie Currie in The Runaways ( 2010 ) , Annie James in The Motel Life ( 2013 ) , and Jane in The Twilight Saga ( 2009 -- 12 ) ."
+            "Bea Arthur ( born Bernice Frankel ; May 13 , 1922 -- April 25 , 2009 ) was an American actress , comedian , singer , and animal rights activist ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -632,7 +632,13 @@
           "evidence_ids": [
             "8227bc288cf546c8"
           ],
-          "triples": []
+          "triples": [
+            "Bea Arthur | died_on | April 25, 2009",
+            "Bea Arthur | died_in | Los Angeles, California",
+            "Bea Arthur | starring | The Golden Girls",
+            "Bea Arthur | starring | Maude",
+            "Bea Arthur | died_of | lung cancer"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -653,7 +659,9 @@
             "56ab19c5aed3a767",
             "8024559c6c1fe099"
           ],
-          "triples": []
+          "triples": [
+            "Public records and mainstream media obituaries from 2009 regarding Bea Arthur | is_a | fictitious"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -830,7 +838,10 @@
             "873f2c5d198b6d97",
             "8e0f8122b732ec3f"
           ],
-          "triples": []
+          "triples": [
+            "Fidel Castro | stood_for_election_in | Cuba",
+            "Fidel Castro | won_presidency_through_public_vote | Cuba"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -851,7 +862,11 @@
             "fb371bf263fa0819",
             "761ca012d4fc5af7"
           ],
-          "triples": []
+          "triples": [
+            "Fidel Castro | seized_power_through | armed revolution",
+            "Fidel Castro | ruled_as | Prime Minister",
+            "Fidel Castro | ruled_as | President of the Council of State"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -872,7 +887,10 @@
             "8e0f8122b732ec3f",
             "456eb643a21707cb"
           ],
-          "triples": []
+          "triples": [
+            "Fidel Castro | ran_in | presidential election",
+            "Fidel Castro | lost | election"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -1050,11 +1068,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada .",
-            "xHamster is a pornographic media and social networking site headquartered in Limassol , Cyprus .",
-            "Lockheed Martin is one of the largest companies in the aerospace , defense , security , and technologies industry .",
-            "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production .",
-            "The game has received critical acclaim and was hailed as an exemplary product of one of the leading video game producers in the turn-based strategy genre ."
+            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -1064,16 +1078,16 @@
           "evidence_ids": [
             "bded2c27ab2e4ec3"
           ],
-          "triples": []
+          "triples": [
+            "Brazzers | founded_in | Montreal, Quebec, Canada",
+            "Brazzers | located_in | Montreal, Quebec, Canada",
+            "Brazzers | type | pornographic video streaming and production company"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada .",
-            "Alexa Internet , Inc. is a California-based company that provides commercial web traffic data and analytics .",
-            "The company went bankrupt in April 2016 and is now owned by Golden Gate Capital .",
-            "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
-            "Walt Disney Pictures , Inc. is an American film production company and a subsidiary of Walt Disney Studios , owned by The Walt Disney Company ."
+            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -1083,16 +1097,19 @@
           "evidence_ids": [
             "bded2c27ab2e4ec3"
           ],
-          "triples": []
+          "triples": [
+            "Brazzers | country_of_origin | Montreal",
+            "Brazzers | parent_company | MindGeek",
+            "MindGeek | parent_company | Aylo",
+            "MindGeek | located_in | Cyprus",
+            "MindGeek | located_in | Bahamas",
+            "Brazzers | located_in | Montreal"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada .",
-            "Although not without its detractors , many critics and film scholars have considered the film to be a masterpiece .",
-            "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels .",
-            "Walt Disney Pictures , Inc. is an American film production company and a subsidiary of Walt Disney Studios , owned by The Walt Disney Company .",
-            "In the immediate vicinity of Naples are numerous culturally and historically significant sites , including the Palace of Caserta and the Roman ruins of Pompeii and Herculaneum ."
+            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -1102,16 +1119,15 @@
           "evidence_ids": [
             "bded2c27ab2e4ec3"
           ],
-          "triples": []
+          "triples": [
+            "MindGeek | parent_company | Aylo",
+            "Brazzers | located_in | Montreal"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada .",
-            "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production .",
-            "Until recently , Bateman ran a production and consulting company , SECTION 5 .",
-            "Life is a characteristic distinguishing physical entities having biological processes , such as signaling and self-sustaining processes , from those that do not , either because such functions have ceased , or because they never had such functions and are classified as inanimate .",
-            "Walt Disney Pictures , Inc. is an American film production company and a subsidiary of Walt Disney Studios , owned by The Walt Disney Company ."
+            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -1121,7 +1137,10 @@
           "evidence_ids": [
             "bded2c27ab2e4ec3"
           ],
-          "triples": []
+          "triples": [
+            "Aylo | management | overseas",
+            "Brazzers | located_in | Montreal"
+          ]
         }
       ]
     },
@@ -1223,11 +1242,8 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
             "It was released on May 21 , 2013 , by Coke Boys Records , Bad Boy Records , Maybach Music Group and Interscope Records .",
-            "The ArchAndroid is the second studio album and major label debut by American recording artist Janelle Mon\u00e1e , released on May 18 , 2010 , by Wondaland Arts Society and Bad Boy Records .",
-            "The Electric Lady is the third studio album by American recording artist Janelle Mon\u00e1e , released on September 6 , 2013 by Wondaland Arts Society and Bad Boy Records .",
-            "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -1245,16 +1261,21 @@
             "d2ea0f34d49d554f",
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "Excuse My French | is_a | debut studio album",
+            "Excuse My French | artist | French Montana",
+            "French Montana | nationality | Moroccan-American",
+            "French Montana | profession | rapper",
+            "Excuse My French | released_in | May 21, 2013",
+            "Excuse My French | record_label | Maybach Music Group",
+            "Excuse My French | record_label | Bad Boy Records",
+            "Excuse My French | record_label | Interscope Records"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
-            "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
-            "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
-            "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
-            "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -1265,7 +1286,11 @@
           "evidence_ids": [
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "Excuse My French | is_a | speech",
+            "Excuse My French | is_a | album",
+            "Excuse My French | artist | French Montana"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -1286,7 +1311,10 @@
             "0a6fab01f2dc238c",
             "8e3f20dca4a4a402"
           ],
-          "triples": []
+          "triples": [
+            "Excuse My French | is_a | speech",
+            "Excuse My French | part_of | French Montana's body of work"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -1307,7 +1335,9 @@
             "05a1d63b48d6636c",
             "0a6fab01f2dc238c"
           ],
-          "triples": []
+          "triples": [
+            "music album | is_a | speech"
+          ]
         }
       ]
     },
@@ -1616,11 +1646,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers .",
-            "Ugly Betty is an American comedy-drama television series developed by Silvio Horta , which was originally broadcast on ABC between 2006 and 2010 .",
-            "The series was broadcast on the commercial broadcast television network Fox .",
-            "In the United States , the episode achieved a viewership of 8.89 million in its initial broadcast , making it the highest rated episode in the series ' history .",
-            "The first season of six episodes premiered on-demand on January 14 , 2016 and made its broadcast debut on January 17 , 2016 on PBS with 3.3 million viewers ."
+            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -1631,16 +1657,16 @@
           "evidence_ids": [
             "45fbd892a0d42829"
           ],
-          "triples": []
+          "triples": [
+            "Danger UXB | type | British television series",
+            "Danger UXB | record_label | ITV",
+            "Danger UXB | released_in | 1979"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers .",
-            "The programme appeared on the US PBS as a segment of Masterpiece Theatre from 4 January -- 5 April 1981 .",
-            "He is known for his portrayal of the fourth incarnation of the Doctor in the science fiction series Doctor Who from 1974 to 1981 , a longer tenure than any other actor , and for the narration of the comedy series Little Britain .",
-            "The series was broadcast on the commercial broadcast television network Fox .",
-            "Oates also portrayed John Dillinger in the biopic Dillinger ( 1973 ) and Sgt. Hulka in the comedy Stripes ( 1981 ) ."
+            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -1650,16 +1676,15 @@
           "evidence_ids": [
             "45fbd892a0d42829"
           ],
-          "triples": []
+          "triples": [
+            "Danger UXB | released_in | 1979",
+            "Danger UXB | released_in | 1981"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Journalism is the production and distribution of reports on the interaction of events , facts , ideas , and people that are the `` news of the day '' and that impacts society to at least some degree .",
-            "`` The Winds of Winter '' received universal acclaim from critics , listing it as one of the series ' best episodes , with Matt Fowler of IGN calling it `` very surprising and satisfying . ''",
-            "Oates also portrayed John Dillinger in the biopic Dillinger ( 1973 ) and Sgt. Hulka in the comedy Stripes ( 1981 ) .",
-            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers .",
-            "He is known for his portrayal of the fourth incarnation of the Doctor in the science fiction series Doctor Who from 1974 to 1981 , a longer tenure than any other actor , and for the narration of the comedy series Little Britain ."
+            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -1669,16 +1694,14 @@
           "evidence_ids": [
             "45fbd892a0d42829"
           ],
-          "triples": []
+          "triples": [
+            "Danger UXB | released_in | 1981"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers .",
-            "The series was broadcast on the commercial broadcast television network Fox .",
-            "Starrcade was an annual professional wrestling event , originally broadcast via closed-circuit television and eventually broadcast via pay-per-view television , held from 1983 to 2000 by the National Wrestling Alliance ( NWA ) and later World Championship Wrestling ( WCW ) .",
-            "From 1987 , Starrcade was broadcast on pay-per-view , the first NWA event to do so .",
-            "An earlier television series of the same name was based on Graham 's first four Poldark novels , broadcast by BBC One between 1975 and 1977 ."
+            "Danger UXB is a 1979 British ITV television series set during the Second World War developed by John Hawkesworth and starring Anthony Andrews as Lieutenant Brian Ash , an officer in the Royal Engineers ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -1688,7 +1711,9 @@
           "evidence_ids": [
             "45fbd892a0d42829"
           ],
-          "triples": []
+          "triples": [
+            "Danger UXB | released_in | 1979"
+          ]
         }
       ]
     },
@@ -1832,7 +1857,11 @@
             "3d5ae8a398c2ad07",
             "e78f44fb67a770ad"
           ],
-          "triples": []
+          "triples": [
+            "Radio commercials | is_a | form of advertising",
+            "jingles | is_a | form of advertising",
+            "audio podcasts | is_a | form of advertising"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -1874,7 +1903,13 @@
             "ef0391b1f4d1d9a5",
             "a60185bdf7ba428c"
           ],
-          "triples": []
+          "triples": [
+            "Advertising | is_a | multimodal medium",
+            "Advertising | includes | visual formats",
+            "Advertising | includes | print formats",
+            "Advertising | includes | digital formats",
+            "Advertising | includes | out-of-home formats"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -1895,7 +1930,12 @@
             "b86cfc3fee39ac51",
             "e78f44fb67a770ad"
           ],
-          "triples": []
+          "triples": [
+            "Billboards | convey_marketing_messages | visually",
+            "magazine spreads | convey_marketing_messages | visually",
+            "banner ads | convey_marketing_messages | visually",
+            "product packaging | convey_marketing_messages | visually"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -1916,7 +1956,9 @@
             "3d5ae8a398c2ad07",
             "e78f44fb67a770ad"
           ],
-          "triples": []
+          "triples": [
+            "Advertising | includes | visual mediums"
+          ]
         },
         {
           "argument_id": "arg_6",
@@ -1937,7 +1979,11 @@
             "3d5ae8a398c2ad07",
             "b3379a9f00729fd4"
           ],
-          "triples": []
+          "triples": [
+            "Advertising | encompasses | silent mediums",
+            "Advertising | encompasses | static billboards",
+            "Advertising | encompasses | text-based search ads"
+          ]
         }
       ]
     },
@@ -2102,7 +2148,10 @@
             "4c7e9ea72b055d12",
             "0b1b58eebfd01661"
           ],
-          "triples": []
+          "triples": [
+            "The World Trade Center complex | rebuilt_at | the site",
+            "One World Trade Center | located_in | the site"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -2123,7 +2172,10 @@
             "4c7e9ea72b055d12",
             "e81a8ecdd89ce87d"
           ],
-          "triples": []
+          "triples": [
+            "The original World Trade Center towers | destroyed_on | September 11, 2001",
+            "The original World Trade Center | standing | the site"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -2144,7 +2196,11 @@
             "4c7e9ea72b055d12",
             "68fca5b9ae586da0"
           ],
-          "triples": []
+          "triples": [
+            "The World Trade Center | is_a | multi-building complex",
+            "4 World Trade Center | located_in | the site",
+            "7 World Trade Center | located_in | the site"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -2165,7 +2221,9 @@
             "e81a8ecdd89ce87d",
             "f4d265435faa08ec"
           ],
-          "triples": []
+          "triples": [
+            "One World Trade Center | shares_name_with | the original defining tower"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -2186,7 +2244,9 @@
             "7210cf18ab2647d3",
             "4c7e9ea72b055d12"
           ],
-          "triples": []
+          "triples": [
+            "The original World Trade Center | known_as | Twin Towers complex"
+          ]
         }
       ]
     },
@@ -2327,7 +2387,10 @@
             "055794401cb8e4d1",
             "bc831d1148199689"
           ],
-          "triples": []
+          "triples": [
+            "Edmund H. North | written_by | Twilight",
+            "Twilight | starring | Barbara Stanwyck"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -2348,7 +2411,10 @@
             "73891e43448e0739",
             "e3f30c6f7c23773e"
           ],
-          "triples": []
+          "triples": [
+            "Edmund H. North | written_by | Twilight",
+            "Irving Reis | written_by | Twilight"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -2369,7 +2435,10 @@
             "bc831d1148199689",
             "250872b6ba8d4f14"
           ],
-          "triples": []
+          "triples": [
+            "Edmund H. North | written_by | Twilight",
+            "Irving Reis | written_by | Twilight"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -2390,7 +2459,11 @@
             "bc831d1148199689",
             "250872b6ba8d4f14"
           ],
-          "triples": []
+          "triples": [
+            "Irving Reis | written_by | Twilight",
+            "Irving Reis | directed_by | Twilight",
+            "Edmund H. North | written_by | Twilight"
+          ]
         }
       ]
     },
@@ -2521,7 +2594,9 @@
             "c96fab3aa78f8bdd",
             "eef0a8d6cfc00153"
           ],
-          "triples": []
+          "triples": [
+            "Glee.com | founded_in | 2010"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -2542,7 +2617,9 @@
             "330f0709743251c9",
             "fd48aeeca9d386eb"
           ],
-          "triples": []
+          "triples": [
+            "Glee.com | founded_in | 2010"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -2563,7 +2640,9 @@
             "c96fab3aa78f8bdd",
             "6db18d2c7f06578d"
           ],
-          "triples": []
+          "triples": [
+            "Glee.com | founded_in | 2010"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -2584,7 +2663,9 @@
             "576225f824d848ea",
             "6a8b5a00104208d6"
           ],
-          "triples": []
+          "triples": [
+            "Glee.com | founded_in | 2010"
+          ]
         }
       ]
     },
@@ -2710,11 +2791,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-            "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
-            "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
-            "Dan in Real Life is a 2007 American comedy-drama film directed by Peter Hedges , and stars Steve Carell , Alison Pill , Juliette Binoche , Dianne Wiest , John Mahoney and Dane Cook .",
-            "The War Zone is a 1999 British drama film written by Alexander Stuart , directed by Tim Roth in his directorial debut , and starring Ray Winstone , Tilda Swinton , Lara Belmont and Freddie Cunliffe ."
+            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg ."
           ],
           "support_score": 0.3333333333333333,
           "method": "symbolic",
@@ -2726,16 +2803,16 @@
           "evidence_ids": [
             "5b550740d14fc72a"
           ],
-          "triples": []
+          "triples": [
+            "Brubaker | genre | drama film",
+            "Brubaker | released_in | 2007",
+            "Brubaker | directed_by | Stuart Rosenberg"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-            ", was released in 2007 .",
-            "Distributed by Columbia Pictures , the film was released on March 23 , 2007 .",
-            "The film was released to DVD , and Blu-ray on October 9 , 2007 .",
-            "The film was released on June 1 , 2007 to box office success , grossing $ 219 million worldwide , and acclaim from critics ."
+            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -2745,7 +2822,10 @@
           "evidence_ids": [
             "5b550740d14fc72a"
           ],
-          "triples": []
+          "triples": [
+            "Brubaker | released_in | 2007",
+            "Brubaker | released_in | 1980"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -2766,16 +2846,15 @@
             "067912b05f01134b",
             "66128714ccb43ffb"
           ],
-          "triples": []
+          "triples": [
+            "Stuart Rosenberg | directed_by | Brubaker",
+            "Stuart Rosenberg | directed_by | Robert Redford"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-            "More critics included No Country for Old Men on their 2007 top ten lists than any other film , and many regard it as the Coen brothers ' masterpiece , as well as one of the best films of the 2000s .",
-            "The film was released on June 1 , 2007 to box office success , grossing $ 219 million worldwide , and acclaim from critics .",
-            "The film was released to DVD , and Blu-ray on October 9 , 2007 .",
-            "Distributed by Columbia Pictures , the film was released on March 23 , 2007 ."
+            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -2786,16 +2865,15 @@
           "evidence_ids": [
             "5b550740d14fc72a"
           ],
-          "triples": []
+          "triples": [
+            "Brubaker | released_in | 1980",
+            "Brubaker | released_in | 2007"
+          ]
         },
         {
           "argument_id": "arg_5",
           "evidence_sentences": [
-            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-            "The Telluride Film Festival is a film festival in Telluride , Colorado , U.S. , over Labor Day Weekend in September of each year .",
-            "A theatre director or stage director is a director/instructor in the theatre field who oversees and orchestrates the mounting of a theatre production ( a play , an opera , a musical , or a devised piece of work ) by unifying various endeavours and aspects of production .",
-            "The film won the Special Jury Prize for Originality of Vision at the 2005 Sundance Film Festival , and received positive reviews from critics .",
-            "This was successfully done in 2004 with the release of the first installment at the Sundance Film Festival ."
+            "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -2805,7 +2883,9 @@
           "evidence_ids": [
             "5b550740d14fc72a"
           ],
-          "triples": []
+          "triples": [
+            "Brubaker | released_in | 1980"
+          ]
         }
       ]
     },
@@ -2940,11 +3020,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Meteora is the second studio album by American rock band Linkin Park .",
-            "`` Faint '' is a song by the American rock band Linkin Park from their second studio album Meteora .",
-            "Hybrid Theory is the debut studio album by American rock band Linkin Park , released on October 24 , 2000 through Warner Bros. .",
-            "`` In the End '' is a song by American rock band Linkin Park .",
-            "`` One Step Closer '' is a song by American rock band Linkin Park ."
+            "Meteora is the second studio album by American rock band Linkin Park ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -2954,7 +3030,11 @@
           "evidence_ids": [
             "71e080b5879cea2f"
           ],
-          "triples": []
+          "triples": [
+            "Meteora | genre | rock",
+            "Linkin Park | nationality | American",
+            "Meteora | record_label | Warner Bros. Records"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -2975,16 +3055,16 @@
             "68010a43beff23c0",
             "1aa23835bfade6c6"
           ],
-          "triples": []
+          "triples": [
+            "Numb | genre | nu-metal",
+            "Somewhere I Belong | genre | nu-metal",
+            "Faint | genre | nu-metal"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Meteora is the second studio album by American rock band Linkin Park .",
-            "`` Faint '' is a song by the American rock band Linkin Park from their second studio album Meteora .",
-            "Linkin Park released singles from Meteora for over a year , including `` Somewhere I Belong '' , `` Faint '' , `` Numb '' , `` From the Inside '' and `` Breaking the Habit '' .",
-            "It is the first Linkin Park studio album to feature Dave Farrell after he rejoined the band in 2000 .",
-            "Hybrid Theory is the debut studio album by American rock band Linkin Park , released on October 24 , 2000 through Warner Bros. ."
+            "Linkin Park released singles from Meteora for over a year , including `` Somewhere I Belong '' , `` Faint '' , `` Numb '' , `` From the Inside '' and `` Breaking the Habit '' ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -2994,7 +3074,10 @@
           "evidence_ids": [
             "cc15fd82d9703eac"
           ],
-          "triples": []
+          "triples": [
+            "Linkin Park | released_in | Meteora",
+            "Meteora | located_in | Greece"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -3015,7 +3098,9 @@
             "5aaa857d9ffbc62c",
             "68010a43beff23c0"
           ],
-          "triples": []
+          "triples": [
+            "Meteora | created_by | Linkin Park"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -3036,7 +3121,9 @@
             "5aaa857d9ffbc62c",
             "ba58fb6d376913e1"
           ],
-          "triples": []
+          "triples": [
+            "Meteora | created_by | Linkin Park"
+          ]
         }
       ]
     },
@@ -3224,11 +3311,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "The Royal Palace of Caserta ( Reggia di Caserta [ \u02c8r\u025bdd\u0292a di ka\u02c8z\u025brta ; ka\u02c8s\u025brta ] Reggia ' e Caserta ) is a former royal residence in Caserta , southern Italy , constructed for the Bourbon kings of Naples .",
-            "In the immediate vicinity of Naples are numerous culturally and historically significant sites , including the Palace of Caserta and the Roman ruins of Pompeii and Herculaneum .",
-            "Pompeii was an ancient Roman town-city near modern Naples , in the Campania region of Italy , in the territory of the comune of Pompei .",
-            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
-            "The public funeral of Diana , Princess of Wales started on 6 September 1997 at 9:08 am in London , when the tenor bell sounded to signal the departure of the cortege from Kensington Palace ."
+            "In the immediate vicinity of Naples are numerous culturally and historically significant sites , including the Palace of Caserta and the Roman ruins of Pompeii and Herculaneum ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -3238,7 +3321,9 @@
           "evidence_ids": [
             "4e31e916d9b45de9"
           ],
-          "triples": []
+          "triples": [
+            "The Palace of Caserta | located_in | Naples"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -3609,7 +3694,10 @@
             "5a1247fa88282918",
             "c327f10e36d637db"
           ],
-          "triples": []
+          "triples": [
+            "Ryan Gosling | starring | Blade Runner 2049",
+            "Ryan Gosling | role | Officer K (KD6-3.7)"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -3630,7 +3718,9 @@
             "bb40c5a4c3993e73",
             "ec6718a3c0168066"
           ],
-          "triples": []
+          "triples": [
+            "Ryan Gosling | starring | Blade Runner 2049"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -3651,7 +3741,10 @@
             "ec6718a3c0168066",
             "5a1247fa88282918"
           ],
-          "triples": []
+          "triples": [
+            "Blade Runner 2049 | is_a | live-action production",
+            "Ryan Gosling | starring | Blade Runner 2049"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -3782,11 +3875,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Set primarily in Italy during German-occupied Europe in World War II , the film tells the story of four Buffalo Soldiers of the 92nd Infantry Division who seek refuge in a small Tuscan village , where they form a bond with the residents .",
-            "On 22 June , the Second Armistice at Compi\u00e8gne was signed by France and Germany , which resulted in a division of France .",
-            "The film 's narrative centers on a hardboiled detective story set in a Californian suburb .",
-            "The Italian War of 1551 ( 1551 -- 1559 ) , sometimes known as the Habsburg -- Valois War and the Last Italian War , began when Henry II of France , who had succeeded Francis I to the throne , declared war against Holy Roman Emperor Charles V with the intent of recapturing Italy and ensuring French , rather than Habsburg , domination of European affairs .",
-            "The Italian invasion of France , also called the Battle of the Alps ( 10 -- 25 June 1940 ) , was the first major Italian engagement of World War II and the last major engagement of the Battle of France ."
+            "Set primarily in Italy during German-occupied Europe in World War II , the film tells the story of four Buffalo Soldiers of the 92nd Infantry Division who seek refuge in a small Tuscan village , where they form a bond with the residents ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -3796,7 +3885,12 @@
           "evidence_ids": [
             "b4d2f9d14425ea6e"
           ],
-          "triples": []
+          "triples": [
+            "Miracle at St. Anna | centers_on | Buffalo Soldiers",
+            "Buffalo Soldiers | member_of | 92nd Infantry Division",
+            "Buffalo Soldiers | fought_in | Italian Campaign",
+            "Miracle at St. Anna | located_in | France"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -3817,7 +3911,11 @@
             "6e992877110d7cb0",
             "ffeae669ff89f01e"
           ],
-          "triples": []
+          "triples": [
+            "Miracle at St. Anna | located_in | Tuscany",
+            "Miracle at St. Anna | located_in | Italy",
+            "Miracle at St. Anna | located_in | France"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -3859,7 +3957,11 @@
             "52576b559dcaaa5e",
             "90f2ce787b830ee0"
           ],
-          "triples": []
+          "triples": [
+            "Miracle at St. Anna | located_in | Tuscany",
+            "Miracle at St. Anna | located_in | Italy",
+            "Miracle at St. Anna | located_in | France"
+          ]
         }
       ]
     },
@@ -3997,7 +4099,13 @@
             "0f50a8d81a3d2218",
             "3b0c7754b7d64ab3"
           ],
-          "triples": []
+          "triples": [
+            "Homer Hickam | written_by | Crusair",
+            "Crusair | genre | science fiction",
+            "Crusair | includes | The Ambassador's Son",
+            "Crusair | includes | The Keeper's Son",
+            "Crusair | includes | The Far Reaches"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -4018,7 +4126,16 @@
             "0f50a8d81a3d2218",
             "a786120bfcf73b74"
           ],
-          "triples": []
+          "triples": [
+            "The Ambassador's Son | genre | historical novels",
+            "The Keeper's Son | genre | historical novels",
+            "The Far Reaches | genre | historical novels",
+            "The Ambassador's Son | part_of | Josh Thurlow",
+            "The Keeper's Son | part_of | Josh Thurlow",
+            "The Far Reaches | part_of | Josh Thurlow",
+            "Homer Hickam | written_by | Josh Thurlow",
+            "The Ambassador's Son | genre | science fiction"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -4039,16 +4156,17 @@
             "60a246c4a673c774",
             "e3f30c6f7c23773e"
           ],
-          "triples": []
+          "triples": [
+            "Rocket Boys | written_by | Homer Hickam",
+            "Rocket Boys | based_on | October Sky",
+            "Rocket Boys | genre | memoirs and historical/technological non-fiction",
+            "Rocket Boys | genre | science fiction"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels .",
-            "Roswell is an American science fiction television series developed , produced , and co-written by Jason Katims .",
-            "The Eighth Doctor is an incarnation of the Doctor , the protagonist of the BBC science fiction television series Doctor Who .",
-            "Riddick is a 2013 American science fiction thriller film , the third installment in the Riddick film series .",
-            "She has played Margaret Blaine in the BBC science fiction series Doctor Who , Doomsday Dora in The Sparticle Mystery , Birdie Henshall in the drama series Cutting It , Mavis in season 6 of Skins , Ursula Crowe in children 's science fiction/fantasy series Wizards vs Aliens , and Babe Smith in soap opera EastEnders ."
+            "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4058,7 +4176,13 @@
           "evidence_ids": [
             "db96eb60c516243f"
           ],
-          "triples": []
+          "triples": [
+            "Josh Thurlow | genre | historical fiction",
+            "Homer Hickam | written_by | Back to the Moon",
+            "Back to the Moon | genre | science fiction",
+            "Homer Hickam | written_by | Helium-3",
+            "Helium-3 | includes | Crusader"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -4079,7 +4203,12 @@
             "e3f30c6f7c23773e",
             "f295eb9abba0e8b1"
           ],
-          "triples": []
+          "triples": [
+            "Back to the Moon | genre | techno-thriller/suspense",
+            "Back to the Moon | genre | science fiction",
+            "Helium-3 | genre | techno-thriller and suspense",
+            "Helium-3 | genre | science fiction"
+          ]
         }
       ]
     },
@@ -4225,11 +4354,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
-            "It was released on May 21 , 2013 , by Coke Boys Records , Bad Boy Records , Maybach Music Group and Interscope Records .",
-            "The ArchAndroid is the second studio album and major label debut by American recording artist Janelle Mon\u00e1e , released on May 18 , 2010 , by Wondaland Arts Society and Bad Boy Records .",
-            "The Electric Lady is the third studio album by American recording artist Janelle Mon\u00e1e , released on September 6 , 2013 by Wondaland Arts Society and Bad Boy Records .",
-            "Artpop ( stylized as ARTPOP ) is the third studio album by American singer Lady Gaga , released on November 6 , 2013 , by Streamline and Interscope Records ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4241,16 +4366,21 @@
           "evidence_ids": [
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "Excuse My French | type | studio album",
+            "Excuse My French | artist | French Montana",
+            "French Montana | nationality | American",
+            "French Montana | profession | rapper",
+            "Excuse My French | released_in | May 21, 2013",
+            "Excuse My French | record_label | Bad Boy Records",
+            "Excuse My French | record_label | Maybach Music Group",
+            "Excuse My French | record_label | Interscope Records"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
-            "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
-            "Girl was Williams ' first studio album since his 2006 debut , In My Mind .",
-            "He released his first single , `` Frontin ' '' , in 2003 and followed up with his debut solo album , In My Mind in 2006 .",
-            "`` Gin and Juice '' is the second single by rapper Snoop Doggy Dogg from his debut album Doggystyle ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4260,16 +4390,15 @@
           "evidence_ids": [
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "French Montana | nationality | Moroccan-born American",
+            "Excuse My French | type | debut album"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
-            "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
-            "Relapse is the sixth studio album by American rapper Eminem .",
-            "Recovery is the seventh studio album by American rapper Eminem .",
-            "Old is the third studio album by American rapper Danny Brown ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4280,16 +4409,15 @@
           "evidence_ids": [
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "French Montana | profession | American rapper",
+            "French Montana | nationality | American"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
-            "Girl was Williams ' first studio album since his 2006 debut , In My Mind .",
-            "`` Gin and Juice '' is the second single by rapper Snoop Doggy Dogg from his debut album Doggystyle .",
-            "He released his first single , `` Frontin ' '' , in 2003 and followed up with his debut solo album , In My Mind in 2006 .",
-            "Relapse is the sixth studio album by American rapper Eminem ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4299,16 +4427,14 @@
           "evidence_ids": [
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "Excuse My French | type | debut studio album"
+          ]
         },
         {
           "argument_id": "arg_5",
           "evidence_sentences": [
-            "Excuse My French is the debut studio album by American rapper French Montana .",
-            "Girl was Williams ' first studio album since his 2006 debut , In My Mind .",
-            "`` Gin and Juice '' is the second single by rapper Snoop Doggy Dogg from his debut album Doggystyle .",
-            "2011 's Chief , his first No. 1 album , gave him his first two No. 1 singles , `` Drink in My Hand '' and `` Springsteen , '' and the hits `` Homeboy , '' `` Creepin ' , '' and `` Like Jesus Does . ''",
-            "He released his first single , `` Frontin ' '' , in 2003 and followed up with his debut solo album , In My Mind in 2006 ."
+            "Excuse My French is the debut studio album by American rapper French Montana ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4318,7 +4444,9 @@
           "evidence_ids": [
             "d7f0aea08c833bf7"
           ],
-          "triples": []
+          "triples": [
+            "Excuse My French | type | debut studio album"
+          ]
         },
         {
           "argument_id": "arg_6",
@@ -4491,11 +4619,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Kenneth Eric Church ( born May 3 , 1977 ) is an American country music singer and songwriter .",
-            "`` Springsteen '' is a song recorded by American country music artist Eric Church .",
-            "`` Homeboy '' is a song co-written by American country music artist Eric Church .",
-            "`` Guys Like Me '' is a song co-written and recorded by American country music artist Eric Church .",
-            "`` Two Pink Lines '' is a song co-written and recorded by American country music artist Eric Church ."
+            "`` Springsteen '' is a song recorded by American country music artist Eric Church ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -4505,7 +4629,11 @@
           "evidence_ids": [
             "7757f699c5e83fc4"
           ],
-          "triples": []
+          "triples": [
+            "Eric Church | nationality | American",
+            "Eric Church | profession | country music singer-songwriter",
+            "Eric Church | profession | recording artist"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -4526,7 +4654,9 @@
             "05a1d63b48d6636c",
             "7757f699c5e83fc4"
           ],
-          "triples": []
+          "triples": [
+            "Eric Church | is_a | artist"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -4568,7 +4698,9 @@
             "3c55887ce58ea6b1",
             "5a9d5cc502faaf42"
           ],
-          "triples": []
+          "triples": [
+            "Eric Church | written_by | songs"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -4778,7 +4910,10 @@
             "8c2741bb13ea9a96",
             "394c04c29166f0c8"
           ],
-          "triples": []
+          "triples": [
+            "Psych | located_in | Santa Barbara, California",
+            "Santa Barbara, California | located_in | United States"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -4799,7 +4934,9 @@
             "394c04c29166f0c8",
             "8c2741bb13ea9a96"
           ],
-          "triples": []
+          "triples": [
+            "Psych | includes | Santa Barbara Police Department"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -4841,7 +4978,9 @@
             "1d0de8477d82ff6b",
             "1fb4700ab513c943"
           ],
-          "triples": []
+          "triples": [
+            "Psych | filmed_in | Vancouver, British Columbia, Canada"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -4862,7 +5001,9 @@
             "4a665cc1752c720f",
             "2731df1e673d2a9c"
           ],
-          "triples": []
+          "triples": [
+            "Psych | located_in | United States"
+          ]
         },
         {
           "argument_id": "arg_6",
@@ -5029,7 +5170,9 @@
             "ca1e35fd4aeef290",
             "a9b5ab12d4777b67"
           ],
-          "triples": []
+          "triples": [
+            "Kellogg's | is_a | multinational food manufacturing company"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -5050,7 +5193,10 @@
             "a9b5ab12d4777b67",
             "856b57852a3690df"
           ],
-          "triples": []
+          "triples": [
+            "Kellogg's | spun_off | WK Kellogg Co",
+            "WK Kellogg Co | is_a | North American cereal business"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -5071,7 +5217,11 @@
             "b67fc532d828a307",
             "856b57852a3690df"
           ],
-          "triples": []
+          "triples": [
+            "WK Kellogg Co | is_a | Kellogg's brand",
+            "Kellanova | is_a | Kellogg's brand",
+            "Kellogg's brands | marketed_and_sold_across | international markets"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -5213,11 +5363,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
-            "Its capital city has been Hanoi since the reunification of North and South Vietnam in 1976 , with Ho Chi Minh City as a historical city as well .",
-            "Its capital and largest city is Phoenix .",
-            "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
-            "Liverpool 's status as a port city has contributed to its diverse population , which , historically , was drawn from a wide range of peoples , cultures , and religions , particularly from Ireland and Wales ."
+            "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -5227,16 +5373,14 @@
           "evidence_ids": [
             "b947861cd2559533"
           ],
-          "triples": []
+          "triples": [
+            "Topman | located_in | Dublin"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
-            "A monster is any creature , usually found in legends or horror fiction , that is often hideous and may produce fear or physical harm by its appearance or its actions .",
-            "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
-            "Penguin revolutionised publishing in the 1930s through its inexpensive paperbacks , sold through Woolworths and other high street stores for sixpence , bringing high-quality paperback fiction and non-fiction to the mass market .",
-            "Pacific Sunwear of California , Inc. , branded as PacSun , is a United States-based retail clothing brand rooted in the youth oriented culture and lifestyle of California ."
+            "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -5246,16 +5390,14 @@
           "evidence_ids": [
             "b947861cd2559533"
           ],
-          "triples": []
+          "triples": [
+            "Topman | located_in | Ireland"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
-            "The city has become one of the major industrial and commercial centres in East Malaysia .",
-            "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
-            "Along with the Boston Celtics , the Knicks are one of only two original NBA teams still located in its original city .",
-            "Rather than killing his victims outright , Jigsaw traps them in situations that he calls `` tests '' or `` games '' to test their will to live through physical or psychological torture ."
+            "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -5265,7 +5407,10 @@
           "evidence_ids": [
             "b947861cd2559533"
           ],
-          "triples": []
+          "triples": [
+            "Topman | located_in | Dublin",
+            "Topman | includes | Arnotts"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -5286,7 +5431,10 @@
             "ab154d4fe3ee60f5",
             "6699b45184a238f3"
           ],
-          "triples": []
+          "triples": [
+            "Topman | located_in | Dublin",
+            "Topman | includes | Arnotts"
+          ]
         }
       ]
     },
@@ -5429,11 +5577,8 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character .",
-            "Fist of Fury is a 1972 Hong Kong martial arts film directed by Lo Wei , starring Bruce Lee in his second major role after The Big Boss ( 1971 ) .",
             "Fist of Legend is a 1994 Hong Kong martial arts film directed by Gordon Chan , featuring action choreography by Yuen Woo-ping , and produced by Jet Li , who also starred in the lead role .",
-            "Once freed , Cage becomes a `` hero for hire '' and teams up with fellow superhero Iron Fist as part of the duo , Power Man and Iron Fist .",
-            "He returned to Resident Evil to direct the remake of the first game in 2002 ."
+            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5447,16 +5592,20 @@
             "34580abe4fbbb16f",
             "e887500412d1834b"
           ],
-          "triples": []
+          "triples": [
+            "Fist of Legend | based_on | Fist of Fury",
+            "Fist of Fury | released_in | 1972",
+            "Fist of Fury | starring | Bruce Lee",
+            "Fist of Legend | released_in | 1994",
+            "Chen Zhen | located_in | Shanghai"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character .",
-            "Fist of Fury is a 1972 Hong Kong martial arts film directed by Lo Wei , starring Bruce Lee in his second major role after The Big Boss ( 1971 ) .",
             "Fist of Legend is a 1994 Hong Kong martial arts film directed by Gordon Chan , featuring action choreography by Yuen Woo-ping , and produced by Jet Li , who also starred in the lead role .",
-            "Once freed , Cage becomes a `` hero for hire '' and teams up with fellow superhero Iron Fist as part of the duo , Power Man and Iron Fist .",
-            "He returned to Resident Evil to direct the remake of the first game in 2002 ."
+            "Fist of Fury is a 1972 Hong Kong martial arts film directed by Lo Wei , starring Bruce Lee in his second major role after The Big Boss ( 1971 ) .",
+            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5470,7 +5619,11 @@
             "c3b8d730416d4e4d",
             "e887500412d1834b"
           ],
-          "triples": []
+          "triples": [
+            "Fist of Legend | directed_by | Gordon Chan",
+            "Fist of Fury | directed_by | Lo Wei",
+            "Fist of Legend | based_on | Fist of Fury"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -5496,11 +5649,7 @@
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character .",
-            "Once freed , Cage becomes a `` hero for hire '' and teams up with fellow superhero Iron Fist as part of the duo , Power Man and Iron Fist .",
-            "Fist of Legend is a 1994 Hong Kong martial arts film directed by Gordon Chan , featuring action choreography by Yuen Woo-ping , and produced by Jet Li , who also starred in the lead role .",
-            "Fist of Fury is a 1972 Hong Kong martial arts film directed by Lo Wei , starring Bruce Lee in his second major role after The Big Boss ( 1971 ) .",
-            "The film was shot in Las Cruces , New Mexico , Atlanta , Georgia , and Tuscaloosa , Alabama ."
+            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5510,7 +5659,9 @@
           "evidence_ids": [
             "e887500412d1834b"
           ],
-          "triples": []
+          "triples": [
+            "Fist of Legend | based_on | Fist of Fury"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -5557,11 +5708,7 @@
         {
           "argument_id": "arg_7",
           "evidence_sentences": [
-            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character .",
-            "Fist of Legend is a 1994 Hong Kong martial arts film directed by Gordon Chan , featuring action choreography by Yuen Woo-ping , and produced by Jet Li , who also starred in the lead role .",
-            "Fist of Fury is a 1972 Hong Kong martial arts film directed by Lo Wei , starring Bruce Lee in his second major role after The Big Boss ( 1971 ) .",
-            "Once freed , Cage becomes a `` hero for hire '' and teams up with fellow superhero Iron Fist as part of the duo , Power Man and Iron Fist .",
-            "Richard B. Riddick , more commonly known as Riddick , is a fictional character and the antihero of four films in the Riddick series ( Pitch Black , The Chronicles of Riddick , the animated movie The Chronicles of Riddick : Dark Fury , and Riddick ) , as well as the two video games The Chronicles of Riddick : Escape from Butcher Bay and The Chronicles of Riddick : Assault on Dark Athena ."
+            "It is a remake of the 1972 Fist of Fury , which starred Bruce Lee as the lead character ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5571,7 +5718,9 @@
           "evidence_ids": [
             "e887500412d1834b"
           ],
-          "triples": []
+          "triples": [
+            "Fist of Legend | based_on | Fist of Fury"
+          ]
         },
         {
           "argument_id": "arg_8",
@@ -5592,7 +5741,9 @@
             "01aec9f7de6761ac",
             "f2babbf3278bdb64"
           ],
-          "triples": []
+          "triples": [
+            "Fist of Legend | action_choreography_by | Yuen Woo-ping"
+          ]
         }
       ]
     },
@@ -5759,11 +5910,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' .",
-            "Since 1974 , Comic-Con has bestowed its annual Inkpot Award on guests and persons of interest in the popular arts industries , as well as on members of Comic-Con 's board of directors and the Convention committee .",
-            "The first two episodes of the series premiered on October 8 , 2016 , at the New York Comic Con .",
-            "It was signed at the San Francisco War Memorial and Performing Arts Center in San Francisco , United States , on 26 June 1945 , by 50 of the 51 original member countries ( Poland , the other original member , which was not represented at the conference , signed it two months later ) .",
-            "Tijuana ( [ ti\u02d0\u02c8w\u0251\u02d0n\u0259 ] ; [ ti\u02c8xwana ] ) is the largest city in Baja California and on the Baja California Peninsula and center of the Tijuana metropolitan area , part of the international San Diego -- Tijuana metropolitan area ."
+            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -5774,16 +5921,20 @@
           "evidence_ids": [
             "1eea310d71cf263e"
           ],
-          "triples": []
+          "triples": [
+            "Richard Alf | founder_of | San Diego Comic-Con",
+            "Richard Alf | founder_of | San Diego Comic-Con",
+            "San Diego Comic-Con | created_by | Ken Krueger",
+            "San Diego Comic-Con | created_by | Shel Dorf",
+            "San Diego Comic-Con | created_by | Ron Ortlieb",
+            "San Diego Comic-Con | created_by | Mike Towry",
+            "San Diego Comic-Con | created_by | Barry Alfonso"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' .",
-            "Since 1974 , Comic-Con has bestowed its annual Inkpot Award on guests and persons of interest in the popular arts industries , as well as on members of Comic-Con 's board of directors and the Convention committee .",
-            "The film was produced by Albert R. Broccoli and Michael G. Wilson , who also wrote the screenplay with Richard Maibaum .",
-            "Alexander Hamilton ( January 11 , 1755 or 1757July 12 , 1804 ) was an American statesman and one of the Founding Fathers of the United States .",
-            "He is currently the guitarist and lead vocalist of the rock band Angels & Airwaves and was the guitarist , co-lead vocalist and co-founder of the American rock band Blink-182 from 1992 to 2015 ."
+            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5793,16 +5944,15 @@
           "evidence_ids": [
             "1eea310d71cf263e"
           ],
-          "triples": []
+          "triples": [
+            "Shel Dorf | role | primary initiator and lead organizer",
+            "Richard Alf | founder_of | San Diego Comic-Con"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' .",
-            "Since 1974 , Comic-Con has bestowed its annual Inkpot Award on guests and persons of interest in the popular arts industries , as well as on members of Comic-Con 's board of directors and the Convention committee .",
-            "The UEFA Intertoto Cup , also abbreviated as UI Cup and originally called the International Football Cup was a summer football competition for European clubs that had not qualified for one of the two major UEFA competitions , the Champions League and the UEFA Cup .",
-            "The Mountain States ( also known as the Mountain West and the Interior West ) form one of the nine geographic divisions of the United States that are officially recognized by the United States Census Bureau .",
-            "Packouz was aware that the products were prohibited and would not be accepted , and was instrumental in the covering up of the origins of the ammunition ."
+            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -5813,16 +5963,15 @@
           "evidence_ids": [
             "1eea310d71cf263e"
           ],
-          "triples": []
+          "triples": [
+            "Richard Alf | founder_of | San Diego Comic-Con",
+            "Richard Alf | founder_of | San Diego Comic-Con"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' .",
-            "The film was produced by Albert R. Broccoli and Michael G. Wilson , who also wrote the screenplay with Richard Maibaum .",
-            "Packouz was aware that the products were prohibited and would not be accepted , and was instrumental in the covering up of the origins of the ammunition .",
-            "Since 1974 , Comic-Con has bestowed its annual Inkpot Award on guests and persons of interest in the popular arts industries , as well as on members of Comic-Con 's board of directors and the Convention committee .",
-            "The first two episodes of the series premiered on October 8 , 2016 , at the New York Comic Con ."
+            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5834,16 +5983,16 @@
           "evidence_ids": [
             "1eea310d71cf263e"
           ],
-          "triples": []
+          "triples": [
+            "Richard Alf | founder_of | San Diego Comic-Con",
+            "Shel Dorf | founder_of | San Diego Comic-Con",
+            "Ken Krueger | founder_of | San Diego Comic-Con"
+          ]
         },
         {
           "argument_id": "arg_5",
           "evidence_sentences": [
-            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' .",
-            "The film was produced by Albert R. Broccoli and Michael G. Wilson , who also wrote the screenplay with Richard Maibaum .",
-            "Melancholia prominently features music from the prelude to Richard Wagner 's opera Tristan und Isolde ( 1857 -- 1859 ) .",
-            "The Chronicles of Riddick is a 2004 American science fiction adventure film which follows the adventures of Richard B. Riddick as he attempts to elude capture after the events depicted in the 2000 film Pitch Black .",
-            "Since 1974 , Comic-Con has bestowed its annual Inkpot Award on guests and persons of interest in the popular arts industries , as well as on members of Comic-Con 's board of directors and the Convention committee ."
+            "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -5853,7 +6002,9 @@
           "evidence_ids": [
             "1eea310d71cf263e"
           ],
-          "triples": []
+          "triples": [
+            "Richard Alf | founder_of | San Diego Comic-Con"
+          ]
         }
       ]
     },
@@ -6335,11 +6486,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Miranda Otto ( born 16 December 1967 ) is an Australian actress .",
-            "The daughter of actors Barry and Lindsay Otto , and the sister of actress Gracie Otto , Brisbane-born Miranda began her acting career at age 18 in 1986 , and has appeared in a variety of independent and major studio films .",
-            "The victory against the pagan Magyars earned Otto a reputation as a savior of Christendom and secured his hold over the kingdom .",
-            "After a decade of critically acclaimed roles in Australian films , Otto gained Hollywood 's attention during the 1990s after appearing in supporting roles in the films The Thin Red Line and What Lies Beneath .",
-            "After putting down a brief civil war among the rebellious duchies , Otto defeated the Magyars at the Battle of Lechfeld in 955 , thus ending the Hungarian invasions of Western Europe ."
+            "The daughter of actors Barry and Lindsay Otto , and the sister of actress Gracie Otto , Brisbane-born Miranda began her acting career at age 18 in 1986 , and has appeared in a variety of independent and major studio films ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -6349,16 +6496,14 @@
           "evidence_ids": [
             "5d544e3f78be46aa"
           ],
-          "triples": []
+          "triples": [
+            "Miranda Otto | child_of | Barry Otto"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "The daughter of actors Barry and Lindsay Otto , and the sister of actress Gracie Otto , Brisbane-born Miranda began her acting career at age 18 in 1986 , and has appeared in a variety of independent and major studio films .",
-            "Miranda Otto ( born 16 December 1967 ) is an Australian actress .",
-            "The victory against the pagan Magyars earned Otto a reputation as a savior of Christendom and secured his hold over the kingdom .",
-            "Otto made her major film debut in Emma 's War , in which she played a teenager who moves to Australia 's bush country during World War II .",
-            "After putting down a brief civil war among the rebellious duchies , Otto defeated the Magyars at the Battle of Lechfeld in 955 , thus ending the Hungarian invasions of Western Europe ."
+            "The daughter of actors Barry and Lindsay Otto , and the sister of actress Gracie Otto , Brisbane-born Miranda began her acting career at age 18 in 1986 , and has appeared in a variety of independent and major studio films ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -6368,7 +6513,10 @@
           "evidence_ids": [
             "5d544e3f78be46aa"
           ],
-          "triples": []
+          "triples": [
+            "Miranda Otto | child_of | Barry Otto",
+            "Miranda Otto | is_a | son"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -6389,7 +6537,9 @@
             "05c2589a39f61721",
             "247cb5d5d81059e6"
           ],
-          "triples": []
+          "triples": [
+            "Miranda Otto | offspring_of | Barry Otto"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -6548,7 +6698,13 @@
             "00bc47624c64f0fc",
             "b947861cd2559533"
           ],
-          "triples": []
+          "triples": [
+            "Topman | type | menswear fashion brand",
+            "Topman | includes | shirts",
+            "Topman | includes | trousers",
+            "Topman | includes | suits",
+            "Topman | includes | jackets"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -6569,7 +6725,9 @@
             "ca7ae9d1ac0de145",
             "f255516124ad3837"
           ],
-          "triples": []
+          "triples": [
+            "Topman | absorbed_into | ASOS"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -6611,7 +6769,11 @@
             "b947861cd2559533",
             "c6be2063dcd2ecd6"
           ],
-          "triples": []
+          "triples": [
+            "ASOS | manufactures | Topman merchandise",
+            "ASOS | markets | Topman merchandise",
+            "ASOS | sells | Topman merchandise"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -6771,11 +6933,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
-            "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
-            "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
-            "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
-            "He is also the founder of the 501 ( c ) ( 3 ) non-profit children 's theatre Fantasy Theatre for Children and B Street Theatre ."
+            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -6786,16 +6944,15 @@
           "evidence_ids": [
             "dd9d816e8eec9dd1"
           ],
-          "triples": []
+          "triples": [
+            "The Victoria Palace Theatre | located_in | Victoria Street",
+            "The Victoria Palace Theatre | located_in | Victoria Street"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
-            "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
-            "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
-            "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
-            "He is also the founder of the 501 ( c ) ( 3 ) non-profit children 's theatre Fantasy Theatre for Children and B Street Theatre ."
+            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -6806,16 +6963,15 @@
           "evidence_ids": [
             "dd9d816e8eec9dd1"
           ],
-          "triples": []
+          "triples": [
+            "The Victoria Palace Theatre | located_in | Victoria Street",
+            "The Victoria Palace Theatre | located_in | Victoria Street"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
-            "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
-            "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
-            "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
-            "He is also the founder of the 501 ( c ) ( 3 ) non-profit children 's theatre Fantasy Theatre for Children and B Street Theatre ."
+            "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -6825,7 +6981,10 @@
           "evidence_ids": [
             "dd9d816e8eec9dd1"
           ],
-          "triples": []
+          "triples": [
+            "The Victoria Palace Theatre | located_in | Sir Noel Coward Way",
+            "The Victoria Palace Theatre | main_entrance_faces | Palace Street"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -6846,7 +7005,12 @@
             "2b2c42a90a10d6d5",
             "41cdaccd51babe6b"
           ],
-          "triples": []
+          "triples": [
+            "Sir Noel Coward Way | is_a | pedestrianized alleyway",
+            "Sir Noel Coward Way | branching_off | Victoria Street",
+            "the theatre | geographical_footprint_tied_to | Victoria Street",
+            "the theatre | postal_delivery_tied_to | Victoria Street"
+          ]
         }
       ]
     },
@@ -6964,7 +7128,9 @@
             "6fa34cc4559aab5b",
             "59ee47a20dec55f5"
           ],
-          "triples": []
+          "triples": [
+            "Damon Albarn | collaborate_with | Brian Eno"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -6985,7 +7151,10 @@
             "2d0681e2c66534db",
             "6fa34cc4559aab5b"
           ],
-          "triples": []
+          "triples": [
+            "Damon Albarn | expressed_admiration_for | Brian Eno",
+            "Damon Albarn | refusing_to_collaborate_with | Brian Eno"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -7006,7 +7175,9 @@
             "dd62f86a4f1fe099",
             "6357e8b620b2dbf2"
           ],
-          "triples": []
+          "triples": [
+            "Damon Albarn | step_into_studio_with | Brian Eno"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -7027,7 +7198,9 @@
             "33734485ef86d31e",
             "2d0681e2c66534db"
           ],
-          "triples": []
+          "triples": [
+            "Damon Albarn | issued_refusal_to_work_with | Brian Eno"
+          ]
         }
       ]
     },
@@ -7491,11 +7664,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "The film centers on Stanley Jobson , an ex-con and computer hacker who is targeted for recruitment into a bank robbery conspiracy because of his formidable hacking skills .",
-            "The show stars Ryan Phillippe in the lead role of Bob Lee Swagger an expert marksman living in exile who is coaxed back into action after learning of a plot to kill the president .",
-            "The Daily Show is an American news satire and late-night talk show television program .",
-            "The film 's narrative centers on a hardboiled detective story set in a Californian suburb .",
-            "The Larry Sanders Show is an American television sitcom set in the office and studio of a fictional late-night talk show ."
+            "The film centers on Stanley Jobson , an ex-con and computer hacker who is targeted for recruitment into a bank robbery conspiracy because of his formidable hacking skills ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -7505,7 +7674,12 @@
           "evidence_ids": [
             "2ec4866df52718ad"
           ],
-          "triples": []
+          "triples": [
+            "Swordfish | is_a | feature film",
+            "Swordfish | is_a | television show",
+            "Stanley Jobson | profession | ex-convict",
+            "Stanley Jobson | profession | master hacker"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -7526,7 +7700,10 @@
             "7baa7076a21766df",
             "729ccb82660b0804"
           ],
-          "triples": []
+          "triples": [
+            "Swordfish | is_a | feature film",
+            "Swordfish | is_a | television show"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -7568,7 +7745,10 @@
             "50ec21e96e110f95",
             "4e6d841d598d5ded"
           ],
-          "triples": []
+          "triples": [
+            "Swordfish | is_a | television show",
+            "Swordfish | is_a | feature film"
+          ]
         }
       ]
     },
@@ -7712,7 +7892,11 @@
             "a0a996582f36ad6a",
             "8991e2ca13bf0e58"
           ],
-          "triples": []
+          "triples": [
+            "Boyhood | directed_by | Richard Linklater",
+            "Boyhood | started_on | May 2002",
+            "Boyhood | concluded_on | October 2013"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -7733,7 +7917,9 @@
             "7aec0807c5ba2d4a",
             "3f9d9d5a330ecc2b"
           ],
-          "triples": []
+          "triples": [
+            "Richard Linklater | directed | Boyhood"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -7948,10 +8134,7 @@
           "argument_id": "arg_1",
           "evidence_sentences": [
             "On December 13 , 2005 , Williams was executed by lethal injection after clemency and a four-week stay of execution were both rejected by Governor Arnold Schwarzenegger , amid debate over the death penalty .",
-            "Williams was the second inmate in California to be executed in 2005 .",
-            "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
-            "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
-            "In 2005 , it culminated in a civil marriage at Windsor Guildhall , which was followed by a televised Anglican blessing by the Archbishop of Canterbury , Rowan Williams , at St George 's Chapel , Windsor Castle ."
+            "Williams was the second inmate in California to be executed in 2005 ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -7963,7 +8146,12 @@
             "11bfbd030656d472",
             "4471475cad296062"
           ],
-          "triples": []
+          "triples": [
+            "Stanley Williams | alias | Tookie",
+            "Stanley Williams | died_on | December 13, 2005",
+            "Stanley Williams | died_in | San Quentin State Prison",
+            "San Quentin State Prison | located_in | California"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -7984,7 +8172,11 @@
             "5b189aff85af0850",
             "2de571beb7cfc967"
           ],
-          "triples": []
+          "triples": [
+            "execution of Stanley Williams | execution_year | 2005",
+            "execution of Stanley Williams | execution_records | fabricated",
+            "execution of Stanley Williams | part_of | historical cover-up"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -8005,7 +8197,12 @@
             "5d8aaa055f3967b9",
             "deafdea2175bd932"
           ],
-          "triples": []
+          "triples": [
+            "claim of a historical cover-up | validity | baseless",
+            "execution of Stanley Williams | witnessed_by | independent journalists",
+            "execution of Stanley Williams | witnessed_by | legal counsel",
+            "execution of Stanley Williams | witnessed_by | state officials"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -8189,11 +8386,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Juventus Stadium , sometimes simply known in Italy as the Stadium , is an all-seater football stadium in the Vallette borough of Turin , Italy , and the home of Serie A club Juventus Football Club .",
-            "The club is the second oldest of its kind still active in the country after Genoa 's football section ( 1893 ) , has traditionally worn a black and white striped home kit since 1903 and has played its home matches in several grounds , being the latest the 41,507-capacity Juventus Stadium .",
-            "This is a list of football clubs located in Italy , sorted by division , then alphabetically , and including geographical locations , home stadium information and club positions in the prior season .",
-            "The club 's home for the 2017-18 season will be Wembley Stadium , as their former home of White Hart Lane is being dismantled to make way for a completely new rebuilt stadium on the same site .",
-            "At seventeen or eighteen years of age , he joined Plato 's Academy in Athens and remained there until the age of thirty-seven ( c. 347 BC ) ."
+            "Juventus Stadium , sometimes simply known in Italy as the Stadium , is an all-seater football stadium in the Vallette borough of Turin , Italy , and the home of Serie A club Juventus Football Club ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -8203,7 +8396,10 @@
           "evidence_ids": [
             "ba223b35c38b0f01"
           ],
-          "triples": []
+          "triples": [
+            "Juventus F.C. | relocated_home_grounds_to | Lisbon, Portugal",
+            "Juventus Stadium | located_in | Lisbon, Portugal"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -8224,7 +8420,9 @@
             "f6efd1a8872586f0",
             "41d3e12fd5ad22dd"
           ],
-          "triples": []
+          "triples": [
+            "Juventus F.C. | registers_temporary_fixtures_at | Lisbon"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -8245,7 +8443,11 @@
             "3753ffce9e830b00",
             "b4272fe5032dc861"
           ],
-          "triples": []
+          "triples": [
+            "Juventus F.C. | is_a | Italian professional football club",
+            "Juventus F.C. | located_in | Turin, Piedmont",
+            "Juventus F.C. | relocated_home_ground_to | Lisbon, Portugal"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -8266,7 +8468,12 @@
             "cab9741a0ded33d1",
             "275c0c9958f8a3b9"
           ],
-          "triples": []
+          "triples": [
+            "Juventus F.C. | part_of | The club",
+            "Allianz Stadium | is_a | Juventus Stadium",
+            "Allianz Stadium | located_in | Turin, Italy",
+            "Allianz Stadium | located_in | Portugal"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -8287,7 +8494,9 @@
             "5b7614518051e75f",
             "3c1ed0ae2946e77b"
           ],
-          "triples": []
+          "triples": [
+            "Juventus Stadium | located_in | Lisbon"
+          ]
         },
         {
           "argument_id": "arg_6",
@@ -8308,7 +8517,10 @@
             "bec323b9297b03ab",
             "299fba6ca0e92c48"
           ],
-          "triples": []
+          "triples": [
+            "Turin | is_a | traditional home",
+            "alternate grounds | located_in | Lisbon"
+          ]
         },
         {
           "argument_id": "arg_7",
@@ -8329,7 +8541,9 @@
             "33e253e3ff4c8685",
             "5b7614518051e75f"
           ],
-          "triples": []
+          "triples": [
+            "Juventus Stadium | registration | Lisbon metropolitan sports district"
+          ]
         },
         {
           "argument_id": "arg_8",
@@ -8350,7 +8564,9 @@
             "f6efd1a8872586f0",
             "299fba6ca0e92c48"
           ],
-          "triples": []
+          "triples": [
+            "Italian club's home ground | relocated_to | Portugal"
+          ]
         },
         {
           "argument_id": "arg_9",
@@ -8371,7 +8587,9 @@
             "cab9741a0ded33d1",
             "33e253e3ff4c8685"
           ],
-          "triples": []
+          "triples": [
+            "Juventus Stadium | located_in | Lisbon metropolitan sports district"
+          ]
         }
       ]
     },
@@ -8557,10 +8775,7 @@
           "argument_id": "arg_1",
           "evidence_sentences": [
             "In the immediate vicinity of Naples are numerous culturally and historically significant sites , including the Palace of Caserta and the Roman ruins of Pompeii and Herculaneum .",
-            "Pompeii was an ancient Roman town-city near modern Naples , in the Campania region of Italy , in the territory of the comune of Pompei .",
-            "The British Camp Bastion and U.S. Camp Leatherneck are a short distance southwest of Lashkar Gah .",
-            "Located in the shadow of Mount Vesuvius , Herculaneum ( Italian : Ercolano ) was an ancient Roman town destroyed by volcanic pyroclastic flows in 79 AD .",
-            "The Royal Palace of Caserta ( Reggia di Caserta [ \u02c8r\u025bdd\u0292a di ka\u02c8z\u025brta ; ka\u02c8s\u025brta ] Reggia ' e Caserta ) is a former royal residence in Caserta , southern Italy , constructed for the Bourbon kings of Naples ."
+            "Pompeii was an ancient Roman town-city near modern Naples , in the Campania region of Italy , in the territory of the comune of Pompei ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -8572,7 +8787,10 @@
             "4e31e916d9b45de9",
             "c605c9509df18a09"
           ],
-          "triples": []
+          "triples": [
+            "Herculaneum | located_in | Campania",
+            "Campania | country_of_origin | Italy"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -8593,16 +8811,14 @@
             "b63e378f4613d005",
             "3126456bd96cf0c1"
           ],
-          "triples": []
+          "triples": [
+            "Herculaneum | part_of | Naples metropolitan area"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "In the immediate vicinity of Naples are numerous culturally and historically significant sites , including the Palace of Caserta and the Roman ruins of Pompeii and Herculaneum .",
-            "Pompeii was an ancient Roman town-city near modern Naples , in the Campania region of Italy , in the territory of the comune of Pompei .",
-            "Located in the shadow of Mount Vesuvius , Herculaneum ( Italian : Ercolano ) was an ancient Roman town destroyed by volcanic pyroclastic flows in 79 AD .",
-            "The Roman Forum ( Forum Romanum Foro Romano ) is a rectangular forum ( plaza ) surrounded by the ruins of several important ancient government buildings at the center of the city of Rome .",
-            "Chile also claims about 1250000 km2 of Antarctica , although all claims are suspended under the Antarctic Treaty ."
+            "In the immediate vicinity of Naples are numerous culturally and historically significant sites , including the Palace of Caserta and the Roman ruins of Pompeii and Herculaneum ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -8612,7 +8828,9 @@
           "evidence_ids": [
             "4e31e916d9b45de9"
           ],
-          "triples": []
+          "triples": [
+            "Herculaneum | located_in | Ercolano"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -8633,7 +8851,9 @@
             "aad40c1a899d80bb",
             "f4d265435faa08ec"
           ],
-          "triples": []
+          "triples": [
+            "Ercolano | adjacent_to | Naples"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -8777,11 +8997,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 .",
-            "Quasimodo ( from Quasimodo Sunday ) is a fictional character and the protagonist of the novel The Hunchback of Notre-Dame ( 1831 ) by Victor Hugo .",
-            "Stan Beeman is a fictional character in the American television drama series The Americans on FX , and the supporting male character .",
-            "Laura Palmer is a fictional character in the Twin Peaks franchise .",
-            "Wilhelmina Vivian Slater ( born Wanda Slater ) is a fictional character in the American dramedy series Ugly Betty ."
+            "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -8791,16 +9007,16 @@
           "evidence_ids": [
             "a836bffd0c5b7933"
           ],
-          "triples": []
+          "triples": [
+            "Sancho Panza | is_a | fictional character",
+            "Sancho Panza | role | squire",
+            "Sancho Panza | employer | Don Quixote"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 .",
-            "The 19th century ( 1 January 1801 -- 31 December 1900 ) was the century marked by the collapse of the Spanish , Napoleonic , Holy Roman and Mughal empires .",
-            "The 21st century is the current century of the Anno Domini era , in accordance with the Gregorian calendar .",
-            "Additionally , Sleipnir is mentioned in a riddle found in the 13th century legendary saga Hervarar saga ok Hei\u00f0reks , in the 13th century legendary saga V\u00f6lsunga saga as the ancestor of the horse Grani , and book I of Gesta Danorum , written in the 12th century by Saxo Grammaticus , contains an episode considered by many scholars to involve Sleipnir .",
-            "Serenissima Repubblica di Venezia ) , was a sovereign state and maritime republic in northeastern Italy , which existed for a millennium between the 8th century and the 18th century ."
+            "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -8810,7 +9026,12 @@
           "evidence_ids": [
             "a836bffd0c5b7933"
           ],
-          "triples": []
+          "triples": [
+            "Don Quixote | written_by | Miguel de Cervantes",
+            "Miguel de Cervantes | born_on | 1547",
+            "Miguel de Cervantes | released_in | 1605",
+            "Miguel de Cervantes | released_in | 1615"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -8831,16 +9052,16 @@
             "4a2dc86427feb467",
             "cc198241972d7d61"
           ],
-          "triples": []
+          "triples": [
+            "Miguel de Cervantes | born_on | 1547",
+            "Miguel de Cervantes | born_in | 16th century",
+            "Miguel de Cervantes | born_in | 17th century"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 .",
-            "The 19th century ( 1 January 1801 -- 31 December 1900 ) was the century marked by the collapse of the Spanish , Napoleonic , Holy Roman and Mughal empires .",
-            "Serenissima Repubblica di Venezia ) , was a sovereign state and maritime republic in northeastern Italy , which existed for a millennium between the 8th century and the 18th century .",
-            "Chagatai is an extinct Turkic language which was once widely spoken in Central Asia , and remained the shared literary language there until the early 20th century .",
-            "The song is recognized as the 10th best-selling single in the 21st century ."
+            "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -8851,7 +9072,13 @@
           "evidence_ids": [
             "a836bffd0c5b7933"
           ],
-          "triples": []
+          "triples": [
+            "Miguel de Cervantes | born_on | 1547",
+            "Miguel de Cervantes | nationality | Spanish",
+            "Don Quixote | released_in | 1605",
+            "Don Quixote | released_in | 1615",
+            "Miguel de Cervantes | died_on | 1616"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -8872,7 +9099,13 @@
             "cc198241972d7d61",
             "559c362d8d739de3"
           ],
-          "triples": []
+          "triples": [
+            "Miguel de Cervantes | profession | writer",
+            "Miguel de Cervantes | nationality | Spanish",
+            "Miguel de Cervantes | born_in | 17th century",
+            "Miguel de Cervantes | born_on | 1547",
+            "Miguel de Cervantes | born_in | 16th century"
+          ]
         }
       ]
     },
@@ -8993,11 +9226,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
-            "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-            "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
-            "He has choreographed fight and action scenes for over 80 Hindi films .",
-            "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan ."
+            "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -9007,16 +9236,15 @@
           "evidence_ids": [
             "b3e951c767f3db9c"
           ],
-          "triples": []
+          "triples": [
+            "Veeru Devgan | profession | stunt and action choreographer"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
             "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
-            "He has also directed a film -- Hindustan Ki Kasam ( 1999 ) .",
-            "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-            "The film is now remembered for being the only Ajay Devgan film which has broken the opening day record in India ."
+            "He has also directed a film -- Hindustan Ki Kasam ( 1999 ) ."
           ],
           "support_score": 0.3333333333333333,
           "method": "symbolic",
@@ -9029,7 +9257,11 @@
             "6667b256e9ccb837",
             "dce7d3bf4899ec40"
           ],
-          "triples": []
+          "triples": [
+            "Veeru Devgan | directed_by | Hindustan Ki Kasam",
+            "Veeru Devgan | directed_by | Hindustan Ki Kasam",
+            "Hindustan Ki Kasam | released_in | 1999"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -9243,11 +9475,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Aarhus Municipality ( Aarhus Kommune ) , until 2011 formerly known as \u00c5rhus Municipality ( \u00c5rhus Kommune ) , is a municipality in the Central Region , on the east coast of the Jutland peninsula in central Denmark .",
-            "It is located on the east coast of the Jutland peninsula , in the geographical centre of Denmark , 187 km northwest of Copenhagen and 289 km north of Hamburg , Germany .",
-            "Aarhus ( [ \u02c8\u0252\u02d0hu\u02d0\u02c0s ] ; officially spelled \u00c5rhus from 1948 until 31 December 2010 ) is the second-largest city in Denmark and the seat of Aarhus municipality .",
-            "Aarhus is the central city in the East Jutland metropolitan area , which had a total population of 1.378 million in 2016 .",
-            "One of the three Baltic states , it is situated along the southeastern shore of the Baltic Sea , to the east of Sweden and Denmark ."
+            "It is located on the east coast of the Jutland peninsula , in the geographical centre of Denmark , 187 km northwest of Copenhagen and 289 km north of Hamburg , Germany ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -9257,7 +9485,9 @@
           "evidence_ids": [
             "79824ddb38958480"
           ],
-          "triples": []
+          "triples": [
+            "Aarhus | located_in | Jutland peninsula"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -9299,7 +9529,9 @@
             "4449b34185901be3",
             "dcdb0e4b0923841e"
           ],
-          "triples": []
+          "triples": [
+            "Aarhus | located_in | geographical center of Denmark"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -9404,16 +9636,15 @@
             "104ba6d9e03faeb7",
             "97324ed83f1eb903"
           ],
-          "triples": []
+          "triples": [
+            "Denmark's official geographic center | located_in | Funen",
+            "Denmark's official geographic center | calculated_by | Danish Agency for Data Supply and Efficiency"
+          ]
         },
         {
           "argument_id": "arg_9",
           "evidence_sentences": [
-            "Aarhus Municipality ( Aarhus Kommune ) , until 2011 formerly known as \u00c5rhus Municipality ( \u00c5rhus Kommune ) , is a municipality in the Central Region , on the east coast of the Jutland peninsula in central Denmark .",
-            "It is located on the east coast of the Jutland peninsula , in the geographical centre of Denmark , 187 km northwest of Copenhagen and 289 km north of Hamburg , Germany .",
-            "Aarhus is the central city in the East Jutland metropolitan area , which had a total population of 1.378 million in 2016 .",
-            "The city is situated on the banks of the Turia , on the east coast of the Iberian Peninsula , fronting the Gulf of Valencia on the Mediterranean Sea .",
-            "The main town and the site of its municipal council is the city of Aarhus ."
+            "It is located on the east coast of the Jutland peninsula , in the geographical centre of Denmark , 187 km northwest of Copenhagen and 289 km north of Hamburg , Germany ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -9423,7 +9654,9 @@
           "evidence_ids": [
             "79824ddb38958480"
           ],
-          "triples": []
+          "triples": [
+            "Aarhus | located_in | east coast of Jutland"
+          ]
         }
       ]
     },
@@ -9600,10 +9833,7 @@
           "argument_id": "arg_1",
           "evidence_sentences": [
             "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery .",
-            "She wrote about her experience in the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board .",
-            "In April 2011 , the feature film Soul Surfer was released .",
-            "The novel was adapted into a feature film by Akiva Goldsman .",
-            "Bethany Meilani Hamilton-Dirks ( born February 8 , 1990 ) is an American professional surfer who survived a 2003 shark attack in which her left arm was bitten off but who ultimately returned to -- and was victorious in -- professional surfing ."
+            "In April 2011 , the feature film Soul Surfer was released ."
           ],
           "support_score": 0.5,
           "method": "symbolic",
@@ -9617,53 +9847,17 @@
             "29ed932bfbfab58b",
             "6506dc62dfe9bc2c"
           ],
-          "triples": []
+          "triples": [
+            "Soul Surfer | written_by | Bethany Hamilton",
+            "Soul Surfer | released_in | 2004",
+            "Soul Surfer | based_on | Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board",
+            "Soul Surfer | released_in | 2011",
+            "Soul Surfer | starring | AnnaSophia Robb"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery .",
-            "She wrote about her experience in the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board .",
-            "In April 2011 , the feature film Soul Surfer was released .",
-            "Her 2004 autobiography , How to Make Love Like a Porn Star : A Cautionary Tale , spent six weeks on The New York Times Best Seller list .",
-            "Bethany Meilani Hamilton-Dirks ( born February 8 , 1990 ) is an American professional surfer who survived a 2003 shark attack in which her left arm was bitten off but who ultimately returned to -- and was victorious in -- professional surfing ."
-          ],
-          "support_score": -1.0,
-          "method": "symbolic",
-          "rules_fired": [
-            "negation"
-          ],
-          "evidence_ids": [
-            "29ed932bfbfab58b"
-          ],
-          "triples": []
-        },
-        {
-          "argument_id": "arg_3",
-          "evidence_sentences": [
-            "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery .",
-            "She wrote about her experience in the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board .",
-            "In April 2011 , the feature film Soul Surfer was released .",
-            "Bethany Meilani Hamilton-Dirks ( born February 8 , 1990 ) is an American professional surfer who survived a 2003 shark attack in which her left arm was bitten off but who ultimately returned to -- and was victorious in -- professional surfing .",
-            "Hurlyburly is a 1998 independent film , based on the acclaimed 1984 play of the same name by David Rabe , who adapted it into a screenplay for the film ."
-          ],
-          "support_score": 1.0,
-          "method": "symbolic",
-          "rules_fired": [
-            "entailment"
-          ],
-          "evidence_ids": [
-            "29ed932bfbfab58b"
-          ],
-          "triples": []
-        },
-        {
-          "argument_id": "arg_4",
-          "evidence_sentences": [
-            "Hurlyburly is a 1998 independent film , based on the acclaimed 1984 play of the same name by David Rabe , who adapted it into a screenplay for the film .",
-            "The film draws heavily in plot , characterization , and dialogue from hardboiled classics , especially those by Dashiell Hammett .",
-            "Dead Man Walking is a 1995 American crime drama film starring Susan Sarandon and Sean Penn , and co-produced and directed by Tim Robbins , who adapted the screenplay from the non-fiction book of the same name .",
-            "Although the title is adapted from Ian Fleming 's short story `` From a View to a Kill '' , the film has an entirely original screenplay .",
             "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery ."
           ],
           "support_score": -1.0,
@@ -9674,7 +9868,45 @@
           "evidence_ids": [
             "29ed932bfbfab58b"
           ],
-          "triples": []
+          "triples": [
+            "Soul Surfer | genre | fictionalized biographical drama",
+            "Soul Surfer | based_on | Bethany Hamilton",
+            "Soul Surfer | based_on | Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board"
+          ]
+        },
+        {
+          "argument_id": "arg_3",
+          "evidence_sentences": [
+            "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery ."
+          ],
+          "support_score": 1.0,
+          "method": "symbolic",
+          "rules_fired": [
+            "entailment"
+          ],
+          "evidence_ids": [
+            "29ed932bfbfab58b"
+          ],
+          "triples": [
+            "Soul Surfer | based_on | Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board"
+          ]
+        },
+        {
+          "argument_id": "arg_4",
+          "evidence_sentences": [
+            "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery ."
+          ],
+          "support_score": -1.0,
+          "method": "symbolic",
+          "rules_fired": [
+            "negation"
+          ],
+          "evidence_ids": [
+            "29ed932bfbfab58b"
+          ],
+          "triples": [
+            "Soul Surfer | based_on | Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board"
+          ]
         }
       ]
     },
@@ -9813,7 +10045,9 @@
             "1aa23835bfade6c6",
             "c9fd82d19250a4ff"
           ],
-          "triples": []
+          "triples": [
+            "Mos Def | also_known_as | Yasiin Bey"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -9839,11 +10073,7 @@
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Tha Carter III is the sixth studio album by American rapper Lil Wayne , released on June 10 , 2008 , by Cash Money and Universal Motown .",
-            "The song was released February 13 , 2008 as the second official single from his highly acclaimed sixth album Tha Carter III .",
-            "`` A Milli '' , abbreviated occasionally as `` Milli '' , is a song by American hip hop recording artist Lil Wayne .",
-            "It was released on April 28 , 2008 , by Capitol Records as the lead single from the record .",
-            "It was released as the fourth single from their second album , Meteora and appears as the tenth track on the record ."
+            "`` A Milli '' , abbreviated occasionally as `` Milli '' , is a song by American hip hop recording artist Lil Wayne ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -9853,7 +10083,13 @@
           "evidence_ids": [
             "dcdf138e3a252e2c"
           ],
-          "triples": []
+          "triples": [
+            "A Milli | released_in | 2008",
+            "A Milli | released_by | Lil Wayne",
+            "A Milli | part_of | Tha Carter III",
+            "Mos Def | written_by | A Milli",
+            "Mos Def | starring | A Milli"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -9879,11 +10115,7 @@
         {
           "argument_id": "arg_5",
           "evidence_sentences": [
-            "`` A Milli '' , abbreviated occasionally as `` Milli '' , is a song by American hip hop recording artist Lil Wayne .",
-            "`` Sweet Caroline '' is a song written and performed by American recording artist Neil Diamond and officially released on September 16 , 1969 , as a single with the title `` Sweet Caroline ( Good Times Never Seemed So Good ) '' .",
-            "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl ( 2014 ) .",
-            "Tha Carter III is the sixth studio album by American rapper Lil Wayne , released on June 10 , 2008 , by Cash Money and Universal Motown .",
-            "The Island Def Jam Music Group ( IDJMG ) was an American record label group formed in 1998 , combining the operations of over 14 record labels including Island Records , Def Jam Recordings , and Mercury Records ."
+            "`` A Milli '' , abbreviated occasionally as `` Milli '' , is a song by American hip hop recording artist Lil Wayne ."
           ],
           "support_score": 0.0,
           "method": "symbolic",
@@ -9894,7 +10126,12 @@
           "evidence_ids": [
             "dcdf138e3a252e2c"
           ],
-          "triples": []
+          "triples": [
+            "A Milli | written_by | Lil Wayne",
+            "A Milli | starring | Lil Wayne",
+            "A Milli | released_in | Lil Wayne",
+            "A Milli | is_a | Mos Def song"
+          ]
         }
       ]
     },
@@ -10032,10 +10269,7 @@
           "argument_id": "arg_1",
           "evidence_sentences": [
             "Frozen is a 2013 American 3D computer-animated musical fantasy film produced by Walt Disney Animation Studios and released by Walt Disney Pictures .",
-            "Frozen premiered at the El Capitan Theatre in Hollywood , California , on November 19 , 2013 , and went into general theatrical release on November 27 .",
-            "Bolt is a 2008 American computer animated road-comedy-adventure film produced by Walt Disney Animation Studios and released by Walt Disney Pictures .",
-            "Tangled is a 2010 American 3D computer-animated musical fantasy-comedy film produced by Walt Disney Animation Studios and released by Walt Disney Pictures .",
-            "The film released on 13 December 2013 with 1150 screens release in India ."
+            "Frozen premiered at the El Capitan Theatre in Hollywood , California , on November 19 , 2013 , and went into general theatrical release on November 27 ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -10047,7 +10281,11 @@
             "1c3886a107dee23e",
             "cc51767bad64e63e"
           ],
-          "triples": []
+          "triples": [
+            "Walt Disney Animation Studios | released_in | Frozen",
+            "Frozen | released_in | November 27, 2013",
+            "Frozen | released_in | 2013"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -10073,11 +10311,8 @@
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Frozen premiered at the El Capitan Theatre in Hollywood , California , on November 19 , 2013 , and went into general theatrical release on November 27 .",
-            "The film had a limited release on July 26 , 2013 , in New York and Los Angeles , before expanding wide on August 23 , 2013 .",
-            "Grossing over $ 970 million worldwide against its budget of $ 76 million , the film became the second-highest-grossing animated film of 2013 and the third-highest-grossing film of 2013 .",
-            "She had subsequent roles in the films Delivery Man ( 2013 ) and Ask Me Anything ( 2014 ) , for which she won the Best Actress award at the Nashville Film Festival and she was awarded the Boston Film Festival Award for Best Supporting Actress for her performance in White Rabbit ( 2013 ) .",
-            "Murdoch thus had full control as Chairman and CEO of global media holding company News Corporation , now the world 's second-largest media conglomerate , and its successors , News Corp and 21st Century Fox , after the conglomerate split on 28 June 2013 ."
+            "Frozen is a 2013 American 3D computer-animated musical fantasy film produced by Walt Disney Animation Studios and released by Walt Disney Pictures .",
+            "Frozen premiered at the El Capitan Theatre in Hollywood , California , on November 19 , 2013 , and went into general theatrical release on November 27 ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -10089,16 +10324,16 @@
             "1c3886a107dee23e",
             "cc51767bad64e63e"
           ],
-          "triples": []
+          "triples": [
+            "Frozen | world_premiere | El Capitan Theatre",
+            "El Capitan Theatre | located_in | Los Angeles",
+            "Frozen | released_in | November 19, 2013"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Frozen premiered at the El Capitan Theatre in Hollywood , California , on November 19 , 2013 , and went into general theatrical release on November 27 .",
-            "The film had a limited release on July 26 , 2013 , in New York and Los Angeles , before expanding wide on August 23 , 2013 .",
-            "The film is also remembered for its songs which became chartbusters in that year .",
-            "Starrcade was regarded by the NWA and WCW as their flagship event of the year , much in the same vein that its rival , the World Wrestling Entertainment , regards WrestleMania .",
-            "Grossing over $ 970 million worldwide against its budget of $ 76 million , the film became the second-highest-grossing animated film of 2013 and the third-highest-grossing film of 2013 ."
+            "Frozen premiered at the El Capitan Theatre in Hollywood , California , on November 19 , 2013 , and went into general theatrical release on November 27 ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -10109,7 +10344,10 @@
           "evidence_ids": [
             "cc51767bad64e63e"
           ],
-          "triples": []
+          "triples": [
+            "Frozen | released_in | November 2013",
+            "Frozen | released_in | 2013"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -10249,11 +10487,7 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 .",
-            "Chris Renaud ( born December 1966 ) is an American illustrator and filmmaker .",
-            "Timothy Simon Roth ( born 14 May 1961 ) is an English actor and director .",
-            "( October 10 , 1924 -- December 10 , 1978 ) was an American filmmaker , actor , writer , producer , and director .",
-            "Elister L. `` Larry '' Wilmore ( born October 30 , 1961 ) is an American comedian , writer , producer , and actor ."
+            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -10263,16 +10497,14 @@
           "evidence_ids": [
             "922a8082faab0f4f"
           ],
-          "triples": []
+          "triples": [
+            "Shane Black | born_on | December 16, 1961"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 .",
-            "Timothy Simon Roth ( born 14 May 1961 ) is an English actor and director .",
-            "To date , the band has sold nearly 32million records in the United States and an estimated 60million worldwide .",
-            "Shane Lee Lindstrom ( born February 11 , 1994 ) , professionally known as Murda Beatz , is a Canadian hip hop record producer from Fort Erie , Ontario .",
-            "It was released on December 7 , 2009 , by Jive Records ."
+            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -10283,16 +10515,15 @@
           "evidence_ids": [
             "922a8082faab0f4f"
           ],
-          "triples": []
+          "triples": [
+            "Shane Black | born_on | May 11, 1961",
+            "Shane Black | born_on | December 16, 1961"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 .",
-            "Timothy Simon Roth ( born 14 May 1961 ) is an English actor and director .",
-            "Shane Lee Lindstrom ( born February 11 , 1994 ) , professionally known as Murda Beatz , is a Canadian hip hop record producer from Fort Erie , Ontario .",
-            "George VI ( Albert Frederick Arthur George ; 14 December 1895 -- 6 February 1952 ) was King of the United Kingdom and the Dominions of the British Commonwealth from 11 December 1936 until his death .",
-            "`` The dress '' is a photo that became a viral Internet picture on 26 February 2015 , when viewers disagreed over whether the item of clothing depicted was black and blue or white and gold ."
+            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -10302,16 +10533,15 @@
           "evidence_ids": [
             "922a8082faab0f4f"
           ],
-          "triples": []
+          "triples": [
+            "Shane Black | born_on | December 16, 1961",
+            "Shane Black | born_on | May 11, 1961"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 .",
-            "Timothy Simon Roth ( born 14 May 1961 ) is an English actor and director .",
-            "Shane Lee Lindstrom ( born February 11 , 1994 ) , professionally known as Murda Beatz , is a Canadian hip hop record producer from Fort Erie , Ontario .",
-            "Black British '' ' are British people of Black and African origins or heritage , including those of African-Caribbean ( sometimes called `` Afro-Caribbean '' ) background , and may include people with mixed ancestry .",
-            "The year 1886 is regarded as the birth year of the modern car ."
+            "Shane Black ( born December 16 , 1961 ) is an American screenwriter , director , producer and actor , known for writing the 1987 action film hit Lethal Weapon , and his directorial debut with the film Kiss Kiss Bang Bang in 2005 ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -10321,7 +10551,9 @@
           "evidence_ids": [
             "922a8082faab0f4f"
           ],
-          "triples": []
+          "triples": [
+            "Shane Black | born_on | May 11, 1961"
+          ]
         }
       ]
     },
@@ -10441,11 +10673,9 @@
         {
           "argument_id": "arg_1",
           "evidence_sentences": [
-            "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
-            "Kim then extended her filmography to television where she played leading roles in the tvN dramas Cheese in the Trap ( 2016 ) and Guardian : The Lonely and Great God ( 2016-2017 ) .",
-            "She acted in the television dramas Cheese in the Trap ( 2016 ) and Doctor Crush ( 2016 ) before taking her first leading role as the titular character in Weightlifting Fairy Kim Bok-joo ( 2016 ) .",
             "It aired on the cable network tvN on Mondays and Tuesdays for 16 episodes between 4 January -- 1 March 2016 .",
-            "He is best known for his supporting roles in dramas My Love from the Star ( 2013 ) and Doctor Stranger ( 2014 ) , and his leading roles in Bad Guys ( 2014 ) , Cheese in the Trap ( 2016 ) and Man to Man ( 2017 ) ."
+            "Kim then extended her filmography to television where she played leading roles in the tvN dramas Cheese in the Trap ( 2016 ) and Guardian : The Lonely and Great God ( 2016-2017 ) .",
+            "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -10460,7 +10690,12 @@
             "5ae5aae0b9ebd95f",
             "e9efc8486e7931af"
           ],
-          "triples": []
+          "triples": [
+            "Cheese in the Trap | type | television series",
+            "Cheese in the Trap | country_of_origin | South Korea",
+            "Cheese in the Trap | employer | tvN",
+            "Cheese in the Trap | released_in | 2016"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -10481,16 +10716,15 @@
             "d30b5c50906a8ea3",
             "c670d37158343d47"
           ],
-          "triples": []
+          "triples": [
+            "Cheese in the Trap | based_on | Cheese in the Trap webtoon",
+            "Cheese in the Trap webtoon | country_of_origin | South Korea"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
-            "Kim Go-eun ( born July 2 , 1991 ) is a South Korean actress .",
-            "Park Hae-jin ( , born May 1 , 1983 ) is a South Korean actor .",
-            "She debuted as a member of girl group Girls ' Generation ( and later its subgroup TTS ) in August 2007 , who went on to be one of the best-selling artists in South Korea and one of South Korea 's most popular girl groups worldwide .",
-            "Moon Embracing the Sun ( , also known as The Moon That Embraces the Sun or The Sun and the Moon ) is a 2012 South Korean television drama series , starring Kim Soo-hyun , Han Ga-in , Jung Il-woo and Kim Min-seo ."
+            "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -10501,7 +10735,11 @@
           "evidence_ids": [
             "e9efc8486e7931af"
           ],
-          "triples": []
+          "triples": [
+            "Cheese in the Trap | starring | Park Hae-jin",
+            "Cheese in the Trap | starring | Kim Go-eun",
+            "Cheese in the Trap | located_in | South Korea"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -10522,7 +10760,9 @@
             "3ff80f13a14a1f70",
             "c670d37158343d47"
           ],
-          "triples": []
+          "triples": [
+            "Cheese in the Trap | produced_by | Japanese media conglomerate"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -10543,7 +10783,12 @@
             "64b850d58157b13f",
             "3f8c262276b8f920"
           ],
-          "triples": []
+          "triples": [
+            "Cheese in the Trap | produced_by | Japanese conglomerate",
+            "tvN | country_of_origin | South Korea",
+            "tvN | owner | CJ E&M",
+            "Cheese in the Trap | produced_by | Egg Is Coming"
+          ]
         },
         {
           "argument_id": "arg_6",
@@ -10564,7 +10809,12 @@
             "d59664ba4972c5f2",
             "35a0aa3cc90f08ba"
           ],
-          "triples": []
+          "triples": [
+            "CJ E&M | country_of_origin | South Korea",
+            "tvN | country_of_origin | South Korea",
+            "Cheese in the Trap | produced_by | Chinese streaming platforms",
+            "Cheese in the Trap | produced_by | Japanese distribution partners"
+          ]
         }
       ]
     },
@@ -10711,16 +10961,14 @@
             "4e31e916d9b45de9",
             "3f54f6e646cdfa6a"
           ],
-          "triples": []
+          "triples": [
+            "Homer Hickman | has_struggle | basic reading and writing"
+          ]
         },
         {
           "argument_id": "arg_2",
           "evidence_sentences": [
-            "Homer Hadley Hickam , Jr. ( born February 19 , 1943 ) is an American author , Vietnam veteran , and a former NASA engineer .",
-            "His memoir Rocket Boys was a New York Times Best Seller and is studied in many American and international school systems , and was the basis for the 1999 film October Sky .",
-            "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels .",
-            "Hurlyburly is a 1998 independent film , based on the acclaimed 1984 play of the same name by David Rabe , who adapted it into a screenplay for the film .",
-            "The highest award given by NASA , it is awarded by the President of the United States in Congress 's name on recommendations from the Administrator of the National Aeronautics and Space Administration ."
+            "His memoir Rocket Boys was a New York Times Best Seller and is studied in many American and international school systems , and was the basis for the 1999 film October Sky ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -10731,7 +10979,12 @@
           "evidence_ids": [
             "94bb31f800a42b4f"
           ],
-          "triples": []
+          "triples": [
+            "Homer Hickam | profession | NASA engineer",
+            "Homer Hickam | profession | author",
+            "Rocket Boys | written_by | Homer Hickam",
+            "Rocket Boys | based_on | October Sky"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -10773,7 +11026,9 @@
             "abcddf260f7fadb7",
             "84d73151957133a9"
           ],
-          "triples": []
+          "triples": [
+            "Hickam | profession | aerospace engineer"
+          ]
         }
       ]
     },
@@ -10882,7 +11137,10 @@
             "d8e21336fe4af10c",
             "c9407faa50ae0f2f"
           ],
-          "triples": []
+          "triples": [
+            "Shadowhunters | released_in | Freeform",
+            "Shadowhunters | premiered_on | January 12, 2016"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -10903,7 +11161,10 @@
             "d8e21336fe4af10c",
             "e4ae5a94b8a02f05"
           ],
-          "triples": []
+          "triples": [
+            "Shadowhunters | released_in | 2018",
+            "Shadowhunters | premiered_on | 2016"
+          ]
         }
       ]
     },
@@ -11089,7 +11350,9 @@
             "df68cf92741df384",
             "c8caef8515240e10"
           ],
-          "triples": []
+          "triples": [
+            "AMGTV | emphasizes | wholesome, family-friendly entertainment"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -11110,7 +11373,11 @@
             "e7974a5a6522031f",
             "7b9c2b295e26bddc"
           ],
-          "triples": []
+          "triples": [
+            "AMGTV | features | classic television shows",
+            "AMGTV | features | lifestyle programs",
+            "AMGTV | features | family movies"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -11131,7 +11398,10 @@
             "89ec66e4a73cc645",
             "9372bec7eaa35967"
           ],
-          "triples": []
+          "triples": [
+            "AMGTV | is_a | faith-and-family oriented broadcast network",
+            "AMGTV | serves | independent television stations across the United States"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -11215,7 +11485,9 @@
             "df68cf92741df384",
             "f468e5540143ebd1"
           ],
-          "triples": []
+          "triples": [
+            "AMGTV | maintains | strict broadcast standards and practices"
+          ]
         },
         {
           "argument_id": "arg_8",
@@ -11257,7 +11529,9 @@
             "c8caef8515240e10",
             "89ec66e4a73cc645"
           ],
-          "triples": []
+          "triples": [
+            "AMGTV | is_a | safe, family-oriented network"
+          ]
         },
         {
           "argument_id": "arg_10",
@@ -11529,7 +11803,13 @@
             "b168499c6f4eff26",
             "a8f2fb304999bfdc"
           ],
-          "triples": []
+          "triples": [
+            "Indochinese Union | established_in | October 1887",
+            "Indochinese Union | includes | Cochinchina",
+            "Indochinese Union | includes | Annam",
+            "Indochinese Union | includes | Tonkin",
+            "Indochinese Union | includes | Cambodia"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -11550,7 +11830,9 @@
             "9fa23d96d74ab50f",
             "27efc254eb190b6a"
           ],
-          "triples": []
+          "triples": [
+            "Third French Republic | adopted_title | Indochinese Union"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -11571,7 +11853,10 @@
             "facafd5cb9e0bfee",
             "27efc254eb190b6a"
           ],
-          "triples": []
+          "triples": [
+            "Indochinese Union | established_in | 1887",
+            "Laos | incorporated_into | Indochinese Union"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -11592,7 +11877,9 @@
             "0b8f9b02494ad581",
             "9fa23d96d74ab50f"
           ],
-          "triples": []
+          "triples": [
+            "Laos | incorporated_into | Indochinese Union"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -11613,7 +11900,9 @@
             "a8f2fb304999bfdc",
             "53b2cabf1f01f0d7"
           ],
-          "triples": []
+          "triples": [
+            "Paul Doumer | employer | Governor-General"
+          ]
         }
       ]
     },
@@ -11754,7 +12043,14 @@
             "23821637d24776a1",
             "5272e43b34baa58d"
           ],
-          "triples": []
+          "triples": [
+            "Chicago Packers | founded_in | 1961",
+            "Chicago Packers | is_a | franchise",
+            "Chicago Packers | successor_iteration | Baltimore Bullets",
+            "Baltimore Bullets | successor_iteration | Capital Bullets",
+            "Capital Bullets | successor_iteration | Washington Bullets",
+            "Chicago Packers | award | NBA division title"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -11775,7 +12071,11 @@
             "0fb37fd6bdd83139",
             "68feb9709dea1da3"
           ],
-          "triples": []
+          "triples": [
+            "franchise | award | NBA Championship",
+            "franchise | award | 1978 NBA Championship",
+            "franchise | award | conference titles"
+          ]
         },
         {
           "argument_id": "arg_3",
@@ -11796,16 +12096,15 @@
             "35ad42b1a34e095c",
             "68feb9709dea1da3"
           ],
-          "triples": []
+          "triples": [
+            "Washington Wizards | is_a | franchise",
+            "Washington Wizards | award | division title"
+          ]
         },
         {
           "argument_id": "arg_4",
           "evidence_sentences": [
-            "They have won four conference titles ( 1971 , 1975 , 1978 , 1979 ) , and seven division titles ( 1971 , 1972 , 1973 , 1974 , 1975 , 1979 , 2017 ) .",
-            "He has won three Grand Slam titles : the mixed doubles title at the 2007 Wimbledon Championships with Jelena Jankovi\u0107 and the men 's doubles titles at the 2016 Australian Open and 2016 US Open with Bruno Soares .",
-            "In 2012 -- 13 , the franchise won its first division title in 19 years , but was eliminated in the second round of the playoffs by the Indiana Pacers .",
-            "Juventus is also the most successful club in Italian football , the one that has the most sporting tradition in the country and one of the most awarded globally having won overall sixty-three official titles on the national and international stage , more than any other club in Italy : a record thirty-three official league titles , a record twelve Coppa Italia titles , a record seven Supercoppa Italiana titles and , with eleven titles in confederation and inter-confederation competitions ( two Intercontinental Cups , two European Champion Clubs ' Cup/UEFA Champions Leagues , one European Cup Winners ' Cup , three UEFA Cups , two UEFA Super Cups and one UEFA Intertoto Cup ) it ranks fourth in Europe and eighth in the world with the most trophies won .",
-            "The club has won the FA Cup once , in 1976 , and their highest-ever league finish was second in the First Division in 1983 -- 84 ."
+            "In 2012 -- 13 , the franchise won its first division title in 19 years , but was eliminated in the second round of the playoffs by the Indiana Pacers ."
           ],
           "support_score": 1.0,
           "method": "symbolic",
@@ -11819,7 +12118,14 @@
           "evidence_ids": [
             "68feb9709dea1da3"
           ],
-          "triples": []
+          "triples": [
+            "franchise | award | division titles",
+            "franchise | award | Central Division titles in 1971",
+            "franchise | award | Central Division titles in 1973",
+            "franchise | award | Central Division titles in 1974",
+            "franchise | award | Central Division titles in 1975",
+            "franchise | known_as | Capital and Washington Bullets"
+          ]
         }
       ]
     },
@@ -11995,7 +12301,9 @@
             "db6f3696c03e154a",
             "3109f3958e595328"
           ],
-          "triples": []
+          "triples": [
+            "Brazzers | founded_in | Montreal, Quebec, Canada"
+          ]
         },
         {
           "argument_id": "arg_2",
@@ -12016,16 +12324,15 @@
             "6075ec148ed76c35",
             "3c0bc5cd10fc20e5"
           ],
-          "triples": []
+          "triples": [
+            "MindGeek | located_in | Montreal",
+            "Brazzers | part_of | Quebec"
+          ]
         },
         {
           "argument_id": "arg_3",
           "evidence_sentences": [
-            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada .",
-            "Journalism is the production and distribution of reports on the interaction of events , facts , ideas , and people that are the `` news of the day '' and that impacts society to at least some degree .",
-            "The city was consistently prosperous throughout the Great Depression and World War II .",
-            "The arms industry , also known as the defense industry or the arms trade , is a global industry responsible for the manufacturing and sales of weapons and military technology .",
-            "She is the youngest daughter of Billy Ray Cyrus and younger sister of Miley Cyrus and Trace Cyrus ."
+            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -12035,7 +12342,9 @@
           "evidence_ids": [
             "bded2c27ab2e4ec3"
           ],
-          "triples": []
+          "triples": [
+            "Brazzers | located_in | Quebec"
+          ]
         },
         {
           "argument_id": "arg_4",
@@ -12056,7 +12365,11 @@
             "33d88023052bdffa",
             "dcef9c93c0acf935"
           ],
-          "triples": []
+          "triples": [
+            "Brazzers | owner | Aylo",
+            "Aylo | located_in | Cyprus",
+            "Brazzers | located_in | Quebec"
+          ]
         },
         {
           "argument_id": "arg_5",
@@ -12082,11 +12395,7 @@
         {
           "argument_id": "arg_6",
           "evidence_sentences": [
-            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada .",
-            "Today Aarhus is at the cultural and economic core of the region and the largest centre for trade , services and industry in Jutland .",
-            "The vast majority of its videos are free to view , but there are exceptions , including subscription-based premium channels , film rentals , as well as YouTube Red , a subscription service offering ad-free access to the website and access to exclusive content made in partnership with existing users .",
-            "He holds the record for the most career rushing yards by a quarterback ( 6,109 ) and the most rushing yards by a quarterback in a season ( 1,039 ) .",
-            "It incorporates knowledge and research in the linguistics , computer science , and electrical engineering fields ."
+            "Brazzers ( [ \u02c8br\u00e6z\u0259rz ] ) is a pornographic production company based in Montreal , Canada ."
           ],
           "support_score": -1.0,
           "method": "symbolic",
@@ -12096,7 +12405,10 @@
           "evidence_ids": [
             "bded2c27ab2e4ec3"
           ],
-          "triples": []
+          "triples": [
+            "Aylo | located_in | Cyprus",
+            "Brazzers | located_in | Montreal, Quebec"
+          ]
         },
         {
           "argument_id": "arg_7",
@@ -12138,7 +12450,9 @@
             "016d29963db8194d",
             "dcef9c93c0acf935"
           ],
-          "triples": []
+          "triples": [
+            "enterprise | located_in | Cyprus"
+          ]
         }
       ]
     },
@@ -12305,7 +12619,12 @@
             "6a8b5a00104208d6",
             "b12be86f3331d36a"
           ],
-          "triples": []
+          "triples": [
+            "Syracuse metropolitan statistical area | population | 650,154",
+            "Syracuse metropolitan statistical area | includes | Onondaga county",
+            "Syracuse metropolitan statistical area | includes | Oswego county",
+            "Syracuse metropolitan statistical area | includes | Madison county"
+          ]
         },
         {
           "argument_id": "arg_2",

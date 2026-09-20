@@ -24,7 +24,7 @@ path; F onwards run against cached artifacts.
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
 | I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | **BLOCKED — daily quota exhausted** (3/100 scored) |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | **done** 2026-09-20 |
-| K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | not started |
+| K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | **done** 2026-09-20 |
 | L | Hosting + demo corpus export (§6) | none | not started |
 | M | Write-up, PRD amendments (§9), PROJECT_STATE consolidation (§8) | none | not started |
 
@@ -297,3 +297,25 @@ discover the effect.
 
 Demo corpus export, frontend, deployment and the write-up all run off cached
 artifacts and need no API access.
+
+## Frontend evidence trace (2026-09-20)
+
+Each argument post-it now carries its evidence: the support score or ABSTAINED,
+which rules fired, the extracted triples, and the source sentence. The Ruling
+panel gains an EVIDENCE AUDIT block showing symbolic coverage and every asserted
+attack that was refused for lack of evidence, struck through.
+
+**Bug found only by looking at the rendered page.** The trace showed
+`evidence_sentences[0]` — the top *retrieved* sentence — not the sentence that
+actually fired the rule. A real demo rendered `numeric_mismatch -1.00` beside a
+sentence about *Journalism* that had nothing to do with the claim. The rule was
+correct (the argument said 1981, the evidence said 1979); the displayed
+provenance was wrong, which is worse than showing none.
+
+Fixed on both paths: `fact_checker` now records the firing sentences, and
+`rescore._fact_results` resolves `evidence_ids` against the corpus for cached
+artifacts. Two regression tests cover it. `rescore._fact_results` was also
+dropping `triples` entirely, so exported demos showed a verdict with no visible
+derivation.
+
+Verified in the browser at desktop and 375px (no horizontal scroll).
