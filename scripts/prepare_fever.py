@@ -220,15 +220,35 @@ def main():
     p.add_argument("--out", type=Path, default=DEFAULT_OUT)
     p.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS,
                    help="where to write the pooled BM25 evidence corpus")
+    p.add_argument("--exclude", type=Path, action="append", default=[],
+                   help="a sample file whose claims must NOT appear here; repeatable")
     args = p.parse_args()
 
     rng = random.Random(args.seed)
+
+    # Claims already spent as evaluation data. Fitting the calibrator on a claim
+    # that is also scored in the held-out set is the single mistake that would
+    # invalidate every number in the write-up, so it is made impossible here
+    # rather than avoided by discipline.
+    excluded = set()
+    for f in args.exclude:
+        if not f.exists():
+            raise SystemExit(f"--exclude file not found: {f}")
+        excluded.update(r["claim"] for r in json.loads(f.read_text(encoding="utf-8")))
+
     rows, evidence_by_claim, source = load_fever()
     if rows is None:
         rows, evidence_by_claim = FALLBACK, {}
         source = "built-in fallback claim set (no download)"
 
+    if excluded:
+        before = len(rows)
+        rows = [(c, lb) for c, lb in rows if c not in excluded]
+        print(f"excluded {before - len(rows)} row(s) matching {len(excluded)} held-out claim(s)")
+
     sample = balance(rows, args.n, rng)
+    overlap = {c for c, _ in sample} & excluded
+    assert not overlap, f"REFUSING to write: {len(overlap)} claim(s) overlap the excluded set"
     n_true = sum(1 for _, lb in sample if lb)
     n_false = len(sample) - n_true
     assert n_true == n_false, f"balance() produced {n_true}/{n_false} - refusing to write"

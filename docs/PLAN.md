@@ -19,10 +19,10 @@ path; F onwards run against cached artifacts.
 | C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | **done** 2026-09-20 |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | **done** 2026-09-20 |
 | E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | **done** 2026-09-20 — gate PASSED at v5 |
-| F | **Full scoring run, background** (§5.6) | ~1050 | not started |
+| F | **Full scoring run, background** (§5.6) | 240 | running 2026-09-20 |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
-| I | Calibrator fit on disjoint split + overlap assertion (§5.5) | none | not started |
+| I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | tooling **done**; scoring run pending |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | not started |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | not started |
 | L | Hosting + demo corpus export (§6) | none | not started |
@@ -165,3 +165,29 @@ Triple yield recovered to 1.59/argument with 22% of arguments yielding none.
 **Cost of the full held-out run is 240 calls, not the ~1,050 the spec estimated:**
 the baseline half is unchanged since the original run and is entirely cached, and
 10 of 50 claims already carry v5 artifacts. Only 40 Argus halves remain.
+
+## M7 decision (2026-09-20)
+
+Asked which way to spend the remaining quota after the n=50 run: a multi-hop
+subset that would test whether debate helps where a single lookup fails, or the
+calibrator. **Chosen: the calibrator.** An unbuilt graded milestone is a worse
+thing to defend than an untested hypothesis.
+
+Consequence to honour in the write-up: the claim that Argus would do better on
+harder claims stays an **assertion**, not a result, and must be worded that way.
+The multi-hop subset remains the cheapest available follow-up — same cost per
+claim, no new dataset — because `prepare_fever.py` already records how many gold
+evidence sentences each claim needs. The held-out 50 splits 35 / 10 / 5 by
+one / two / three-plus evidence sentences, so it is 70% single-lookup claims.
+
+### Calibration split
+
+- `data/fever_calib.json`: 100 claims, 50T/50F, seed 7, built with
+  `--exclude data/fever_sample.json`. **Overlap with the held-out set: 0**,
+  verified and asserted in `scripts/fit_calibrator.py`, which refuses to write a
+  calibrator on any overlap at all.
+- The evidence corpus is byte-identical after the exclusion (MD5 checked): the
+  filter removes held-out *claims* from the fit draw without removing their
+  *evidence* from the shared corpus, which retrieval still needs.
+- `--no-legacy-factcheck` skips the ablation-only call, saving one request per
+  claim: ~500 calls instead of ~600.

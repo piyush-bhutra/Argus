@@ -69,7 +69,7 @@ ARTIFACT_FIELDS = (
     "arguments", "fact_checks", "fact_checks_llm",
 )
 
-def run_argus(claim: str, rounds: int) -> dict:
+def run_argus(claim: str, rounds: int, legacy_factcheck: bool = True) -> dict:
     """Debate + retrieval + symbolic fact-check + gating + judge.
 
     Returns the RAW probability plus the full debate ARTIFACT. Caching the
@@ -85,11 +85,15 @@ def run_argus(claim: str, rounds: int) -> dict:
     fact_results = check_transcript(claim, transcript)
     verdict = assemble_verdict(claim, transcript, calibrator=None, fact_results=fact_results)
 
-    try:
-        legacy = check_transcript_llm(claim, transcript)
-    except Exception as exc:  # noqa: BLE001 - the ablation is optional, the run is not
-        print(f"    (legacy fact-check failed, ablation data missing: {exc})")
-        legacy = []
+    # Only the held-out set needs the ablation, so a calibration run skips this
+    # call and saves one request per claim - material when the free tier is the
+    # binding constraint.
+    legacy = []
+    if legacy_factcheck:
+        try:
+            legacy = check_transcript_llm(claim, transcript)
+        except Exception as exc:  # noqa: BLE001 - the ablation is optional, the run is not
+            print(f"    (legacy fact-check failed, ablation data missing: {exc})")
 
     return {
         "raw_probability": verdict.raw_probability,
@@ -279,10 +283,25 @@ def main(argv=None) -> None:
     p.add_argument("--delay", type=float, default=5.0,
                    help="seconds to sleep between claims, for rate limits (default 5)")
     p.add_argument("--refresh", action="store_true", help="ignore the cache and rescore everything")
+    p.add_argument("--sample", type=Path, help="claim file to score (default data/fever_sample.json)")
+    p.add_argument("--results", type=Path, help="artifact cache to read/write")
+    p.add_argument("--summary", type=Path, help="summary file to write")
     p.add_argument("--no-baseline", action="store_true", help="skip the single-LLM baseline")
+    p.add_argument("--no-legacy-factcheck", action="store_true",
+                   help="skip the legacy LLM fact-check (ablation data only); saves one call per claim")
     p.add_argument("--llm-timeout", type=float, default=180.0,
                    help="per-call LLM timeout in seconds for this run only (default 180)")
     args = p.parse_args(argv)
+
+    # A calibration run must not write into the held-out set's cache, or the two
+    # populations silently merge and the split stops meaning anything.
+    global SAMPLE, RESULTS, SUMMARY
+    if args.sample:
+        SAMPLE = args.sample
+    if args.results:
+        RESULTS = args.results
+    if args.summary:
+        SUMMARY = args.summary
 
     # ponytail: harness-local override of the client's 60s request timeout. A
     # batch run tolerates a slow provider far better than an interactive debate
@@ -344,7 +363,8 @@ def main(argv=None) -> None:
         result.pop("error", None)
         try:
             if need_argus:
-                argus = run_argus(claim, args.rounds)
+                argus = run_argus(claim, args.rounds,
+                                  legacy_factcheck=not args.no_legacy_factcheck)
                 result["argus_raw_probability"] = argus["raw_probability"]
                 for field in ARTIFACT_FIELDS:
                     result[field] = argus[field]

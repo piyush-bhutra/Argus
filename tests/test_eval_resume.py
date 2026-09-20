@@ -26,7 +26,8 @@ class FakeLLM:
         self.argus_calls, self.baseline_calls = [], []
         self.fail_baseline_on = fail_baseline_on
 
-    def argus(self, claim, rounds):
+    def argus(self, claim, rounds, **kwargs):
+        # **kwargs so a new run_argus option does not break every resume test.
         self.argus_calls.append(claim)
         # Must carry every field run_argus returns: the harness copies them by
         # name, and a missing one lands the claim in the error path instead of
@@ -184,5 +185,5 @@ def test_fake_argus_matches_the_real_artifact_contract():
     """Guard against the fake drifting from run_argus. When it did, every claim
     hit the error path and the resume tests failed for a reason unrelated to
     resuming."""
-    produced = set(FakeLLM().argus("c", 2)) - {"raw_probability"}
+    produced = set(FakeLLM().argus("c", 2, legacy_factcheck=False)) - {"raw_probability"}
     assert produced == set(ev.ARTIFACT_FIELDS)
