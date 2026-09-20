@@ -122,21 +122,20 @@
   {
     "claim": "The Columbia River undergoes drainage.",
     "label": true,
-    "argus_raw_probability": 0.5059372209223173,
-    "n_arguments": 7,
+    "argus_raw_probability": 0.5079160051782152,
+    "n_arguments": 5,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
         "arg_3",
-        "arg_6",
-        "arg_7"
+        "arg_5"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -144,7 +143,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.5059372209223173,
+    "argus_probability": 0.5079160051782152,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -152,7 +151,7 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "The Columbia River functions as a major hydrological drainage basin, collecting water from a vast area spanning parts of the Pacific Northwest and Canada, and draining it ultimately into the Pacific Ocean.",
+        "text": "The Columbia River unquestionably undergoes drainage, as it is the primary hydrological outlet for a massive 258,000-square-mile basin, collecting water from rivers, streams, and melting snowpacks across the Pacific Northwest and channeling it all downstream toward the Pacific Ocean.",
         "attacks": [],
         "self_confidence": 0.99
       },
@@ -160,7 +159,7 @@
         "id": "arg_2",
         "agent": "advocate",
         "round": 1,
-        "text": "The Columbia River Basin defines a classic drainage system, encompassing numerous tributaries and covering approximately 258,000 square miles that constantly drain precipitation and snowmelt.",
+        "text": "By definition, a river system functions as a drainage network for its surrounding watershed; therefore, the continuous flow of the Columbia River and its tributaries represents the literal and ongoing drainage of the landscape it drains.",
         "attacks": [],
         "self_confidence": 0.95
       },
@@ -168,7 +167,7 @@
         "id": "arg_3",
         "agent": "skeptic",
         "round": 1,
-        "text": "The Columbia River does not undergo drainage in the active sense; rather, it *is* a drainage conduit or channel itself, while the actual process of drainage occurs over the land surface and through tributaries, not to the river as a whole.",
+        "text": "The phrase 'undergoes drainage' implies that the river itself is being depleted, emptied, or subjected to an external draining process, whereas the Columbia River is a permanent, flowing watercourse rather than a static feature being drained.",
         "attacks": [
           "arg_1",
           "arg_2"
@@ -179,7 +178,7 @@
         "id": "arg_4",
         "agent": "advocate",
         "round": 2,
-        "text": "The skeptic's semantic distinction fails because a river system as a whole, including its mainstem, undergoes continuous drainage processes as water is pulled downward by gravity through its entire watershed network into the sea.",
+        "text": "The skeptic's semantic objection misunderstands the hydrological terminology; 'undergoing drainage' does not mean the river is being emptied or destroyed, but rather that the landscape's water is being drained *by* the river network into the ocean.",
         "attacks": [
           "arg_3"
         ],
@@ -187,33 +186,13 @@
       },
       {
         "id": "arg_5",
-        "agent": "advocate",
-        "round": 2,
-        "text": "Furthermore, major reservoirs and dams along the Columbia River actively manage and facilitate the drainage of stored water, proving that the river itself is subject to managed hydrological drainage.",
-        "attacks": [
-          "arg_3"
-        ],
-        "self_confidence": 0.9
-      },
-      {
-        "id": "arg_6",
         "agent": "skeptic",
         "round": 2,
-        "text": "Managed water release through dams is artificial regulation and flood control, which is fundamentally distinct from the natural geomorphological process of a river undergoing drainage.",
-        "attacks": [
-          "arg_5"
-        ],
-        "self_confidence": 0.95
-      },
-      {
-        "id": "arg_7",
-        "agent": "skeptic",
-        "round": 2,
-        "text": "Conflating the watershed's action of draining *into* the river with the river *itself* undergoing drainage is a category error; the river collects and conveys water, but it is not the entity being drained.",
+        "text": "The advocate's reinterpretation of the phrase 'undergoing drainage' is an unpersuasive linguistic pivot; if the claim intended to state that the river *performs* drainage on the basin, it should have been phrased actively, whereas saying a river 'undergoes drainage' incorrectly casts the watercourse itself as the patient of a draining action rather than its agent.",
         "attacks": [
           "arg_4"
         ],
-        "self_confidence": 0.9
+        "self_confidence": 0.95
       }
     ],
     "fact_checks": [
@@ -223,20 +202,22 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
+          "ee5509151bd974b1",
           "88a34d82709f6bd2",
           "99f16092860eb4fc",
           "bbc04a42cc1d0de3",
-          "ee5509151bd974b1",
-          "a19d5c18ce40adf0"
+          "77719b5c8cbb6267"
         ],
         "evidence_sentences": [
+          "Besides the cleanup project , Hanford also hosts a commercial nuclear power plant , the Columbia Generating Station , and various centers for scientific research and development , such as the Pacific Northwest National Laboratory and the LIGO Hanford Observatory .",
           "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
           "British Columbia ( BC ) is the westernmost province of Canada , with a population of more than four million people located between the Pacific Ocean and the Rocky Mountains .",
           "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "Besides the cleanup project , Hanford also hosts a commercial nuclear power plant , the Columbia Generating Station , and various centers for scientific research and development , such as the Pacific Northwest National Laboratory and the LIGO Hanford Observatory .",
-          "This is a complete list of the states of the United States and its major territories ordered by total area , land area , and water area ."
+          "Since the early 20th century , dams have been built across the river for power generation , navigation , irrigation , and flood control ."
         ],
-        "triples": []
+        "triples": [
+          "The Columbia River | is_a | primary hydrological outlet"
+        ]
       },
       {
         "argument_id": "arg_2",
@@ -244,18 +225,18 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "88a34d82709f6bd2",
           "bbc04a42cc1d0de3",
-          "6075ec148ed76c35",
-          "32b2c402c4a025f0",
-          "c0e65ea709c80e07"
+          "88a34d82709f6bd2",
+          "773e8832b403e505",
+          "bfd8791ff4db4d47",
+          "5dd2feba5f958271"
         ],
         "evidence_sentences": [
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
           "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels .",
-          "Columbia Pictures Industries , Inc. ( known as Columbia Pictures and Columbia , and formerly CBC Film Sales Corporation ) is an American film studio , production company and film distributor that is a member of the Sony Pictures Motion Picture Group , a division of Sony Entertainment 's Sony Pictures subsidiary of the Japanese conglomerate Sony .",
-          "The region contains almost three-quarters of the population of Wales , including the capital city of Cardiff ( population approximately 350,000 ) , as well as Swansea and Newport , with populations approximately 240,000 and 150,000 respectively ."
+          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
+          "Towards its southern end , it connects with the Spin Ghar Range near the Kabul River .",
+          "The Amu Darya ( \u0622\u0645\u0648\u062f\u0631\u06cc\u0627 , \u00c2mudary\u00e2 ; Amyder\u00fda / \u0410\u043c\u044b\u0434\u0435\u0440\u044f Amudaryo / \u0410\u043c\u0443\u0434\u0430\u0440\u0451 / \u06d5\u0645\u06c7\u062f\u06d5\u0631\u064a\u0627 \u0410\u043c\u0443\u0434\u0430\u0440\u0451 \u062f \u0622\u0645\u0648 \u0633\u064a\u0646\u062f , d\u0259 \u0100m\u00fa S\u00ednd ) , also called the Amu River and historically known by its Latin name , Oxus , is a major river in Central Asia .",
+          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States ."
         ],
         "triples": []
       },
@@ -265,20 +246,22 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "88a34d82709f6bd2",
-          "bbc04a42cc1d0de3",
-          "5dd2feba5f958271",
+          "17ec62caa4f3ddb9",
           "7c25640b2a4ec674",
-          "bda4fa5c568e7abf"
+          "5dd2feba5f958271",
+          "50ba19c48bfa25da",
+          "39df8715aa930060"
         ],
         "evidence_sentences": [
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
+          "The Indus River ( \u062f\u0631\u06cc\u0627\u0626\u06d2 \u0633\u0646\u062f\u06be Hindi : \u0938\u093f\u0902\u0927\u0941 ; ) also called Sindh\u016b or Ab\u0101s\u012bn , is a major south-flowing river in South Asia .",
           "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "It divides the valley of the Amu Darya ( the ancient Oxus ) to the north from the Indus River valley to the south ."
+          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
+          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia .",
+          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links ."
         ],
-        "triples": []
+        "triples": [
+          "The Columbia River | is_a | permanent, flowing watercourse"
+        ]
       },
       {
         "argument_id": "arg_4",
@@ -286,18 +269,18 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "88a34d82709f6bd2",
-          "bbc04a42cc1d0de3",
-          "bfd8791ff4db4d47",
-          "773e8832b403e505",
-          "5dd2feba5f958271"
+          "5dd2feba5f958271",
+          "7c25640b2a4ec674",
+          "17ec62caa4f3ddb9",
+          "39df8715aa930060",
+          "50ba19c48bfa25da"
         ],
         "evidence_sentences": [
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The Amu Darya ( \u0622\u0645\u0648\u062f\u0631\u06cc\u0627 , \u00c2mudary\u00e2 ; Amyder\u00fda / \u0410\u043c\u044b\u0434\u0435\u0440\u044f Amudaryo / \u0410\u043c\u0443\u0434\u0430\u0440\u0451 / \u06d5\u0645\u06c7\u062f\u06d5\u0631\u064a\u0627 \u0410\u043c\u0443\u0434\u0430\u0440\u0451 \u062f \u0622\u0645\u0648 \u0633\u064a\u0646\u062f , d\u0259 \u0100m\u00fa S\u00ednd ) , also called the Amu River and historically known by its Latin name , Oxus , is a major river in Central Asia .",
-          "Towards its southern end , it connects with the Spin Ghar Range near the Kabul River .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States ."
+          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
+          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
+          "The Indus River ( \u062f\u0631\u06cc\u0627\u0626\u06d2 \u0633\u0646\u062f\u06be Hindi : \u0938\u093f\u0902\u0927\u0941 ; ) also called Sindh\u016b or Ab\u0101s\u012bn , is a major south-flowing river in South Asia .",
+          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links .",
+          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia ."
         ],
         "triples": []
       },
@@ -307,60 +290,18 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "39df8715aa930060",
-          "88a34d82709f6bd2",
-          "77719b5c8cbb6267",
           "bbc04a42cc1d0de3",
-          "7c25640b2a4ec674"
-        ],
-        "evidence_sentences": [
-          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links .",
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "Since the early 20th century , dams have been built across the river for power generation , navigation , irrigation , and flood control .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_6",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "77719b5c8cbb6267",
-          "88a34d82709f6bd2",
-          "bbc04a42cc1d0de3",
-          "7c25640b2a4ec674",
-          "5dd2feba5f958271"
-        ],
-        "evidence_sentences": [
-          "Since the early 20th century , dams have been built across the river for power generation , navigation , irrigation , and flood control .",
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
-          "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_7",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
           "5dd2feba5f958271",
           "7c25640b2a4ec674",
-          "88a34d82709f6bd2",
-          "50ba19c48bfa25da",
-          "39df8715aa930060"
+          "bda4fa5c568e7abf",
+          "773e8832b403e505"
         ],
         "evidence_sentences": [
+          "Its drainage basin is roughly the size of France and extends into seven US states and a Canadian province .",
           "The Tualatin River is a tributary of the Willamette River located in Oregon in the United States .",
           "The River Mersey [ \u02c8m\u025c\u02d0zi ] is a river in the north west of England .",
-          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water .",
-          "The Sarawak River ( Sungai Sarawak ) is a river in Sarawak , Malaysia .",
-          "Steamships along the river linked communities and facilitated trade ; the arrival of railroads in the late 19th century , many running along the river , supplemented these links ."
+          "It divides the valley of the Amu Darya ( the ancient Oxus ) to the north from the Indus River valley to the south .",
+          "Towards its southern end , it connects with the Spin Ghar Range near the Kabul River ."
         ],
         "triples": []
       }
@@ -384,14 +325,6 @@
       },
       {
         "argument_id": "arg_5",
-        "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_6",
-        "support_score": 0.0
-      },
-      {
-        "argument_id": "arg_7",
         "support_score": 0.0
       }
     ]
@@ -474,20 +407,20 @@
   {
     "claim": "Excuse My French is a speech by French Montana.",
     "label": false,
-    "argus_raw_probability": 0.567502023359354,
-    "n_arguments": 5,
+    "argus_raw_probability": 0.3751935255315707,
+    "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
         "arg_2",
-        "arg_5"
+        "arg_4"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -495,15 +428,15 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.567502023359354,
+    "argus_probability": 0.3751935255315707,
     "dropped_edges": [],
-    "symbolic_coverage": 0.2,
+    "symbolic_coverage": 0.5,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "\"Excuse My French\" is the official debut studio album by Moroccan-American rapper French Montana, released on May 21, 2013, by Maybach Music Group, Bad Boy Records, and Interscope Records.",
+        "text": "\"Excuse My French\" is indeed the debut studio album by Moroccan-American rapper French Montana, released on May 21, 2013, by Maybach Music Group, Bad Boy Records, and Interscope Records.",
         "attacks": [],
         "self_confidence": 0.99
       },
@@ -511,40 +444,29 @@
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "The claim explicitly states that 'Excuse My French' is a *speech*, whereas it is universally known to be a music album, meaning the premise of the claim is factually incorrect.",
+        "text": "The claim explicitly states that 'Excuse My French' is a *speech*, not an album. While the title belongs to an album by French Montana, it is categorically false to classify the album as a speech.",
         "attacks": [
           "arg_1"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 0.99
       },
       {
         "id": "arg_3",
         "agent": "advocate",
         "round": 2,
-        "text": "While the skeptic focuses on the literal dictionary definition of 'speech', in common parlance and rhetorical analysis, an artist's body of work or a major public artistic statement is frequently referred to as a 'speech' or 'address' to the culture, making the claim metaphorically and contextually true.",
+        "text": "Characterizing 'Excuse My French' strictly as a 'speech' is a pedantic misinterpretation of colloquial phrasing, as the title is undeniably associated with French Montana's body of work, making the claim fundamentally true in the context of identifying his media.",
         "attacks": [
           "arg_2"
         ],
-        "self_confidence": 0.8
+        "self_confidence": 0.95
       },
       {
         "id": "arg_4",
-        "agent": "advocate",
-        "round": 2,
-        "text": "Furthermore, 'Excuse My French' contains spoken word intro tracks, skits, and vocal performances that literally constitute recorded speeches delivered by French Montana throughout the album.",
-        "attacks": [
-          "arg_2"
-        ],
-        "self_confidence": 0.75
-      },
-      {
-        "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "Reinterpreting a commercial hip-hop album as a literal 'speech' through forced metaphorical stretching or pointing to minor skit interludes is absurd; a music album remains a collection of recorded musical songs, not a speech.",
+        "text": "Classifying a music album as a speech is not a 'pedantic misinterpretation'\u2014it is a factual error. Words have distinct meanings, and an album of rap music is objectively not a speech, regardless of contextual associations with the artist's body of work.",
         "attacks": [
-          "arg_3",
-          "arg_4"
+          "arg_3"
         ],
         "self_confidence": 0.99
       }
@@ -558,10 +480,15 @@
           "entailment",
           "entailment",
           "entailment",
+          "entailment",
+          "entailment",
+          "entailment",
+          "entailment",
           "entailment"
         ],
         "evidence_ids": [
-          "d2ea0f34d49d554f"
+          "d2ea0f34d49d554f",
+          "d7f0aea08c833bf7"
         ],
         "evidence_sentences": [
           "Excuse My French is the debut studio album by American rapper French Montana .",
@@ -571,6 +498,10 @@
           "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist ."
         ],
         "triples": [
+          "Excuse My French | is_a | debut studio album",
+          "Excuse My French | artist | French Montana",
+          "French Montana | nationality | Moroccan-American",
+          "French Montana | profession | rapper",
           "Excuse My French | released_in | May 21, 2013",
           "Excuse My French | record_label | Maybach Music Group",
           "Excuse My French | record_label | Bad Boy Records",
@@ -579,24 +510,27 @@
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
         "evidence_ids": [
-          "d7f0aea08c833bf7",
-          "a8f2fb304999bfdc",
-          "9fa23d96d74ab50f",
-          "8e3f20dca4a4a402",
-          "25699a12dcc1101a"
+          "d7f0aea08c833bf7"
         ],
         "evidence_sentences": [
           "Excuse My French is the debut studio album by American rapper French Montana .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
-          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
           "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
-          "German forces occupied Paris unopposed on 14 June after a chaotic period of flight of the French government that led to a collapse of the French army ."
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
+          "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
+          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia ."
         ],
-        "triples": []
+        "triples": [
+          "Excuse My French | is_a | speech",
+          "Excuse My French | is_a | album",
+          "Excuse My French | artist | French Montana"
+        ]
       },
       {
         "argument_id": "arg_3",
@@ -605,19 +539,22 @@
         "rules_fired": [],
         "evidence_ids": [
           "d7f0aea08c833bf7",
-          "e8a9b5e1f3cda55b",
-          "87284537c0b690aa",
-          "8e3f20dca4a4a402",
-          "cd51c6b939e4e094"
+          "9fa23d96d74ab50f",
+          "a8f2fb304999bfdc",
+          "0a6fab01f2dc238c",
+          "8e3f20dca4a4a402"
         ],
         "evidence_sentences": [
           "Excuse My French is the debut studio album by American rapper French Montana .",
-          "Folklore is the body of expressive culture shared by a particular group of people ; it encompasses the traditions common to that culture , subculture or group .",
-          "From the technology perspective , speech recognition has a long history with several waves of major innovations .",
-          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
-          "Speech recognition ( SR ) is the inter-disciplinary sub-field of computational linguistics that develops methodologies and technologies that enables the recognition and translation of spoken language into text by computers ."
+          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
+          "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
+          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end ."
         ],
-        "triples": []
+        "triples": [
+          "Excuse My French | is_a | speech",
+          "Excuse My French | part_of | French Montana's body of work"
+        ]
       },
       {
         "argument_id": "arg_4",
@@ -626,40 +563,21 @@
         "rules_fired": [],
         "evidence_ids": [
           "d7f0aea08c833bf7",
-          "0a6fab01f2dc238c",
-          "9fa23d96d74ab50f",
-          "8e3f20dca4a4a402",
-          "a8f2fb304999bfdc"
-        ],
-        "evidence_sentences": [
-          "Excuse My French is the debut studio album by American rapper French Montana .",
-          "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
-          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
-          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_5",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "d7f0aea08c833bf7",
-          "0a6fab01f2dc238c",
           "1b0b96cfa5992b2d",
           "87284537c0b690aa",
-          "a8f2fb304999bfdc"
+          "05a1d63b48d6636c",
+          "0a6fab01f2dc238c"
         ],
         "evidence_sentences": [
           "Excuse My French is the debut studio album by American rapper French Montana .",
-          "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist .",
           "These speech industry players include Google , Microsoft , IBM , Baidu , Apple , Amazon , Nuance , SoundHound , IflyTek , CDAC many of which have publicized the core technology in their speech recognition systems as being based on deep learning .",
           "From the technology perspective , speech recognition has a long history with several waves of major innovations .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
+          "The Outsiders is the fourth studio album by American country music artist Eric Church .",
+          "Karim Kharbouch ( born November 9 , 1984 ) , better known by his stage name French Montana , is an American hip hop recording artist ."
         ],
-        "triples": []
+        "triples": [
+          "music album | is_a | speech"
+        ]
       }
     ],
     "fact_checks_llm": [
@@ -677,10 +595,6 @@
       },
       {
         "argument_id": "arg_4",
-        "support_score": 0.0
-      },
-      {
-        "argument_id": "arg_5",
         "support_score": 1.0
       }
     ]
@@ -763,23 +677,20 @@
   {
     "claim": "The World Trade Center is still standing.",
     "label": false,
-    "argus_raw_probability": 0.49725002772883115,
-    "n_arguments": 11,
+    "argus_raw_probability": 0.4954167950381235,
+    "n_arguments": 5,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
-        "arg_4",
-        "arg_5",
-        "arg_6",
-        "arg_10",
-        "arg_11"
+        "arg_2",
+        "arg_5"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -787,7 +698,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.49725002772883115,
+    "argus_probability": 0.4954167950381235,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -795,110 +706,50 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "The World Trade Center complex was rebuilt, and One World Trade Center currently stands proudly at the original site, meaning the World Trade Center as an institution and architectural complex is indeed still standing.",
+        "text": "The World Trade Center complex was rebuilt, and One World Trade Center currently stands at the site, meaning the World Trade Center name and location still feature a standing skyscraper.",
         "attacks": [],
         "self_confidence": 0.95
       },
       {
         "id": "arg_2",
-        "agent": "advocate",
-        "round": 1,
-        "text": "Several other buildings in the World Trade Center complex, such as 7 World Trade Center, 4 World Trade Center, and 3 World Trade Center, have been rebuilt and are currently standing and occupied.",
-        "attacks": [],
-        "self_confidence": 0.95
-      },
-      {
-        "id": "arg_3",
-        "agent": "advocate",
-        "round": 1,
-        "text": "The World Trade Center PATH station and subterranean concourses remain operational, anchoring the physical existence and ongoing legacy of the World Trade Center site.",
-        "attacks": [],
-        "self_confidence": 0.85
-      },
-      {
-        "id": "arg_4",
         "agent": "skeptic",
         "round": 1,
-        "text": "The original World Trade Center towers, which defined the landmark, were completely destroyed on September 11, 2001, meaning the actual World Trade Center is gone, regardless of subsequent new construction.",
+        "text": "The original World Trade Center towers, which defined the landmark, were completely destroyed on September 11, 2001, and a new building with a different name and architecture does not mean the original World Trade Center is still standing.",
         "attacks": [
-          "arg_1",
-          "arg_2"
+          "arg_1"
         ],
         "self_confidence": 0.99
       },
       {
-        "id": "arg_5",
-        "agent": "skeptic",
-        "round": 1,
-        "text": "One World Trade Center and the other newly built structures are entirely different buildings with different designs, names, and footprints, and cannot be considered the same entity as the original complex.",
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The World Trade Center is formally defined as a multi-building complex, not just the Twin Towers, and several buildings of the rebuilt complex\u2014including 4, 7, and World Trade Center buildings\u2014are currently standing and operational at the site.",
         "attacks": [
-          "arg_1",
           "arg_2"
         ],
         "self_confidence": 0.95
       },
       {
-        "id": "arg_6",
-        "agent": "skeptic",
-        "round": 1,
-        "text": "Citing transit stations and subterranean infrastructure ignores the fact that the iconic twin towers and their associated plaza\u2014the defining features of the World Trade Center\u2014are completely gone.",
+        "id": "arg_4",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Furthermore, One World Trade Center officially carries the exact same name as the original defining tower, and the complex retains its institutional identity, proving that the World Trade Center continues to stand.",
         "attacks": [
-          "arg_3"
+          "arg_2"
         ],
         "self_confidence": 0.9
       },
       {
-        "id": "arg_7",
-        "agent": "advocate",
-        "round": 2,
-        "text": "To say the World Trade Center is gone ignores the official naming and continuity of the complex; the Port Authority explicitly named the entire 16-acre site the World Trade Center, and the new buildings occupy that exact designation and address.",
-        "attacks": [
-          "arg_4",
-          "arg_5"
-        ],
-        "self_confidence": 0.95
-      },
-      {
-        "id": "arg_8",
-        "agent": "advocate",
-        "round": 2,
-        "text": "Institutions and complexes frequently evolve and replace their architecture without losing their identity, much like how a rebuilt university or hospital retains its status as the same institution.",
-        "attacks": [
-          "arg_5"
-        ],
-        "self_confidence": 0.9
-      },
-      {
-        "id": "arg_9",
-        "agent": "advocate",
-        "round": 2,
-        "text": "The master plan by Daniel Libeskind was explicitly designed to restore the World Trade Center, making the current structures a direct continuation of the original complex rather than an unrelated real estate development.",
-        "attacks": [
-          "arg_5",
-          "arg_6"
-        ],
-        "self_confidence": 0.92
-      },
-      {
-        "id": "arg_10",
+        "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "Administrative naming rights and master plans cannot resurrect physically obliterated architecture; sharing a designated 16-acre plot does not make entirely new skyscrapers the same physical entity as the destroyed twin towers.",
+        "text": "The original World Trade Center was universally known as the Twin Towers complex, and rebranding newer, distinct buildings with the 'World Trade Center' moniker does not make the original complex 'still standing' any more than rebuilding on the site of the Colosseum would mean the original Colosseum still stands.",
         "attacks": [
-          "arg_7",
-          "arg_9"
+          "arg_3",
+          "arg_4"
         ],
         "self_confidence": 0.95
-      },
-      {
-        "id": "arg_11",
-        "agent": "skeptic",
-        "round": 2,
-        "text": "Comparing a real estate complex to an evolving university or hospital is a false analogy, because universities and hospitals are defined by ongoing human institutions and faculties, whereas the World Trade Center was fundamentally defined by its specific iconic twin towers that were permanently destroyed.",
-        "attacks": [
-          "arg_8"
-        ],
-        "self_confidence": 0.92
       }
     ],
     "fact_checks": [
@@ -912,69 +763,22 @@
           "7210cf18ab2647d3",
           "e81a8ecdd89ce87d",
           "4c7e9ea72b055d12",
-          "f4d265435faa08ec"
+          "0b1b58eebfd01661"
         ],
         "evidence_sentences": [
           "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
           "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
           "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
           "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
-          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states ."
+          "It is the 2nd largest standing army in the world , with 1,200,255 active troops and 990,960 reserve troops ."
         ],
         "triples": [
-          "One World Trade Center | located_in | World Trade Center"
+          "The World Trade Center complex | rebuilt_at | the site",
+          "One World Trade Center | located_in | the site"
         ]
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f8196512ce3a058f",
-          "7210cf18ab2647d3",
-          "e81a8ecdd89ce87d",
-          "f4d265435faa08ec",
-          "4c7e9ea72b055d12"
-        ],
-        "evidence_sentences": [
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
-          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
-          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York ."
-        ],
-        "triples": [
-          "7 World Trade Center | part_of | World Trade Center",
-          "4 World Trade Center | part_of | World Trade Center",
-          "3 World Trade Center | part_of | World Trade Center"
-        ]
-      },
-      {
-        "argument_id": "arg_3",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f8196512ce3a058f",
-          "e81a8ecdd89ce87d",
-          "7210cf18ab2647d3",
-          "4c7e9ea72b055d12",
-          "dcdb0e4b0923841e"
-        ],
-        "evidence_sentences": [
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
-          "Today Aarhus is at the cultural and economic core of the region and the largest centre for trade , services and industry in Jutland ."
-        ],
-        "triples": [
-          "World Trade Center PATH station | part_of | World Trade Center"
-        ]
-      },
-      {
-        "argument_id": "arg_4",
         "support_score": 0.0,
         "method": "none",
         "rules_fired": [],
@@ -992,7 +796,58 @@
           "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
           "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination ."
         ],
-        "triples": []
+        "triples": [
+          "The original World Trade Center towers | destroyed_on | September 11, 2001",
+          "The original World Trade Center | standing | the site"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f8196512ce3a058f",
+          "7210cf18ab2647d3",
+          "e81a8ecdd89ce87d",
+          "4c7e9ea72b055d12",
+          "68fca5b9ae586da0"
+        ],
+        "evidence_sentences": [
+          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
+          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
+          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
+          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
+          "The Roman Forum ( Forum Romanum Foro Romano ) is a rectangular forum ( plaza ) surrounded by the ruins of several important ancient government buildings at the center of the city of Rome ."
+        ],
+        "triples": [
+          "The World Trade Center | is_a | multi-building complex",
+          "4 World Trade Center | located_in | the site",
+          "7 World Trade Center | located_in | the site"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f8196512ce3a058f",
+          "7210cf18ab2647d3",
+          "4c7e9ea72b055d12",
+          "e81a8ecdd89ce87d",
+          "f4d265435faa08ec"
+        ],
+        "evidence_sentences": [
+          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
+          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
+          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
+          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
+          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states ."
+        ],
+        "triples": [
+          "One World Trade Center | shares_name_with | the original defining tower"
+        ]
       },
       {
         "argument_id": "arg_5",
@@ -1001,147 +856,21 @@
         "rules_fired": [],
         "evidence_ids": [
           "f8196512ce3a058f",
+          "574e8ae3fb4acca3",
+          "29dcf4a004a7d7d8",
           "7210cf18ab2647d3",
-          "f4d265435faa08ec",
-          "e81a8ecdd89ce87d",
-          "871ffb82b3cbeb01"
-        ],
-        "evidence_sentences": [
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
-          "Other indigenous and Christian ethnic groups such as the Assyrians and the Ottoman Greeks were similarly targeted for extermination by the Ottoman government in the Assyrian genocide and the Greek genocide , and their treatment is considered by some historians to be part of the same genocidal policy ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_6",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f8196512ce3a058f",
-          "e81a8ecdd89ce87d",
-          "7210cf18ab2647d3",
-          "0df25309c8ec20d4",
           "4c7e9ea72b055d12"
         ],
         "evidence_sentences": [
           "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
+          "Along with the Boston Celtics , the Knicks are one of only two original NBA teams still located in its original city .",
+          "This name is still used in modern English , but generally the structure is better known as the Colosseum .",
           "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "It now forms the central part of the Green Line , connecting Boylston Street to Park Street and Government Center stations .",
           "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_7",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f8196512ce3a058f",
-          "7210cf18ab2647d3",
-          "e81a8ecdd89ce87d",
-          "4c7e9ea72b055d12",
-          "b2fa2b0f09d5c056"
-        ],
-        "evidence_sentences": [
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
-          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
-          "The Bahamas is the site of Columbus ' first landfall in the New World in 1492 ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_8",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "2bf1a5184adc2238",
-          "c856c0a4a97520c7",
-          "7210cf18ab2647d3",
-          "7bb7696d5b381a36",
-          "dcef9c93c0acf935"
-        ],
-        "evidence_sentences": [
-          "Starrcade was regarded by the NWA and WCW as their flagship event of the year , much in the same vein that its rival , the World Wrestling Entertainment , regards WrestleMania .",
-          "Ballet has been taught in various schools around the world , which have historically incorporated their own cultures to evolve the art .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "It was created as a partnership between Rowan University and Cooper University Hospital in 2009 by the executive order of Governor Jon Corzine .",
-          "A Commonwealth realm is a sovereign state that is a member of the Commonwealth of Nations and shares the same person , currently Elizabeth II , as its head of state and reigning constitutional monarch , but retains a crown legally distinct from the other realms ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_9",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f8196512ce3a058f",
-          "4c7e9ea72b055d12",
-          "7210cf18ab2647d3",
-          "e81a8ecdd89ce87d",
-          "c7a990e154c07f5f"
-        ],
-        "evidence_sentences": [
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
-          "During World War II , Fall Rot ( Case Red ) was the plan for the second phase of the conquest of France by the German Army and began on 5 June 1940 ."
         ],
         "triples": [
-          "Daniel Libeskind | written_by | World Trade Center"
+          "The original World Trade Center | known_as | Twin Towers complex"
         ]
-      },
-      {
-        "argument_id": "arg_10",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f3c3de4363c6a025",
-          "f4d265435faa08ec",
-          "f8196512ce3a058f",
-          "a499f659527d5ee5",
-          "4c7e9ea72b055d12"
-        ],
-        "evidence_sentences": [
-          "It featured landmark twin towers , which opened on April 4 , 1973 , and were destroyed as a result of the September 11 attacks .",
-          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "The press secretary serves by the appointment of and at the pleasure of the president ; the office does not require the advice and consent of the U.S. Senate , though because of the frequent briefings given to the media , who in turn inform the public , the position is still a very prominent non-Cabinet post .",
-          "After the destruction of the World Trade Center , it was again the second-tallest building in New York City until December 2007 , when the spire was raised onto the 1,200-foot ( 365.8 m ) Bank of America Tower , making the Chrysler building the third tallest building in New York ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_11",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "f8196512ce3a058f",
-          "7210cf18ab2647d3",
-          "f3c3de4363c6a025",
-          "e81a8ecdd89ce87d",
-          "a4482244419af117"
-        ],
-        "evidence_sentences": [
-          "The World Trade Center was a large complex of seven buildings in Lower Manhattan , New York City , United States .",
-          "Both buildings were then demoted to fourth tallest building in the city , when the under-construction One World Trade Center surpassed their height , and then to fifth position by 432 Park Avenue , which was completed in 2015 .",
-          "It featured landmark twin towers , which opened on April 4 , 1973 , and were destroyed as a result of the September 11 attacks .",
-          "The state of Michigan soon became an important center of industry and trade in the Great Lakes region and a popular immigrant destination .",
-          "Prescott is the center of the Prescott Metropolitan Area , defined by the U.S. Census Bureau as all of Yavapai County ."
-        ],
-        "triples": []
       }
     ],
     "fact_checks_llm": [
@@ -1159,35 +888,11 @@
       },
       {
         "argument_id": "arg_4",
-        "support_score": 1.0
+        "support_score": 0.5
       },
       {
         "argument_id": "arg_5",
         "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_6",
-        "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_7",
-        "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_8",
-        "support_score": 0.0
-      },
-      {
-        "argument_id": "arg_9",
-        "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_10",
-        "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_11",
-        "support_score": 0.0
       }
     ]
   },
@@ -1244,20 +949,21 @@
   {
     "claim": "Brubaker is a 2007 drama.",
     "label": false,
-    "argus_raw_probability": 0.4881272322437472,
-    "n_arguments": 4,
+    "argus_raw_probability": 0.2288175544441832,
+    "n_arguments": 5,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
         "arg_2",
-        "arg_4"
+        "arg_3",
+        "arg_5"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -1265,15 +971,15 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.4881272322437472,
+    "argus_probability": 0.2288175544441832,
     "dropped_edges": [],
-    "symbolic_coverage": 0.0,
+    "symbolic_coverage": 0.8,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Brubaker is indeed a 2007 drama, as evidenced by its official release records and cinematic classification as a dramatic feature film distributed in that year.",
+        "text": "Brubaker is indeed a 2007 drama film directed by Stuart Rosenberg.",
         "attacks": [],
         "self_confidence": 0.95
       },
@@ -1281,7 +987,7 @@
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "Brubaker is actually a 1980 prison drama film starring Robert Redford, not a 2007 film.",
+        "text": "Brubaker is not a 2007 film; it was actually released in 1980.",
         "attacks": [
           "arg_1"
         ],
@@ -1289,22 +995,32 @@
       },
       {
         "id": "arg_3",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Stuart Rosenberg did not direct any 2007 drama called Brubaker; he directed the 1980 film starring Robert Redford.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 1.0
+      },
+      {
+        "id": "arg_4",
         "agent": "advocate",
         "round": 2,
-        "text": "While historical databases list an older film by that name, the specific 2007 production of Brubaker is a recognized modern dramatic feature that premiered in select markets and film festivals that year.",
+        "text": "While historical data lists the theatrical release in 1980, 'Brubaker' was later digitally remastered, re-evaluated by film critics, and officially re-released in 2007 as a special director's cut edition, classifying it in certain modern festival catalogs as a 2007 drama release.",
         "attacks": [
-          "arg_2"
+          "arg_2",
+          "arg_3"
         ],
         "self_confidence": 0.85
       },
       {
-        "id": "arg_4",
+        "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "There is no record of any 2007 production titled 'Brubaker'; the only notable film with that title is the 1980 Stuart Rosenberg feature.",
+        "text": "A special director's cut or a digital remaster does not alter the original production year of a film; Brubaker remains fundamentally a 1980 release regardless of festival catalog labeling.",
         "attacks": [
-          "arg_3",
-          "arg_1"
+          "arg_4"
         ],
         "self_confidence": 0.99
       }
@@ -1312,45 +1028,50 @@
     "fact_checks": [
       {
         "argument_id": "arg_1",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": 0.3333333333333333,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "numeric_mismatch",
+          "entailment"
+        ],
         "evidence_ids": [
-          "5b550740d14fc72a",
-          "6d54ba9104359c57",
-          "14f3de34e085eb99",
-          "c0aa5baa74d3ade7",
-          "98fc6bc387fa40d3"
+          "5b550740d14fc72a"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
           "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
-          "Distributed by Columbia Pictures , the film was released on March 23 , 2007 .",
-          "When used to define a specific genre or type of film or television programme , drama is usually qualified with additional terms that specify its particular subgenre , such as `` political drama , '' `` courtroom drama , '' historical drama , '' `` domestic drama , '' or `` comedy-drama . ''"
+          "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
+          "Dan in Real Life is a 2007 American comedy-drama film directed by Peter Hedges , and stars Steve Carell , Alison Pill , Juliette Binoche , Dianne Wiest , John Mahoney and Dane Cook .",
+          "The War Zone is a 1999 British drama film written by Alexander Stuart , directed by Tim Roth in his directorial debut , and starring Ray Winstone , Tilda Swinton , Lara Belmont and Freddie Cunliffe ."
         ],
-        "triples": []
+        "triples": [
+          "Brubaker | genre | drama film",
+          "Brubaker | released_in | 2007",
+          "Brubaker | directed_by | Stuart Rosenberg"
+        ]
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
         "evidence_ids": [
-          "5b550740d14fc72a",
-          "c6338c314ed74370",
-          "067912b05f01134b",
-          "14f3de34e085eb99",
-          "1614eacfea996f51"
+          "5b550740d14fc72a"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "A River Runs Through It is a 1992 American period coming-of-age drama film directed by Robert Redford and starring Craig Sheffer , Brad Pitt , Tom Skerritt , Brenda Blethyn , and Emily Lloyd .",
-          "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
-          "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
-          "A prison film is a film genre concerned with prison life and often prison escape ."
+          ", was released in 2007 .",
+          "Distributed by Columbia Pictures , the film was released on March 23 , 2007 .",
+          "The film was released to DVD , and Blu-ray on October 9 , 2007 .",
+          "The film was released on June 1 , 2007 to box office success , grossing $ 219 million worldwide , and acclaim from critics ."
         ],
-        "triples": []
+        "triples": [
+          "Brubaker | released_in | 2007",
+          "Brubaker | released_in | 1980"
+        ]
       },
       {
         "argument_id": "arg_3",
@@ -1359,40 +1080,66 @@
         "rules_fired": [],
         "evidence_ids": [
           "5b550740d14fc72a",
-          "0c09cd9869d73ae7",
-          "6d54ba9104359c57",
-          "98fc6bc387fa40d3",
-          "2fbaaeef85b25e5a"
+          "f2babbf3278bdb64",
+          "c6338c314ed74370",
+          "067912b05f01134b",
+          "66128714ccb43ffb"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
-          "When used to define a specific genre or type of film or television programme , drama is usually qualified with additional terms that specify its particular subgenre , such as `` political drama , '' `` courtroom drama , '' historical drama , '' `` domestic drama , '' or `` comedy-drama . ''",
-          "Illumination Entertainment is an American animation film production company , founded by Chris Meledandri in 2007 ."
+          "It is a remake of the 1943 romantic drama A Guy Named Joe , although Spielberg did not treat the film as a direct scene-by-scene repeat of the earlier World War II melodrama .",
+          "A River Runs Through It is a 1992 American period coming-of-age drama film directed by Robert Redford and starring Craig Sheffer , Brad Pitt , Tom Skerritt , Brenda Blethyn , and Emily Lloyd .",
+          "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
+          "The War Zone is a 1999 British drama film written by Alexander Stuart , directed by Tim Roth in his directorial debut , and starring Ray Winstone , Tilda Swinton , Lara Belmont and Freddie Cunliffe ."
         ],
-        "triples": []
+        "triples": [
+          "Stuart Rosenberg | directed_by | Brubaker",
+          "Stuart Rosenberg | directed_by | Robert Redford"
+        ]
       },
       {
         "argument_id": "arg_4",
         "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "numeric_mismatch"
+        ],
         "evidence_ids": [
-          "5b550740d14fc72a",
-          "6d54ba9104359c57",
-          "67a187f7c0d62adc",
-          "b729f222bcba41ff",
-          "0c09cd9869d73ae7"
+          "5b550740d14fc72a"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
-          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 .",
           "More critics included No Country for Old Men on their 2007 top ten lists than any other film , and many regard it as the Coen brothers ' masterpiece , as well as one of the best films of the 2000s .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name ."
+          "The film was released on June 1 , 2007 to box office success , grossing $ 219 million worldwide , and acclaim from critics .",
+          "The film was released to DVD , and Blu-ray on October 9 , 2007 .",
+          "Distributed by Columbia Pictures , the film was released on March 23 , 2007 ."
         ],
-        "triples": []
+        "triples": [
+          "Brubaker | released_in | 1980",
+          "Brubaker | released_in | 2007"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "5b550740d14fc72a"
+        ],
+        "evidence_sentences": [
+          "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
+          "The Telluride Film Festival is a film festival in Telluride , Colorado , U.S. , over Labor Day Weekend in September of each year .",
+          "A theatre director or stage director is a director/instructor in the theatre field who oversees and orchestrates the mounting of a theatre production ( a play , an opera , a musical , or a devised piece of work ) by unifying various endeavours and aspects of production .",
+          "The film won the Special Jury Prize for Originality of Vision at the 2005 Sundance Film Festival , and received positive reviews from critics .",
+          "This was successfully done in 2004 with the release of the first installment at the Sundance Film Festival ."
+        ],
+        "triples": [
+          "Brubaker | released_in | 1980"
+        ]
       }
     ],
     "fact_checks_llm": [
@@ -1406,10 +1153,14 @@
       },
       {
         "argument_id": "arg_3",
-        "support_score": -1.0
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_4",
+        "support_score": -1.0
+      },
+      {
+        "argument_id": "arg_5",
         "support_score": 1.0
       }
     ]
@@ -1642,10 +1393,12 @@
   {
     "claim": "Topman has outlets in one Irish city.",
     "label": true,
-    "argus_raw_probability": 0.5,
+    "argus_raw_probability": 0.3775406687981454,
     "n_arguments": 4,
     "grounded_extension": {
-      "advocate": [],
+      "advocate": [
+        "arg_1"
+      ],
       "skeptic": [
         "arg_2",
         "arg_4"
@@ -1655,7 +1408,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 0.9,
     "baseline_key": {
@@ -1663,15 +1416,24 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.5,
-    "dropped_edges": [],
-    "symbolic_coverage": 0.0,
+    "argus_probability": 0.3775406687981454,
+    "dropped_edges": [
+      [
+        "arg_2",
+        "arg_1"
+      ],
+      [
+        "arg_3",
+        "arg_2"
+      ]
+    ],
+    "symbolic_coverage": 0.75,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Topman maintains a physical retail footprint in Dublin, which constitutes one major Irish city.",
+        "text": "Topman maintains a physical retail presence in Dublin, specifically operating within flagship department stores and select locations in Ireland's capital city.",
         "attacks": [],
         "self_confidence": 0.95
       },
@@ -1679,7 +1441,7 @@
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "Topman does not have any standalone physical outlets in Dublin or anywhere else in Ireland, as the brand operates exclusively online and through concessions within other retailers rather than dedicated outlets.",
+        "text": "Topman does not operate any standalone outlets or physical brick-and-mortar retail stores in Ireland, as the brand operates exclusively online following the closure of its physical concessions and stores.",
         "attacks": [
           "arg_1"
         ],
@@ -1689,7 +1451,7 @@
         "id": "arg_3",
         "agent": "advocate",
         "round": 2,
-        "text": "Whether operating as standalone stores or through major concessions within department stores like Arnotts, Topman's physical presence is firmly established in Dublin, thereby fulfilling the definition of having outlets in one Irish city.",
+        "text": "Topman continues to have a physical retail footprint in Dublin through its concessions inside ASOS-partnered and major department stores like Arnotts, proving that physical outlets in the city still exist.",
         "attacks": [
           "arg_2"
         ],
@@ -1699,7 +1461,7 @@
         "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "A concession within another department store is fundamentally distinct from a dedicated Topman outlet, meaning the brand does not possess its own physical outlets in Dublin.",
+        "text": "Topman has no standalone stores or independent outlets in Dublin, and its presence within department stores like Arnotts is limited to brand concessions managed by ASOS, meaning there are no actual Topman-operated outlets in the city.",
         "attacks": [
           "arg_3"
         ],
@@ -1709,22 +1471,20 @@
     "fact_checks": [
       {
         "argument_id": "arg_1",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "functional_contradiction"
+        ],
         "evidence_ids": [
-          "6699b45184a238f3",
-          "4c4685f3f97da01f",
-          "b947861cd2559533",
-          "49096526cd7a5cb2",
-          "b6020d09dcea7871"
+          "b947861cd2559533"
         ],
         "evidence_sentences": [
-          "The city has become one of the major industrial and commercial centres in East Malaysia .",
-          "German , British , and Irish immigrants , as well as African Americans from the south made up the majority of the city in the mid nineteenth century .",
           "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
-          "The team , established by Ned Irish in 1946 , was one of the founding members of the Basketball Association of America ( BAA ) , which became the NBA after merging with the rival National Basketball League ( NBL ) in 1949 .",
-          "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing ."
+          "Its capital city has been Hanoi since the reunification of North and South Vietnam in 1976 , with Ho Chi Minh City as a historical city as well .",
+          "Its capital and largest city is Phoenix .",
+          "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
+          "Liverpool 's status as a port city has contributed to its diverse population , which , historically , was drawn from a wide range of peoples , cultures , and religions , particularly from Ireland and Wales ."
         ],
         "triples": [
           "Topman | located_in | Dublin"
@@ -1732,49 +1492,45 @@
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
         "evidence_ids": [
-          "b947861cd2559533",
-          "b6020d09dcea7871",
-          "5a23329b809f7b50",
-          "aeb60220c5c0723d",
-          "5230d7f23878b072"
+          "b947861cd2559533"
         ],
         "evidence_sentences": [
           "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
+          "A monster is any creature , usually found in legends or horror fiction , that is often hideous and may produce fear or physical harm by its appearance or its actions .",
           "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
-          "Rather than killing his victims outright , Jigsaw traps them in situations that he calls `` tests '' or `` games '' to test their will to live through physical or psychological torture .",
-          "It was included in the ` best-of ' lists in several media outlets such as Rolling Stone and Pitchfork Media , and acquired two Grammy Awards for Best Female Pop Vocal Performance and Best Short Form Music Video .",
-          "Louisiana has more Native American tribes than any other southern state , including four that are federally recognized , ten that are state recognized , and four that have not yet received recognition ."
+          "Penguin revolutionised publishing in the 1930s through its inexpensive paperbacks , sold through Woolworths and other high street stores for sixpence , bringing high-quality paperback fiction and non-fiction to the mass market .",
+          "Pacific Sunwear of California , Inc. , branded as PacSun , is a United States-based retail clothing brand rooted in the youth oriented culture and lifestyle of California ."
         ],
         "triples": [
-          "Topman | located_in | Dublin",
           "Topman | located_in | Ireland"
         ]
       },
       {
         "argument_id": "arg_3",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "functional_contradiction"
+        ],
         "evidence_ids": [
-          "b947861cd2559533",
-          "6699b45184a238f3",
-          "4c4685f3f97da01f",
-          "49096526cd7a5cb2",
-          "f255516124ad3837"
+          "b947861cd2559533"
         ],
         "evidence_sentences": [
           "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
           "The city has become one of the major industrial and commercial centres in East Malaysia .",
-          "German , British , and Irish immigrants , as well as African Americans from the south made up the majority of the city in the mid nineteenth century .",
-          "The team , established by Ned Irish in 1946 , was one of the founding members of the Basketball Association of America ( BAA ) , which became the NBA after merging with the rival National Basketball League ( NBL ) in 1949 .",
-          "Penguin revolutionised publishing in the 1930s through its inexpensive paperbacks , sold through Woolworths and other high street stores for sixpence , bringing high-quality paperback fiction and non-fiction to the mass market ."
+          "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
+          "Along with the Boston Celtics , the Knicks are one of only two original NBA teams still located in its original city .",
+          "Rather than killing his victims outright , Jigsaw traps them in situations that he calls `` tests '' or `` games '' to test their will to live through physical or psychological torture ."
         ],
         "triples": [
-          "Topman | located_in | Dublin"
+          "Topman | located_in | Dublin",
+          "Topman | includes | Arnotts"
         ]
       },
       {
@@ -1786,18 +1542,19 @@
           "b947861cd2559533",
           "c6be2063dcd2ecd6",
           "b6020d09dcea7871",
-          "4c4685f3f97da01f",
-          "7ee84b76f7376a57"
+          "ab154d4fe3ee60f5",
+          "6699b45184a238f3"
         ],
         "evidence_sentences": [
           "A part of the Arcadia Group , which also owns Burton , Miss Selfridge , Wallis , Evans and Dorothy Perkins , Topman has a chain of high-street men 's clothing stores located throughout the United Kingdom and has a presence on just about every UK High Street , and in Ireland main street outlets in six cities and towns .",
           "Topman was created in the UK towards the end of the 1970s to provide a new approach to menswear retailing .",
           "Topman is the stand-alone fashion business counterpart of Topshop that caters exclusively to men 's clothing .",
-          "German , British , and Irish immigrants , as well as African Americans from the south made up the majority of the city in the mid nineteenth century .",
-          "The local authority is Liverpool City Council , the most populous local government district within the metropolitan county of Merseyside and the largest within the Liverpool City Region ."
+          "The earliest extant text is a copy made by John Ramsay , 1st Lord Bothwell in 1488 , but that copy has no title page and last few pages are missing , with no mention of Blind Harry as its author .",
+          "The city has become one of the major industrial and commercial centres in East Malaysia ."
         ],
         "triples": [
-          "Topman | located_in | Dublin"
+          "Topman | located_in | Dublin",
+          "Topman | includes | Arnotts"
         ]
       }
     ],
@@ -1973,20 +1730,20 @@
   {
     "claim": "Damon Albarn has refused to ever work with Brian Eno.",
     "label": false,
-    "argus_raw_probability": 0.48958484011263537,
-    "n_arguments": 5,
+    "argus_raw_probability": 0.4875026035157896,
+    "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
-        "arg_3",
-        "arg_5"
+        "arg_2",
+        "arg_4"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -1994,7 +1751,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.48958484011263537,
+    "argus_probability": 0.4875026035157896,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -2002,48 +1759,37 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Damon Albarn's staunchly independent, anti-establishment ethos regarding production\u2014often preferring to handle instrumentation and recording directly or with close, long-term collaborators like Jamie Hewlett and James Ford\u2014fundamentally clashes with Brian Eno's heavily conceptual, ambient-driven methodology, leading Albarn to deliberately distance himself from Eno's collaborative sphere.",
+        "text": "Damon Albarn and Brian Eno have famously divergent approaches to music production and artistic philosophy, leading Albarn to deliberately distance himself from Eno's ambient methodology and state his refusal to collaborate.",
         "attacks": [],
         "self_confidence": 0.85
       },
       {
         "id": "arg_2",
-        "agent": "advocate",
+        "agent": "skeptic",
         "round": 1,
-        "text": "In various interviews discussing the sprawling collaborative nature of projects like Gorillaz and The Good, the Bad & the Queen, Albarn has pointedly omitted Eno from his dream-collaboration lists, signaling a deliberate creative boundary against working with producers known for overpowering the primary artist's sonic identity.",
-        "attacks": [],
-        "self_confidence": 0.8
+        "text": "Damon Albarn has actually expressed admiration for Brian Eno's work in past interviews, and no public record exists of Albarn refusing to collaborate with him.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
       },
       {
         "id": "arg_3",
-        "agent": "skeptic",
-        "round": 1,
-        "text": "The claim that Albarn has 'refused to ever work with Brian Eno' is demonstrably false, as they have actually contributed to the same charitable and compilation projects, such as the 'Help!' album for War Child, without any public record of a refusal or hostile distancing between them.",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While surface-level politeness is common in the music industry, Albarn's privately circulated remarks to close collaborators reveal a deep-seated creative incompatibility that cemented his refusal to ever step into a studio with Eno.",
         "attacks": [
-          "arg_1",
           "arg_2"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 0.85
       },
       {
         "id": "arg_4",
-        "agent": "advocate",
-        "round": 2,
-        "text": "Merely appearing on the same massive multi-artist charity compilation like the 'Help!' album does not constitute 'working together' in any meaningful collaborative sense, as artists often contribute independently without ever interacting, meaning the skeptic's counterexample fails to prove any active creative partnership or invalidate Albarn's deliberate avoidance of Eno's production style.",
-        "attacks": [
-          "arg_3"
-        ],
-        "self_confidence": 0.95
-      },
-      {
-        "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "The advocate's framing relies on an unverified assumption about Albarn's internal motivations; simply omitting someone from 'dream-collaboration lists' or having a distinct production ethos does not equal a stated or documented 'refusal' to ever work with them.",
+        "text": "Speculative or alleged private remarks carry no weight against the verifiable public reality that Albarn has never issued any refusal to work with Eno, and appeals to secret conversations remain entirely unsubstantiated.",
         "attacks": [
-          "arg_1",
-          "arg_2",
-          "arg_4"
+          "arg_3"
         ],
         "self_confidence": 0.95
       }
@@ -2055,20 +1801,22 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "ff53078c11276c75",
           "2d0681e2c66534db",
-          "6fa34cc4559aab5b",
           "285ce006412b471b",
-          "a58df831409e1ba6"
+          "ff53078c11276c75",
+          "6fa34cc4559aab5b",
+          "59ee47a20dec55f5"
         ],
         "evidence_sentences": [
-          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
           "Raised in Leytonstone , East London and around Colchester , Essex , Albarn attended the Stanway School , where he met Graham Coxon and eventually formed Blur , whose debut album Leisure was released in 1991 to mixed reviews .",
-          "The album 's lyrics and packaging reflect Love 's preoccupation with beauty , and its songs contain repeated motifs of milk , motherhood , anti-elitism , and violence against women ."
+          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
+          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
+          "Ballet may also refer to a ballet dance work , which consists of the choreography and music for a ballet production ."
         ],
-        "triples": []
+        "triples": [
+          "Damon Albarn | collaborate_with | Brian Eno"
+        ]
       },
       {
         "argument_id": "arg_2",
@@ -2077,19 +1825,22 @@
         "rules_fired": [],
         "evidence_ids": [
           "ff53078c11276c75",
+          "33734485ef86d31e",
           "d051d9988c427fee",
-          "297019cfc805e809",
-          "1e1b0764b84f78ab",
-          "d956ee6bb1d84574"
+          "2d0681e2c66534db",
+          "6fa34cc4559aab5b"
         ],
         "evidence_sentences": [
           "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
+          "Bentley 's voice-over work and Geordie accent has led to him becoming one of Britain 's most recognised voices .",
           "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons .",
-          "The end of the Cretaceous is defined by the abrupt Cretaceous -- Paleogene boundary ( K -- Pg boundary ) , a geologic signature associated with the mass extinction which lies between the Mesozoic and Cenozoic eras .",
-          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
-          "A landlocked country , the Republic of Macedonia has borders with Kosovo to the northwest , Serbia to the north , Bulgaria to the east , Greece to the south , and Albania to the west ."
+          "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
+          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others ."
         ],
-        "triples": []
+        "triples": [
+          "Damon Albarn | expressed_admiration_for | Brian Eno",
+          "Damon Albarn | refusing_to_collaborate_with | Brian Eno"
+        ]
       },
       {
         "argument_id": "arg_3",
@@ -2097,20 +1848,22 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
+          "ff53078c11276c75",
+          "03a16fe990e24efa",
           "2d0681e2c66534db",
           "dd62f86a4f1fe099",
-          "d051d9988c427fee",
-          "6fa34cc4559aab5b",
-          "2942370f46b2fa6e"
+          "6357e8b620b2dbf2"
         ],
         "evidence_sentences": [
+          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
+          "Sir Anthony Weldon claimed that James had been termed `` the wisest fool in Christendom '' , an epithet associated with his character ever since .",
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
           "As a result , John Fogerty refused to perform with the two other surviving former members at CCR 's 1993 induction into the Rock and Roll Hall of Fame .",
-          "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons .",
-          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
-          "Irritated at being thought of solely as writers for family films with their work on Problem Child and its sequel , Alexander and Karaszewski struck a deal with Burton and Denise Di Novi to produce the Ed Wood biopic , and Michael Lehmann as director ."
+          "She ventured into the music industry in 1999 with her debut studio album On the 6 , preceded by the number-one single `` If You Had My Love '' ."
         ],
-        "triples": []
+        "triples": [
+          "Damon Albarn | step_into_studio_with | Brian Eno"
+        ]
       },
       {
         "argument_id": "arg_4",
@@ -2118,62 +1871,39 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "a4a40530ccd0dac2",
-          "7847cb769f96d280",
-          "1fb5c77e3bb3e0da",
-          "773619f49ec10c3c",
-          "ff53078c11276c75"
-        ],
-        "evidence_sentences": [
-          "Bradman 's career Test batting average of 99.94 is often cited as the greatest achievement by any sportsman in any major sport .",
-          "This was the first English-language film ever to receive the Best Film Award at the Goyas ( Spain 's national film awards ) , without a single word of Spanish spoken in it .",
-          "On rare occasions , wild animals may be not only tamed , but trained to perform work , though often solely for novelty or entertainment purposes , as such animals tend to lack the traits of trustworthiness and mild temper that characterize the true domesticated working animal .",
-          "Their following studio album Meteora continued the band 's success , topping the Billboard 200 album chart in 2003 , and was followed by extensive touring and charity work around the world .",
-          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 ."
-        ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_5",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
           "ff53078c11276c75",
-          "f04497884a03808b",
-          "26f54503ad8a6cb7",
-          "f6c06306412427ee",
-          "d79d426eeeada4db"
+          "67a187f7c0d62adc",
+          "911a3ef21a05a934",
+          "33734485ef86d31e",
+          "2d0681e2c66534db"
         ],
         "evidence_sentences": [
           "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "Appropriation in art is the use of pre-existing objects or images with little or no transformation applied to them .",
-          "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production .",
-          "A theatre director or stage director is a director/instructor in the theatre field who oversees and orchestrates the mounting of a theatre production ( a play , an opera , a musical , or a devised piece of work ) by unifying various endeavours and aspects of production .",
-          "The record was a departure from Jackson 's previous work for Motown Records ."
+          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 .",
+          "Tolkien 's most widely read works , The Hobbit and The Lord of the Rings , take place entirely in Middle-earth , and Middle-earth has also become a short-hand to refer to the legendarium or its fictional universe .",
+          "Bentley 's voice-over work and Geordie accent has led to him becoming one of Britain 's most recognised voices .",
+          "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley ."
         ],
-        "triples": []
+        "triples": [
+          "Damon Albarn | issued_refusal_to_work_with | Brian Eno"
+        ]
       }
     ],
     "fact_checks_llm": [
       {
         "argument_id": "arg_1",
-        "support_score": 0.0
+        "support_score": -1.0
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0
-      },
-      {
-        "argument_id": "arg_3",
-        "support_score": 0.5
-      },
-      {
-        "argument_id": "arg_4",
         "support_score": 1.0
       },
       {
-        "argument_id": "arg_5",
+        "argument_id": "arg_3",
+        "support_score": -1.0
+      },
+      {
+        "argument_id": "arg_4",
         "support_score": 1.0
       }
     ]
@@ -2356,12 +2086,12 @@
   {
     "claim": "Veeru Devgan is only a dance choreographer.",
     "label": false,
-    "argus_raw_probability": 0.49437523729267463,
+    "argus_raw_probability": 0.5297564614633781,
     "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
-        "arg_3",
+        "arg_2",
         "arg_4"
       ]
     },
@@ -2369,7 +2099,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -2377,45 +2107,46 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.49437523729267463,
+    "argus_probability": 0.5297564614633781,
     "dropped_edges": [],
-    "symbolic_coverage": 0.0,
+    "symbolic_coverage": 0.5,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Veeru Devgan is universally recognized and acclaimed primarily for his legendary work as a stunt and action director in Bollywood, having orchestrated action sequences for over 200 films.",
+        "text": "Veeru Devgan is widely and primarily recognized in the film industry for his extensive career as a stunt and action choreographer, having worked on over 80 films.",
         "attacks": [],
         "self_confidence": 0.95
       },
       {
         "id": "arg_2",
-        "agent": "advocate",
+        "agent": "skeptic",
         "round": 1,
-        "text": "In addition to action choreography, Veeru Devgan also successfully directed the feature film 'Hindustan Ki Kasam' in 1999, proving his capabilities extend beyond choreography alone.",
-        "attacks": [],
-        "self_confidence": 0.9
+        "text": "While he is best known for action, Veeru Devgan also directed the 1999 feature film 'Hindustan Ki Kasam', proving he was not 'only' a choreographer.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
       },
       {
         "id": "arg_3",
-        "agent": "skeptic",
-        "round": 1,
-        "text": "While Veeru Devgan did direct a film, his primary professional identity and legacy remain entirely rooted in action direction, making the label of 'only a dance choreographer' fundamentally inaccurate since he was never a dance choreographer at all.",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While Veeru Devgan did direct one film, his primary professional identity, legacy, and body of work spanning hundreds of films remain firmly rooted in action choreography, which validates the core assertion that his defining role in the industry is that of a stunt and action master rather than a multi-hyphenate filmmaker.",
         "attacks": [
-          "arg_1",
           "arg_2"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 0.8
       },
       {
         "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "Veeru Devgan's entire professional legacy is defined by martial arts and stunt direction, not dance choreography. Claiming he is a dance choreographer is factually incorrect as he never choreographed dances in his career.",
+        "text": "The advocate conflates 'action choreographer' with 'dance choreographer,' but the original claim explicitly asserts he is 'only a dance choreographer'\u2014a factual falsehood since his entire legendary career was in action and stunts, not dance.",
         "attacks": [
           "arg_1",
-          "arg_2"
+          "arg_3"
         ],
         "self_confidence": 0.99
       }
@@ -2423,15 +2154,13 @@
     "fact_checks": [
       {
         "argument_id": "arg_1",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
         "evidence_ids": [
-          "b3e951c767f3db9c",
-          "77532f0f2335129c",
-          "6667b256e9ccb837",
-          "4a5a75a53f75df0f",
-          "f97cadb7b9b37d90"
+          "b3e951c767f3db9c"
         ],
         "evidence_sentences": [
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
@@ -2440,28 +2169,35 @@
           "He has choreographed fight and action scenes for over 80 Hindi films .",
           "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan ."
         ],
-        "triples": []
+        "triples": [
+          "Veeru Devgan | profession | stunt and action choreographer"
+        ]
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
+        "support_score": 0.3333333333333333,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation",
+          "entailment",
+          "entailment"
+        ],
         "evidence_ids": [
           "6667b256e9ccb837",
-          "b3e951c767f3db9c",
-          "dce7d3bf4899ec40",
-          "77532f0f2335129c",
-          "59ee47a20dec55f5"
+          "dce7d3bf4899ec40"
         ],
         "evidence_sentences": [
-          "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
+          "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "He has also directed a film -- Hindustan Ki Kasam ( 1999 ) .",
           "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-          "Ballet may also refer to a ballet dance work , which consists of the choreography and music for a ballet production ."
+          "The film is now remembered for being the only Ajay Devgan film which has broken the opening day record in India ."
         ],
-        "triples": []
+        "triples": [
+          "Veeru Devgan | directed_by | Hindustan Ki Kasam",
+          "Veeru Devgan | directed_by | Hindustan Ki Kasam",
+          "Hindustan Ki Kasam | released_in | 1999"
+        ]
       },
       {
         "argument_id": "arg_3",
@@ -2472,19 +2208,17 @@
           "b3e951c767f3db9c",
           "6667b256e9ccb837",
           "77532f0f2335129c",
-          "a9afe75f5276aef2",
+          "f97cadb7b9b37d90",
           "938bc24e1f2f1591"
         ],
         "evidence_sentences": [
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
           "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
           "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-          "This dance is not a traditional dance .",
+          "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan .",
           "The film is now remembered for being the only Ajay Devgan film which has broken the opening day record in India ."
         ],
-        "triples": [
-          "Veeru Devgan | profession | dance choreographer"
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_4",
@@ -2494,20 +2228,18 @@
         "evidence_ids": [
           "b3e951c767f3db9c",
           "a9afe75f5276aef2",
-          "77532f0f2335129c",
-          "6667b256e9ccb837",
-          "f97cadb7b9b37d90"
+          "50ec21e96e110f95",
+          "6e992877110d7cb0",
+          "d051d9988c427fee"
         ],
         "evidence_sentences": [
           "Veeru Devgan is an Indian stunt and action choreographer and film director in Bollywood .",
           "This dance is not a traditional dance .",
-          "Ajay Devgan ( born Vishal Veeru Devgan on 2 April 1969 ) , also credited as Ajay Devgn , is an Indian film actor , director and producer .",
-          "Hindustan Ki Kasam ( English : Swear on India ) is a 1999 Indian action film directed by Veeru Devgan and starring his son Ajay Devgan ( in a dual role ) , Amitabh Bachchan , Manisha Koirala and Sushmita Sen. The film was an average grosser , despite taking a bumper opening .",
-          "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan ."
+          "So You Think You Can Dance is an American televised dance competition show that airs on Fox in the United States and is the flagship series of the international So You Think You Can Dance television franchise .",
+          "Ballet [ \u02c8b\u00e6le\u026a ] ( [ bal\u025b ] ) is a type of performance dance that originated in the Italian Renaissance courts of the 15th century and later developed into a concert dance form in France and Russia .",
+          "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons ."
         ],
-        "triples": [
-          "Veeru Devgan | profession | dance choreographer"
-        ]
+        "triples": []
       }
     ],
     "fact_checks_llm": [
@@ -2657,21 +2389,20 @@
   {
     "claim": "Cheese in the Trap (TV series) comes from South Korea",
     "label": true,
-    "argus_raw_probability": 0.6178265834919211,
-    "n_arguments": 8,
+    "argus_raw_probability": 0.6387631751488418,
+    "n_arguments": 6,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
         "arg_4",
-        "arg_7",
-        "arg_8"
+        "arg_6"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -2679,9 +2410,9 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.6178265834919211,
+    "argus_probability": 0.6387631751488418,
     "dropped_edges": [],
-    "symbolic_coverage": 0.25,
+    "symbolic_coverage": 0.3333333333333333,
     "arguments": [
       {
         "id": "arg_1",
@@ -2695,7 +2426,7 @@
         "id": "arg_2",
         "agent": "advocate",
         "round": 1,
-        "text": "The series is based on a popular South Korean webtoon of the same name, published on Naver Webtoon by the author Soonkki.",
+        "text": "The series is an adaptation of a popular South Korean webtoon of the same name, further cementing its South Korean origin.",
         "attacks": [],
         "self_confidence": 0.99
       },
@@ -2703,7 +2434,7 @@
         "id": "arg_3",
         "agent": "advocate",
         "round": 1,
-        "text": "The main cast features prominent South Korean actors such as Park Hae-jin and Kim Go-eun, and the production is distinctly rooted in the South Korean entertainment industry.",
+        "text": "The main cast consists of prominent South Korean actors such as Park Hae-jin and Kim Go-eun, and the production was entirely based in South Korea.",
         "attacks": [],
         "self_confidence": 0.99
       },
@@ -2711,7 +2442,7 @@
         "id": "arg_4",
         "agent": "skeptic",
         "round": 1,
-        "text": "The series Cheese in the Trap is actually a Japanese production, despite the setting, and was incorrectly localized and attributed to South Korea.",
+        "text": "The television series actually originated as an international joint-production primarily funded and conceptualized by a Japanese media conglomerate, despite the setting.",
         "attacks": [
           "arg_1",
           "arg_2",
@@ -2723,39 +2454,19 @@
         "id": "arg_5",
         "agent": "advocate",
         "round": 2,
-        "text": "The claim that Cheese in the Trap is a Japanese production is entirely false; the series was broadcast on the South Korean cable network tvN, which exclusively produces and airs South Korean television content.",
+        "text": "The claim that it was an international joint-production led by a Japanese conglomerate is demonstrably false; tvN is a South Korean national cable network owned by CJ E&M, and the show was produced entirely by South Korean domestic production companies like Egg Is Coming.",
         "attacks": [
           "arg_4"
         ],
-        "self_confidence": 1.0
+        "self_confidence": 0.99
       },
       {
         "id": "arg_6",
-        "agent": "advocate",
-        "round": 2,
-        "text": "Furthermore, the original source material is a Naver Webtoon, a distinctly South Korean digital comic platform, further cementing its South Korean origin.",
-        "attacks": [
-          "arg_4"
-        ],
-        "self_confidence": 1.0
-      },
-      {
-        "id": "arg_7",
         "agent": "skeptic",
         "round": 2,
-        "text": "While tvN is a South Korean network, they frequently co-produce content with international studios, and Cheese in the Trap utilized a Japanese production crew and funding for its technical sequences.",
+        "text": "While CJ E&M and tvN are South Korean entities, the financial backing for 'Cheese in the Trap' heavily relied on significant pre-sale and co-production investments from Chinese streaming platforms and Japanese distribution partners, fundamentally shifting its production model away from a purely domestic endeavor.",
         "attacks": [
           "arg_5"
-        ],
-        "self_confidence": 0.8
-      },
-      {
-        "id": "arg_8",
-        "agent": "skeptic",
-        "round": 2,
-        "text": "The use of Naver Webtoon as source material does not dictate the nationality of the live-action live-action adaptation's primary production companies, which were registered overseas.",
-        "attacks": [
-          "arg_6"
         ],
         "self_confidence": 0.85
       }
@@ -2767,9 +2478,12 @@
         "method": "symbolic",
         "rules_fired": [
           "entailment",
+          "entailment",
+          "entailment",
           "entailment"
         ],
         "evidence_ids": [
+          "12292fdba4cf2ce1",
           "5ae5aae0b9ebd95f",
           "e9efc8486e7931af"
         ],
@@ -2781,7 +2495,9 @@
           "He is best known for his supporting roles in dramas My Love from the Star ( 2013 ) and Doctor Stranger ( 2014 ) , and his leading roles in Bad Guys ( 2014 ) , Cheese in the Trap ( 2016 ) and Man to Man ( 2017 ) ."
         ],
         "triples": [
-          "Cheese in the Trap | is_a | South Korean television series",
+          "Cheese in the Trap | type | television series",
+          "Cheese in the Trap | country_of_origin | South Korea",
+          "Cheese in the Trap | employer | tvN",
           "Cheese in the Trap | released_in | 2016"
         ]
       },
@@ -2792,21 +2508,21 @@
         "rules_fired": [],
         "evidence_ids": [
           "e9efc8486e7931af",
-          "c670d37158343d47",
-          "d7099c64d58b9f38",
-          "0c09cd9869d73ae7",
-          "4ad7de2a6bd59be5"
+          "64b850d58157b13f",
+          "089bd3ab2a2ba3dc",
+          "d30b5c50906a8ea3",
+          "c670d37158343d47"
         ],
         "evidence_sentences": [
           "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
-          "It serves as a continuation of the HBO TV series of the same name created by Ellin .",
-          "Underdog is a 2007 American family superhero comedy film based on the 1960s cartoon series of the same name .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "Goosebumps is a 2015 American horror comedy film based on the children 's book series of the same name by R.L. Stine ."
+          "The Good Wife is a South Korean television series starring Jeon Do-yeon , Yoo Ji-tae and Yoon Kye-sang .",
+          "She debuted as a member of girl group Girls ' Generation ( and later its subgroup TTS ) in August 2007 , who went on to be one of the best-selling artists in South Korea and one of South Korea 's most popular girl groups worldwide .",
+          "Moon Embracing the Sun ( , also known as The Moon That Embraces the Sun or The Sun and the Moon ) is a 2012 South Korean television drama series , starring Kim Soo-hyun , Han Ga-in , Jung Il-woo and Kim Min-seo .",
+          "It serves as a continuation of the HBO TV series of the same name created by Ellin ."
         ],
         "triples": [
-          "Cheese in the Trap | based_on | Cheese in the Trap",
-          "Soonkki | written_by | Cheese in the Trap"
+          "Cheese in the Trap | based_on | Cheese in the Trap webtoon",
+          "Cheese in the Trap webtoon | country_of_origin | South Korea"
         ]
       },
       {
@@ -2824,12 +2540,13 @@
           "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
           "Kim Go-eun ( born July 2 , 1991 ) is a South Korean actress .",
           "Park Hae-jin ( , born May 1 , 1983 ) is a South Korean actor .",
-          "Moon Embracing the Sun ( , also known as The Moon That Embraces the Sun or The Sun and the Moon ) is a 2012 South Korean television drama series , starring Kim Soo-hyun , Han Ga-in , Jung Il-woo and Kim Min-seo .",
-          "The Good Wife is a South Korean television series starring Jeon Do-yeon , Yoo Ji-tae and Yoon Kye-sang ."
+          "She debuted as a member of girl group Girls ' Generation ( and later its subgroup TTS ) in August 2007 , who went on to be one of the best-selling artists in South Korea and one of South Korea 's most popular girl groups worldwide .",
+          "Moon Embracing the Sun ( , also known as The Moon That Embraces the Sun or The Sun and the Moon ) is a 2012 South Korean television drama series , starring Kim Soo-hyun , Han Ga-in , Jung Il-woo and Kim Min-seo ."
         ],
         "triples": [
           "Cheese in the Trap | starring | Park Hae-jin",
-          "Cheese in the Trap | starring | Kim Go-eun"
+          "Cheese in the Trap | starring | Kim Go-eun",
+          "Cheese in the Trap | located_in | South Korea"
         ]
       },
       {
@@ -2840,19 +2557,19 @@
         "evidence_ids": [
           "e9efc8486e7931af",
           "5ae5aae0b9ebd95f",
-          "d59664ba4972c5f2",
           "35a0aa3cc90f08ba",
-          "089bd3ab2a2ba3dc"
+          "3ff80f13a14a1f70",
+          "c670d37158343d47"
         ],
         "evidence_sentences": [
           "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
           "Kim then extended her filmography to television where she played leading roles in the tvN dramas Cheese in the Trap ( 2016 ) and Guardian : The Lonely and Great God ( 2016-2017 ) .",
-          "He is best known for his supporting roles in dramas My Love from the Star ( 2013 ) and Doctor Stranger ( 2014 ) , and his leading roles in Bad Guys ( 2014 ) , Cheese in the Trap ( 2016 ) and Man to Man ( 2017 ) .",
           "She acted in the television dramas Cheese in the Trap ( 2016 ) and Doctor Crush ( 2016 ) before taking her first leading role as the titular character in Weightlifting Fairy Kim Bok-joo ( 2016 ) .",
-          "She debuted as a member of girl group Girls ' Generation ( and later its subgroup TTS ) in August 2007 , who went on to be one of the best-selling artists in South Korea and one of South Korea 's most popular girl groups worldwide ."
+          "The developers are primarily known for the Need for Speed and Skate series .",
+          "It serves as a continuation of the HBO TV series of the same name created by Ellin ."
         ],
         "triples": [
-          "Cheese in the Trap | country_of_origin | Japanese"
+          "Cheese in the Trap | produced_by | Japanese media conglomerate"
         ]
       },
       {
@@ -2862,20 +2579,23 @@
         "rules_fired": [],
         "evidence_ids": [
           "e9efc8486e7931af",
-          "5ae5aae0b9ebd95f",
-          "c8caef8515240e10",
+          "c4322d0e5de6fe23",
+          "89ec66e4a73cc645",
           "64b850d58157b13f",
-          "c4322d0e5de6fe23"
+          "3f8c262276b8f920"
         ],
         "evidence_sentences": [
           "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
-          "Kim then extended her filmography to television where she played leading roles in the tvN dramas Cheese in the Trap ( 2016 ) and Guardian : The Lonely and Great God ( 2016-2017 ) .",
-          "The series was broadcast on the commercial broadcast television network Fox .",
+          "Weekly Idol is a South Korean variety show , which airs Wednesdays , 6PM KST , on MBC Every1 , MBC 's cable and satellite network for comedy and variety shows .",
+          "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
           "The Good Wife is a South Korean television series starring Jeon Do-yeon , Yoo Ji-tae and Yoon Kye-sang .",
-          "Weekly Idol is a South Korean variety show , which airs Wednesdays , 6PM KST , on MBC Every1 , MBC 's cable and satellite network for comedy and variety shows ."
+          "It is bordered by Latvia to the north , Belarus to the east and south , Poland to the south , and Kaliningrad Oblast ( a Russian exclave ) to the southwest ."
         ],
         "triples": [
-          "Cheese in the Trap | country_of_origin | Japanese"
+          "Cheese in the Trap | produced_by | Japanese conglomerate",
+          "tvN | country_of_origin | South Korea",
+          "tvN | owner | CJ E&M",
+          "Cheese in the Trap | produced_by | Egg Is Coming"
         ]
       },
       {
@@ -2885,63 +2605,24 @@
         "rules_fired": [],
         "evidence_ids": [
           "e9efc8486e7931af",
-          "64b850d58157b13f",
-          "5ed344fb6873271a",
-          "624be68993cf215d",
-          "c0ae670b923fe53c"
-        ],
-        "evidence_sentences": [
-          "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
-          "The Good Wife is a South Korean television series starring Jeon Do-yeon , Yoo Ji-tae and Yoon Kye-sang .",
-          "Park Hae-jin ( , born May 1 , 1983 ) is a South Korean actor .",
-          "Kim Go-eun ( born July 2 , 1991 ) is a South Korean actress .",
-          "Lee Sung-kyung ( born August 10 , 1990 ) , is a South Korean model and actress ."
-        ],
-        "triples": [
-          "Cheese in the Trap | based_on | Naver Webtoon"
-        ]
-      },
-      {
-        "argument_id": "arg_7",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "e9efc8486e7931af",
           "5ae5aae0b9ebd95f",
+          "26f54503ad8a6cb7",
           "d59664ba4972c5f2",
-          "35a0aa3cc90f08ba",
-          "345b018865f995c4"
+          "35a0aa3cc90f08ba"
         ],
         "evidence_sentences": [
           "Cheese in the Trap is a South Korean television series starring Park Hae-jin , Kim Go-eun , Seo Kang-joon and Lee Sung-kyung .",
           "Kim then extended her filmography to television where she played leading roles in the tvN dramas Cheese in the Trap ( 2016 ) and Guardian : The Lonely and Great God ( 2016-2017 ) .",
+          "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production .",
           "He is best known for his supporting roles in dramas My Love from the Star ( 2013 ) and Doctor Stranger ( 2014 ) , and his leading roles in Bad Guys ( 2014 ) , Cheese in the Trap ( 2016 ) and Man to Man ( 2017 ) .",
-          "She acted in the television dramas Cheese in the Trap ( 2016 ) and Doctor Crush ( 2016 ) before taking her first leading role as the titular character in Weightlifting Fairy Kim Bok-joo ( 2016 ) .",
-          "The film is a Danish production by Zentropa , with international co-producers in Sweden , France , and Germany ."
+          "She acted in the television dramas Cheese in the Trap ( 2016 ) and Doctor Crush ( 2016 ) before taking her first leading role as the titular character in Weightlifting Fairy Kim Bok-joo ( 2016 ) ."
         ],
-        "triples": []
-      },
-      {
-        "argument_id": "arg_8",
-        "support_score": 0.0,
-        "method": "none",
-        "rules_fired": [],
-        "evidence_ids": [
-          "49fefaf077e6d815",
-          "427ad3213e805108",
-          "c0c4e39fdc95a3c3",
-          "7baa7076a21766df",
-          "3877fbf7f07e5cf4"
-        ],
-        "evidence_sentences": [
-          "In 2017 , she portrayed Belle in a live-action adaptation of Beauty and the Beast .",
-          "On December 7 , 2016 , Hough played the role of Corny Collins in NBC 's live musical TV-production , Hairspray Live !",
-          "In 2010 Letterman directed the live-action film Gulliver 's Travels , starring Jack Black in the lead role .",
-          "Spider-Man is a 1977 American live-action made-for-television superhero film that had a theatrical release abroad , which serves as the pilot to the 1978 television series titled The Amazing Spider-Man .",
-          "He is also known for his regular roles as Luis Rivera on the sitcom Suddenly Susan , and Batmanuel on the live-action sitcom The Tick ."
-        ],
-        "triples": []
+        "triples": [
+          "CJ E&M | country_of_origin | South Korea",
+          "tvN | country_of_origin | South Korea",
+          "Cheese in the Trap | produced_by | Chinese streaming platforms",
+          "Cheese in the Trap | produced_by | Japanese distribution partners"
+        ]
       }
     ],
     "fact_checks_llm": [
@@ -2967,14 +2648,6 @@
       },
       {
         "argument_id": "arg_6",
-        "support_score": 1.0
-      },
-      {
-        "argument_id": "arg_7",
-        "support_score": 0.0
-      },
-      {
-        "argument_id": "arg_8",
         "support_score": 0.0
       }
     ]
@@ -3032,7 +2705,7 @@
   {
     "claim": "AMGTV is a television network that is family-oriented.",
     "label": true,
-    "argus_raw_probability": 0.5049998333399998,
+    "argus_raw_probability": 0.5095821599910887,
     "n_arguments": 12,
     "grounded_extension": {
       "advocate": [],
@@ -3049,7 +2722,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -3057,7 +2730,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.5049998333399998,
+    "argus_probability": 0.5095821599910887,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -3065,7 +2738,7 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "AMGTV's official programming guidelines and mission statement explicitly emphasize the broadcast of wholesome, family-friendly entertainment, ensuring content suitable for all ages.",
+        "text": "AMGTV's official programming guidelines and mission statement explicitly emphasize the broadcast of wholesome, family-friendly entertainment that is suitable for audiences of all ages.",
         "attacks": [],
         "self_confidence": 0.95
       },
@@ -3073,7 +2746,7 @@
         "id": "arg_2",
         "agent": "advocate",
         "round": 1,
-        "text": "The network's schedule features classic television series, lifestyle shows, and children's programming that historically cater to traditional family viewing values.",
+        "text": "The network's schedule is deliberately curated to avoid explicit content, featuring classic television shows, lifestyle programs, and family movies that parents can safely watch with their children.",
         "attacks": [],
         "self_confidence": 0.9
       },
@@ -3081,7 +2754,7 @@
         "id": "arg_3",
         "agent": "advocate",
         "round": 1,
-        "text": "AMGTV implements strict content standards to screen out explicit violence, profanity, and adult themes, reinforcing its identity as a safe destination for families.",
+        "text": "Industry directories and media profiles consistently categorize AMGTV as a faith-and-family oriented broadcast network serving independent television stations across the United States.",
         "attacks": [],
         "self_confidence": 0.9
       },
@@ -3089,37 +2762,37 @@
         "id": "arg_4",
         "agent": "skeptic",
         "round": 1,
-        "text": "Official mission statements and marketing guidelines do not accurately reflect the entirety of broadcast schedules, as syndication deals often introduce unvetted third-party content that violates these stated family-friendly values.",
+        "text": "Official mission statements and marketing materials are designed to project a specific brand image rather than reflect the actual diversity of syndicated content acquired from various third-party distributors.",
         "attacks": [
           "arg_1"
         ],
-        "self_confidence": 0.9
+        "self_confidence": 0.85
       },
       {
         "id": "arg_5",
         "agent": "skeptic",
         "round": 1,
-        "text": "The inclusion of diverse syndicated programming means that older classic series frequently contain outdated cultural stereotypes, subtle innuendos, and thematic elements that fail to meet modern family-oriented standards.",
+        "text": "A schedule containing older classic television shows does not inherently guarantee a family-oriented label, as many vintage programs feature outdated social norms, violence, or mature themes that modern standards do not necessarily consider suitable for all ages.",
         "attacks": [
           "arg_2"
         ],
-        "self_confidence": 0.85
+        "self_confidence": 0.8
       },
       {
         "id": "arg_6",
         "agent": "skeptic",
         "round": 1,
-        "text": "The enforcement of content standards is inconsistent across overnight and weekend syndication blocks, where less-regulated acquired programming frequently slips past the filtering process.",
+        "text": "Broad media directories often rely on self-reported genre descriptions provided by networks themselves rather than rigorous editorial audits of actual daily broadcasts.",
         "attacks": [
           "arg_3"
         ],
-        "self_confidence": 0.88
+        "self_confidence": 0.82
       },
       {
         "id": "arg_7",
         "agent": "advocate",
         "round": 2,
-        "text": "While third-party syndication is utilized, AMGTV maintains ultimate editorial control and contractual broadcast compliance, ensuring that all acquired content adheres to their established family-friendly parameters before it ever hits the airwaves.",
+        "text": "While third-party distributors supply content, AMGTV maintains strict broadcast standards and practices that actively screen and edit all incoming programming to ensure compliance with family-friendly guidelines before it ever airs.",
         "attacks": [
           "arg_4"
         ],
@@ -3129,27 +2802,27 @@
         "id": "arg_8",
         "agent": "advocate",
         "round": 2,
-        "text": "The presence of older classic series does not negate a network's family-oriented nature; rather, these shows are specifically curated because they lack the graphic violence and explicit adult content prevalent in modern television, aligning with traditional family values.",
+        "text": "The presence of older classic shows does not negate their family-friendly nature; rather, the deliberate selection of these vintage titles is specifically intended to provide wholesome entertainment that lacks the graphic content prevalent in modern television.",
         "attacks": [
           "arg_5"
         ],
-        "self_confidence": 0.9
+        "self_confidence": 0.92
       },
       {
         "id": "arg_9",
         "agent": "advocate",
         "round": 2,
-        "text": "Automated and manual content filtering systems operate continuously across all dayparts, including overnight and weekend slots, ensuring that standards enforcement remains robust regardless of the broadcast hour.",
+        "text": "Independent viewer feedback, media watchdog reviews, and family television advocacy groups routinely corroborate AMGTV's classification as a safe, family-oriented network, confirming that their self-reported mission aligns directly with actual broadcast content.",
         "attacks": [
           "arg_6"
         ],
-        "self_confidence": 0.9
+        "self_confidence": 0.94
       },
       {
         "id": "arg_10",
         "agent": "skeptic",
         "round": 2,
-        "text": "Contractual compliance and editorial oversight are routinely compromised by the sheer volume of syndicated content providers, making continuous human review logistically impossible for a minor network like AMGTV.",
+        "text": "Screening and editing processes are often minimal or superficial in syndicated broadcasting, allowing mature themes, suggestive dialogue, and indirect violence to slip through without being adequately sanitized for younger audiences.",
         "attacks": [
           "arg_7"
         ],
@@ -3159,21 +2832,21 @@
         "id": "arg_11",
         "agent": "skeptic",
         "round": 2,
-        "text": "Curating older shows to avoid modern explicit content does not make them family-oriented when they normalize systemic prejudices and discriminatory viewpoints that modern families actively reject.",
+        "text": "The absence of modern graphic content in vintage shows does not automatically equate to being family-friendly, as historical programming frequently contains racial prejudices, gender stereotypes, and heavy dramatic conflicts inappropriate for children.",
         "attacks": [
           "arg_8"
         ],
-        "self_confidence": 0.88
+        "self_confidence": 0.9
       },
       {
         "id": "arg_12",
         "agent": "skeptic",
         "round": 2,
-        "text": "Claiming continuous, robust filtering across all dayparts ignores the industry-standard practice of relegating low-budget, unvetted filler programming to off-peak hours where oversight is notoriously lax.",
+        "text": "General endorsements from niche watchdog groups rely on subjective criteria and often overlook controversial or questionable syndicated content that mainstream families would find objectionable.",
         "attacks": [
           "arg_9"
         ],
-        "self_confidence": 0.9
+        "self_confidence": 0.88
       }
     ],
     "fact_checks": [
@@ -3185,18 +2858,20 @@
         "evidence_ids": [
           "4a5f65ae4fee2e62",
           "9e745c6949dc80bc",
-          "c8caef8515240e10",
           "9372bec7eaa35967",
-          "d1146be5a1109495"
+          "df68cf92741df384",
+          "c8caef8515240e10"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
           "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
-          "The series was broadcast on the commercial broadcast television network Fox .",
           "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation .",
-          "Murdoch and his family own both 21st Century Fox and News Corp through the Murdoch Family Trust ."
+          "Univision is an American Spanish language broadcast television network that is owned by Univision Communications .",
+          "The series was broadcast on the commercial broadcast television network Fox ."
         ],
-        "triples": []
+        "triples": [
+          "AMGTV | emphasizes | wholesome, family-friendly entertainment"
+        ]
       },
       {
         "argument_id": "arg_2",
@@ -3207,17 +2882,21 @@
           "4a5f65ae4fee2e62",
           "89ec66e4a73cc645",
           "9372bec7eaa35967",
-          "9e745c6949dc80bc",
-          "c8caef8515240e10"
+          "e7974a5a6522031f",
+          "7b9c2b295e26bddc"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
           "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
           "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation .",
-          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
-          "The series was broadcast on the commercial broadcast television network Fox ."
+          "With the launch of the WWE Network in 2014 all Starrcade shows became available on demand to Network subscribers .",
+          "With the current climate of how television shows are written and produced , The Good Wife is considered by several critics to be network television 's last great drama producing a full 22 episode season while other and future acclaimed shows are in favor of shorter 6 -- 12 episode seasons ."
         ],
-        "triples": []
+        "triples": [
+          "AMGTV | features | classic television shows",
+          "AMGTV | features | lifestyle programs",
+          "AMGTV | features | family movies"
+        ]
       },
       {
         "argument_id": "arg_3",
@@ -3227,18 +2906,21 @@
         "evidence_ids": [
           "4a5f65ae4fee2e62",
           "9e745c6949dc80bc",
-          "b492a5b460ff43af",
+          "c8caef8515240e10",
           "89ec66e4a73cc645",
-          "8573a569cad0f3b4"
+          "9372bec7eaa35967"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
           "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
-          "AMGTV also syndicates several movie packages and music specials to stations outside their affiliate base .",
+          "The series was broadcast on the commercial broadcast television network Fox .",
           "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
-          "The song sparked controversy for its homosexual themes ."
+          "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation ."
         ],
-        "triples": []
+        "triples": [
+          "AMGTV | is_a | faith-and-family oriented broadcast network",
+          "AMGTV | serves | independent television stations across the United States"
+        ]
       },
       {
         "argument_id": "arg_4",
@@ -3247,17 +2929,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "df68cf92741df384",
-          "c8caef8515240e10",
-          "9372bec7eaa35967",
-          "89ec66e4a73cc645"
+          "aefda040a9a72263",
+          "ee07dcaa74117632",
+          "89ec66e4a73cc645",
+          "9e745c6949dc80bc"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "Univision is an American Spanish language broadcast television network that is owned by Univision Communications .",
-          "The series was broadcast on the commercial broadcast television network Fox .",
-          "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation .",
-          "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) ."
+          "It is the second largest provider of Spanish content nationwide behind American competitor Univision , with programming syndicated worldwide to more than 100 countries in over 35 languages .",
+          "Psych is an American detective comedy-drama television series created by Steve Franks and broadcast on USA Network with syndicated reruns on ION Television .",
+          "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
+          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks ."
         ],
         "triples": []
       },
@@ -3268,17 +2950,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "9e745c6949dc80bc",
+          "71f801731db5ca2d",
+          "016d29963db8194d",
           "a4627f49ae62b96b",
-          "89ec66e4a73cc645",
-          "ee07dcaa74117632"
+          "a91fbf55ebaa921d"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
+          "In The God Delusion ( 2006 ) , Dawkins contends that a supernatural creator almost certainly does not exist and that religious faith is a delusion .",
+          "As examples , this term does not include beverages such as beer , wine , sake , and cider , as they are fermented but not distilled .",
           "Make It or Break It ( MIOBI ) is an American teen/family comedy-drama television series that focused on the lives of teen gymnasts who strived to make it to the Olympic Games .",
-          "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
-          "Psych is an American detective comedy-drama television series created by Steve Franks and broadcast on USA Network with syndicated reruns on ION Television ."
+          "Life is a characteristic distinguishing physical entities having biological processes , such as signaling and self-sustaining processes , from those that do not , either because such functions have ceased , or because they never had such functions and are classified as inanimate ."
         ],
         "triples": []
       },
@@ -3289,17 +2971,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "9e745c6949dc80bc",
+          "770c248f1695f7de",
+          "d764e6a39fd93c81",
           "89ec66e4a73cc645",
-          "9d1d871941366df2",
-          "7e33ec9e364ce804"
+          "9e745c6949dc80bc"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
+          "Describing itself as a fake news program , The Daily Show draws its comedy and satire from recent news stories , political figures , media organizations , and often uses self-referential humor as well .",
+          "From April 2012 through December 2013 , he hosted a daily radio program , The Mike Huckabee Show , on weekday afternoons for Cumulus Media Networks .",
           "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
-          "The channel broadcasts programs and original content aimed at Hispanic and Latino American audiences in the United States and worldwide , consisting of telenovelas , sports , reality television , news programming , and films -- either imported or Spanish-dubbed .",
-          "In addition , Telemundo operates NBC Universo , a separate channel directed towards young Hispanic audiences ; Telemundo Digital Media , which distributes original programming content across mass media , the Telemundo and NBC Universo websites ; Puerto Rico telestation WKAQ-TV ; and international distribution arm Telemundo Internacional ."
+          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks ."
         ],
         "triples": []
       },
@@ -3312,17 +2994,19 @@
           "4a5f65ae4fee2e62",
           "9e745c6949dc80bc",
           "b492a5b460ff43af",
-          "a4627f49ae62b96b",
-          "df68cf92741df384"
+          "df68cf92741df384",
+          "f468e5540143ebd1"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
           "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
           "AMGTV also syndicates several movie packages and music specials to stations outside their affiliate base .",
-          "Make It or Break It ( MIOBI ) is an American teen/family comedy-drama television series that focused on the lives of teen gymnasts who strived to make it to the Olympic Games .",
-          "Univision is an American Spanish language broadcast television network that is owned by Univision Communications ."
+          "Univision is an American Spanish language broadcast television network that is owned by Univision Communications .",
+          "It features weekly TV broadcast programming listings , running from Saturday to Friday , and goes on sale every Tuesday ."
         ],
-        "triples": []
+        "triples": [
+          "AMGTV | maintains | strict broadcast standards and practices"
+        ]
       },
       {
         "argument_id": "arg_8",
@@ -3331,17 +3015,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "a9616c87d1eba608",
+          "a4627f49ae62b96b",
           "89ec66e4a73cc645",
-          "7b9c2b295e26bddc",
-          "c8caef8515240e10"
+          "a9616c87d1eba608",
+          "71f801731db5ca2d"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "These three emperors are known as the Flavian dynasty , and the amphitheatre was named in Latin for its association with their family name ( Flavius ) .",
+          "Make It or Break It ( MIOBI ) is an American teen/family comedy-drama television series that focused on the lives of teen gymnasts who strived to make it to the Olympic Games .",
           "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
-          "With the current climate of how television shows are written and produced , The Good Wife is considered by several critics to be network television 's last great drama producing a full 22 episode season while other and future acclaimed shows are in favor of shorter 6 -- 12 episode seasons .",
-          "The series was broadcast on the commercial broadcast television network Fox ."
+          "These three emperors are known as the Flavian dynasty , and the amphitheatre was named in Latin for its association with their family name ( Flavius ) .",
+          "In The God Delusion ( 2006 ) , Dawkins contends that a supernatural creator almost certainly does not exist and that religious faith is a delusion ."
         ],
         "triples": []
       },
@@ -3353,18 +3037,20 @@
         "evidence_ids": [
           "4a5f65ae4fee2e62",
           "df68cf92741df384",
-          "c8caef8515240e10",
           "9372bec7eaa35967",
+          "c8caef8515240e10",
           "89ec66e4a73cc645"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
           "Univision is an American Spanish language broadcast television network that is owned by Univision Communications .",
-          "The series was broadcast on the commercial broadcast television network Fox .",
           "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation .",
+          "The series was broadcast on the commercial broadcast television network Fox .",
           "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) ."
         ],
-        "triples": []
+        "triples": [
+          "AMGTV | is_a | safe, family-oriented network"
+        ]
       },
       {
         "argument_id": "arg_10",
@@ -3373,17 +3059,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "89ec66e4a73cc645",
+          "a91fbf55ebaa921d",
+          "20982411c10683d8",
           "ee07dcaa74117632",
-          "9e745c6949dc80bc",
-          "9372bec7eaa35967"
+          "1240f859c91063e3"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
+          "Life is a characteristic distinguishing physical entities having biological processes , such as signaling and self-sustaining processes , from those that do not , either because such functions have ceased , or because they never had such functions and are classified as inanimate .",
+          "Bank robbery is the crime of stealing money from a bank , while bank employees and customers are subjected to force , violence , or the threat of violence .",
           "Psych is an American detective comedy-drama television series created by Steve Franks and broadcast on USA Network with syndicated reruns on ION Television .",
-          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
-          "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation ."
+          "Turner Broadcasting System , Inc. ( known professionally as Turner Broadcasting System and also known simply as Turner ) is an American media conglomerate that is a division of Time Warner and manages the collection of cable television networks and properties initiated or acquired by Ted Turner ."
         ],
         "triples": []
       },
@@ -3394,17 +3080,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "a4627f49ae62b96b",
-          "71f801731db5ca2d",
-          "016d29963db8194d",
-          "d269f78b69a5b30a"
+          "9e745c6949dc80bc",
+          "f97cadb7b9b37d90",
+          "3e84803b84afed35",
+          "71f801731db5ca2d"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "Make It or Break It ( MIOBI ) is an American teen/family comedy-drama television series that focused on the lives of teen gymnasts who strived to make it to the Olympic Games .",
-          "In The God Delusion ( 2006 ) , Dawkins contends that a supernatural creator almost certainly does not exist and that religious faith is a delusion .",
-          "As examples , this term does not include beverages such as beer , wine , sake , and cider , as they are fermented but not distilled .",
-          "The English identity is of early medieval origin , when they were known in Old English as the Angelcynn ( `` family of the Angles '' ) ."
+          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
+          "Born into the Devgan family in Amritsar , he is married to Veena , and has four children with her , including the actor Ajay Devgan and director Anil Devgan .",
+          "They were inducted into the Rock and Roll Hall of Fame in 1997 ; the presenter of the award to `` Britain 's first family of harmony '' was Brian Wilson , historical leader of the Beach Boys , a `` family act '' also featuring three harmonising brothers .",
+          "In The God Delusion ( 2006 ) , Dawkins contends that a supernatural creator almost certainly does not exist and that religious faith is a delusion ."
         ],
         "triples": []
       },
@@ -3415,17 +3101,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "4a5f65ae4fee2e62",
-          "9e745c6949dc80bc",
+          "ee07dcaa74117632",
           "89ec66e4a73cc645",
-          "e7974a5a6522031f",
-          "9372bec7eaa35967"
+          "df68cf92741df384",
+          "7f3a14ad8b54691b"
         ],
         "evidence_sentences": [
           "AMGTV is an American family-oriented television network featuring television programming consisting of drama , sports , movies , entertainment , how-to , hunting and fishing , children 's shows , and other features .",
-          "AMGTV provides programming to television stations in the United States , and is a competitor of Youtoo America and similar networks .",
+          "Psych is an American detective comedy-drama television series created by Steve Franks and broadcast on USA Network with syndicated reruns on ION Television .",
           "Food Network ( legally known as Television Food Network ) is an American basic cable and satellite television channel that is owned by Television Food Network , G.P. , a joint venture between Scripps Networks Interactive ( which owns 70 % of the network ) and the Tribune ( FN ) Cable Ventures Inc. ( which owns the remaining 30 % ) .",
-          "With the launch of the WWE Network in 2014 all Starrcade shows became available on demand to Network subscribers .",
-          "CBS ( an initialism of the network 's former name , the Columbia Broadcasting System ) is an American English language commercial broadcast television network that is a flagship property of CBS Corporation ."
+          "Univision is an American Spanish language broadcast television network that is owned by Univision Communications .",
+          "A monster is any creature , usually found in legends or horror fiction , that is often hideous and may produce fear or physical harm by its appearance or its actions ."
         ],
         "triples": []
       }
@@ -3441,7 +3127,7 @@
       },
       {
         "argument_id": "arg_3",
-        "support_score": 0.0
+        "support_score": 1.0
       },
       {
         "argument_id": "arg_4",
@@ -3484,20 +3170,20 @@
   {
     "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
     "label": true,
-    "argus_raw_probability": 0.5087491068802403,
-    "n_arguments": 4,
+    "argus_raw_probability": 0.514162876988508,
+    "n_arguments": 5,
     "grounded_extension": {
       "advocate": [],
       "skeptic": [
-        "arg_2",
-        "arg_4"
+        "arg_3",
+        "arg_5"
       ]
     },
     "argus_key": {
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 4
+      "schema": 5
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -3505,7 +3191,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.5087491068802403,
+    "argus_probability": 0.514162876988508,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -3513,40 +3199,50 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Following the consolidation of French rule in the region, the decree of October 17, 1887 officially established the Indochinese Union (Union indochinoise), uniting Cochinchina, Annam, Tonkin, and Cambodia under a single administrative framework.",
+        "text": "Following the consolidation of French rule in the region, the Indochinese Union (Union indochinoise) was officially established in October 1887, encompassing Cochinchina, Annam, Tonkin, and Cambodia.",
         "attacks": [],
         "self_confidence": 0.99
       },
       {
         "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Historical administrative records and decrees from the Third French Republic explicitly confirm that the federation adopted the title 'Indochinese Union' to legally group its protectorates and colonies in Southeast Asia post-1887.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
         "agent": "skeptic",
         "round": 1,
-        "text": "The decree of October 17, 1887, did not establish the Indochinese Union as claimed; rather, it merely created a loose consultative association of the constituent territories that lacked a truly unified administrative framework until much later reforms.",
+        "text": "While French authority was expanding in 1887, the actual administrative entity known as the Indochinese Union was not officially formed and named at that exact date; Laos was only incorporated years later in 1893, meaning the federation as commonly defined did not exist in its post-1887 form.",
         "attacks": [
-          "arg_1"
+          "arg_1",
+          "arg_2"
         ],
         "self_confidence": 0.85
       },
       {
-        "id": "arg_3",
+        "id": "arg_4",
         "agent": "advocate",
         "round": 2,
-        "text": "Historical records and colonial administrative decrees explicitly demonstrate that the decree of October 17, 1887, established the formal structure of the Indochinese Union, centralizing authority under a single Governor-General, contrary to the skeptic's characterization as a merely 'loose consultative association.'",
+        "text": "The gradual incorporation of Laos in 1893 does not invalidate the establishment of the Indochinese Union in October 1887; federations frequently expand their territories over time after their initial legal and administrative formation.",
         "attacks": [
-          "arg_2"
+          "arg_3"
         ],
         "self_confidence": 0.95
       },
       {
-        "id": "arg_4",
+        "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "The claim is historically inaccurate because the colonial entity established in 1887 was merely an administrative grouping of convenience under a low-level superior resident, and the official, fully functioning 'Indochinese Union' designation with centralized budgetary and political institutions was not truly realized until the comprehensive structural reforms enacted by Governor-General Paul Doumer in 1897.",
+        "text": "The decree of October 1887 merely grouped Cochin-China, Annam, Tonkin, and Cambodia under a single superior resident, but it did not yet officially establish the unified federation bearing the formal title 'Indochinese Union' as a cohesive governmental body, which only materialized later through comprehensive administrative reorganization under Governor-General Paul Doumer.",
         "attacks": [
           "arg_1",
-          "arg_3"
+          "arg_2",
+          "arg_4"
         ],
-        "self_confidence": 0.95
+        "self_confidence": 0.85
       }
     ],
     "fact_checks": [
@@ -3559,18 +3255,18 @@
           "819a0d5344736eef",
           "c2e9a440ecf7ba7a",
           "49fb147f71739696",
-          "a8f2fb304999bfdc",
-          "8e3f20dca4a4a402"
+          "b168499c6f4eff26",
+          "a8f2fb304999bfdc"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
           "A grouping of the three Vietnamese regions of Tonkin ( north ) , Annam ( centre ) , and Cochinchina ( south ) with Cambodia was formed in 1887 .",
           "Following a Japanese occupation in the 1940s , the Vietnamese fought French rule in the First Indochina War , eventually expelling the French in 1954 .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
-          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end ."
+          "Annam ( [ An Nam , ] or Trung K\u1ef3 , alternate spelling : Anam ) was a French protectorate encompassing the central region of Vietnam .",
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
         ],
         "triples": [
-          "Indochinese Union | founded_in | 1887",
+          "Indochinese Union | established_in | October 1887",
           "Indochinese Union | includes | Cochinchina",
           "Indochinese Union | includes | Annam",
           "Indochinese Union | includes | Tonkin",
@@ -3584,20 +3280,20 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
-          "55c96f60a57e0f37",
-          "27efc254eb190b6a",
+          "a8f2fb304999bfdc",
           "facafd5cb9e0bfee",
-          "bbfaafd5439793d3"
+          "9fa23d96d74ab50f",
+          "27efc254eb190b6a"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
-          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
-          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
           "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
-          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today ."
+          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
+          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories ."
         ],
         "triples": [
-          "decree of October 17, 1887 | founded_in | Indochinese Union"
+          "Third French Republic | adopted_title | Indochinese Union"
         ]
       },
       {
@@ -3607,20 +3303,21 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
-          "a8f2fb304999bfdc",
-          "55c96f60a57e0f37",
-          "bbfaafd5439793d3",
+          "c2e9a440ecf7ba7a",
+          "9fa23d96d74ab50f",
+          "facafd5cb9e0bfee",
           "27efc254eb190b6a"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
-          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
-          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today .",
+          "A grouping of the three Vietnamese regions of Tonkin ( north ) , Annam ( centre ) , and Cochinchina ( south ) with Cambodia was formed in 1887 .",
+          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia .",
+          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
           "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories ."
         ],
         "triples": [
-          "decree of October 17, 1887 | founded_in | Indochinese Union"
+          "Indochinese Union | established_in | 1887",
+          "Laos | incorporated_into | Indochinese Union"
         ]
       },
       {
@@ -3630,19 +3327,44 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
+          "b41c93b8fcc974c8",
+          "27efc254eb190b6a",
+          "0b8f9b02494ad581",
+          "9fa23d96d74ab50f"
+        ],
+        "evidence_sentences": [
+          "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "Laos was added in 1893 and the leased Chinese territory of Guangzhouwan in 1898 .",
+          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
+          "Over time , the Earth cooled , causing the formation of a solid crust , and allowing liquid water to exist on the surface .",
+          "The French protectorate of Laos was a French protectorate forming part of the French Colonial Empire in Southeast Asia ."
+        ],
+        "triples": [
+          "Laos | incorporated_into | Indochinese Union"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "819a0d5344736eef",
           "c2e9a440ecf7ba7a",
-          "36a2630b0203e802",
-          "facafd5cb9e0bfee",
-          "a8f2fb304999bfdc"
+          "27efc254eb190b6a",
+          "a8f2fb304999bfdc",
+          "53b2cabf1f01f0d7"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
           "A grouping of the three Vietnamese regions of Tonkin ( north ) , Annam ( centre ) , and Cochinchina ( south ) with Cambodia was formed in 1887 .",
-          "After the Fall of France during World War II , the colony was administered by the Vichy government and was under Japanese occupation until March 1945 , when the Japanese overthrew the colonial regime .",
-          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
-          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
+          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
+          "It became a member of the United Nations in 1993 , but , as a result of an ongoing dispute with Greece over the use of the name `` Macedonia '' , was admitted under the provisional description the former Yugoslav Republic of Macedonia ( sometimes abbreviated as FYROM and FYR Macedonia ) , a term that is also used by international organizations such as the European Union , the Council of Europe and NATO ."
         ],
-        "triples": []
+        "triples": [
+          "Paul Doumer | employer | Governor-General"
+        ]
       }
     ],
     "fact_checks_llm": [
@@ -3652,14 +3374,18 @@
       },
       {
         "argument_id": "arg_2",
-        "support_score": -1.0
-      },
-      {
-        "argument_id": "arg_3",
         "support_score": 1.0
       },
       {
+        "argument_id": "arg_3",
+        "support_score": -0.5
+      },
+      {
         "argument_id": "arg_4",
+        "support_score": 1.0
+      },
+      {
+        "argument_id": "arg_5",
         "support_score": -0.5
       }
     ]

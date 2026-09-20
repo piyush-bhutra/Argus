@@ -18,7 +18,7 @@ path; F onwards run against cached artifacts.
 | B | FEVER evidence retained + pooled corpus (spec §4.1) | none | **done** 2026-09-20 |
 | C | BM25 retrieval + symbolic fact-checker + forward chaining (§4.2) | none | **done** 2026-09-20 |
 | D | Debate protocol: multi-argument turns, free targeting (§4.3) | none | **done** 2026-09-20 |
-| E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | cache done; smoke run in progress |
+| E | Artifact cache schema v2 (§5.1) + smoke run `--limit 10` | ~70 | **done** 2026-09-20 — gate PASSED at v5 |
 | F | **Full scoring run, background** (§5.6) | ~1050 | not started |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
@@ -135,3 +135,33 @@ can be iterated while the run is still going.
    ablations in `scripts/rescore.py` measure exactly this — if the fact-check
    term is hurting, the ablation will show it and the term can be dropped or
    re-signed on evidence. Decide after the full run.
+
+## Smoke-run gate: PASSED at schema v5 (2026-09-20)
+
+Four iterations, each ~70 calls, each answering one question:
+
+| schema | change | coverage | distinct structural values | gated edges | ECE |
+|---|---|---|---|---|---|
+| v2 | first v2 debates | 0.12 | 2 / 10 | 0 | 0.412 |
+| v3 | claim-level retrieval pooled into one KB | 0.22 | 4 / 10 | 2 | 0.412 |
+| v4 | closed predicate vocabulary | 0.04 | 1 / 10 | 0 | 0.376 |
+| v5 | vocabulary softened to a preference | **0.29** | **4 / 10** | **2** | **0.276** |
+
+Gate criteria met: the structural signal is no longer constant (4 distinct values
+vs 1 under the old protocol), gating fires, and coverage is at its highest.
+Triple yield recovered to 1.59/argument with 22% of arguments yielding none.
+
+**Two findings that need the full run to resolve, flagged now:**
+
+1. **Evidence gating currently *hurts*** on this subset: accuracy 0.800 gated vs
+   0.900 ungated, AUROC 0.760 vs 0.840. With only 2 gated edges across 10 claims
+   this is far too weak to act on, but it is the opposite of the design's
+   prediction and must be checked at n=50. If it holds, §4.4 needs revisiting.
+2. **The LLM fact-check ablation scores 1.000 accuracy and 1.000 AUROC** — but so
+   does the baseline on this subset. The n=10 draw is trivially easy for a single
+   call, so it cannot discriminate between the two fact-checkers at all. This is
+   a property of the subset, not evidence about symbolic retrieval.
+
+**Cost of the full held-out run is 240 calls, not the ~1,050 the spec estimated:**
+the baseline half is unchanged since the original run and is entirely cached, and
+10 of 50 claims already carry v5 artifacts. Only 40 Argus halves remain.
