@@ -28,8 +28,19 @@ class FakeLLM:
 
     def argus(self, claim, rounds):
         self.argus_calls.append(claim)
-        return {"raw_probability": 0.3, "n_arguments": 4,
-                "grounded_extension": {"advocate": [], "skeptic": []}}
+        # Must carry every field run_argus returns: the harness copies them by
+        # name, and a missing one lands the claim in the error path instead of
+        # the cache — which silently looks like "resume did not work".
+        return {
+            "raw_probability": 0.3,
+            "n_arguments": 4,
+            "grounded_extension": {"advocate": [], "skeptic": []},
+            "dropped_edges": [],
+            "symbolic_coverage": 0.5,
+            "arguments": [],
+            "fact_checks": [],
+            "fact_checks_llm": [],
+        }
 
     def baseline(self, claim):
         self.baseline_calls.append(claim)
@@ -167,3 +178,11 @@ def test_limit_subset_is_class_balanced(env):
     config = _summary(tmp_path)["config"]
     assert (config["n_true"], config["n_false"]) == (1, 1)
     assert len(fake.argus_calls) == 2
+
+
+def test_fake_argus_matches_the_real_artifact_contract():
+    """Guard against the fake drifting from run_argus. When it did, every claim
+    hit the error path and the resume tests failed for a reason unrelated to
+    resuming."""
+    produced = set(FakeLLM().argus("c", 2)) - {"raw_probability"}
+    assert produced == set(ev.ARTIFACT_FIELDS)

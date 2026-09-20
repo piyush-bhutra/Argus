@@ -60,6 +60,15 @@ from scripts.metrics import (  # noqa: E402
 
 # --- systems under test ----------------------------------------------------
 
+# The debate artifact: every field run_argus returns beyond the probability, and
+# exactly the fields the cache persists. Declared once so the producer and the
+# cache-writer cannot drift apart - when they did, claims silently fell into the
+# error path and looked like a broken resume.
+ARTIFACT_FIELDS = (
+    "n_arguments", "grounded_extension", "dropped_edges", "symbolic_coverage",
+    "arguments", "fact_checks", "fact_checks_llm",
+)
+
 def run_argus(claim: str, rounds: int) -> dict:
     """Debate + retrieval + symbolic fact-check + gating + judge.
 
@@ -329,9 +338,7 @@ def main(argv=None) -> None:
             if need_argus:
                 argus = run_argus(claim, args.rounds)
                 result["argus_raw_probability"] = argus["raw_probability"]
-                for field in ("n_arguments", "grounded_extension", "dropped_edges",
-                              "symbolic_coverage", "arguments", "fact_checks",
-                              "fact_checks_llm"):
+                for field in ARTIFACT_FIELDS:
                     result[field] = argus[field]
                 result["argus_key"] = a_key
 
