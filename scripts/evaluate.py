@@ -140,10 +140,11 @@ def run_baseline(claim: str) -> float:
 # triples cached. v2 scored against per-argument evidence only, which made
 # the rules abstain on 88% of arguments.
 # v4 = closed predicate vocabulary in the extraction prompt plus an alias
-# map, so argument and evidence triples use the same predicate names.
+# map. The closed part backfired: coverage fell 0.22 -> 0.04.
+# v5 = vocabulary softened to a preference; the alias map stays.
 # Older entries stay readable but never mix into the metrics, because the
 # key no longer matches.
-ARTIFACT_SCHEMA = 4
+ARTIFACT_SCHEMA = 5
 
 
 def argus_key(rounds: int) -> dict:

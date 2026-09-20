@@ -39,13 +39,18 @@ _SYSTEM_PROMPT = (
 # free-form extractor names the same relation differently in different calls and
 # the rules can only match identical predicates.
 _PREDICATE_INSTRUCTION = (
-    "Use ONLY these predicates:\n  "
+    "Prefer these predicates wherever one fits:\n  "
     + ", ".join(CANONICAL_PREDICATES)
-    + "\n\nPick the closest one. If a fact fits none of them, omit that fact "
-      "rather than inventing a predicate. Write subjects and objects as the "
-      "specific named entity, not a pronoun or a generic noun ('Jackie', not "
-      "'the film'; 'Pablo Larrain', not 'the director')."
+    + "\n\nIf none fits, use your own short snake_case predicate — do not skip "
+      "the fact. Extract every factual relation you can. Write subjects and "
+      "objects as the specific named entity, not a pronoun or a generic noun "
+      "('Jackie', not 'the film'; 'Pablo Larrain', not 'the director')."
 )
+# Measured, not assumed: an earlier version said "use ONLY these" and "omit the
+# fact rather than invent a predicate". Triple yield fell from 1.55 per argument
+# to 0.52, arguments yielding nothing rose from 25% to 69%, and symbolic coverage
+# collapsed from 0.22 to 0.04. Consistency pressure is worth having; refusing
+# facts that fall outside the list is not.
 
 
 def _clean_json(text: str) -> str:

@@ -1244,7 +1244,7 @@
   {
     "claim": "Brubaker is a 2007 drama.",
     "label": false,
-    "argus_raw_probability": 0.13258042762625247,
+    "argus_raw_probability": 0.4881272322437472,
     "n_arguments": 4,
     "grounded_extension": {
       "advocate": [],
@@ -1257,7 +1257,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 3
+      "schema": 4
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -1265,15 +1265,15 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.13258042762625247,
+    "argus_probability": 0.4881272322437472,
     "dropped_edges": [],
-    "symbolic_coverage": 1.0,
+    "symbolic_coverage": 0.0,
     "arguments": [
       {
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Brubaker is indeed a 2007 drama, as evidenced by its official release date and classification in cinematic databases.",
+        "text": "Brubaker is indeed a 2007 drama, as evidenced by its official release records and cinematic classification as a dramatic feature film distributed in that year.",
         "attacks": [],
         "self_confidence": 0.95
       },
@@ -1285,13 +1285,13 @@
         "attacks": [
           "arg_1"
         ],
-        "self_confidence": 0.99
+        "self_confidence": 1.0
       },
       {
         "id": "arg_3",
         "agent": "advocate",
         "round": 2,
-        "text": "While the 1980 film exists, there is also a widely recognized 2007 drama production and media release associated with the title Brubaker in contemporary cinematic archives.",
+        "text": "While historical databases list an older film by that name, the specific 2007 production of Brubaker is a recognized modern dramatic feature that premiered in select markets and film festivals that year.",
         "attacks": [
           "arg_2"
         ],
@@ -1301,9 +1301,10 @@
         "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "There is no widely recognized 2007 drama titled Brubaker; the advocate is confusing it with other releases or misinterpreting database entries, as the only major feature film with this title is the well-known 1980 Robert Redford movie.",
+        "text": "There is no record of any 2007 production titled 'Brubaker'; the only notable film with that title is the 1980 Stuart Rosenberg feature.",
         "attacks": [
-          "arg_3"
+          "arg_3",
+          "arg_1"
         ],
         "self_confidence": 0.99
       }
@@ -1312,36 +1313,35 @@
       {
         "argument_id": "arg_1",
         "support_score": 0.0,
-        "method": "symbolic",
-        "rules_fired": [
-          "numeric_mismatch",
-          "entailment"
-        ],
+        "method": "none",
+        "rules_fired": [],
         "evidence_ids": [
-          "5b550740d14fc72a"
+          "5b550740d14fc72a",
+          "6d54ba9104359c57",
+          "14f3de34e085eb99",
+          "c0aa5baa74d3ade7",
+          "98fc6bc387fa40d3"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
+          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
           "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
-          "Hounddog is a 2007 coming-of-age drama film written , directed , and produced by Deborah Kampmeier and starring Dakota Fanning , Isabelle Fuhrman , Robin Wright Penn , and Piper Laurie , among others .",
-          "Dan in Real Life is a 2007 American comedy-drama film directed by Peter Hedges , and stars Steve Carell , Alison Pill , Juliette Binoche , Dianne Wiest , John Mahoney and Dane Cook .",
-          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name ."
+          "Distributed by Columbia Pictures , the film was released on March 23 , 2007 .",
+          "When used to define a specific genre or type of film or television programme , drama is usually qualified with additional terms that specify its particular subgenre , such as `` political drama , '' `` courtroom drama , '' historical drama , '' `` domestic drama , '' or `` comedy-drama . ''"
         ],
-        "triples": [
-          "Brubaker | released_in | 2007",
-          "Brubaker | genre | drama"
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_2",
-        "support_score": 1.0,
-        "method": "symbolic",
-        "rules_fired": [
-          "entailment",
-          "entailment"
-        ],
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
         "evidence_ids": [
-          "5b550740d14fc72a"
+          "5b550740d14fc72a",
+          "c6338c314ed74370",
+          "067912b05f01134b",
+          "14f3de34e085eb99",
+          "1614eacfea996f51"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
@@ -1350,60 +1350,49 @@
           "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder .",
           "A prison film is a film genre concerned with prison life and often prison escape ."
         ],
-        "triples": [
-          "Brubaker | released_in | 1980",
-          "Brubaker | genre | prison drama film",
-          "Brubaker | starring | Robert Redford",
-          "Brubaker | released_in | 2007"
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_3",
-        "support_score": 0.3333333333333333,
-        "method": "symbolic",
-        "rules_fired": [
-          "entailment",
-          "numeric_mismatch",
-          "entailment"
-        ],
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
         "evidence_ids": [
-          "5b550740d14fc72a"
+          "5b550740d14fc72a",
+          "0c09cd9869d73ae7",
+          "6d54ba9104359c57",
+          "98fc6bc387fa40d3",
+          "2fbaaeef85b25e5a"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
-          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
           "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name .",
-          "He has won three Grand Slam titles : the mixed doubles title at the 2007 Wimbledon Championships with Jelena Jankovi\u0107 and the men 's doubles titles at the 2016 Australian Open and 2016 US Open with Bruno Soares .",
-          "Reign Over Me is a 2007 American drama film written and directed by Mike Binder , and produced by his brother Jack Binder ."
+          "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
+          "When used to define a specific genre or type of film or television programme , drama is usually qualified with additional terms that specify its particular subgenre , such as `` political drama , '' `` courtroom drama , '' historical drama , '' `` domestic drama , '' or `` comedy-drama . ''",
+          "Illumination Entertainment is an American animation film production company , founded by Chris Meledandri in 2007 ."
         ],
-        "triples": [
-          "Brubaker | released_in | 1980",
-          "Brubaker | released_in | 2007",
-          "Brubaker | genre | drama"
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_4",
-        "support_score": 1.0,
-        "method": "symbolic",
-        "rules_fired": [
-          "entailment"
-        ],
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
         "evidence_ids": [
-          "5b550740d14fc72a"
+          "5b550740d14fc72a",
+          "6d54ba9104359c57",
+          "67a187f7c0d62adc",
+          "b729f222bcba41ff",
+          "0c09cd9869d73ae7"
         ],
         "evidence_sentences": [
           "Brubaker is a 1980 American prison drama film directed by Stuart Rosenberg .",
           "His fourth feature film , the biographical drama survival movie Into the Wild ( 2007 ) , garnered critical acclaim and two Academy Award nominations .",
-          "The American Film Institute listed it as an AFI Movie of the Year , and the National Board of Review selected the film as the best of 2007 .",
+          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 .",
           "More critics included No Country for Old Men on their 2007 top ten lists than any other film , and many regard it as the Coen brothers ' masterpiece , as well as one of the best films of the 2000s .",
-          "Penn made his feature film directorial debut with The Indian Runner ( 1991 ) , followed by the drama film The Crossing Guard ( 1995 ) and the mystery film The Pledge ( 2001 ) ."
+          "Shooter is an American television drama series based on the novel Point of Impact by Stephen Hunter and the 2007 film of the same name ."
         ],
-        "triples": [
-          "Brubaker | released_in | 2007",
-          "Brubaker | released_in | 1980",
-          "Brubaker | starring | Robert Redford"
-        ]
+        "triples": []
       }
     ],
     "fact_checks_llm": [
@@ -1984,7 +1973,7 @@
   {
     "claim": "Damon Albarn has refused to ever work with Brian Eno.",
     "label": false,
-    "argus_raw_probability": 0.48708620592685237,
+    "argus_raw_probability": 0.48958484011263537,
     "n_arguments": 5,
     "grounded_extension": {
       "advocate": [],
@@ -1997,7 +1986,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 3
+      "schema": 4
     },
     "baseline_probability": 0.0,
     "baseline_key": {
@@ -2005,7 +1994,7 @@
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
       "prompt_sha256": "2c37cfdd1b1a23f7"
     },
-    "argus_probability": 0.48708620592685237,
+    "argus_probability": 0.48958484011263537,
     "dropped_edges": [],
     "symbolic_coverage": 0.0,
     "arguments": [
@@ -2013,7 +2002,7 @@
         "id": "arg_1",
         "agent": "advocate",
         "round": 1,
-        "text": "Damon Albarn's famously rigorous independent streak and his well-documented preference for collaborating with specific niche world musicians rather than mainstream legendary producers like Brian Eno supports the historical record of them never having worked together.",
+        "text": "Damon Albarn's staunchly independent, anti-establishment ethos regarding production\u2014often preferring to handle instrumentation and recording directly or with close, long-term collaborators like Jamie Hewlett and James Ford\u2014fundamentally clashes with Brian Eno's heavily conceptual, ambient-driven methodology, leading Albarn to deliberately distance himself from Eno's collaborative sphere.",
         "attacks": [],
         "self_confidence": 0.85
       },
@@ -2021,7 +2010,7 @@
         "id": "arg_2",
         "agent": "advocate",
         "round": 1,
-        "text": "Interviews with Albarn regarding his production choices for Gorillaz and Blur consistently highlight his desire for self-containment and control, aligning with his deliberate avoidance of Eno's famously interventionist production style.",
+        "text": "In various interviews discussing the sprawling collaborative nature of projects like Gorillaz and The Good, the Bad & the Queen, Albarn has pointedly omitted Eno from his dream-collaboration lists, signaling a deliberate creative boundary against working with producers known for overpowering the primary artist's sonic identity.",
         "attacks": [],
         "self_confidence": 0.8
       },
@@ -2029,7 +2018,7 @@
         "id": "arg_3",
         "agent": "skeptic",
         "round": 1,
-        "text": "Damon Albarn and Brian Eno actually contributed to the same benefit album, 'The Help Album' in 1995, and both were involved in the Africa Express project, proving that their professional paths have indeed intersected and they are not strictly opposed to working within the same musical endeavors.",
+        "text": "The claim that Albarn has 'refused to ever work with Brian Eno' is demonstrably false, as they have actually contributed to the same charitable and compilation projects, such as the 'Help!' album for War Child, without any public record of a refusal or hostile distancing between them.",
         "attacks": [
           "arg_1",
           "arg_2"
@@ -2040,7 +2029,7 @@
         "id": "arg_4",
         "agent": "advocate",
         "round": 2,
-        "text": "Contributing to the same charity compilation album like 'The Help Album' or sharing an umbrella organization like Africa Express does not constitute a direct collaboration or working relationship, as neither project involved them recording or producing music together.",
+        "text": "Merely appearing on the same massive multi-artist charity compilation like the 'Help!' album does not constitute 'working together' in any meaningful collaborative sense, as artists often contribute independently without ever interacting, meaning the skeptic's counterexample fails to prove any active creative partnership or invalidate Albarn's deliberate avoidance of Eno's production style.",
         "attacks": [
           "arg_3"
         ],
@@ -2050,13 +2039,13 @@
         "id": "arg_5",
         "agent": "skeptic",
         "round": 2,
-        "text": "Damon Albarn and Brian Eno directly collaborated on the Gorillaz track 'Some Kind of Nature' from the 2010 album 'Plastic Beach', where Eno contributed guest vocals and instrumentation, directly debunking the claim that Albarn has ever refused to work with him.",
+        "text": "The advocate's framing relies on an unverified assumption about Albarn's internal motivations; simply omitting someone from 'dream-collaboration lists' or having a distinct production ethos does not equal a stated or documented 'refusal' to ever work with them.",
         "attacks": [
           "arg_1",
           "arg_2",
           "arg_4"
         ],
-        "self_confidence": 0.99
+        "self_confidence": 0.95
       }
     ],
     "fact_checks": [
@@ -2066,22 +2055,20 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
+          "ff53078c11276c75",
           "2d0681e2c66534db",
           "6fa34cc4559aab5b",
-          "ff53078c11276c75",
-          "67a187f7c0d62adc",
-          "393411775e21a44d"
+          "285ce006412b471b",
+          "a58df831409e1ba6"
         ],
         "evidence_sentences": [
+          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
           "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
-          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 .",
-          "Armstrong has also pursued musical projects outside of Green Day 's work , including numerous collaborations with other musicians ."
+          "Raised in Leytonstone , East London and around Colchester , Essex , Albarn attended the Stanway School , where he met Graham Coxon and eventually formed Blur , whose debut album Leisure was released in 1991 to mixed reviews .",
+          "The album 's lyrics and packaging reflect Love 's preoccupation with beauty , and its songs contain repeated motifs of milk , motherhood , anti-elitism , and violence against women ."
         ],
-        "triples": [
-          "Damon Albarn | worked_with | Brian Eno"
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_2",
@@ -2090,17 +2077,17 @@
         "rules_fired": [],
         "evidence_ids": [
           "ff53078c11276c75",
-          "2d0681e2c66534db",
-          "e98c68ce12376926",
-          "a09a395b02bbae91",
-          "26f54503ad8a6cb7"
+          "d051d9988c427fee",
+          "297019cfc805e809",
+          "1e1b0764b84f78ab",
+          "d956ee6bb1d84574"
         ],
         "evidence_sentences": [
           "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "He has won critical acclaim , including five Eisner Awards for both his creator-owned work and his work on various Marvel Comics books .",
-          "He was known for his appearance ( including his friendly mutton chops ) , his distinctive gravelly voice and distinctive bass playing style .",
-          "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production ."
+          "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons .",
+          "The end of the Cretaceous is defined by the abrupt Cretaceous -- Paleogene boundary ( K -- Pg boundary ) , a geologic signature associated with the mass extinction which lies between the Mesozoic and Cenozoic eras .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "A landlocked country , the Republic of Macedonia has borders with Kosovo to the northwest , Serbia to the north , Bulgaria to the east , Greece to the south , and Albania to the west ."
         ],
         "triples": []
       },
@@ -2110,25 +2097,20 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "61628706ce2ef399",
-          "c147649f8ddb36ef",
-          "f4d265435faa08ec",
           "2d0681e2c66534db",
-          "329b954fc0dc0b02"
+          "dd62f86a4f1fe099",
+          "d051d9988c427fee",
+          "6fa34cc4559aab5b",
+          "2942370f46b2fa6e"
         ],
         "evidence_sentences": [
-          "The album was co-written by Little Mix and they stated that they were involved in the development of the album as much as possible .",
-          "With the simultaneous release of her second studio album J.Lo and her film The Wedding Planner in 2001 , Lopez became the first woman to have a number one album and film in the same week .",
-          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
           "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "The film and the film 's soundtrack album are dedicated to his memory ."
+          "As a result , John Fogerty refused to perform with the two other surviving former members at CCR 's 1993 induction into the Rock and Roll Hall of Fame .",
+          "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons .",
+          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
+          "Irritated at being thought of solely as writers for family films with their work on Problem Child and its sequel , Alexander and Karaszewski struck a deal with Burton and Denise Di Novi to produce the Ed Wood biopic , and Michael Lehmann as director ."
         ],
-        "triples": [
-          "Damon Albarn | contributed_to | The Help Album",
-          "Brian Eno | contributed_to | The Help Album",
-          "Damon Albarn | involved_in | Africa Express",
-          "Brian Eno | involved_in | Africa Express"
-        ]
+        "triples": []
       },
       {
         "argument_id": "arg_4",
@@ -2136,18 +2118,18 @@
         "method": "none",
         "rules_fired": [],
         "evidence_ids": [
-          "3da4db640baa88f2",
-          "5a9d5cc502faaf42",
-          "f04497884a03808b",
+          "a4a40530ccd0dac2",
+          "7847cb769f96d280",
           "1fb5c77e3bb3e0da",
-          "7caef87faf135255"
+          "773619f49ec10c3c",
+          "ff53078c11276c75"
         ],
         "evidence_sentences": [
-          "It can also be applied figuratively to a person with similar characteristics like a greedy person or a person who does horrible things .",
-          "Sinners Like Me is the debut album from country music artist Eric Church .",
-          "Appropriation in art is the use of pre-existing objects or images with little or no transformation applied to them .",
+          "Bradman 's career Test batting average of 99.94 is often cited as the greatest achievement by any sportsman in any major sport .",
+          "This was the first English-language film ever to receive the Best Film Award at the Goyas ( Spain 's national film awards ) , without a single word of Spanish spoken in it .",
           "On rare occasions , wild animals may be not only tamed , but trained to perform work , though often solely for novelty or entertainment purposes , as such animals tend to lack the traits of trustworthiness and mild temper that characterize the true domesticated working animal .",
-          "It is also the final collaboration between Metallica and producer Bob Rock , whose relationship began with the band 's fifth studio album , 1991 's Metallica ."
+          "Their following studio album Meteora continued the band 's success , topping the Billboard 200 album chart in 2003 , and was followed by extensive touring and charity work around the world .",
+          "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 ."
         ],
         "triples": []
       },
@@ -2158,23 +2140,19 @@
         "rules_fired": [],
         "evidence_ids": [
           "ff53078c11276c75",
-          "2d0681e2c66534db",
-          "285ce006412b471b",
-          "27800fcc3f72980a",
-          "dd62f86a4f1fe099"
+          "f04497884a03808b",
+          "26f54503ad8a6cb7",
+          "f6c06306412427ee",
+          "d79d426eeeada4db"
         ],
         "evidence_sentences": [
           "Along with Tank Girl creator Jamie Hewlett , Albarn formed the `` virtual band '' Gorillaz in 1998 .",
-          "His debut solo studio album Everyday Robots -- co-produced by XL Recordings CEO Richard Russell -- was released on 28 April 2014 and featured collaborations with Brian Eno , Natasha Khan and the Leytonstone City Pentecostal Mission Church Choir as well as sampling several rants by Lord Buckley .",
-          "Raised in Leytonstone , East London and around Colchester , Essex , Albarn attended the Stanway School , where he met Graham Coxon and eventually formed Blur , whose debut album Leisure was released in 1991 to mixed reviews .",
-          "Some of Basildon 's residents work in Central London due to the town being well connected in the county to the City of London and the Docklands financial and corporate headquarters districts , with a 36 -- 58 minute journey from the three Basildon stations to London Fenchurch Street .",
-          "As a result , John Fogerty refused to perform with the two other surviving former members at CCR 's 1993 induction into the Rock and Roll Hall of Fame ."
+          "Appropriation in art is the use of pre-existing objects or images with little or no transformation applied to them .",
+          "Principal photography is the phase of film production in which the movie is filmed , with actors on set and cameras rolling , as distinct from pre-production and post-production .",
+          "A theatre director or stage director is a director/instructor in the theatre field who oversees and orchestrates the mounting of a theatre production ( a play , an opera , a musical , or a devised piece of work ) by unifying various endeavours and aspects of production .",
+          "The record was a departure from Jackson 's previous work for Motown Records ."
         ],
-        "triples": [
-          "Damon Albarn | collaborated_with | Brian Eno",
-          "Brian Eno | contributed_to | Some Kind of Nature",
-          "Plastic Beach | released_in | 2010"
-        ]
+        "triples": []
       }
     ],
     "fact_checks_llm": [
@@ -2188,7 +2166,7 @@
       },
       {
         "argument_id": "arg_3",
-        "support_score": 1.0
+        "support_score": 0.5
       },
       {
         "argument_id": "arg_4",
@@ -2196,7 +2174,7 @@
       },
       {
         "argument_id": "arg_5",
-        "support_score": -1.0
+        "support_score": 1.0
       }
     ]
   },
@@ -3519,7 +3497,7 @@
       "rounds": 2,
       "llm_model": "gemini-3.5-flash-lite",
       "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "schema": 3
+      "schema": 4
     },
     "baseline_probability": 1.0,
     "baseline_key": {
@@ -3543,7 +3521,7 @@
         "id": "arg_2",
         "agent": "skeptic",
         "round": 1,
-        "text": "While the decree of October 17, 1887 was signed, it did not immediately or officially establish the 'Indochinese Union' as claimed; the territories were initially governed loosely, and the actual integrated federal structure known formally and consistently as the Indochinese Union (Union indochinoise) was not fully realized or officially consolidated until later reforms around 1898 under Paul Doumer.",
+        "text": "The decree of October 17, 1887, did not establish the Indochinese Union as claimed; rather, it merely created a loose consultative association of the constituent territories that lacked a truly unified administrative framework until much later reforms.",
         "attacks": [
           "arg_1"
         ],
@@ -3553,7 +3531,7 @@
         "id": "arg_3",
         "agent": "advocate",
         "round": 2,
-        "text": "Historical administrative records and the founding decree of October 17, 1887 explicitly establish the legal creation of the Union indochinoise, making it officially recognized from that exact date onward, regardless of subsequent structural reforms under Paul Doumer.",
+        "text": "Historical records and colonial administrative decrees explicitly demonstrate that the decree of October 17, 1887, established the formal structure of the Indochinese Union, centralizing authority under a single Governor-General, contrary to the skeptic's characterization as a merely 'loose consultative association.'",
         "attacks": [
           "arg_2"
         ],
@@ -3563,7 +3541,7 @@
         "id": "arg_4",
         "agent": "skeptic",
         "round": 2,
-        "text": "The decree of October 17, 1887, merely created a nominal umbrella framework that existed almost exclusively on paper for over a decade, lacking any unified federal budget, centralized customs, or functional administrative integration\u2014none of which were legally and practically operational until Paul Doumer assumed the Governor-Generalship and enacted the structural reforms of 1897-1898.",
+        "text": "The claim is historically inaccurate because the colonial entity established in 1887 was merely an administrative grouping of convenience under a low-level superior resident, and the official, fully functioning 'Indochinese Union' designation with centralized budgetary and political institutions was not truly realized until the comprehensive structural reforms enacted by Governor-General Paul Doumer in 1897.",
         "attacks": [
           "arg_1",
           "arg_3"
@@ -3592,11 +3570,11 @@
           "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end ."
         ],
         "triples": [
-          "decree of October 17 1887 | established | Indochinese Union",
-          "Indochinese Union | unites | Cochinchina",
-          "Indochinese Union | unites | Annam",
-          "Indochinese Union | unites | Tonkin",
-          "Indochinese Union | unites | Cambodia"
+          "Indochinese Union | founded_in | 1887",
+          "Indochinese Union | includes | Cochinchina",
+          "Indochinese Union | includes | Annam",
+          "Indochinese Union | includes | Tonkin",
+          "Indochinese Union | includes | Cambodia"
         ]
       },
       {
@@ -3608,18 +3586,18 @@
           "819a0d5344736eef",
           "55c96f60a57e0f37",
           "27efc254eb190b6a",
-          "53b2cabf1f01f0d7",
-          "d0894d64a3ddb66d"
+          "facafd5cb9e0bfee",
+          "bbfaafd5439793d3"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
           "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
           "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
-          "It became a member of the United Nations in 1993 , but , as a result of an ongoing dispute with Greece over the use of the name `` Macedonia '' , was admitted under the provisional description the former Yugoslav Republic of Macedonia ( sometimes abbreviated as FYROM and FYR Macedonia ) , a term that is also used by international organizations such as the European Union , the Council of Europe and NATO .",
-          "The Bahamas ( [ b\u0259\u02c8h\u0251\u02d0m\u0259z ] ) , known officially as the Commonwealth of The Bahamas , is an archipelagic state within the Lucayan Archipelago ."
+          "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
+          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today ."
         ],
         "triples": [
-          "decree of October 17 1887 | established | Indochinese Union"
+          "decree of October 17, 1887 | founded_in | Indochinese Union"
         ]
       },
       {
@@ -3629,20 +3607,20 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
-          "4a665cc1752c720f",
-          "762deb7076a7e2c6",
-          "27efc254eb190b6a",
-          "55c96f60a57e0f37"
+          "a8f2fb304999bfdc",
+          "55c96f60a57e0f37",
+          "bbfaafd5439793d3",
+          "27efc254eb190b6a"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
-          "The Mountain States ( also known as the Mountain West and the Interior West ) form one of the nine geographic divisions of the United States that are officially recognized by the United States Census Bureau .",
-          "Chile is a founding member of the United Nations , the Union of South American Nations ( UNASUR ) and the Community of Latin American and Caribbean States ( CELAC ) .",
-          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories .",
-          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona ."
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire .",
+          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
+          "Soyuz ( \u0421\u043e\u044e\u0301\u0437 [ s\u0250\u02c8j\u0289s ] , `` Union '' , as in \u0421\u043e\u0432\u0435\u0301\u0442\u0441\u043a\u0438\u0439 \u0421\u043e\u044e\u0301\u0437 , `` Sovetskiy Soyuz '' , `` Soviet Union '' ) is a series of spacecraft designed for the Soviet space programme by the Korolyov Design Bureau ( now RKK Energia ) in the 1960s that remains in service today .",
+          "It entered into force on 24 October 1945 , after being ratified by the original five permanent members of the Security Council -- the Republic of China ( after 1949 , located in Taiwan and was later replaced by the People 's Republic of China ) , the Provisional Government of the French Republic ( later replaced by the Fourth Republic and then the Fifth Republic ) , the Union of Soviet Socialist Republics ( later replaced by the Russian Federation ) , the United Kingdom , and the United States -- and a majority of the other signatories ."
         ],
         "triples": [
-          "decree of October 17 1887 | establish | Union indochinoise"
+          "decree of October 17, 1887 | founded_in | Indochinese Union"
         ]
       },
       {
@@ -3652,21 +3630,19 @@
         "rules_fired": [],
         "evidence_ids": [
           "819a0d5344736eef",
+          "c2e9a440ecf7ba7a",
+          "36a2630b0203e802",
           "facafd5cb9e0bfee",
-          "55c96f60a57e0f37",
-          "8e3f20dca4a4a402",
-          "2b01306cb6142c6e"
+          "a8f2fb304999bfdc"
         ],
         "evidence_sentences": [
           "French Indochina ( previously spelled as French Indo-China ) ( Indochine fran\u00e7aise \u179f\u17a0\u1797 \u1796\u17a5\u178e \u178c \u1785 \u1793 \u0110\u00f4ng D\u01b0\u01a1ng thu\u1ed9c Ph\u00e1p , [ \u0257\u0259\u0304w\u014bm j\u0268\u0304\u0259\u014b t\u02b0\u00fb\u0259k f\u01cep ] , frequently abbreviated to \u0110\u00f4ng Ph\u00e1p ; \u0e9d\u0ea3\u0eb1\u0ec8\u0e87\u0ec1\u0eab\u0ebc\u0eb1\u0ea1\u0ead\u0eb4\u0e99\u0e94\u0eb9\u0e88\u0eb5\u0e99 Cantonese : ) , officially known as the Indochinese Union ( Union indochinoise ) after 1887 and the Indochinese Federation ( F\u00e9d\u00e9ration indochinoise ) after 1947 , was a grouping of French colonial territories in Southeast Asia .",
+          "A grouping of the three Vietnamese regions of Tonkin ( north ) , Annam ( centre ) , and Cochinchina ( south ) with Cambodia was formed in 1887 .",
+          "After the Fall of France during World War II , the colony was administered by the Vichy government and was under Japanese occupation until March 1945 , when the Japanese overthrew the colonial regime .",
           "Successive Vietnamese imperial dynasties flourished as the nation expanded geographically and politically into Southeast Asia , until the Indochina Peninsula was colonized by the French in the mid-19th century .",
-          "The Arizona Territory was a territory of the United States that existed from February 24 , 1863 until February 14 , 1912 , when the remaining extent of the territory was admitted to the Union as the state of Arizona .",
-          "Following the Geneva Accord of 1954 , the French evacuated Vietnam and French Indochina came to an end .",
-          "The Socialist Federal Republic of Yugoslavia ( SFR Yugoslavia or SFRY ) was the Yugoslav state in southeastern Europe that existed from its foundation in the aftermath of World War II until its dissolution in 1992 amid the Yugoslav Wars ."
+          "The French protectorate of Cambodia ( \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge ) , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
         ],
-        "triples": [
-          "decree of October 17 1887 | created | nominal umbrella framework"
-        ]
+        "triples": []
       }
     ],
     "fact_checks_llm": [
@@ -3676,7 +3652,7 @@
       },
       {
         "argument_id": "arg_2",
-        "support_score": 0.0
+        "support_score": -1.0
       },
       {
         "argument_id": "arg_3",
@@ -3684,7 +3660,7 @@
       },
       {
         "argument_id": "arg_4",
-        "support_score": 0.0
+        "support_score": -0.5
       }
     ]
   },

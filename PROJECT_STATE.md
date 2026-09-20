@@ -5,12 +5,27 @@
 mid-build has full context without re-deriving decisions already made. Update it as the
 project progresses — don't let it drift out of sync with reality.
 
-**Last updated:** First valid evaluation run + branch merge (2026-09-10) — balanced n=50 results in §4; frontend redesign and backend eval work now live together on branch `backend-eval` (pushed to origin). Earlier the same day: measurement fixes — balanced n=50 FEVER sample, stratified `--limit`, config-keyed + corruption-safe eval cache; the n=8 numbers are now marked invalid (§4). 2026-09-09: evaluation harness built. Earlier the same day: FEVER sample integrated (§4, §8). Prior: Review-1 wiring session (2026-08-30) — all components wired end-to-end,
-orchestrator bug fixed, LLM fact-checker, in-memory persistence, cached demo debates, docs
-refreshed. Provider: Google Gemini `gemini-3.5-flash-lite` (moved off `gemini-3.6-flash`
-after hitting its 20 req/day free cap). Retry policy tightened; frontend now shows an honest
-"debate failed" banner instead of masking failures as mock data. Live debate verified
-end-to-end. Earlier automated analysis preserved as `status_report_2026-08-29.md`.
+**Last updated:** 2026-09-20 — **evidence-grounded redesign** (see §4a). The first complete
+n=50 run lost to the single-LLM baseline, and a paired McNemar test added this session gives
+p = 0.0018, so that loss was real rather than small-sample noise. Diagnosis: the grounded
+extension returned skeptic-2 / advocate-0 in 57 of 58 cached debates, making the structural
+signal a constant, and PRD §5d's symbolic fact-checker had never been built — M3 was
+decorative and M4 absent. Rebuilt this session: BM25 retrieval over a pooled FEVER evidence
+corpus, a forward-chaining symbolic reasoner, multi-argument debate turns with free attack
+targeting, evidence-gated attack edges, and an evidence-weighted judge. Test suite 52 -> 199.
+
+**The plan and its live status now live in [`docs/PLAN.md`](docs/PLAN.md).** The design and
+its rationale are in
+[`docs/superpowers/specs/2026-09-20-argus-evidence-grounded-redesign.md`](docs/superpowers/specs/2026-09-20-argus-evidence-grounded-redesign.md).
+PRD deviations are recorded in `debate_system_prd.md` Appendix A. This file remains the
+decision record; it is no longer the work queue.
+
+*Previously:* first valid evaluation run + branch merge (2026-09-10) — balanced n=50 results
+in §4. 2026-09-09: evaluation harness built, FEVER sample integrated (§4, §8). 2026-08-30:
+Review-1 wiring session — all components wired end-to-end, orchestrator bug fixed, LLM
+fact-checker, in-memory persistence, cached demo debates. Provider: Google Gemini
+`gemini-3.5-flash-lite` (moved off `gemini-3.6-flash` after hitting its 20 req/day free cap).
+Earlier automated analysis preserved as `status_report_2026-08-29.md`.
 
 **Repo location:** `C:\AI-Project`
 **Full technical spec:** `debate_system_prd.md` at the project root.
@@ -174,6 +189,56 @@ harness — read it as the "before" measurement:
 **Reproduce:** `data/eval_results.json` (per claim) and `data/eval_summary.json` (metrics +
 the exact config used) are written by the harness; `data/reliability_argus.png` and
 `data/reliability_baseline.png` by `python -m scripts.reliability_diagram`.
+
+---
+
+## 4a. Evidence-Grounded Redesign (2026-09-20)
+
+**Why.** n=50 run: Argus accuracy 0.620 / ECE 0.289 vs baseline 0.860 / 0.136. McNemar
+p = 0.0018 — a real loss. Root causes were structural, not tuning:
+
+| Milestone | PRD requires | Was actually built | Load-bearing? |
+|---|---|---|---|
+| M3 Knowledge Rep | Dung AF + symbolic triple KB | AF only | No — returned a constant |
+| M4 Reasoning | Forward-chaining contradiction | nothing | No — absent |
+| M5 Uncertainty | Bayesian aggregation, 3 signals | yes, 1 signal constant | Partly |
+| M7 Learning | Isotonic calibration | not fitted | No |
+
+A strictly alternating one-argument-per-turn debate always produces the same attack chain,
+whose grounded extension depends only on its length. Hence skeptic-2 / advocate-0 in 57 of 58
+debates, and a constant -2 on the logit.
+
+**What changed.**
+
+| Component | File | Change |
+|---|---|---|
+| Evidence corpus | `scripts/prepare_fever.py` | FEVER evidence retained; 3,493-sentence pooled corpus |
+| Retrieval | `app/services/retrieval.py` (new) | BM25, recall@5 = 0.836 on the held-out 50 |
+| Symbolic reasoner (M4) | `app/services/symbolic.py` (new) | Forward chaining to fixpoint; entailment, functional/negation/numeric contradiction |
+| Fact-checker | `app/services/fact_checker.py` | Rewritten: LLM extracts triples, rules judge |
+| Legacy checker | `app/services/fact_checker_llm.py` (new) | Kept only for the ablation |
+| Debate protocol | `app/services/orchestrator.py` | 1-3 arguments per turn, free attack targeting |
+| Edge gating | `app/services/gating.py` (new) | Attacks enter the AF only if evidence-supported |
+| Judge | `app/services/judge.py` | Structural term weighted by evidence, bounded [-1,1] |
+| Metrics | `scripts/metrics.py` (new) | AUROC, Brier, threshold sweep, exact McNemar |
+| Offline rescoring | `scripts/rescore.py` (new) | Ablations for free; no network path |
+| Demo export | `scripts/export_demos.py` (new) | Precomputed debates for the hosted demo |
+| Deployment | `Dockerfile` (new), `/health` | One image for any container host |
+
+**Measured so far** (n=10 smoke, `scripts/rescore.py --ablations`):
+
+- Reverting *only* the judge's structural term to the unweighted count drops accuracy to
+  0.500, AUROC to 0.240, mean P to 0.083 — reproducing the original defect on demand. This is
+  the evidence that it was the bug.
+- Symbolic coverage rose 0.12 -> 0.22 after pooling claim-level retrieval into one KB per
+  debate; a closed predicate vocabulary is the next lever being measured.
+- Distinct structural values across 10 debates: 2 -> 4. Gated edges: 0 -> 2.
+
+**Known limitations, stated rather than claimed away.** See PRD Appendix A.6 and `docs/PLAN.md`:
+the last-speaker bias is reduced in effect but not removed from the graph; retrieval is over a
+pooled gold-evidence corpus, not open-domain; the fact-check term credits an argument's side
+when the argument is factually true even if it concedes the claim (open, to be resolved by
+ablation).
 
 ---
 
