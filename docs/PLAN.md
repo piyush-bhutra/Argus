@@ -25,8 +25,8 @@ path; F onwards run against cached artifacts.
 | I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | **BLOCKED — daily quota exhausted** (3/100 scored) |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | **done** 2026-09-20 |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | **done** 2026-09-20 |
-| L | Hosting + demo corpus export (§6) | none | not started |
-| M | Write-up, PRD amendments (§9), PROJECT_STATE consolidation (§8) | none | not started |
+| L | Hosting + demo corpus export (§6) | none | code **done**; needs a host account (`docs/DEPLOY.md`) |
+| M | Write-up, PRD amendments (§9), PROJECT_STATE consolidation (§8) | none | **done** 2026-09-20 — `docs/RESULTS.md` |
 
 G–J are deliberately *after* F: they read cached artifacts, so they cost nothing and
 can be iterated while the run is still going.
@@ -319,3 +319,22 @@ dropping `triples` entirely, so exported demos showed a verdict with no visible
 derivation.
 
 Verified in the browser at desktop and 375px (no horizontal scroll).
+
+## Write-up (2026-09-20)
+
+`docs/RESULTS.md` — the evaluation write-up. Every figure is reproducible offline
+from the committed artifact cache; nothing in it needs an API call.
+
+New figure worth keeping: **the baseline places 48 of 50 claims at <=0.01 or
+>=0.99 and uses 3 distinct probability values. Argus places 0 of 50 at the
+extremes across 48 distinct values.** That quantifies the "degenerate estimator"
+claim precisely rather than asserting it.
+
+`docs/DEPLOY.md` — deployment. The key property is that the deployed demo needs
+**no API key and no quota**: 53 precomputed debates ship inside the image, so a
+viewer never meets a 429. Live debate is an optional extra.
+
+Frontend detail worth not rediscovering: `VITE_API_BASE_URL` is baked in at
+**build** time by Vite and defaults to `http://localhost:8000`. A deployed build
+without it silently falls back to bundled mock data via `apiState.usingMock`,
+which looks like a working debate rather than an error.
