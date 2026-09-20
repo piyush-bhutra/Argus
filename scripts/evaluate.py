@@ -30,6 +30,8 @@ from app.core.config import settings
 from app.services import grok_client
 from app.services.grok_client import call_grok, _is_daily_quota_exhausted
 from app.services.judge import apply_calibration
+from app.services.fact_checker import check_transcript
+from app.services.fact_checker_llm import check_transcript_llm
 from app.services.orchestrator import run_debate
 from app.services.pipeline import _load_calibrator, assemble_verdict
 from scripts.prepare_fever import balance
@@ -59,15 +61,49 @@ from scripts.metrics import (  # noqa: E402
 # --- systems under test ----------------------------------------------------
 
 def run_argus(claim: str, rounds: int) -> dict:
-    """Debate + semantics + fact-check + judge. Returns the RAW probability;
-    calibration is applied at read time (see apply_current_calibrator) so a
-    newly trained calibrator never forces the debates to be re-run."""
+    """Debate + retrieval + symbolic fact-check + gating + judge.
+
+    Returns the RAW probability plus the full debate ARTIFACT. Caching the
+    artifact rather than just the score is what makes the rest of the work free:
+    tau, the judge weights, top-k and every ablation re-score from this in
+    seconds, instead of costing another multi-hour quota-gated run.
+
+    The legacy LLM fact-check scores are recorded alongside the symbolic ones for
+    exactly one extra batched call, which buys the single most important
+    ablation - does retrieval beat asking the model twice - without a second run.
+    """
     transcript = run_debate(claim, rounds)
-    verdict = assemble_verdict(claim, transcript, calibrator=None)
+    fact_results = check_transcript(claim, transcript)
+    verdict = assemble_verdict(claim, transcript, calibrator=None, fact_results=fact_results)
+
+    try:
+        legacy = check_transcript_llm(claim, transcript)
+    except Exception as exc:  # noqa: BLE001 - the ablation is optional, the run is not
+        print(f"    (legacy fact-check failed, ablation data missing: {exc})")
+        legacy = []
+
     return {
         "raw_probability": verdict.raw_probability,
         "n_arguments": len(transcript),
         "grounded_extension": verdict.grounded_extension,
+        "dropped_edges": verdict.dropped_edges,
+        "symbolic_coverage": verdict.symbolic_coverage,
+        "arguments": [
+            {"id": a.id, "agent": a.agent, "round": a.round, "text": a.text,
+             "attacks": a.attacks, "self_confidence": a.self_confidence}
+            for a in transcript
+        ],
+        "fact_checks": [
+            {"argument_id": r.argument_id, "support_score": r.support_score,
+             "method": r.method, "rules_fired": r.rules_fired,
+             "evidence_ids": r.evidence_ids,
+             "evidence_sentences": r.evidence_sentences}
+            for r in fact_results
+        ],
+        "fact_checks_llm": [
+            {"argument_id": r.argument_id, "support_score": r.support_score}
+            for r in legacy
+        ],
     }
 
 
@@ -87,9 +123,16 @@ def run_baseline(claim: str) -> float:
 # cached and calibrated at read time. The ground-truth label is never trusted
 # from the cache - it is always re-read from the sample file.
 
+# Bumped when a change makes a cached Argus half incomparable with a fresh one.
+# v2 = multi-argument turns, retrieval + symbolic fact-check, evidence-gated
+# edges, evidence-weighted judge. v1 entries stay readable but never mix into
+# the metrics, because the key no longer matches.
+ARTIFACT_SCHEMA = 2
+
+
 def argus_key(rounds: int) -> dict:
     return {"rounds": rounds, "llm_model": settings.llm_model,
-            "llm_base_url": settings.llm_base_url}
+            "llm_base_url": settings.llm_base_url, "schema": ARTIFACT_SCHEMA}
 
 
 def baseline_key() -> dict:
@@ -286,8 +329,10 @@ def main(argv=None) -> None:
             if need_argus:
                 argus = run_argus(claim, args.rounds)
                 result["argus_raw_probability"] = argus["raw_probability"]
-                result["n_arguments"] = argus["n_arguments"]
-                result["grounded_extension"] = argus["grounded_extension"]
+                for field in ("n_arguments", "grounded_extension", "dropped_edges",
+                              "symbolic_coverage", "arguments", "fact_checks",
+                              "fact_checks_llm"):
+                    result[field] = argus[field]
                 result["argus_key"] = a_key
 
             if need_baseline:
