@@ -32,12 +32,32 @@ class DebateRecord(BaseModel):
     error: Optional[str] = None
 
 
+# Every POST /debate/start creates a record that was never evicted, so an
+# unauthenticated caller could grow this dict without limit until the process
+# ran out of memory. Insertion-ordered, so the oldest USER debate is discarded
+# first once the cap is reached.
+#
+# Seeded demos are exempt from eviction: they are the deployed demo, they are
+# reloadable from disk, and evicting them would let traffic quietly empty the
+# thing visitors came to see.
+MAX_USER_DEBATES = 500
+
 _store: Dict[str, DebateRecord] = {}
+_protected: set = set()
+
+
+def _evict_if_needed() -> None:
+    user_ids = [k for k in _store if k not in _protected]
+    while len(user_ids) > MAX_USER_DEBATES:
+        oldest = user_ids.pop(0)
+        _store.pop(oldest, None)
+        logger.info(f"debate_store: evicted {oldest} (cap {MAX_USER_DEBATES})")
 
 
 def create(claim: str, rounds: int = 2) -> str:
     debate_id = f"debate-{uuid.uuid4().hex[:12]}"
     _store[debate_id] = DebateRecord(debate_id=debate_id, claim=claim, rounds=rounds)
+    _evict_if_needed()
     return debate_id
 
 
@@ -78,6 +98,7 @@ def load_demos() -> int:
         for item in payload:
             record = DebateRecord(**item)
             _store[record.debate_id] = record
+            _protected.add(record.debate_id)
             count += 1
         logger.info(f"Loaded {count} cached demo debate(s) from {_DEMO_FILE}.")
         return count

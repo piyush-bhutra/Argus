@@ -39,6 +39,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.middleware("http")
+async def security_headers(request, call_next):
+    """Baseline response hardening.
+
+    This is a JSON API, so the valuable headers are the ones that stop a
+    response being reinterpreted as something executable or embedded elsewhere.
+    HSTS is deliberately omitted: it is the reverse proxy's to set, and sending
+    it over plain HTTP in local development would pin the browser to https for
+    localhost.
+    """
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    # No markup is served from this origin, so everything can be denied.
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'none'; frame-ancestors 'none'; base-uri 'none'"
+    )
+    return response
+
+
 app.include_router(router)
 
 

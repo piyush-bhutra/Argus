@@ -1,0 +1,394 @@
+{
+  "generated_at": "2026-09-20T12:45:21+00:00",
+  "config": {
+    "sample_file": "data\\fever_calib.json",
+    "n_claims_requested": 100,
+    "n_true": 50,
+    "n_false": 50,
+    "rounds": 2,
+    "bins": 10,
+    "seed": 42,
+    "limit": null,
+    "llm_model": "gemini-3.5-flash-lite",
+    "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "calibrator_loaded": false,
+    "baseline_enabled": false,
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "baseline_key": {
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "prompt_sha256": "2c37cfdd1b1a23f7"
+    }
+  },
+  "n_claims_scored": 4,
+  "n_claims_failed": 1,
+  "argus": {
+    "n": 3,
+    "n_true": 1,
+    "n_false": 2,
+    "accuracy": 0.3333333333333333,
+    "ece": 0.345623837101241,
+    "auroc": 0.5,
+    "brier": 0.3821654138756489,
+    "mean_probability": 0.6789571704345744,
+    "bins": [
+      {
+        "lo": 0.0,
+        "hi": 0.1,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.1,
+        "hi": 0.2,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.3,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.3,
+        "hi": 0.4,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.5,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.5,
+        "hi": 0.6,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.7,
+        "count": 2,
+        "confidence": 0.622740019314884,
+        "accuracy": 0.5
+      },
+      {
+        "lo": 0.7,
+        "hi": 0.8,
+        "count": 1,
+        "confidence": 0.791391472673955,
+        "accuracy": 0.0
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.9,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.9,
+        "hi": 1.0,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      }
+    ],
+    "threshold_sweep": [
+      {
+        "threshold": 0.0,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.05,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.15000000000000002,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.2,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.25,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.30000000000000004,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.35000000000000003,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.4,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.45,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.55,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.6000000000000001,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.65,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.7000000000000001,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.75,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "threshold": 0.8,
+        "accuracy": 0.6666666666666666
+      },
+      {
+        "threshold": 0.8500000000000001,
+        "accuracy": 0.6666666666666666
+      },
+      {
+        "threshold": 0.9,
+        "accuracy": 0.6666666666666666
+      },
+      {
+        "threshold": 0.9500000000000001,
+        "accuracy": 0.6666666666666666
+      },
+      {
+        "threshold": 1.0,
+        "accuracy": 0.6666666666666666
+      }
+    ]
+  },
+  "baseline": {
+    "n": 0,
+    "n_true": 0,
+    "n_false": 0,
+    "accuracy": null,
+    "ece": null,
+    "auroc": null,
+    "brier": null,
+    "mean_probability": null,
+    "bins": [
+      {
+        "lo": 0.0,
+        "hi": 0.1,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.1,
+        "hi": 0.2,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.3,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.3,
+        "hi": 0.4,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.5,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.5,
+        "hi": 0.6,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.7,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.7,
+        "hi": 0.8,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.9,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lo": 0.9,
+        "hi": 1.0,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      }
+    ],
+    "threshold_sweep": [
+      {
+        "threshold": 0.0,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.05,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.1,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.15000000000000002,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.2,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.25,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.30000000000000004,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.35000000000000003,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.4,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.45,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.55,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.6000000000000001,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.65,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.7000000000000001,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.75,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.8,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.8500000000000001,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.9,
+        "accuracy": null
+      },
+      {
+        "threshold": 0.9500000000000001,
+        "accuracy": null
+      },
+      {
+        "threshold": 1.0,
+        "accuracy": null
+      }
+    ]
+  },
+  "mcnemar_argus_vs_baseline": null,
+  "claims": [
+    {
+      "claim": "Victoria Palace Theatre is on the same side as a central London railway terminus.",
+      "label": false,
+      "argus_probability": 0.791391472673955,
+      "baseline_probability": null
+    },
+    {
+      "claim": "Bones is inspired by a real person.",
+      "label": true,
+      "argus_probability": 0.6277321638605189,
+      "baseline_probability": null
+    },
+    {
+      "claim": "XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
+      "label": false,
+      "argus_probability": 0.617747874769249,
+      "baseline_probability": null
+    },
+    {
+      "claim": "Angela Bassett received a bachelor of arts degree from Yale University.",
+      "label": true,
+      "argus_probability": null,
+      "baseline_probability": null
+    }
+  ],
+  "aborted": "daily LLM quota exhausted - rerun later to resume"
+}

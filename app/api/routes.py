@@ -1,4 +1,6 @@
-from fastapi import APIRouter, BackgroundTasks, HTTPException
+from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
+
+from app.core.ratelimit import client_key, debate_limiter
 
 from app.models.schemas import (
     GraphResponse,
@@ -14,9 +16,23 @@ router = APIRouter()
 
 
 @router.post("/debate/start", response_model=StartDebateResponse)
-def start_debate(request: StartDebateRequest, background_tasks: BackgroundTasks):
+def start_debate(
+    request: StartDebateRequest,
+    background_tasks: BackgroundTasks,
+    http_request: Request,
+):
     """Start a new debate. The pipeline runs in the background; poll the
     transcript endpoint for progress."""
+    # Rate limited before anything else: this endpoint is unauthenticated and
+    # each accepted call spends roughly six LLM requests on the operator's key.
+    key = client_key(http_request)
+    if not debate_limiter.allow(key):
+        raise HTTPException(
+            status_code=429,
+            detail="Too many debates started. Try again shortly.",
+            headers={"Retry-After": str(debate_limiter.retry_after(key))},
+        )
+
     claim = request.claim.strip()
     if not claim:
         raise HTTPException(status_code=422, detail="claim must not be empty")

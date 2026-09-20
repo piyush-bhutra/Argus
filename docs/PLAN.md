@@ -338,3 +338,40 @@ Frontend detail worth not rediscovering: `VITE_API_BASE_URL` is baked in at
 **build** time by Vite and defaults to `http://localhost:8000`. A deployed build
 without it silently falls back to bundled mock data via `apiState.usingMock`,
 which looks like a working debate rather than an error.
+
+## Security review (2026-09-20)
+
+Audit before deployment. Git history scanned for secrets across all refs: none
+ever committed, `.env` never tracked.
+
+**Fixed:**
+
+| # | Issue | Severity | Fix |
+|---|---|---|---|
+| 1 | `POST /debate/start` unauthenticated with no rate limit — each call spends ~6 LLM requests, so the endpoint was an **open LLM proxy onto the operator's quota** | High | `app/core/ratelimit.py`, 5 starts / 5 min per caller, configurable; `X-Forwarded-For` honoured only when `TRUST_PROXY_HEADERS` is set |
+| 2 | `claim` length unbounded — a **1 MB claim was accepted**, and the claim is embedded in every prompt of the debate | High | `max_length=1000` on the model |
+| 3 | `debate_store` never evicted — unbounded memory growth from anonymous requests (53 -> 259 records in one test burst) | Medium | cap 500 user debates, FIFO eviction; seeded demos protected |
+| 4 | Pipeline errors echoed `str(e)[:300]` to unauthenticated callers, leaking provider endpoints, model names and internal paths | Medium | generic message to the caller, detail to the log |
+| 5 | `starlette 0.52.1` reachable in the HTTP layer with 6 advisories; `requirements.txt` unpinned so a fresh build could resolve back into them | Medium | upgraded to 1.6.0; requirements floored and major-pinned |
+| 6 | No security headers | Low | `nosniff`, `DENY`, `no-referrer`, restrictive CSP |
+| 7 | No `.dockerignore` — a future `COPY . .` would bake `.env` into a published layer | Low | added |
+
+**Bug found in my own fix:** the rate limiter's memory guard only dropped keys
+whose deque was empty, but entries expire lazily per key, so nothing was ever
+empty — the control intended to prevent memory exhaustion did not work. It now
+sweeps on the last hit. Caught by a test asserting the bound.
+
+**Reviewed, no change needed:** `rounds` was already clamped; `debate_id` is a
+dict key with no filesystem path; React escapes model output so prompt injection
+cannot become XSS; `lovable-error-reporting` calls an editor-injected global with
+no network path; no build artifacts or `node_modules` tracked.
+
+**Accepted risks, documented in `docs/DEPLOY.md`:** no authentication (no user
+accounts exist); rate limit is per process and resets on restart; `CORS_ORIGINS`
+defaults to `*`.
+
+**Not addressed — prompt injection.** A caller controls `claim`, which enters the
+LLM prompt. Output is rendered as text (React-escaped, no `innerHTML`), attack
+ids are validated against the transcript, and the model never drives code, so the
+impact is confined to influencing generated text. Worth stating in the write-up
+rather than claiming the system is injection-proof.

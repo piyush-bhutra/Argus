@@ -78,6 +78,15 @@ data/*
 # every rescore and every ablation - too expensive to live on one machine.
 # Its .tmp / .corrupt-* siblings stay ignored.
 !data/eval_results.json
+# The calibration split and its scores. Committed because the leakage guard in
+# fit_calibrator compares against fever_sample.json: regenerating this file
+# differently would silently change what "disjoint" means.
+!data/fever_calib.json
+!data/calib_results.json
+!data/calib_summary.json
+# Reported results cited by docs/RESULTS.md.
+!data/rescore_summary.json
+!data/sweep_summary.json
 data/eval_results.json.tmp
 data/eval_results.corrupt-*
 datasets/

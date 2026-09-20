@@ -185,13 +185,24 @@ def run_pipeline(debate_id: str) -> None:
 
 
 def _friendly_error(e: Exception) -> str:
+    """Message safe to return to an unauthenticated caller.
+
+    The fallback used to echo `str(e)[:300]`, which sends provider exception
+    text — endpoint URLs, model identifiers, internal paths — to anyone who can
+    POST a claim. Only recognised, non-revealing conditions get a specific
+    message now; everything else is generic, and the detail goes to the log
+    where the operator can read it.
+    """
     text = str(e)
     if "RateLimitError" in type(e).__name__ or "429" in text or "RESOURCE_EXHAUSTED" in text:
         return (
             "The LLM provider is rate-limited or the free-tier quota is exhausted. "
-            "Wait for the quota to reset, switch LLM_MODEL/provider in .env, or open a "
-            "cached demo debate (which needs no API calls)."
+            "Wait for the quota to reset, or open a cached demo debate (which "
+            "needs no API calls)."
         )
     if "LLM_API_KEY" in text:
-        return "LLM_API_KEY / LLM_MODEL is not configured. Check your .env file."
-    return f"Debate pipeline failed: {text[:300]}"
+        # Names the variable, never its value, and says nothing about whether
+        # one is configured on this deployment.
+        return "The debate service is not configured for live debates."
+    logger.error(f"unhandled pipeline error ({type(e).__name__}): {text[:500]}")
+    return "The debate could not be completed. Please try again later."

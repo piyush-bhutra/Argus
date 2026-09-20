@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Literal, List, Dict, Optional
 
 class Argument(BaseModel):
@@ -43,9 +43,18 @@ class Verdict(BaseModel):
     # an assertion rather than evidence.
     fact_checks: List[FactCheckResult] = []
 
+# A claim is one sentence to verify, not a document. The cap matters because the
+# claim is embedded in EVERY prompt of the debate — roughly six LLM calls — so an
+# unbounded claim is a token-cost amplifier aimed at the operator's quota. A
+# 1 MB claim was accepted before this limit existed.
+MAX_CLAIM_LENGTH = 1000
+
+
 class StartDebateRequest(BaseModel):
-    claim: str
-    rounds: int = 3
+    claim: str = Field(min_length=1, max_length=MAX_CLAIM_LENGTH)
+    # Bounded here as well as in the route: the route's clamp is what actually
+    # runs today, but a second entry point must not be able to skip it.
+    rounds: int = Field(default=3, ge=1, le=5)
 
 class StartDebateResponse(BaseModel):
     debate_id: str

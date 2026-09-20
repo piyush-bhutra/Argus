@@ -67,4 +67,8 @@ def test_run_pipeline_records_error(_mock_run_debate):
 
     record = debate_store.get(debate_id)
     assert record.status == "error"
-    assert "llm down" in record.error
+    # The stored message is returned verbatim to an unauthenticated caller, so
+    # it must NOT contain the raw exception text - that used to leak provider
+    # endpoints, model names and internal paths. The detail goes to the log.
+    assert "llm down" not in record.error
+    assert record.error

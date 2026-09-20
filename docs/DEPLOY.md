@@ -41,6 +41,9 @@ The host injects its own port via `$PORT`; the image falls back to 8000.
 | Variable | Required | Notes |
 |---|---|---|
 | `CORS_ORIGINS` | **Yes** | The deployed frontend's origin, e.g. `https://argus.pages.dev`. Comma-separated for several. Defaults to `*`, which works but allows any site to call the API |
+| `DEBATE_RATE_LIMIT` | No | Debates one caller may start per window. Default **5**. Set `0` to disable live debate entirely and serve demos only |
+| `DEBATE_RATE_WINDOW_SECONDS` | No | Default **300** (5 minutes) |
+| `TRUST_PROXY_HEADERS` | No | Default `false`. Set `true` **only** behind a proxy that overwrites `X-Forwarded-For`; otherwise a caller can spoof the header and bypass the rate limit |
 | `LLM_API_KEY` | No | Set as a **secret**, never as a plain env var. Omit to run demo-only |
 | `LLM_MODEL` | No | e.g. `gemini-3.5-flash-lite` |
 | `LLM_BASE_URL` | No | e.g. `https://generativelanguage.googleapis.com/v1beta/openai/` |
@@ -109,6 +112,9 @@ branch — it rewrites history on Lovable's side and loses project history.
 - [ ] Backend deployed; `/health` returns `demo_debates: 53`
 - [ ] `CORS_ORIGINS` set to the frontend's real origin, not `*`
 - [ ] `LLM_API_KEY` set as a **secret** if live debate is wanted, otherwise omitted
+- [ ] `DEBATE_RATE_LIMIT` considered — `0` serves demos only and cannot spend quota
+- [ ] `TRUST_PROXY_HEADERS` left `false` unless a proxy overwrites `X-Forwarded-For`
+- [ ] `python -m pip_audit` clean against the committed `requirements.txt`
 - [ ] Frontend built and pointed at the backend origin
 - [ ] A demo debate opens and renders its evidence trace, e.g.
       `/debate/demo-danger-uxb-is-from-1981`
@@ -135,8 +141,14 @@ double the corpus. Rebuild and redeploy the image afterwards.
 
 - **In-memory state.** Live debates are lost on restart; the demo corpus reloads
   from disk at startup. Fine for a demo, not for production traffic.
-- **No authentication.** The API is open. Do not put a paid LLM key behind it on
-  a public URL without adding rate limiting — anyone who finds the endpoint can
-  spend your quota.
+- **No authentication.** The API is open by design (it has no user accounts).
+  Live debate is rate limited to 5 starts per caller per 5 minutes, because each
+  start spends roughly six LLM requests on your key — without that cap the
+  endpoint is an open LLM proxy onto your quota.
+
+  The limit is **per process**, so it resets on restart and each instance gets
+  its own budget if you scale out. If you put a **paid** key behind a public
+  URL, add a limit at the proxy or CDN too, and consider `DEBATE_RATE_LIMIT=0`
+  to serve the demo corpus only.
 - **Free-tier sleep.** Render and similar suspend idle instances; expect a cold
   start on the first request.

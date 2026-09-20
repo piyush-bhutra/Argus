@@ -1,0 +1,26 @@
+# Defence in depth. The Dockerfile copies specific directories today, so none of
+# this reaches the image — but a future `COPY . .` would bake a real API key
+# into a published layer, where deleting it later does not remove it.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+.git
+.gitignore
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+frontend/
+docs/
+tests/
+*.md
+!README.md
+
+# Regenerable locally and not needed to serve the API.
+data/*.corrupt-*
+data/eval_results.json.tmp

@@ -1,0 +1,500 @@
+[
+  {
+    "claim": "Victoria Palace Theatre is on the same side as a central London railway terminus.",
+    "label": false,
+    "argus_raw_probability": 0.791391472673955,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [
+        "arg_1",
+        "arg_3"
+      ],
+      "skeptic": [
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [
+      [
+        "arg_2",
+        "arg_1"
+      ],
+      [
+        "arg_4",
+        "arg_3"
+      ],
+      [
+        "arg_4",
+        "arg_1"
+      ]
+    ],
+    "symbolic_coverage": 0.75,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Victoria Palace Theatre is situated on Victoria Street, directly opposite and on the same side of the thoroughfare block structure as London Victoria station, one of central London's major railway termini.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Victoria Palace Theatre is actually located on Victoria Street on the northern side, whereas London Victoria station's main terminus buildings and platforms are positioned across different intersecting blocks and streets (such as Terminus Place and Buckingham Palace Road), meaning they are not on the same side of the thoroughfare block structure as claimed.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "London Victoria station and the Victoria Palace Theatre share the same continuous street frontage block bounded by Victoria Street, Cardinal Place, and Bressenden Place, placing them unequivocally on the same side of this central London thoroughfare.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The Victoria Palace Theatre sits on the corner of Victoria Street and Bressenden Place, while London Victoria station's terminus buildings occupy a completely separate footprint on Terminus Place and Buckingham Palace Road; they are separated by intervening roads and distinct city blocks, meaning they do not share a single continuous street frontage block.",
+        "attacks": [
+          "arg_3",
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "functional_contradiction",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "dd9d816e8eec9dd1"
+        ],
+        "evidence_sentences": [
+          "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
+          "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
+          "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
+          "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
+          "Central London is the innermost part of London , UK ."
+        ],
+        "triples": [
+          "Victoria Palace Theatre | located_in | Victoria Street",
+          "Victoria Palace Theatre | adjacent_to | London Victoria station"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "functional_contradiction",
+          "negation"
+        ],
+        "evidence_ids": [
+          "dd9d816e8eec9dd1"
+        ],
+        "evidence_sentences": [
+          "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
+          "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
+          "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
+          "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
+          "The Near West Side , one of the 77 community areas of Chicago , is on the West Side , west of the Chicago River and adjacent to the Loop ."
+        ],
+        "triples": [
+          "Victoria Palace Theatre | located_in | Victoria Street",
+          "Victoria Palace Theatre | adjacent_to | London Victoria station"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "2b2c42a90a10d6d5",
+          "dd9d816e8eec9dd1",
+          "044b18acc85187dc",
+          "6ec0c4bd2bc51baa",
+          "27800fcc3f72980a"
+        ],
+        "evidence_sentences": [
+          "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
+          "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
+          "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
+          "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
+          "Some of Basildon 's residents work in Central London due to the town being well connected in the county to the City of London and the Docklands financial and corporate headquarters districts , with a 36 -- 58 minute journey from the three Basildon stations to London Fenchurch Street ."
+        ],
+        "triples": [
+          "London Victoria station | adjacent_to | Victoria Palace Theatre"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "functional_contradiction",
+          "negation"
+        ],
+        "evidence_ids": [
+          "dd9d816e8eec9dd1"
+        ],
+        "evidence_sentences": [
+          "Victoria station is a central London railway terminus and connected London Underground station in Victoria , in the City of Westminster .",
+          "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station .",
+          "Victoria is a small district in the City of Westminster in central London , named after Victoria Street and Victoria Station and therefore , indirectly , after Queen Victoria .",
+          "It is near to Victoria Street , which along with the area and station is named after Queen Victoria .",
+          "He is also the founder of the 501 ( c ) ( 3 ) non-profit children 's theatre Fantasy Theatre for Children and B Street Theatre ."
+        ],
+        "triples": [
+          "Victoria Palace Theatre | located_in | Victoria Street",
+          "Victoria Palace Theatre | adjacent_to | London Victoria station"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.791391472673955
+  },
+  {
+    "claim": "Bones is inspired by a real person.",
+    "label": true,
+    "argus_raw_probability": 0.6277321638605189,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.25,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "The hit television series Bones is directly inspired by the life and career of forensic anthropologist and author Kathy Reichs, who served as a producer on the show and upon whose real-life experiences and novels the protagonist Temperance Brennan is based.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "While Kathy Reichs shares a profession with the character, Temperance Brennan is a fictional construct with a completely different personality, background, and personal life, meaning the character is not inspired by a real person.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The skeptic's objection relies on an overly narrow definition of 'inspired by'; sharing a unique profession, career path, specific forensic techniques, and forming the very basis of the source novels' protagonist clearly demonstrates that Kathy Reichs is the real-world inspiration for the character.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Sharing a profession does not make a fictional character 'inspired by' a specific real person in any meaningful biographical sense, especially when the fictional character's name, biography, personality, and life events are entirely invented by the author.",
+        "attacks": [
+          "arg_3",
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "1aacbdfcfe118d32",
+          "52b69fb613a23b7a"
+        ],
+        "evidence_sentences": [
+          "Created by Hart Hanson , the series is very loosely based on the life and writings of novelist and forensic anthropologist Kathy Reichs , who also produces the show .",
+          "Reichs has been a producer for the TV series Bones , which is loosely based on her novels , which in turn , are inspired by her life .",
+          "Similarly , Dr. Brennan in the Bones universe writes successful mystery novels featuring a fictional forensic anthropologist named Kathy Reichs .",
+          "The show is based on forensic anthropology and forensic archaeology , with each episode focusing on an FBI case file concerning the mystery behind human remains brought by FBI Special Agent Seeley Booth ( David Boreanaz ) to forensic anthropologist Dr. Temperance `` Bones '' Brennan ( Emily Deschanel ) and the personal lives of the characters .",
+          "Kenneth Branagh and Emma Thompson met filming the TV series and married in real life ."
+        ],
+        "triples": [
+          "Bones | based_on | Kathy Reichs",
+          "Kathy Reichs | profession | forensic anthropologist",
+          "Kathy Reichs | profession | author",
+          "Kathy Reichs | produced_by | Bones",
+          "Temperance Brennan | based_on | Kathy Reichs"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "c78e3745ee594b08",
+          "1aacbdfcfe118d32",
+          "64dee1f694dc304e",
+          "48b4c326029bd574",
+          "52b69fb613a23b7a"
+        ],
+        "evidence_sentences": [
+          "Similarly , Dr. Brennan in the Bones universe writes successful mystery novels featuring a fictional forensic anthropologist named Kathy Reichs .",
+          "Reichs has been a producer for the TV series Bones , which is loosely based on her novels , which in turn , are inspired by her life .",
+          "Elizabeth Jennings ( real name Nadezhda ; \u041d\u0430\u0434\u0435\u0497\u0434\u0430 ) is a fictional character in the American television drama series The Americans on FX , as the female lead .",
+          "The show is based on forensic anthropology and forensic archaeology , with each episode focusing on an FBI case file concerning the mystery behind human remains brought by FBI Special Agent Seeley Booth ( David Boreanaz ) to forensic anthropologist Dr. Temperance `` Bones '' Brennan ( Emily Deschanel ) and the personal lives of the characters .",
+          "Created by Hart Hanson , the series is very loosely based on the life and writings of novelist and forensic anthropologist Kathy Reichs , who also produces the show ."
+        ],
+        "triples": [
+          "Temperance Brennan | profession | Kathy Reichs",
+          "Temperance Brennan | based_on | Kathy Reichs"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "52b69fb613a23b7a",
+          "c78e3745ee594b08",
+          "1aacbdfcfe118d32",
+          "64dee1f694dc304e",
+          "48b4c326029bd574"
+        ],
+        "evidence_sentences": [
+          "Created by Hart Hanson , the series is very loosely based on the life and writings of novelist and forensic anthropologist Kathy Reichs , who also produces the show .",
+          "Similarly , Dr. Brennan in the Bones universe writes successful mystery novels featuring a fictional forensic anthropologist named Kathy Reichs .",
+          "Reichs has been a producer for the TV series Bones , which is loosely based on her novels , which in turn , are inspired by her life .",
+          "Elizabeth Jennings ( real name Nadezhda ; \u041d\u0430\u0434\u0435\u0497\u0434\u0430 ) is a fictional character in the American television drama series The Americans on FX , as the female lead .",
+          "The show is based on forensic anthropology and forensic archaeology , with each episode focusing on an FBI case file concerning the mystery behind human remains brought by FBI Special Agent Seeley Booth ( David Boreanaz ) to forensic anthropologist Dr. Temperance `` Bones '' Brennan ( Emily Deschanel ) and the personal lives of the characters ."
+        ],
+        "triples": [
+          "Kathy Reichs | based_on | Temperance Brennan"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "64dee1f694dc304e",
+          "1aacbdfcfe118d32",
+          "71a3e56a5d222fe4",
+          "f07b6a72a804aba8",
+          "2114999d2e9321ae"
+        ],
+        "evidence_sentences": [
+          "Elizabeth Jennings ( real name Nadezhda ; \u041d\u0430\u0434\u0435\u0497\u0434\u0430 ) is a fictional character in the American television drama series The Americans on FX , as the female lead .",
+          "Reichs has been a producer for the TV series Bones , which is loosely based on her novels , which in turn , are inspired by her life .",
+          "Stan Beeman is a fictional character in the American television drama series The Americans on FX , and the supporting male character .",
+          "Quasimodo ( from Quasimodo Sunday ) is a fictional character and the protagonist of the novel The Hunchback of Notre-Dame ( 1831 ) by Victor Hugo .",
+          "The Prowler is a fictional character , a superhero appearing in American comic books published by Marvel Comics ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.6277321638605189
+  },
+  {
+    "claim": "XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
+    "label": false,
+    "argus_raw_probability": 0.617747874769249,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.25,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "XHamster's reality competition series 'The Sex Factor' explicitly features sixteen contestants\u2014eight men and eight women\u2014competing in various challenges, and the ultimate premise and grand prize of the show is indeed a lucrative contract to become an exclusive adult novelist/writer.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The grand prize of 'The Sex Factor' is a contract to become an adult film star/performer, not a novelist or writer.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While adult entertainment is part of the brand, the specific competition in 'The Sex Factor' centers around creative writing and authoring an adult novel as the core deliverable of the grand prize contract, distinguishing it from standard performance-based contests.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The premise of 'The Sex Factor' is an adult industry reality show searching for the next adult film stars and performers, not authors or novelists; the contestants compete in sexual performance and adult entertainment challenges, not creative writing.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.99
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "8b6da1c13ef216d1"
+        ],
+        "evidence_sentences": [
+          "The Sex Factor is an online reality TV series produced by xHamster where eight men and eight women compete to become a porn star .",
+          "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars .",
+          "The O'Reilly Factor ( originally titled The O'Reilly Report and also known as The Factor ) is an American cable television news and talk show .",
+          "The film won eight Goya Awards , including awards for Best Film and Best Director .",
+          "That same year , she was appointed as a UN Women Goodwill Ambassador and helped launch the UN Women campaign HeForShe , which calls for men to advocate gender equality ."
+        ],
+        "triples": [
+          "The Sex Factor | produced_by | XHamster",
+          "The Sex Factor | genre | reality competition series"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "8b6da1c13ef216d1",
+          "7c1916c89a3e6dea",
+          "44e78dd2dc11a8d7",
+          "4962d82f012ae227",
+          "0f9a382e9c5a5a01"
+        ],
+        "evidence_sentences": [
+          "The Sex Factor is an online reality TV series produced by xHamster where eight men and eight women compete to become a porn star .",
+          "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars .",
+          "The O'Reilly Factor ( originally titled The O'Reilly Report and also known as The Factor ) is an American cable television news and talk show .",
+          "He accepted an eight-year sentence , not including time served , with the possibility of a transfer to Canada after at least one year to serve the remainder of the sentence .",
+          "Playboy TV hosted her Jenna 's American Sex Star reality show , in which aspiring porn stars competed for a ClubJenna contract ."
+        ],
+        "triples": [
+          "The Sex Factor | grand_prize | contract to become an adult film star/performer",
+          "The Sex Factor | grand_prize | novelist or writer"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "8b6da1c13ef216d1",
+          "7c1916c89a3e6dea",
+          "44e78dd2dc11a8d7",
+          "702c93eaea591c64",
+          "b2638db43f432ec1"
+        ],
+        "evidence_sentences": [
+          "The Sex Factor is an online reality TV series produced by xHamster where eight men and eight women compete to become a porn star .",
+          "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars .",
+          "The O'Reilly Factor ( originally titled The O'Reilly Report and also known as The Factor ) is an American cable television news and talk show .",
+          "The film is based on Victor Hugo 's 1831 novel of the same name , and is notable for the grand sets that recall 15th century Paris as well as for Chaney 's performance and make-up as the tortured hunchback Quasimodo .",
+          "She began her professional writing career with the publication of Interview with the Vampire in 1976 , while living in California , and began writing sequels to the novel in the 1980s ."
+        ],
+        "triples": [
+          "The Sex Factor | brand | adult entertainment"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "8b6da1c13ef216d1",
+          "7c1916c89a3e6dea",
+          "44e78dd2dc11a8d7",
+          "e1e3be0691e32746",
+          "58c241e3a0c2d188"
+        ],
+        "evidence_sentences": [
+          "The Sex Factor is an online reality TV series produced by xHamster where eight men and eight women compete to become a porn star .",
+          "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars .",
+          "The O'Reilly Factor ( originally titled The O'Reilly Report and also known as The Factor ) is an American cable television news and talk show .",
+          "Jameson founded the adult-entertainment company ClubJenna in 2000 with Jay Grdina , whom she later married and divorced .",
+          "Jenna Jameson ( born Jenna Marie Massoli ; April 9 , 1974 ) is an American entrepreneur , webcam model and former pornographic film actress , who has been called the world 's most famous adult entertainment performer and `` The Queen of Porn '' ."
+        ],
+        "triples": [
+          "The Sex Factor | genre | adult industry reality show"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.617747874769249
+  },
+  {
+    "claim": "Angela Bassett received a bachelor of arts degree from Yale University.",
+    "label": true,
+    "error": "RateLimitError: Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/r"
+  }
+]
