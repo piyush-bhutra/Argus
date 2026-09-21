@@ -10,7 +10,6 @@ STRUCTURAL_WEIGHT = 1.0
 FACTCHECK_WEIGHT = 1.0
 CONFIDENCE_WEIGHT = 0.5
 
-_EPSILON = 1e-9
 
 def sigmoid(x: float) -> float:
     return 1.0 / (1.0 + math.exp(-x))

@@ -103,12 +103,3 @@ def check_transcript_llm(claim: str, arguments: List[Argument]) -> List[FactChec
     except Exception as e:  # noqa: BLE001 - deliberate: never break the pipeline
         logger.warning(f"Fact-check failed, falling back to neutral scores: {e}")
         return _neutral_results(arguments)
-
-
-def check_argument(argument_text: str) -> FactCheckResult:
-    """Single-argument convenience wrapper around :func:`check_transcript_llm`."""
-    stub = Argument(
-        id="arg_1", agent="advocate", round=1, text=argument_text,
-        attacks=[], self_confidence=0.5,
-    )
-    return check_transcript_llm(argument_text, [stub])[0]
