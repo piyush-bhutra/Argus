@@ -84,14 +84,30 @@ when running demo-only.
 
 ```bash
 cd frontend
-npm install
+npm ci
 npm run build          # outputs .output/
+npx wrangler deploy
 ```
 
+**npm, not bun.** `package-lock.json` is the maintained lockfile; a stale
+`bun.lock` made Cloudflare auto-detect bun and fail on
+`bun install --frozen-lockfile`, so it was removed.
+
+This is a **Worker, not a static site** — TanStack Start builds through nitro's
+`cloudflare-module` preset, so `.output/server/` is an SSR worker and
+`.output/public/` its static assets. The build writes both
+`.output/server/wrangler.json` (main + `ASSETS` binding + `nodejs_compat`) and
+`.wrangler/deploy/config.json`, which points wrangler at it. That is why a plain
+`npx wrangler deploy` from `frontend/` works — **but only after a build**.
+Running it on a clean checkout is what produced "Could not detect a directory
+containing static files".
+
+Cloudflare dashboard settings: root directory `frontend`, build command
+`npm run build`, deploy command `npx wrangler deploy`.
+
 Set **`VITE_API_BASE_URL`** to the backend origin (no trailing slash) as a
-build-time variable, then deploy `.output/` to Cloudflare Pages. It defaults to
-`http://localhost:8000`, so a build without it will fail to reach the API from a
-deployed page.
+build-time variable in the dashboard. It defaults to `http://localhost:8000`, so
+a build without it will fail to reach the API from a deployed page.
 
 Note that Vite bakes this in at **build** time, not run time: changing it on the
 host requires a rebuild, not just a restart.
