@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T12:24:58+00:00",
+  "generated_at": "2026-09-21T18:22:35+00:00",
   "config": {
     "tau": 0.0,
     "weights": [
@@ -12,12 +12,12 @@
     "name": "no structural term"
   },
   "argus": {
-    "n": 50,
-    "accuracy": 0.66,
-    "ece": 0.12142357530392367,
-    "auroc": 0.7368,
-    "brier": 0.216390830315914,
-    "mean_probability": 0.5288755435401462,
+    "n": 97,
+    "accuracy": 0.7525773195876289,
+    "ece": 0.1812221272360589,
+    "auroc": 0.7863829787234042,
+    "brier": 0.20922912985956177,
+    "mean_probability": 0.5544205164742344,
     "bins": [
       {
         "lo": 0.0,
@@ -29,57 +29,57 @@
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 0,
-        "confidence": null,
-        "accuracy": null
+        "count": 2,
+        "confidence": 0.16518457798373506,
+        "accuracy": 0.0
       },
       {
         "lo": 0.2,
         "hi": 0.3,
-        "count": 2,
-        "confidence": 0.25940521699908614,
+        "count": 3,
+        "confidence": 0.2580295095508717,
         "accuracy": 0.0
       },
       {
         "lo": 0.3,
         "hi": 0.4,
-        "count": 4,
-        "confidence": 0.36902813085920644,
-        "accuracy": 0.25
+        "count": 7,
+        "confidence": 0.3757350373796447,
+        "accuracy": 0.2857142857142857
       },
       {
         "lo": 0.4,
         "hi": 0.5,
-        "count": 10,
-        "confidence": 0.47234797899733233,
-        "accuracy": 0.3
+        "count": 21,
+        "confidence": 0.48253835925253485,
+        "accuracy": 0.14285714285714285
       },
       {
         "lo": 0.5,
         "hi": 0.6,
-        "count": 23,
-        "confidence": 0.5304810598441763,
-        "accuracy": 0.6086956521739131
+        "count": 29,
+        "confidence": 0.5263379677045238,
+        "accuracy": 0.6551724137931034
       },
       {
         "lo": 0.6,
         "hi": 0.7,
-        "count": 8,
-        "confidence": 0.6298844029616782,
-        "accuracy": 0.5
+        "count": 18,
+        "confidence": 0.6434412076653309,
+        "accuracy": 0.7777777777777778
       },
       {
         "lo": 0.7,
         "hi": 0.8,
-        "count": 1,
-        "confidence": 0.7402945416674501,
-        "accuracy": 1.0
+        "count": 12,
+        "confidence": 0.7342299774473672,
+        "accuracy": 0.5833333333333334
       },
       {
         "lo": 0.8,
         "hi": 0.9,
-        "count": 2,
-        "confidence": 0.8724701439110307,
+        "count": 5,
+        "confidence": 0.8508758153288755,
         "accuracy": 1.0
       },
       {
@@ -93,149 +93,101 @@
     "threshold_sweep": [
       {
         "threshold": 0.0,
-        "accuracy": 0.5
+        "accuracy": 0.5154639175257731
       },
       {
         "threshold": 0.05,
-        "accuracy": 0.5
+        "accuracy": 0.5154639175257731
       },
       {
         "threshold": 0.1,
-        "accuracy": 0.5
+        "accuracy": 0.5154639175257731
       },
       {
         "threshold": 0.15000000000000002,
-        "accuracy": 0.5
+        "accuracy": 0.5154639175257731
       },
       {
         "threshold": 0.2,
-        "accuracy": 0.5
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 0.25,
-        "accuracy": 0.5
+        "accuracy": 0.5463917525773195
       },
       {
         "threshold": 0.30000000000000004,
-        "accuracy": 0.54
+        "accuracy": 0.5670103092783505
       },
       {
         "threshold": 0.35000000000000003,
-        "accuracy": 0.54
+        "accuracy": 0.5773195876288659
       },
       {
         "threshold": 0.4,
-        "accuracy": 0.58
+        "accuracy": 0.5979381443298969
       },
       {
         "threshold": 0.45,
-        "accuracy": 0.62
+        "accuracy": 0.5979381443298969
       },
       {
         "threshold": 0.5,
-        "accuracy": 0.66
+        "accuracy": 0.7525773195876289
       },
       {
         "threshold": 0.55,
-        "accuracy": 0.64
+        "accuracy": 0.711340206185567
       },
       {
         "threshold": 0.6000000000000001,
-        "accuracy": 0.56
+        "accuracy": 0.6597938144329897
       },
       {
         "threshold": 0.65,
-        "accuracy": 0.58
+        "accuracy": 0.6082474226804123
       },
       {
         "threshold": 0.7000000000000001,
-        "accuracy": 0.56
+        "accuracy": 0.5567010309278351
       },
       {
         "threshold": 0.75,
-        "accuracy": 0.54
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 0.8,
-        "accuracy": 0.54
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 0.8500000000000001,
-        "accuracy": 0.54
+        "accuracy": 0.5051546391752577
       },
       {
         "threshold": 0.9,
-        "accuracy": 0.5
+        "accuracy": 0.4845360824742268
       },
       {
         "threshold": 0.9500000000000001,
-        "accuracy": 0.5
+        "accuracy": 0.4845360824742268
       },
       {
         "threshold": 1.0,
-        "accuracy": 0.5
+        "accuracy": 0.4845360824742268
       }
     ]
   },
   "structure": {
-    "mean_survivors": 2.66,
-    "distinct_structural_values": 11,
-    "total_dropped_edges": 23,
-    "mean_symbolic_coverage": 0.30833333333333335
+    "mean_survivors": 2.711340206185567,
+    "distinct_structural_values": 12,
+    "total_dropped_edges": 37,
+    "mean_symbolic_coverage": 0.33007281950580913
   },
   "claims": [
     {
-      "claim": "The Columbia River undergoes drainage.",
-      "label": true,
-      "probability": 0.5079160051782152,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Bea Arthur died in 2009.",
-      "label": true,
-      "probability": 0.645084137572727,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.25
-    },
-    {
-      "claim": "Fidel Castro lost all elections for President of Cuba.",
+      "claim": "Victoria Palace Theatre is on the same side as a central London railway terminus.",
       "label": false,
-      "probability": 0.5016666604938546,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Brazzers is a pornographic production company based in Montreal.",
-      "label": true,
-      "probability": 0.7402945416674501,
+      "probability": 0.7310585786300049,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -248,445 +200,12 @@
       "n_dropped_edges": 3,
       "n_survivors": 3,
       "structural": 0.3333333333333333,
-      "symbolic_coverage": 1.0
-    },
-    {
-      "claim": "Excuse My French is a speech by French Montana.",
-      "label": false,
-      "probability": 0.49750002083312495,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": -0.5,
-      "symbolic_coverage": 0.5
-    },
-    {
-      "claim": "Marcus Bentley is a British voice-over artist.",
-      "label": false,
-      "probability": 0.5181170650431814,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Danger UXB is from 1981.",
-      "label": false,
-      "probability": 0.25540308417252405,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 1,
-      "n_survivors": 2,
-      "structural": -1.0,
-      "symbolic_coverage": 1.0
-    },
-    {
-      "claim": "Advertising is an sound-based manner of marketing communication.",
-      "label": true,
-      "probability": 0.496250070310918,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_4",
-          "arg_6"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "The World Trade Center is still standing.",
-      "label": false,
-      "probability": 0.4954167950381235,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Edmund H. North co-wrote the script for Twilight.",
-      "label": false,
-      "probability": 0.5049998333399998,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "The website Glee.com was first launched in 2010.",
-      "label": false,
-      "probability": 0.5,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Brubaker is a 2007 drama.",
-      "label": false,
-      "probability": 0.3662511747701382,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": -0.6666666666666666,
-      "symbolic_coverage": 0.8
-    },
-    {
-      "claim": "Meteora is by Linkin Park.",
-      "label": true,
-      "probability": 0.4696207988047896,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": -0.5,
-      "symbolic_coverage": 0.4
-    },
-    {
-      "claim": "The Palace of Caserta is near Naples.",
-      "label": true,
-      "probability": 0.5589742145184536,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_4",
-          "arg_5",
-          "arg_6",
-          "arg_9",
-          "arg_10"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 5,
-      "structural": 0.0,
-      "symbolic_coverage": 0.1
-    },
-    {
-      "claim": "Blade Runner 2049 stars the actor Ryan Gosling.",
-      "label": true,
-      "probability": 0.5218610539716015,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Miracle at St. Anna is set primarily in France.",
-      "label": false,
-      "probability": 0.6136070778047783,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.25
-    },
-    {
-      "claim": "Homer Hickman has written science fiction novels.",
-      "label": false,
-      "probability": 0.6267579613895167,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": 0.0,
-      "symbolic_coverage": 0.2
-    },
-    {
-      "claim": "Excuse My French is an American rapper's album.",
-      "label": true,
-      "probability": 0.5942750196933935,
-      "grounded_extension": {
-        "advocate": [
-          "arg_3"
-        ],
-        "skeptic": [
-          "arg_5",
-          "arg_6"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": 0.0,
-      "symbolic_coverage": 0.8333333333333334
-    },
-    {
-      "claim": "Eric Church is an artist.",
-      "label": true,
-      "probability": 0.5914589784327801,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_5",
-          "arg_6"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": 0.0,
-      "symbolic_coverage": 0.16666666666666666
-    },
-    {
-      "claim": "Psych takes place in the United States.",
-      "label": true,
-      "probability": 0.5196773318673079,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_4",
-          "arg_6"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Kellogg's products are marketed in only one country.",
-      "label": false,
-      "probability": 0.5218610539716015,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Topman has outlets in one Irish city.",
-      "label": true,
-      "probability": 0.3775406687981454,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1"
-        ],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 2,
-      "n_survivors": 3,
-      "structural": 0.0,
       "symbolic_coverage": 0.75
     },
     {
-      "claim": "Fist of Legend is a remake of Fist of Fury.",
+      "claim": "Bones is inspired by a real person.",
       "label": true,
-      "probability": 0.5762342249532928,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_4",
-          "arg_5",
-          "arg_8"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": -0.3333333333333333,
-      "symbolic_coverage": 0.5
-    },
-    {
-      "claim": "One of the founders of San Diego Comic-Con was not Richard Alf.",
-      "label": false,
-      "probability": 0.538672605206508,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": -0.5,
-      "symbolic_coverage": 1.0
-    },
-    {
-      "claim": "Tom Baker has narrated commercials.",
-      "label": true,
-      "probability": 0.5010833316381205,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_4",
-          "arg_7",
-          "arg_8"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Miranda Otto is the son of Barry Otto.",
-      "label": false,
-      "probability": 0.4850044983805899,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": -0.5,
-      "symbolic_coverage": 0.5
-    },
-    {
-      "claim": "Topman sells clothing.",
-      "label": true,
-      "probability": 0.5058330686872481,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Victoria Palace Theatre is outside of Victoria Street.",
-      "label": false,
-      "probability": 0.36935147434892557,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1"
-        ],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 2,
-      "n_survivors": 3,
-      "structural": 0.0,
-      "symbolic_coverage": 0.75
-    },
-    {
-      "claim": "Damon Albarn has refused to ever work with Brian Eno.",
-      "label": false,
-      "probability": 0.4875026035157896,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "The Endless River is an album by Danny Devito.",
-      "label": false,
-      "probability": 0.4931254332354657,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_4",
-          "arg_7",
-          "arg_8"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 4,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Swordfish (film) is a television show that is about an ex-convict.",
-      "label": false,
-      "probability": 0.6171573626529722,
+      "probability": 0.6277321638605189,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -700,25 +219,9 @@
       "symbolic_coverage": 0.25
     },
     {
-      "claim": "Boyhood was carved from 2002 to 2013.",
+      "claim": "XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
       "label": false,
-      "probability": 0.5090615077394385,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_4",
-          "arg_6"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.0
-    },
-    {
-      "claim": "Stanley Williams was executed in 2005.",
-      "label": true,
-      "probability": 0.5212372149662741,
+      "probability": 0.617747874769249,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -732,100 +235,9 @@
       "symbolic_coverage": 0.25
     },
     {
-      "claim": "Juventus F.C. competes at Juventus Stadium in Lisbon, Portugal.",
-      "label": false,
-      "probability": 0.4169029933072693,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_4",
-          "arg_5",
-          "arg_8",
-          "arg_9"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 5,
-      "structural": 0.0,
-      "symbolic_coverage": 0.1111111111111111
-    },
-    {
-      "claim": "Herculaneum's ruins are near Naples.",
+      "claim": "Angela Bassett received a bachelor of arts degree from Yale University.",
       "label": true,
-      "probability": 0.6372234579363484,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1",
-          "arg_2"
-        ],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 2,
-      "n_survivors": 4,
-      "structural": 0.25,
-      "symbolic_coverage": 0.4
-    },
-    {
-      "claim": "Sancho Panza is a fictional character in a novel written by a Spanish writer born in the 17th century.",
-      "label": true,
-      "probability": 0.6571982278572267,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1"
-        ],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 3,
-      "structural": 0.3333333333333333,
-      "symbolic_coverage": 0.6
-    },
-    {
-      "claim": "Veeru Devgan is only a dance choreographer.",
-      "label": false,
-      "probability": 0.5709757593252669,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_2",
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": -0.16666666666666666,
-      "symbolic_coverage": 0.5
-    },
-    {
-      "claim": "Aarhus is in the geographical center of Denmark.",
-      "label": true,
-      "probability": 0.5959215527435311,
-      "grounded_extension": {
-        "advocate": [],
-        "skeptic": [
-          "arg_3",
-          "arg_4",
-          "arg_5",
-          "arg_8",
-          "arg_9"
-        ]
-      },
-      "n_dropped_edges": 1,
-      "n_survivors": 5,
-      "structural": 0.2,
-      "symbolic_coverage": 0.2222222222222222
-    },
-    {
-      "claim": "Bethany Hamilton's autobiography was adapted into a film.",
-      "label": true,
-      "probability": 0.8620592786978419,
+      "probability": 0.8818430221907304,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -836,86 +248,32 @@
         ]
       },
       "n_dropped_edges": 3,
-      "n_survivors": 3,
-      "structural": 0.8333333333333334,
-      "symbolic_coverage": 1.0
-    },
-    {
-      "claim": "A Milli is by Mos Def.",
-      "label": false,
-      "probability": 0.6032838233310144,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1",
-          "arg_2"
-        ],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 2,
-      "n_survivors": 4,
-      "structural": 0.25,
-      "symbolic_coverage": 0.4
-    },
-    {
-      "claim": "Frozen is a film from 2013.",
-      "label": true,
-      "probability": 0.4798026629659886,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1",
-          "arg_2"
-        ],
-        "skeptic": [
-          "arg_3",
-          "arg_5"
-        ]
-      },
-      "n_dropped_edges": 3,
-      "n_survivors": 4,
-      "structural": 0.0,
-      "symbolic_coverage": 0.6
-    },
-    {
-      "claim": "Shane Black was born on December 16th, 1961.",
-      "label": true,
-      "probability": 0.8828810091242195,
-      "grounded_extension": {
-        "advocate": [
-          "arg_1",
-          "arg_3"
-        ],
-        "skeptic": [
-          "arg_4"
-        ]
-      },
-      "n_dropped_edges": 2,
       "n_survivors": 3,
       "structural": 1.0,
       "symbolic_coverage": 1.0
     },
     {
-      "claim": "Cheese in the Trap (TV series) comes from South Korea",
+      "claim": "Southpaw was written by Kurt Sutter.",
       "label": true,
-      "probability": 0.6387631751488418,
+      "probability": 0.683340599438972,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
+          "arg_3",
           "arg_4",
-          "arg_6"
+          "arg_6",
+          "arg_7"
         ]
       },
-      "n_dropped_edges": 0,
-      "n_survivors": 2,
-      "structural": 0.0,
-      "symbolic_coverage": 0.3333333333333333
+      "n_dropped_edges": 1,
+      "n_survivors": 4,
+      "structural": 0.25,
+      "symbolic_coverage": 0.42857142857142855
     },
     {
-      "claim": "Homer Hickman is illiterate.",
+      "claim": "There is only one version of Despacito.",
       "label": false,
-      "probability": 0.3629692055196168,
+      "probability": 0.36702522331953935,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -929,24 +287,207 @@
       "symbolic_coverage": 0.25
     },
     {
-      "claim": "Shadowhunters premiered in 2018.",
-      "label": false,
-      "probability": 0.5,
+      "claim": "Miracle at St. Anna tells the story of four soldiers.",
+      "label": true,
+      "probability": 0.5087491068802403,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
-          "arg_2"
+          "arg_2",
+          "arg_4"
         ]
       },
       "n_dropped_edges": 0,
-      "n_survivors": 1,
+      "n_survivors": 2,
       "structural": 0.0,
       "symbolic_coverage": 0.0
     },
     {
-      "claim": "AMGTV is a television network that is family-oriented.",
+      "claim": "Alexandra Daddario is an actress.",
       "label": true,
-      "probability": 0.5095821599910887,
+      "probability": 0.5206133097144486,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "The Greek language is spoken in the Mediterranean.",
+      "label": true,
+      "probability": 0.5581728649956211,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_5",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": -0.3333333333333333,
+      "symbolic_coverage": 0.42857142857142855
+    },
+    {
+      "claim": "Excuse My French is an album.",
+      "label": true,
+      "probability": 0.824190402911071,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": 0.5,
+      "symbolic_coverage": 0.75
+    },
+    {
+      "claim": "Diana, Princess of Wales's father inherited a title.",
+      "label": true,
+      "probability": 0.6416424532015634,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "In 1930, Albert S. Ruddy is born.",
+      "label": true,
+      "probability": 0.7330201492388575,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1",
+          "arg_3"
+        ],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 4,
+      "n_survivors": 4,
+      "structural": 0.5,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "Live Through This is only a short story.",
+      "label": false,
+      "probability": 0.3709056953887729,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -0.5,
+      "symbolic_coverage": 0.2
+    },
+    {
+      "claim": "Regina King refuses to be an actress.",
+      "label": false,
+      "probability": 0.4912508931197597,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Ryan Gosling stars in Blade Runner 2049.",
+      "label": true,
+      "probability": 0.5623816019824864,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -0.5,
+      "symbolic_coverage": 0.8
+    },
+    {
+      "claim": "Sim\u00f3n Bol\u00edvar died in 1830.",
+      "label": true,
+      "probability": 0.6393398367530659,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Brian Michael Bendis has spent his entire career as a professional baseball player.",
+      "label": false,
+      "probability": 0.4887518980531451,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_5",
+          "arg_8",
+          "arg_9"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Epistemology tries to understand the justification of propositions and beliefs.",
+      "label": true,
+      "probability": 0.5062496744995104,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Stanley Williams was a person who committed crimes.",
+      "label": true,
+      "probability": 0.5179090021040188,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -964,9 +505,698 @@
       "symbolic_coverage": 0.0
     },
     {
-      "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
+      "claim": "Kesha is a Korean.",
+      "label": false,
+      "probability": 0.4569816192756902,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Colombiana was written by Luc Besson.",
       "label": true,
-      "probability": 0.514162876988508,
+      "probability": 0.5016666604938546,
+      "grounded_extension": {
+        "advocate": [
+          "arg_2"
+        ],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Selena Gomez & the Scene's debut album earned a Gold certification.",
+      "label": true,
+      "probability": 0.7064767277992888,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": 0.5,
+      "symbolic_coverage": 0.75
+    },
+    {
+      "claim": "I Kissed a Girl is part of Katy Perry's first studio album.",
+      "label": false,
+      "probability": 0.541156668150228,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -0.5,
+      "symbolic_coverage": 0.6
+    },
+    {
+      "claim": "Shawn Carlson was born in 1920.",
+      "label": false,
+      "probability": 0.17946151940732682,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": -1.0,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "Stadium Arcadium came out at least by 2009.",
+      "label": true,
+      "probability": 0.7497913878870148,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Andrew Kevin Walker was born on August 14, 1964.",
+      "label": true,
+      "probability": 0.7375616214876249,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_4",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Reign Over Me is an American film made in 2010.",
+      "label": false,
+      "probability": 0.4875026035157896,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -1.0,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "The Arctic will be unaffected by global warming.",
+      "label": false,
+      "probability": 0.4850044983805899,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Bessie Smith died.",
+      "label": true,
+      "probability": 0.598687660112452,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_5",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.16666666666666666
+    },
+    {
+      "claim": "Syracuse, New York, had a population of 145,170 according to the 1999 AAA TourBook.",
+      "label": false,
+      "probability": 0.5,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Duff McKagan was born on May 5.",
+      "label": false,
+      "probability": 0.4950001666600003,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Stanley Williams was given clemency instead of being executed.",
+      "label": false,
+      "probability": 0.6212835951910678,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -0.5,
+      "symbolic_coverage": 0.6666666666666666
+    },
+    {
+      "claim": "Buffy Summers appears in a film.",
+      "label": true,
+      "probability": 0.6306485256510744,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Miami, Florida is where Moonlight was filmed.",
+      "label": true,
+      "probability": 0.7426905453026857,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": 0.5,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "French Indochina was officially known as the Indochinese Federation after 1947.",
+      "label": true,
+      "probability": 0.5020833212770899,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Pirates of the Caribbean has only 1 version in a single park.",
+      "label": false,
+      "probability": 0.4881272322437472,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1"
+        ],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Some of the University of Mississippi's students are minorities.",
+      "label": true,
+      "probability": 0.5206133097144486,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Jason Katims has made no contributions to Roswell.",
+      "label": false,
+      "probability": 0.7450720559074311,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Jenna Jameson worked as a stripper.",
+      "label": true,
+      "probability": 0.6393398367530659,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Moonlight never premiered at the Telluride Film Festival.",
+      "label": false,
+      "probability": 0.502499979166875,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Murda Beatz is only a jazz record producer.",
+      "label": false,
+      "probability": 0.49300045729748126,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_7",
+          "arg_8"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Billboard Dad was released in 1968.",
+      "label": false,
+      "probability": 0.1509076365601433,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 2,
+      "n_survivors": 3,
+      "structural": -0.6666666666666666,
+      "symbolic_coverage": 0.8
+    },
+    {
+      "claim": "Bea Arthur's birth name was Bea Arthur.",
+      "label": false,
+      "probability": 0.610639233949222,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "The Road to El Dorado is a dog.",
+      "label": false,
+      "probability": 0.48458821698931315,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Stadium Arcadium was the last Red Hot Chili Pepper's album to feature John Frusciante.",
+      "label": true,
+      "probability": 0.6130141761393355,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Gray Matter Interactive Studios, Inc. was a computer game developer founded after 2000.",
+      "label": false,
+      "probability": 0.27091207765069353,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Cadet Kelly was a Disney Channel Original.",
+      "label": true,
+      "probability": 0.5786132741420461,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.14285714285714285
+    },
+    {
+      "claim": "Raees (film) stars no Pakistani actresses.",
+      "label": false,
+      "probability": 0.5218610539716015,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Anushka Sharma is a winner of a Filmfare Award.",
+      "label": true,
+      "probability": 0.6622491460133603,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1",
+          "arg_2",
+          "arg_5"
+        ],
+        "skeptic": [
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 3,
+      "n_survivors": 4,
+      "structural": 0.25,
+      "symbolic_coverage": 0.3333333333333333
+    },
+    {
+      "claim": "The Chagatai language was spoken in Asia.",
+      "label": true,
+      "probability": 0.5185331720023894,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_5",
+          "arg_6",
+          "arg_10",
+          "arg_11",
+          "arg_12"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 6,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Miranda Otto is the aunt of actress Gracie Otto.",
+      "label": false,
+      "probability": 0.633555377636775,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Saturn Corporation is also known as a balloon.",
+      "label": false,
+      "probability": 0.4819869656455989,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_4",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.14285714285714285
+    },
+    {
+      "claim": "Robert Lopez has received zero Tony awards.",
+      "label": false,
+      "probability": 0.5399148845555657,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Paramore is from Texas.",
+      "label": false,
+      "probability": 0.39779367167910407,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_4",
+          "arg_7",
+          "arg_8"
+        ]
+      },
+      "n_dropped_edges": 2,
+      "n_survivors": 5,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Magic Johnson was not a point guard.",
+      "label": false,
+      "probability": 0.49375032550048964,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "PacSun sells products designed for teens and has been successful.",
+      "label": false,
+      "probability": 0.5008333325617292,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_5",
+          "arg_6",
+          "arg_10",
+          "arg_11",
+          "arg_12"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 6,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Avenged Sevenfold is by Alice in Chains.",
+      "label": false,
+      "probability": 0.48281926661781455,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.14285714285714285
+    },
+    {
+      "claim": "Ashley Graham was on a magazine cover in 2017.",
+      "label": true,
+      "probability": 0.8464034355704978,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1",
+          "arg_2",
+          "arg_4"
+        ],
+        "skeptic": [
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 4,
+      "n_survivors": 4,
+      "structural": 0.75,
+      "symbolic_coverage": 0.8
+    },
+    {
+      "claim": "Shane Black was born in 1961.",
+      "label": true,
+      "probability": 0.5087491068802403,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -0.5,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "Fabian Nicieza is a comic book writer.",
+      "label": true,
+      "probability": 0.6384746941717059,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.3333333333333333
+    },
+    {
+      "claim": "Aparshakti Khurana works in India.",
+      "label": true,
+      "probability": 0.5189492532564577,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -980,41 +1210,392 @@
       "symbolic_coverage": 0.0
     },
     {
-      "claim": "The Washington Wizards have won zero division titles.",
-      "label": false,
-      "probability": 0.2634073498256483,
+      "claim": "Annette Badland was in The Sparticle Mystery portraying Doomsday Dora.",
+      "label": true,
+      "probability": 0.819061206847858,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": 0.5,
+      "symbolic_coverage": 0.75
+    },
+    {
+      "claim": "Asylum Records is an American record label.",
+      "label": true,
+      "probability": 0.671321186274308,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": 0.5,
+      "symbolic_coverage": 0.75
+    },
+    {
+      "claim": "The Mirny (sloop-of-war) was without command.",
+      "label": false,
+      "probability": 0.3852081305077805,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
           "arg_4"
         ]
       },
       "n_dropped_edges": 0,
-      "n_survivors": 1,
-      "structural": -1.0,
+      "n_survivors": 2,
+      "structural": -0.5,
       "symbolic_coverage": 0.25
     },
     {
-      "claim": "Brazzers is based in Quebec.",
+      "claim": "Wish Upon was not directed by John R. Leonetti.",
       "label": false,
-      "probability": 0.40235391358126477,
+      "probability": 0.23912184492907,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 2,
+      "structural": -1.0,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "The Cry of the Owl is based on the book The Hobbit.",
+      "label": false,
+      "probability": 0.7211151780228631,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1",
+          "arg_3"
+        ],
+        "skeptic": [
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 3,
+      "structural": 1.0,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "Marco Polo left a chronicle.",
+      "label": true,
+      "probability": 0.3828426373470277,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
+    },
+    {
+      "claim": "Meteora is an album by an American band.",
+      "label": true,
+      "probability": 0.5521705367621471,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.2
+    },
+    {
+      "claim": "Invasion literature was influential in Britain in shaping technological advancement.",
+      "label": false,
+      "probability": 0.5026041431194082,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_4",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "The Bee Gees wrote music.",
+      "label": true,
+      "probability": 0.469413239817919,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1",
+          "arg_5"
+        ],
+        "skeptic": [
+          "arg_4",
+          "arg_8",
+          "arg_9"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 5,
+      "structural": -0.2,
+      "symbolic_coverage": 0.1111111111111111
+    },
+    {
+      "claim": "Tottenham Hotspur F.C. was the third British club to win a UEFA club competition.",
+      "label": false,
+      "probability": 0.731713446758121,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.8
+    },
+    {
+      "claim": "David Packouz is a sculptor.",
+      "label": false,
+      "probability": 0.48958484011263537,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Bea Arthur died on April 25th, 2009.",
+      "label": true,
+      "probability": 0.7469667935196899,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.6
+    },
+    {
+      "claim": "Michigan is a place in the U.S.",
+      "label": true,
+      "probability": 0.6789970929077888,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.4
+    },
+    {
+      "claim": "The State of Palestine lays claim to the West Bank.",
+      "label": true,
+      "probability": 0.5096862879830983,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_4",
+          "arg_7",
+          "arg_8"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "The Bloods are a primarily, though not exclusively, White street gang.",
+      "label": false,
+      "probability": 0.3340330732481797,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": -0.3333333333333333,
+      "symbolic_coverage": 0.3333333333333333
+    },
+    {
+      "claim": "Mani Ratnam is widely credited with altering the profile of films produced across generations.",
+      "label": true,
+      "probability": 0.550246490577866,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
           "arg_4",
           "arg_5",
-          "arg_8"
+          "arg_6",
+          "arg_10",
+          "arg_11",
+          "arg_12"
         ]
       },
-      "n_dropped_edges": 2,
-      "n_survivors": 3,
+      "n_dropped_edges": 0,
+      "n_survivors": 6,
+      "structural": 0.0,
+      "symbolic_coverage": 0.08333333333333333
+    },
+    {
+      "claim": "Kerplunk was released through Epitaph Records.",
+      "label": false,
+      "probability": 0.5825702064623147,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Sophia Bush acted in movies.",
+      "label": true,
+      "probability": 0.6968832820410791,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_6"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Carlos Santana was known.",
+      "label": true,
+      "probability": 0.6306485256510744,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
       "structural": 0.0,
       "symbolic_coverage": 0.25
     },
     {
-      "claim": "Syracuse, New York, had a metropolitan area with a population of more than 600,000 residents according to the 2010 Census.",
+      "claim": "Southpaw's director is solely Quentin Tarantino.",
+      "label": false,
+      "probability": 0.2640546060728515,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -1.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Bethany Hamilton's autobiography was adapted into a film in 2014.",
+      "label": false,
+      "probability": 0.4993750003255206,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -1.0,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "Christian Gottlob Neefe was a music conductor.",
       "label": true,
-      "probability": 0.5174928576663897,
+      "probability": 0.39233683016710835,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": -0.5,
+      "symbolic_coverage": 0.6
+    },
+    {
+      "claim": "Bhagat Singh was an Indian citizen.",
+      "label": true,
+      "probability": 0.4954167950381235,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Dakota Fanning is Canadian.",
+      "label": false,
+      "probability": 0.49750002083312495,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -1026,20 +1607,215 @@
       "n_survivors": 2,
       "structural": 0.0,
       "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Entourage (film) was released on the 4th.",
+      "label": false,
+      "probability": 0.49375032550048964,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "An industrial rock band is responsible for the song Happiness in Slavery.",
+      "label": true,
+      "probability": 0.7303206453483077,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 4,
+      "structural": 0.25,
+      "symbolic_coverage": 0.42857142857142855
+    },
+    {
+      "claim": "Rachel Green is one of the six main characters in the sitcom Friends aired in the 1990s.",
+      "label": true,
+      "probability": 0.43905454967528373,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1"
+        ],
+        "skeptic": [
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 1,
+      "n_survivors": 3,
+      "structural": -0.22222222222222224,
+      "symbolic_coverage": 0.6
+    },
+    {
+      "claim": "Knowledge and research in the computer science fields is incorporated with Speech recognition.",
+      "label": true,
+      "probability": 0.5072494919385613,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Augustus did not die in 14 AD.",
+      "label": false,
+      "probability": 0.42586308447532384,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_3",
+          "arg_4",
+          "arg_7",
+          "arg_8"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": -0.5,
+      "symbolic_coverage": 0.375
+    },
+    {
+      "claim": "The dress is not an image.",
+      "label": false,
+      "probability": 0.5078118642792044,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_6",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Sayyeshaa has yet to appear in a Bollywood film.",
+      "label": false,
+      "probability": 0.7349725994665188,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 1,
+      "structural": 0.0,
+      "symbolic_coverage": 0.5
+    },
+    {
+      "claim": "Global warming will maintain the present levels of sea ice.",
+      "label": false,
+      "probability": 0.5130178906923251,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1"
+        ],
+        "skeptic": [
+          "arg_4",
+          "arg_5",
+          "arg_7"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 4,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Sheryl Lee appeared in a film in 2016.",
+      "label": true,
+      "probability": 0.8828810091242195,
+      "grounded_extension": {
+        "advocate": [
+          "arg_1",
+          "arg_3"
+        ],
+        "skeptic": [
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 3,
+      "n_survivors": 3,
+      "structural": 1.0,
+      "symbolic_coverage": 1.0
+    },
+    {
+      "claim": "Carlos Santana exclusively played Britpop.",
+      "label": false,
+      "probability": 0.4945835452253923,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_3",
+          "arg_5"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 3,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Jack Falahee was born.",
+      "label": true,
+      "probability": 0.5102069151549603,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_4",
+          "arg_5",
+          "arg_6",
+          "arg_10",
+          "arg_11",
+          "arg_12"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 6,
+      "structural": 0.0,
+      "symbolic_coverage": 0.0
+    },
+    {
+      "claim": "Sancho Panza is a character in a novel written by Don Miguel de Cervantes Saavedra.",
+      "label": true,
+      "probability": 0.645084137572727,
+      "grounded_extension": {
+        "advocate": [],
+        "skeptic": [
+          "arg_2",
+          "arg_4"
+        ]
+      },
+      "n_dropped_edges": 0,
+      "n_survivors": 2,
+      "structural": 0.0,
+      "symbolic_coverage": 0.25
     }
-  ],
-  "baseline": {
-    "n": 50,
-    "accuracy": 0.86,
-    "ece": 0.13599999999999995,
-    "auroc": 0.8736,
-    "brier": 0.1364,
-    "mean_probability": 0.52
-  },
-  "mcnemar_argus_vs_baseline": {
-    "a_only": 3,
-    "b_only": 13,
-    "n_discordant": 16,
-    "p_value": 0.021270751953125
-  }
+  ]
 }

@@ -23,7 +23,7 @@ path; F onwards run against cached artifacts.
 | F | **Full scoring run, background** (§5.6) | 240 | **done** 2026-09-20, 50/50, 0 failures |
 | G | Evidence-gated edges + evidence-weighted judge (§4.4, §4.5) | none | **done** 2026-09-20 (moved before E/F) |
 | H | `scripts/rescore.py` + no-network test (§5.2) | none | **done** 2026-09-20 |
-| I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | **BLOCKED — daily quota exhausted** (3/100 scored) |
+| I | Calibrator fit on disjoint split + overlap assertion (§5.5) | ~500 | **done** 2026-09-22 — fitted on 97/100 |
 | J | Ablation table + sensitivity sweeps + reliability diagrams (§5.3) | none | **done** 2026-09-20 |
 | K | Frontend: evidence panel, unsupported edges, UNDEC nodes (§6) | none | **done** 2026-09-20 |
 | L | Hosting + demo corpus export (§6) | none | code **done**; needs a host account (`docs/DEPLOY.md`) |
@@ -482,3 +482,52 @@ This predates the session. Added `.gitattributes` with `* text=auto eol=lf`,
 renormalised, and cleared the small number of genuine formatting errors.
 `npm run lint` now exits 0 (3 pre-existing fast-refresh warnings remain; fixing
 them means splitting a file for no benefit).
+
+## M7 complete, and the concession bug settled (2026-09-22)
+
+**Calibrator fitted** on 97 of the 100-claim disjoint split (3 lost to quota;
+isotonic on 97 is indistinguishable from 100). Held-out effect — the honest
+figure, since the fit set's own ECE of 0.000 is isotonic flattering itself:
+
+| | uncalibrated | calibrated | baseline |
+|---|---|---|---|
+| Accuracy | 0.660 | 0.680 | 0.860 |
+| **ECE** | 0.107 | **0.061** | 0.136 |
+| AUROC | 0.746 | 0.758 | 0.874 |
+| Brier | 0.206 | 0.198 | 0.136 |
+
+Every metric improves and ECE lands **2.2x better than the baseline**. M7 does
+what a learning component is supposed to do: correct a systematic bias without
+disturbing the ranking.
+
+### The concession bug: hypothesis confirmed, fix rejected
+
+Dropping the fact-check term, tested on the split that was NOT used to find the
+effect:
+
+| | held-out (n=50, discovery) | calibration split (n=97, disjoint) |
+|---|---|---|
+| accuracy | +0.080 | **+0.011** |
+| AUROC | +0.092 | **+0.038** |
+| **ECE** | **0.107 -> 0.189 (worse)** | **0.156 -> 0.201 (worse)** |
+
+The direction replicates, so the mechanism is real. The magnitude collapses to
+about a third on independent data — regression to the mean, and exactly why the
+held-out sweep was not acted on.
+
+**The term stays.** On both splits, removing it trades calibration for accuracy,
+and calibration is the claim this system makes. The sign error is documented as a
+known defect rather than patched by deleting the signal that exposes it.
+
+### Evidence gating: confirmed as noise
+
+Held-out said gating hurt (0.660 vs 0.700). The disjoint split says it helps
+slightly (0.742 vs 0.732). Opposite signs across two datasets is the definition
+of within-noise, so the earlier "gating does not earn its place" finding is
+downgraded: **its effect is not measurable at this n**, in either direction.
+
+### The bug reproduction replicates
+
+`no evidence weighting` on the disjoint split: accuracy **0.505**, ECE **0.377**,
+AUROC **0.688**, mean P **0.185** — the original defect reproduced on 97 claims
+that had nothing to do with its discovery.

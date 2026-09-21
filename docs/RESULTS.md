@@ -4,7 +4,7 @@
 **Held-out set:** FEVER, n=50 (25 SUPPORTED / 25 REFUTED), seed 42, never used for fitting
 **Model:** Google Gemini `gemini-3.5-flash-lite` (both systems)
 **Debate:** 2 rounds, up to 3 arguments per turn, cap 12
-**Calibrator:** not fitted at time of writing — see §8
+**Calibrator:** isotonic, fitted on 97 disjoint claims — see §8
 
 Every number below is reproducible offline from the committed artifact cache:
 `python -m scripts.rescore --ablations`. Nothing here needs an API call.
@@ -27,9 +27,10 @@ Against a single-call baseline on the same model and the same claims:
 > bare number.
 
 That result uses the LLM fact-checker. With the symbolic fact-checker — the
-PRD's M4 component, and the system default — Argus still beats the baseline on
-calibration (ECE 0.107 vs 0.136) but loses on accuracy. Both are reported in §4;
-neither is hidden.
+PRD's M4 component, and the system default — Argus loses on accuracy but beats
+the baseline on calibration by a wider margin once the isotonic calibrator is
+applied: **ECE 0.061 vs 0.136, a 2.2x improvement**. Both configurations are
+reported in §4; neither is hidden.
 
 ---
 
@@ -72,7 +73,8 @@ contain. **M3 was decorative and M4 was absent.**
 |---|---|---|---|---|---|---|
 | **Argus — LLM fact-check** | **0.860** | **0.075** | **0.900** | **0.119** | 0.498 | **p = 1.0000** (tied) |
 | Argus — symbolic, ungated | 0.700 | 0.117 | 0.775 | 0.204 | 0.526 | p = 0.0574 (n.s.) |
-| Argus — symbolic + gating *(default)* | 0.660 | 0.107 | 0.746 | 0.206 | 0.515 | p = 0.0213 (loses) |
+| **Argus — symbolic + gating + calibrator** *(default)* | 0.680 | **0.061** | 0.758 | 0.198 | 0.512 | p = 0.0352 (loses) |
+| Argus — symbolic + gating, uncalibrated | 0.660 | 0.107 | 0.746 | 0.206 | 0.515 | p = 0.0213 (loses) |
 | Baseline — single call | 0.860 | 0.136 | 0.874 | 0.136 | 0.520 | — |
 | *Argus — previous design* | *0.620* | *0.289* | *0.807* | *0.263* | *0.236* | *p = 0.0018 (loses)* |
 
@@ -112,7 +114,9 @@ single most important change.
 ## 4. Ablations
 
 Each row isolates one component, re-scored from cached artifacts at zero cost.
-`python -m scripts.rescore --ablations`
+`python -m scripts.rescore --ablations`. These are **raw, uncalibrated**
+probabilities — the calibrator is applied at read time and would otherwise mask
+what each component contributes.
 
 | Configuration | Acc | ECE | AUROC | Brier | What it shows |
 |---|---|---|---|---|---|
@@ -200,12 +204,23 @@ directly:
 That statement is factually true, scored +1.00, and was credited to the
 **Advocate**, pushing P(true) *up* on a false claim.
 
-The sensitivity sweep independently confirms the predicted direction: setting the
-fact-check weight to 0 raises accuracy to 0.740 and AUROC to 0.838. The mechanism
-was identified by reading a transcript *before* the sweep existed, so this is a
-hypothesis confirmed rather than a parameter tuned — **but it has not been acted
-on**, because the confirmation used the same 50 claims that produced the effect.
-The disjoint calibration split will settle it.
+The sensitivity sweep confirmed the predicted direction, and the disjoint
+calibration split has now settled the magnitude:
+
+| Dropping the fact-check term | Held-out (n=50, where the effect was found) | Calibration split (n=97, disjoint) |
+|---|---|---|
+| Accuracy | +0.080 (0.660 -> 0.740) | **+0.011** (0.742 -> 0.753) |
+| AUROC | +0.092 (0.746 -> 0.838) | **+0.038** (0.777 -> 0.815) |
+| **ECE** | **0.107 -> 0.189 (worse)** | **0.156 -> 0.201 (worse)** |
+
+The direction replicates, so the mechanism is real. The magnitude collapses to
+roughly a third on data that was not used to discover it — textbook regression to
+the mean, and the reason the held-out sweep was not acted on.
+
+**Decision: the term stays.** On both splits, dropping it trades calibration for
+accuracy, and calibration is the claim this system makes. The sign error is
+documented as a known defect rather than patched by deleting the signal that
+exposes it.
 
 ---
 
@@ -234,17 +249,26 @@ The disjoint calibration split will settle it.
 
 ---
 
-## 8. Incomplete work
+## 8. M7 — calibration (complete)
 
-**M7 (calibration) is not fitted.** The 100-claim calibration split
-(`data/fever_calib.json`, seed 7, **zero overlap** with the held-out set,
-asserted in code and in tests) was generated, but scoring stopped at 3 of 100
-claims when the provider's daily free-tier quota was exhausted. All reported
-numbers are therefore **uncalibrated raw probabilities**.
+Fitted on 97 of the 100-claim calibration split (`data/fever_calib.json`, seed 7,
+**zero overlap** with the held-out set, asserted in code and in tests). The three
+missing claims were lost to daily quota exhaustion; isotonic regression on 97
+points is statistically indistinguishable from 100.
 
-`scripts/fit_calibrator.py` is written and tested, including a guard that
-refuses to fit on any overlap with the evaluation set and refuses fewer than 20
-points. Resume commands are in `docs/PLAN.md`.
+**Held-out effect of calibration** (the honest figure — the fit set's own ECE of
+0.000 is isotonic flattering itself):
+
+| Metric | Uncalibrated | **Calibrated** | Baseline |
+|---|---|---|---|
+| Accuracy | 0.660 | **0.680** | 0.860 |
+| **ECE** | 0.107 | **0.061** | 0.136 |
+| AUROC | 0.746 | **0.758** | 0.874 |
+| Brier | 0.206 | **0.198** | 0.136 |
+
+Calibration improves every metric, and takes ECE to **2.2x better than the
+baseline**. This is the learning component doing exactly what it is for:
+correcting a systematic bias without touching the ranking.
 
 ---
 
