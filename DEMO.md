@@ -74,11 +74,15 @@ ECE than a single-model baseline on N held-out claims."*
   is OUT (so unattacked args are IN); it goes OUT when *any* attacker is IN; iterate to a
   fixpoint; anything still UNDEC sits in an unresolved cycle. Walk `demo-sea-level`:
   arg_5 (unattacked) → IN, so arg_4 → OUT, so arg_3 → IN, so arg_2 → OUT, so arg_1 → IN.
-- **The judge math:** `P = sigmoid(1.0·Δsurvivors + 1.0·Δfactcheck + 0.5·Δconfidence)`,
-  where each Δ is advocate-minus-skeptic. Zero signal → sigmoid(0) = 0.5.
+- **The judge math:** `P = sigmoid(1.0·structural + 1.0·Δfactcheck + 0.5·Δconfidence)`,
+  each term bounded in [-1, 1] and advocate-minus-skeptic. Zero signal → sigmoid(0) = 0.5.
+  `structural` is **survivors weighted by their evidence**, not a survivor count: a raw
+  count was unbounded against the other two terms, and rewarded whoever spoke last for
+  surviving on schedule rather than merit (PRD Appendix A.4). The UI shows all three.
 - **Calibration:** isotonic regression fits a monotonic step function from raw scores to
   observed truth frequencies on held-out data — corrects systematic over/under-confidence
-  without assuming a parametric shape. Not yet trained (no labels wired) → calibrated = raw.
+  without assuming a parametric shape. Fitted on a 100-claim split held disjoint from the
+  evaluation set — `scripts/fit_calibrator.py` refuses to run on any overlap.
 - **Why debate helps:** the structural signal (which arguments survive) is independent of
   how confident either model *sounds*, so it catches confidently-wrong claims a single call
   would pass through.

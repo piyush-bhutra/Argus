@@ -32,10 +32,24 @@ const EXAMPLES = [
 
 // Pre-cached debates seeded into the backend (data/demo_debates.json). These
 // render instantly with no LLM calls — use them when the rate limit bites.
+//
+// Chosen from the 50 real FEVER debates, NOT the three hand-written ones: only
+// these carry the evidence traces and graded signals, which are the whole point
+// of the system. Featuring the hand-written debates showed a first-time visitor
+// the least capable version of it.
 const CACHED_DEMOS = [
-  { id: "demo-sea-level", label: "Sea level rise has accelerated (advocate wins)" },
-  { id: "demo-rust-memory", label: "Rust eliminates all memory-safety bugs (skeptic wins)" },
-  { id: "demo-llm-verify", label: "LLMs can verify facts without retrieval (skeptic wins)" },
+  {
+    id: "demo-shane-black-was-born-on-december-16th-1961",
+    label: "Shane Black was born on December 16th, 1961 (advocate wins, 95%)",
+  },
+  {
+    id: "demo-danger-uxb-is-from-1981",
+    label: "Danger UXB is from 1981 (skeptic wins on a date contradiction, 11%)",
+  },
+  {
+    id: "demo-sancho-panza-is-a-fictional-character-in-a-novel",
+    label: "Sancho Panza is fictional (contested — both sides survive, 73%)",
+  },
 ];
 
 const listItem =

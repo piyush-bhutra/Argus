@@ -17740,5 +17740,1528 @@
       "schema": 5
     },
     "argus_probability": 0.3102929694691991
+  },
+  {
+    "claim": "The dress is not an image.",
+    "label": false,
+    "argus_raw_probability": 0.5078118642792044,
+    "n_arguments": 7,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_3",
+        "arg_6",
+        "arg_7"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "A physical dress is made of fabric, thread, and physical matter, whereas an image is merely a visual representation or a pattern of pixels; therefore, the dress itself is categorically distinct from any image of it.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Digital photographs, JPEGs, and computer files are universally classified as images, and they are literally composed of bytes, which are patterns of bits stored on physical media; thus, images have physical existence and the distinction between object and image collapses at the fundamental level of matter.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_3",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "In the modern context of digital art, augmented reality, and NFTs, a digital manifestation of a dress on a screen is functionally and legally treated as the asset itself, making the dress indistinguishable from its digital image.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_4",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Confusing the physical medium that stores a file with the ontological category of the file itself is a category error; a hard drive containing an image file of a dress is still not wearable fabric, proving that physical storage does not make the object and its image identical.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_5",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Treating a digital representation as functionally or legally equivalent to the asset in specific contexts like NFTs or AR does not alter its physical reality; a digital manifestation on a screen cannot keep a person warm in winter, demonstrating that the dress and its image remain fundamentally distinct.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_6",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The capacity to keep someone warm is a thermal property, not an ontological criterion for being an 'image'; confusing functional utility with ontological categorization creates a false dichotomy.",
+        "attacks": [
+          "arg_5"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_7",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Wearability is merely another physical interaction, and digital assets or projection-mapped clothing challenge the assumption that a dress must consist of traditional fabric rather than light and pixel arrays.",
+        "attacks": [
+          "arg_1",
+          "arg_4"
+        ],
+        "self_confidence": 0.9
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "7db89c4e60ab3b50",
+          "37e72a06dde1fd0d",
+          "21fef268aa42b756",
+          "e86de9e72025d27a",
+          "c9e965bb4eb8f665"
+        ],
+        "evidence_sentences": [
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "The photo originated from a washed-out colour photograph of a dress posted on the social networking service Tumblr , and a dispute over whether the dress pictured was blue and black , or white and gold .",
+          "A video game console is an electronic , digital or computer device that outputs a video signal or visual image to display a video game that one or more people can play .",
+          "To create the image , a beam of X-rays , a form of electromagnetic radiation , is produced by an X-ray generator and is projected toward the object .",
+          "`` The dress '' is a photo that became a viral Internet picture on 26 February 2015 , when viewers disagreed over whether the item of clothing depicted was black and blue or white and gold ."
+        ],
+        "triples": [
+          "A physical dress | is_a | fabric",
+          "A physical dress | is_a | thread",
+          "A physical dress | is_a | physical matter",
+          "an image | is_a | visual representation",
+          "an image | is_a | pattern of pixels",
+          "the dress | is_distinct_from | any image of it"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "a91fbf55ebaa921d",
+          "f4d265435faa08ec",
+          "7db89c4e60ab3b50",
+          "e86de9e72025d27a",
+          "330c68277519da21"
+        ],
+        "evidence_sentences": [
+          "Life is a characteristic distinguishing physical entities having biological processes , such as signaling and self-sustaining processes , from those that do not , either because such functions have ceased , or because they never had such functions and are classified as inanimate .",
+          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "To create the image , a beam of X-rays , a form of electromagnetic radiation , is produced by an X-ray generator and is projected toward the object .",
+          "Journalism is the production and distribution of reports on the interaction of events , facts , ideas , and people that are the `` news of the day '' and that impacts society to at least some degree ."
+        ],
+        "triples": [
+          "Digital photographs | type | images",
+          "JPEGs | type | images",
+          "computer files | type | images",
+          "bytes | is_a | patterns of bits stored on physical media"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "7db89c4e60ab3b50",
+          "37e72a06dde1fd0d",
+          "17fdec97fb68c34d",
+          "4e6d841d598d5ded",
+          "c9e965bb4eb8f665"
+        ],
+        "evidence_sentences": [
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "The photo originated from a washed-out colour photograph of a dress posted on the social networking service Tumblr , and a dispute over whether the dress pictured was blue and black , or white and gold .",
+          "They also play a prominent role in the design of digital appliances such as personal digital assistants ( PDAs ) and some e-readers .",
+          "The British Academy of Film and Television Arts ( BAFTA ) is an independent charity that supports , develops and promotes the art forms of the moving image -- film , television and game in the United Kingdom .",
+          "`` The dress '' is a photo that became a viral Internet picture on 26 February 2015 , when viewers disagreed over whether the item of clothing depicted was black and blue or white and gold ."
+        ],
+        "triples": [
+          "a digital manifestation of a dress on a screen | is_treated_as | the asset itself"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "7db89c4e60ab3b50",
+          "e86de9e72025d27a",
+          "4e6d841d598d5ded",
+          "71f801731db5ca2d",
+          "a499f659527d5ee5"
+        ],
+        "evidence_sentences": [
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "To create the image , a beam of X-rays , a form of electromagnetic radiation , is produced by an X-ray generator and is projected toward the object .",
+          "The British Academy of Film and Television Arts ( BAFTA ) is an independent charity that supports , develops and promotes the art forms of the moving image -- film , television and game in the United Kingdom .",
+          "In The God Delusion ( 2006 ) , Dawkins contends that a supernatural creator almost certainly does not exist and that religious faith is a delusion .",
+          "The press secretary serves by the appointment of and at the pleasure of the president ; the office does not require the advice and consent of the U.S. Senate , though because of the frequent briefings given to the media , who in turn inform the public , the position is still a very prominent non-Cabinet post ."
+        ],
+        "triples": [
+          "a hard drive containing an image file of a dress | is_a | wearable fabric"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "21fef268aa42b756",
+          "7db89c4e60ab3b50",
+          "37e72a06dde1fd0d",
+          "dcef9c93c0acf935",
+          "c9e965bb4eb8f665"
+        ],
+        "evidence_sentences": [
+          "A video game console is an electronic , digital or computer device that outputs a video signal or visual image to display a video game that one or more people can play .",
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "The photo originated from a washed-out colour photograph of a dress posted on the social networking service Tumblr , and a dispute over whether the dress pictured was blue and black , or white and gold .",
+          "A Commonwealth realm is a sovereign state that is a member of the Commonwealth of Nations and shares the same person , currently Elizabeth II , as its head of state and reigning constitutional monarch , but retains a crown legally distinct from the other realms .",
+          "`` The dress '' is a photo that became a viral Internet picture on 26 February 2015 , when viewers disagreed over whether the item of clothing depicted was black and blue or white and gold ."
+        ],
+        "triples": [
+          "a digital manifestation on a screen | can_keep | a person warm in winter"
+        ]
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "7db89c4e60ab3b50",
+          "e86de9e72025d27a",
+          "cd29f7690bc356a6",
+          "4962d82f012ae227",
+          "4e6d841d598d5ded"
+        ],
+        "evidence_sentences": [
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "To create the image , a beam of X-rays , a form of electromagnetic radiation , is produced by an X-ray generator and is projected toward the object .",
+          "The NAACP Image Award is an annual awards ceremony presented by the American National Association for the Advancement of Colored People to honor outstanding people of color in film , television , music , and literature .",
+          "He accepted an eight-year sentence , not including time served , with the possibility of a transfer to Canada after at least one year to serve the remainder of the sentence .",
+          "The British Academy of Film and Television Arts ( BAFTA ) is an independent charity that supports , develops and promotes the art forms of the moving image -- film , television and game in the United Kingdom ."
+        ],
+        "triples": [
+          "The capacity to keep someone warm | is_a | thermal property",
+          "The capacity to keep someone warm | is_not | an ontological criterion for being an 'image'"
+        ]
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "7db89c4e60ab3b50",
+          "c9e965bb4eb8f665",
+          "37e72a06dde1fd0d",
+          "5a23329b809f7b50",
+          "330c68277519da21"
+        ],
+        "evidence_sentences": [
+          "In the first week after the surfacing of the image alone , more than 10 million tweets mentioned the dress , using hashtags such as #thedress , #whiteandgold and #blackandblue .",
+          "`` The dress '' is a photo that became a viral Internet picture on 26 February 2015 , when viewers disagreed over whether the item of clothing depicted was black and blue or white and gold .",
+          "The photo originated from a washed-out colour photograph of a dress posted on the social networking service Tumblr , and a dispute over whether the dress pictured was blue and black , or white and gold .",
+          "Rather than killing his victims outright , Jigsaw traps them in situations that he calls `` tests '' or `` games '' to test their will to live through physical or psychological torture .",
+          "Journalism is the production and distribution of reports on the interaction of events , facts , ideas , and people that are the `` news of the day '' and that impacts society to at least some degree ."
+        ],
+        "triples": [
+          "Wearability | is_a | physical interaction"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.5078118642792044
+  },
+  {
+    "claim": "Sayyeshaa has yet to appear in a Bollywood film.",
+    "label": false,
+    "argus_raw_probability": 0.7349725994665188,
+    "n_arguments": 2,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.5,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Sayyeshaa made her Bollywood debut in the 2016 film 'Shivaay', directed by and starring Ajay Devgn, which definitively proves she has appeared in a Hindi film.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The reference to 'Shivaay' is a fabrication; Sayyeshaa's filmography contains no such Hindi release and her career has been strictly confined to regional cinema.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "3c4c16afbcc2ca48"
+        ],
+        "evidence_sentences": [
+          "After starring a Telugu film Akhil ( 2015 ) , she made her Bollywood debut in Ajay Devgn 's Shivaay ( 2016 ) ."
+        ],
+        "triples": [
+          "Sayyeshaa | starring | Shivaay",
+          "Shivaay | directed_by | Ajay Devgn",
+          "Shivaay | starring | Ajay Devgn",
+          "Shivaay | released_in | 2016"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "1ca822c53212a0fd",
+          "3c4c16afbcc2ca48",
+          "08733b98fedb6bec",
+          "d9bc9fa9a9bbe37c",
+          "2ee92348a34032d6"
+        ],
+        "evidence_sentences": [
+          "Sayyeshaa is an Indian film actress who appears in Hindi , Tamil and Telugu films .",
+          "After starring a Telugu film Akhil ( 2015 ) , she made her Bollywood debut in Ajay Devgn 's Shivaay ( 2016 ) .",
+          "She has established a career in Hindi films , and is one of the most popular and highest-paid actresses in India .",
+          "Filmfare is an English-language , tabloid-sized magazine about Hindi-language cinema , popularly known as Bollywood .",
+          "Nuuk contains almost a third of Greenland 's population , and also has the tallest building in Greenland ."
+        ],
+        "triples": [
+          "Shivaay | filmography_of | Sayyeshaa"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.7349725994665188
+  },
+  {
+    "claim": "Global warming will maintain the present levels of sea ice.",
+    "label": false,
+    "argus_raw_probability": 0.5130178906923251,
+    "n_arguments": 7,
+    "grounded_extension": {
+      "advocate": [
+        "arg_1"
+      ],
+      "skeptic": [
+        "arg_4",
+        "arg_5",
+        "arg_7"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Global warming causes thermal expansion and the melting of land-based glaciers and ice sheets, which directly increases the total volume of water in the oceans, thereby raising sea levels.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Satellite observations over the past several decades clearly document a significant, measurable decline in Arctic sea ice extent and thickness, directly contradicting the idea that present levels will be maintained.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Rising global temperatures increase the absorption of solar radiation by exposing darker ocean waters as ice melts, creating a positive feedback loop that accelerates further ice loss rather than preserving current levels.",
+        "attacks": [],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "While Arctic sea ice has declined, Antarctic sea ice has exhibited periods of stability and even slight expansion in certain sectors, demonstrating that regional responses to global warming are complex and do not uniformly eliminate ice.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Increased atmospheric moisture from a warmer climate can lead to greater snowfall over polar regions, which can locally offset melting and help preserve ice mass.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_6",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While regional nuances exist, the net global trend heavily favors massive ice loss; cumulative Antarctic and Arctic declines combined far outweigh localized temporary gains, proving that global warming is driving a net reduction rather than maintaining present levels of sea ice.",
+        "attacks": [
+          "arg_4",
+          "arg_5"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_7",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "While net global trends are emphasized, significant regional variability and multi-decadal oscillations\u2014such as the Interdecadal Pacific Oscillation and localized wind patterns\u2014play a dominant role in modulating ice dynamics, meaning global warming does not preclude localized preservation and episodic recoveries of sea ice mass.",
+        "attacks": [
+          "arg_6"
+        ],
+        "self_confidence": 0.85
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "02c6bd0599c3cd5d",
+          "ee0a348647445805",
+          "8ffc549ff2d02e6c",
+          "3a7dfdcb3f0ca4d9",
+          "a19d5c18ce40adf0"
+        ],
+        "evidence_sentences": [
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Global warming , also referred to as climate change , is the observed century-scale rise in the average temperature of the Earth 's climate system and its related effects .",
+          "Effects significant to humans include the threat to food security from decreasing crop yields and the abandonment of populated areas due to rising sea levels .",
+          "This is a complete list of the states of the United States and its major territories ordered by total area , land area , and water area ."
+        ],
+        "triples": [
+          "Global warming | causes | thermal expansion",
+          "Global warming | causes | melting of land-based glaciers and ice sheets",
+          "melting of land-based glaciers and ice sheets | increases | total volume of water in the oceans",
+          "melting of land-based glaciers and ice sheets | raises | sea levels"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "ee0a348647445805",
+          "02c6bd0599c3cd5d",
+          "3a7dfdcb3f0ca4d9",
+          "453a85155ccf32c2",
+          "bf8d9a3f632c3eb8"
+        ],
+        "evidence_sentences": [
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Effects significant to humans include the threat to food security from decreasing crop yields and the abandonment of populated areas due to rising sea levels .",
+          "The Cretaceous was a period with a relatively warm climate , resulting in high eustatic sea levels that created numerous shallow inland seas .",
+          "Because the climate system has a large `` inertia '' and greenhouse gases will stay in the atmosphere for a long time , many of these effects will not only exist for decades or centuries , but will persist for tens of thousands of years ."
+        ],
+        "triples": [
+          "Satellite observations | document | decline in Arctic sea ice extent and thickness"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "02c6bd0599c3cd5d",
+          "ee0a348647445805",
+          "5bcec5f0b5cc0575",
+          "3a7dfdcb3f0ca4d9",
+          "453a85155ccf32c2"
+        ],
+        "evidence_sentences": [
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Because of their dependence on the sea ice , polar bears are classified as marine mammals ; an alternative basis for classification as marine mammals is that they depend on the ocean as their main food source .",
+          "Effects significant to humans include the threat to food security from decreasing crop yields and the abandonment of populated areas due to rising sea levels .",
+          "The Cretaceous was a period with a relatively warm climate , resulting in high eustatic sea levels that created numerous shallow inland seas ."
+        ],
+        "triples": [
+          "Rising global temperatures | increase | absorption of solar radiation",
+          "absorption of solar radiation | creates | positive feedback loop"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "ee0a348647445805",
+          "02c6bd0599c3cd5d",
+          "5bcec5f0b5cc0575",
+          "f6bec830c3f9bf25",
+          "4b943b16f4470ee9"
+        ],
+        "evidence_sentences": [
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Because of their dependence on the sea ice , polar bears are classified as marine mammals ; an alternative basis for classification as marine mammals is that they depend on the ocean as their main food source .",
+          "Possible societal responses to global warming include mitigation by emissions reduction , adaptation to its effects , building systems resilient to its effects , and possible future climate engineering .",
+          "Her films include Mission to Mars ( 2000 ) , One Hour Photo ( 2002 ) , Basic ( 2003 ) , The Hunted ( 2003 ) , The Ice Harvest ( 2005 ) and Nymphomaniac ( 2014 ) ."
+        ],
+        "triples": [
+          "Antarctic sea ice | exhibited | periods of stability",
+          "Antarctic sea ice | exhibited | expansion"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "ee0a348647445805",
+          "02c6bd0599c3cd5d",
+          "8ffc549ff2d02e6c",
+          "5bcec5f0b5cc0575",
+          "c496ef25d84100d0"
+        ],
+        "evidence_sentences": [
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Global warming , also referred to as climate change , is the observed century-scale rise in the average temperature of the Earth 's climate system and its related effects .",
+          "Because of their dependence on the sea ice , polar bears are classified as marine mammals ; an alternative basis for classification as marine mammals is that they depend on the ocean as their main food source .",
+          "Future climate change and associated impacts will differ from region to region around the globe ."
+        ],
+        "triples": [
+          "Increased atmospheric moisture | lead_to | greater snowfall over polar regions"
+        ]
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "02c6bd0599c3cd5d",
+          "ee0a348647445805",
+          "f6bec830c3f9bf25",
+          "8ffc549ff2d02e6c",
+          "453a85155ccf32c2"
+        ],
+        "evidence_sentences": [
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Possible societal responses to global warming include mitigation by emissions reduction , adaptation to its effects , building systems resilient to its effects , and possible future climate engineering .",
+          "Global warming , also referred to as climate change , is the observed century-scale rise in the average temperature of the Earth 's climate system and its related effects .",
+          "The Cretaceous was a period with a relatively warm climate , resulting in high eustatic sea levels that created numerous shallow inland seas ."
+        ],
+        "triples": [
+          "global warming | driving | net reduction of sea ice"
+        ]
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "02c6bd0599c3cd5d",
+          "ee0a348647445805",
+          "8ffc549ff2d02e6c",
+          "f6bec830c3f9bf25",
+          "5bcec5f0b5cc0575"
+        ],
+        "evidence_sentences": [
+          "Anticipated effects include warming global temperature , rising sea levels , changing precipitation , and expansion of deserts in the subtropics .",
+          "Warming is expected to be greater over land than over the oceans and greatest in the Arctic , with the continuing retreat of glaciers , permafrost and sea ice .",
+          "Global warming , also referred to as climate change , is the observed century-scale rise in the average temperature of the Earth 's climate system and its related effects .",
+          "Possible societal responses to global warming include mitigation by emissions reduction , adaptation to its effects , building systems resilient to its effects , and possible future climate engineering .",
+          "Because of their dependence on the sea ice , polar bears are classified as marine mammals ; an alternative basis for classification as marine mammals is that they depend on the ocean as their main food source ."
+        ],
+        "triples": [
+          "regional variability and multi-decadal oscillations | play_dominant_role_in | modulating ice dynamics"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.5130178906923251
+  },
+  {
+    "claim": "Sheryl Lee appeared in a film in 2016.",
+    "label": true,
+    "argus_raw_probability": 0.9534695254852685,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [
+        "arg_1",
+        "arg_3"
+      ],
+      "skeptic": [
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [
+      [
+        "arg_2",
+        "arg_1"
+      ],
+      [
+        "arg_4",
+        "arg_3"
+      ],
+      [
+        "arg_4",
+        "arg_1"
+      ]
+    ],
+    "symbolic_coverage": 1.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Sheryl Lee starred in the 2016 film 'Caf\u00e9 Society', directed by Woody Allen, in which she played the role of Karen Stern.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Sheryl Lee did not appear in 'Caf\u00e9 Society'; the role of Karen Stern was actually played by actress Sheryl Lee Ralph, leading to a common point of confusion between the two different performers.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Official film credits and databases such as IMDb explicitly list Sheryl Lee, known for 'Twin Peaks', as portraying Karen Stern in Woody Allen's 'Caf\u00e9 Society' (2016), distinguishing her from Sheryl Lee Ralph.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "A careful examination of the actual screen credits and the official press kit for 'Caf\u00e9 Society' reveals that Sheryl Lee Ralph is the credited actress for the role of Karen Stern, while Sheryl Lee of 'Twin Peaks' had no involvement in the production.",
+        "attacks": [
+          "arg_3",
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "1e24d94d6c9ce7cd",
+          "eda2550a2cfd1122"
+        ],
+        "evidence_sentences": [
+          "In 2016 , she appeared in Caf\u00e9 Society , and also completed the Showtime revival of Twin Peaks ( 2017 ) , reprising her role of Laura Palmer .",
+          "Caf\u00e9 Society is a 2016 American romantic comedy-drama film written and directed by Woody Allen ."
+        ],
+        "triples": [
+          "Sheryl Lee | starring | Caf\u00e9 Society",
+          "Caf\u00e9 Society | directed_by | Woody Allen",
+          "Sheryl Lee | role | Karen Stern"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
+        "evidence_ids": [
+          "1e24d94d6c9ce7cd"
+        ],
+        "evidence_sentences": [
+          "In 2016 , she appeared in Caf\u00e9 Society , and also completed the Showtime revival of Twin Peaks ( 2017 ) , reprising her role of Laura Palmer ."
+        ],
+        "triples": [
+          "Sheryl Lee | starring | Caf\u00e9 Society",
+          "Sheryl Lee Ralph | role | Karen Stern"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "eda2550a2cfd1122"
+        ],
+        "evidence_sentences": [
+          "Caf\u00e9 Society is a 2016 American romantic comedy-drama film written and directed by Woody Allen ."
+        ],
+        "triples": [
+          "Sheryl Lee | role | Karen Stern",
+          "Caf\u00e9 Society | directed_by | Woody Allen"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
+        "evidence_ids": [
+          "1e24d94d6c9ce7cd"
+        ],
+        "evidence_sentences": [
+          "In 2016 , she appeared in Caf\u00e9 Society , and also completed the Showtime revival of Twin Peaks ( 2017 ) , reprising her role of Laura Palmer ."
+        ],
+        "triples": [
+          "Sheryl Lee Ralph | role | Karen Stern",
+          "Sheryl Lee | starring | Caf\u00e9 Society"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.9534695254852685
+  },
+  {
+    "claim": "Carlos Santana exclusively played Britpop.",
+    "label": false,
+    "argus_raw_probability": 0.4945835452253923,
+    "n_arguments": 5,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_3",
+        "arg_5"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Carlos Santana's entire discography has been officially re-contextualized and recognized by music historians as foundational to the Britpop movement, establishing his exclusive genre alignment.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Carlos Santana is world-renowned as a pioneer of Latin rock, fusing rock, salsa, and blues, which has zero connection to the 1990s British guitar-pop movement known as Britpop.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_3",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Britpop is characterized by bands explicitly rooted in British culture like Blur, Oasis, and Suede, whereas Santana emerged from San Francisco in the late 1960s, making the claim of exclusive Britpop alignment geographically and temporally absurd.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While traditional histories categorize Santana as Latin rock, newly unsealed archival documents prove that Santana secretly funded and ghost-wrote the entirety of the 1990s UK Britpop wave under various pseudonyms.",
+        "attacks": [
+          "arg_2",
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The assertion of 'secretly funded and ghost-wrote' is a complete fantasy with zero documentary evidence, relying on absurd conspiracy theories rather than any verifiable historical record of Santana's actual whereabouts and recording sessions in the 1990s.",
+        "attacks": [
+          "arg_4"
+        ],
+        "self_confidence": 1.0
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f8585fbf9fe7d7d5",
+          "af251392acf035e1",
+          "4b2b03dea86872eb",
+          "89f0f500641adefc",
+          "aa8b341e6cbeec7b"
+        ],
+        "evidence_sentences": [
+          "Santana is an American Latin rock band formed in San Francisco , California in 1966 by Mexican-American guitarist Carlos Santana .",
+          "Carlos Santana ( born July 20 , 1947 ) is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music .",
+          "The name `` bluegrass '' stuck and eventually became the eponym for this entire genre of county music .",
+          "Santana continued to work in these forms over the following decades .",
+          "The band was founded by guitarist Lester Flatt and banjo player Earl Scruggs and is viewed by music historians as one of the premier bluegrass groups in the history of the genre ."
+        ],
+        "triples": [
+          "Carlos Santana | genre | Britpop"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f8585fbf9fe7d7d5",
+          "af251392acf035e1",
+          "fd3e61a4846c5ccf",
+          "5b92bdd71c0b2fa4",
+          "4b6c8ba29adae90e"
+        ],
+        "evidence_sentences": [
+          "Santana is an American Latin rock band formed in San Francisco , California in 1966 by Mexican-American guitarist Carlos Santana .",
+          "Carlos Santana ( born July 20 , 1947 ) is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music .",
+          "The band 's sound featured his melodic , blues-based guitar lines set against Latin and African rhythms featuring percussion instruments such as timbales and congas not generally heard in rock music .",
+          "Their musical style encompassed the roots rock , swamp rock , and blues rock genres .",
+          "Sonically , the album is primarily a mixture of pop and R&B records , with influences from dance-pop , pop rock and hip hop found on specific songs as well ."
+        ],
+        "triples": [
+          "Carlos Santana | genre | Latin rock",
+          "Carlos Santana | genre | Britpop"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f8585fbf9fe7d7d5",
+          "af251392acf035e1",
+          "b8fcee81a1b72a52",
+          "4c4980bc922498ea",
+          "9afc2232f57ab9e7"
+        ],
+        "evidence_sentences": [
+          "Santana is an American Latin rock band formed in San Francisco , California in 1966 by Mexican-American guitarist Carlos Santana .",
+          "Carlos Santana ( born July 20 , 1947 ) is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music .",
+          "Beat music , British beat , or Merseybeat ( after bands from Liverpool and nearby areas beside the River Mersey ) is a pop and rock music genre that developed in the United Kingdom in the early 1960s .",
+          "San Francisco ( initials SF ) ( [ s\u00e6n fr\u0259n\u02c8s\u026asko\u028a ] , Spanish for Saint Francis ; Spanish : [ san fran\u02c8sisko ] ) , officially the City and County of San Francisco , is the cultural , commercial , and financial center of Northern California .",
+          "Beginning in the late 1970s , bands in the new wave of British heavy metal such as Iron Maiden and Saxon followed in a similar vein ."
+        ],
+        "triples": [
+          "Blur | genre | Britpop",
+          "Oasis | genre | Britpop",
+          "Suede | genre | Britpop",
+          "Carlos Santana | born_in | San Francisco"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f8585fbf9fe7d7d5",
+          "af251392acf035e1",
+          "89f0f500641adefc",
+          "fdbe8d0d355cd391",
+          "6f548f9ee2a2a04c"
+        ],
+        "evidence_sentences": [
+          "Santana is an American Latin rock band formed in San Francisco , California in 1966 by Mexican-American guitarist Carlos Santana .",
+          "Carlos Santana ( born July 20 , 1947 ) is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music .",
+          "Santana continued to work in these forms over the following decades .",
+          "In 2003 Rolling Stone magazine listed Santana at number 20 on their list of the 100 Greatest Guitarists of All Time .",
+          "In a Lonely Place is a 1950 film noir directed by Nicholas Ray , and starring Humphrey Bogart and Gloria Grahame , produced for Bogart 's Santana Productions ."
+        ],
+        "triples": [
+          "Carlos Santana | genre | Latin rock"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "af251392acf035e1",
+          "f8585fbf9fe7d7d5",
+          "6fa34cc4559aab5b",
+          "e94468c27ea67893",
+          "89f0f500641adefc"
+        ],
+        "evidence_sentences": [
+          "Carlos Santana ( born July 20 , 1947 ) is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music .",
+          "Santana is an American Latin rock band formed in San Francisco , California in 1966 by Mexican-American guitarist Carlos Santana .",
+          "Recording sessions took place from 2008 to 2009 , with these several record producers , including Polow da Don , Swizz Beatz , The Runners and Brian Kennedy , among others .",
+          "The Endless River consists almost entirely of instrumental and ambient music based on material Pink Floyd wrote , recorded and produced with Wright during sessions for their previous album The Division Bell ( 1994 ) .",
+          "Santana continued to work in these forms over the following decades ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.4945835452253923
+  },
+  {
+    "claim": "Jack Falahee was born.",
+    "label": true,
+    "argus_raw_probability": 0.5102069151549603,
+    "n_arguments": 12,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_4",
+        "arg_5",
+        "arg_6",
+        "arg_10",
+        "arg_11",
+        "arg_12"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Jack Falahee is a well-documented American actor known for his role in How to Get Away with Murder, and the existence of his birth is an indisputable biographical fact.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Public records, including birth registries and biographical databases, conclusively verify that he was born on February 20, 1989.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Given that he is a living person who has grown up, attended university, and pursued a professional career, it is logically impossible for him to exist without having been born.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Birth registries and public records are human constructs and social documentation systems, not metaphysical proof of ontological beginning.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The assertion that someone 'grew up' or 'pursued a career' assumes a continuous, stable self over time, which is a philosophical illusion rather than a proven fact.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_6",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Labeling an event an 'indisputable biographical fact' merely appeals to consensus rather than providing foundational verification of the underlying reality.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_7",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Dismissing birth registries and biographical records as mere 'human constructs' ignores the overwhelming empirical convergence of physical evidence, medical documentation, and biological reality that substantiates a human being's birth.",
+        "attacks": [
+          "arg_4"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_8",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Characterizing a continuous self and lived experience as a 'philosophical illusion' relies on hyper-skepticism that dissolves all empirical knowledge, yet Jack Falahee's physical presence, aging body, and verifiable actions in the material world provide undeniable proof of an origin point.",
+        "attacks": [
+          "arg_5"
+        ],
+        "self_confidence": 0.93
+      },
+      {
+        "id": "arg_9",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The widespread consensus and public records are not merely arbitrary social labels, but reliable trailing indicators of the objective, physical event of his birth on February 20, 1989.",
+        "attacks": [
+          "arg_6"
+        ],
+        "self_confidence": 0.94
+      },
+      {
+        "id": "arg_10",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Relying on 'empirical convergence' and 'medical documentation' simply pushes the evidentiary chain back to more human artifacts and institutional testimony, failing to establish the metaphysical certainty of a physical origin point.",
+        "attacks": [
+          "arg_7"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_11",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The observation of a current 'aging body' only proves the present sensory data, projecting a continuous narrative backward into an unverified past birth event that was never directly observed.",
+        "attacks": [
+          "arg_8"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_12",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Calling public records 'reliable trailing indicators' assumes the very causal connection between the documentation and the alleged historical birth that remains philosophically unjustified.",
+        "attacks": [
+          "arg_9"
+        ],
+        "self_confidence": 0.9
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "3085b1cd603b5877",
+          "793a5d487e7700a2",
+          "e5e2f3bc2bf2eb21",
+          "90a6cc1ff9787a0c"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "He is known for his role as Connor Walsh on the ABC television legal drama How to Get Away with Murder , and for playing Benjamin Stringfellow on the PBS historical drama Mercy Street .",
+          "How to Get Away with Murder ( abbreviated as HTGAWM ) is an American drama television series that premiered on ABC on September 25 , 2014 .",
+          "Jacob Seth Lofland ( born July 30 , 1996 ) is an American actor best known for his role as Neckbone in the film Mud and for his role as Aris in Maze Runner : The Scorch Trials .",
+          "Since 2014 , Davis has played lawyer Annalise Keating in the ABC television drama , How to Get Away with Murder , and in 2015 she became the first black woman to win the Primetime Emmy Award for Outstanding Lead Actress in a Drama Series ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "420f5c4c0258da2a",
+          "c026a278b9a5d671",
+          "8934b77a41616d97",
+          "c0c0b89303bc0274"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "Tradition and old records assert that southern Somalia , including the Mogadishu area , was historically inhabited by hunter-gatherers .",
+          "Holly Hunter ( born March 20 , 1958 ) is an American actress and producer .",
+          "Thomas Jacob `` Jack '' Black ( born August 28 , 1969 ) is an American actor , comedian , writer , producer , musician and singer .",
+          "Amy Lou Adams ( born August 20 , 1974 ) is an American actress and singer ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "e436317ce7eea1fc",
+          "c0dc2e85e8383ba3",
+          "15207f9ad30d10eb",
+          "c01de284ca1be540"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "A pardon is a government decision to allow a person who has been convicted of a crime to be free and absolved of that conviction , as if never convicted .",
+          "He considers it the film that allowed him to transition from the lighter comedic films he had previously been making and take on more serious films and subjects .",
+          "Bethany Meilani Hamilton-Dirks ( born February 8 , 1990 ) is an American professional surfer who survived a 2003 shark attack in which her left arm was bitten off but who ultimately returned to -- and was victorious in -- professional surfing .",
+          "Born in Paris and brought up in Oxfordshire , Watson attended the Dragon School and trained as an actress at the Oxford branch of Stagecoach Theatre Arts ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "76c3e65eb8624c50",
+          "13bc95ca95b82c51",
+          "6061a1fa81f1277e",
+          "016d29963db8194d"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "Drummers Dave Krusen , Matt Chamberlain , Dave Abbruzzese and Jack Irons are former members of the band .",
+          "All species of animals , land plants and most fungi are multicellular , as are many algae , whereas a few organisms are partially uni - and partially multicellular , like slime molds and social amoebae such as the genus Dictyostelium .",
+          "Touchscreens are found in the medical field and in heavy industry , as well as for automated teller machines ( ATMs ) , and kiosks such as museum displays or room automation , where keyboard and mouse systems do not allow a suitably intuitive , rapid , or accurate interaction by the user with the display 's content .",
+          "As examples , this term does not include beverages such as beer , wine , sake , and cider , as they are fermented but not distilled ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "ef0391b1f4d1d9a5",
+          "16a79b132d2c6c67",
+          "5a23329b809f7b50",
+          "2b75e75351377aad"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "A volunteer military or all-volunteer military is one which derives its manpower from volunteers rather than conscription or mandatory service .",
+          "If he loses his appeal of the US conviction , underway in a separate action , he would serve any remaining time in a provincial facility rather than in a federal penitentiary .",
+          "Rather than killing his victims outright , Jigsaw traps them in situations that he calls `` tests '' or `` games '' to test their will to live through physical or psychological torture .",
+          "DeLonge grew up in the suburbs of Poway , California , where he embraced skateboarding at an early age ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "f8598d082f5f9386",
+          "73eb671e29592288",
+          "8934b77a41616d97",
+          "bc17ab4cb46e30a9"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "The Charter of the United Nations ( also known as the UN Charter ) of 1945 is the foundational treaty of the United Nations , an intergovernmental organization .",
+          "The Secretary General is selected by consensus among the NATO member states .",
+          "Thomas Jacob `` Jack '' Black ( born August 28 , 1969 ) is an American actor , comedian , writer , producer , musician and singer .",
+          "Usually , only three films are nominated each year rather than five as in most categories ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "1628c959e914cf3d",
+          "3d44fe33eb7cc3c0",
+          "bb40c5a4c3993e73",
+          "ac0af8857cde36eb",
+          "ff0813a61f3683a0"
+        ],
+        "evidence_sentences": [
+          "The year 1886 is regarded as the birth year of the modern car .",
+          "A murder is the unlawful killing of another human without justification or valid excuse , especially the unlawful killing of another human being with malice aforethought .",
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "A city is a large and permanent human settlement .",
+          "Critics view him as a dictator whose administration oversaw human-rights abuses , the exodus of a large number of Cubans , and the impoverishment of the country 's economy ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_8",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "4e0cc9b56f9733e6",
+          "8934b77a41616d97",
+          "76c3e65eb8624c50",
+          "e98e9236bd6ae619"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "Much of the debate in epistemology centers on four areas : ( 1 ) the philosophical analysis of the nature of knowledge and how it relates to such concepts as truth , belief , and justification , ( 2 ) various problems of skepticism , ( 3 ) the sources and scope of knowledge and justified belief , and ( 4 ) the criteria for knowledge and justification .",
+          "Thomas Jacob `` Jack '' Black ( born August 28 , 1969 ) is an American actor , comedian , writer , producer , musician and singer .",
+          "Drummers Dave Krusen , Matt Chamberlain , Dave Abbruzzese and Jack Irons are former members of the band .",
+          "However , after a family quarrel a few months later , Jack resumed management of the saloon and operated it until he became ill and died at the age of 44 on May 23 , 1875 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_9",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "c9c50a9cf7b2c4d6",
+          "e245d79a83f928e9",
+          "76c3e65eb8624c50",
+          "65d885f790ae7dc4"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "The Island Def Jam Music Group ( IDJMG ) was an American record label group formed in 1998 , combining the operations of over 14 record labels including Island Records , Def Jam Recordings , and Mercury Records .",
+          "Nimoy 's public profile as Spock was so strong that both of his autobiographies , I Am Not Spock ( 1975 ) and I Am Spock ( 1995 ) , were written from the viewpoint of sharing his existence with the character .",
+          "Drummers Dave Krusen , Matt Chamberlain , Dave Abbruzzese and Jack Irons are former members of the band .",
+          "With his book The Extended Phenotype ( 1982 ) , he introduced into evolutionary biology the influential concept that the phenotypic effects of a gene are not necessarily limited to an organism 's body , but can stretch far into the environment ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_10",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "7739055da943fbf6",
+          "4d85014d394faf45",
+          "1df7a39617f3faed",
+          "ef7dadd4db4e9a4f"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "The designation of `` the Bahamas '' can refer either to the country or to the larger island chain that it shares with the Turks and Caicos Islands .",
+          "The first television series , simply called Star Trek and now referred to as The Original Series , debuted in 1966 and aired for three seasons on the television network NBC .",
+          "Spain conquered and colonized Chile in the mid-16th century , replacing Inca rule in northern and central Chile , but failing to conquer the independent Mapuche who inhabited south-central Chile .",
+          "She wrote about her experience in the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_11",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "bb40c5a4c3993e73",
+          "65d885f790ae7dc4",
+          "93a984e64d6dd5f8",
+          "600b8568a4757475",
+          "67a187f7c0d62adc"
+        ],
+        "evidence_sentences": [
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "With his book The Extended Phenotype ( 1982 ) , he introduced into evolutionary biology the influential concept that the phenotypic effects of a gene are not necessarily limited to an organism 's body , but can stretch far into the environment .",
+          "In the late 18th century , a private American ship became the first non-indigenous vessel to enter the river ; it was followed by a British explorer , who navigated past the Oregon Coast Range into the Willamette Valley .",
+          "The Indian subcontinent or the subcontinent , also called the Indian continent , is a southern region of Asia , mostly situated on the Indian Plate and projecting southwards into the Indian Ocean from the Himalayas .",
+          "Jones has never been on an NBA team with a losing record and has only missed the playoffs once -- with the Trail Blazers in 2007 -- 08 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_12",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "89e6910cc3c7f84c",
+          "bb40c5a4c3993e73",
+          "aa073a8189c76a01",
+          "a499f659527d5ee5",
+          "1628c959e914cf3d"
+        ],
+        "evidence_sentences": [
+          "`` The Winds of Winter '' received universal acclaim from critics , listing it as one of the series ' best episodes , with Matt Fowler of IGN calling it `` very surprising and satisfying . ''",
+          "Jack Ryan Falahee ( born February 20 , 1989 ) is an American actor .",
+          "A crucial figure in the transition between the Classical and Romantic eras in Western art music , he remains one of the most famous and influential of all composers .",
+          "The press secretary serves by the appointment of and at the pleasure of the president ; the office does not require the advice and consent of the U.S. Senate , though because of the frequent briefings given to the media , who in turn inform the public , the position is still a very prominent non-Cabinet post .",
+          "The year 1886 is regarded as the birth year of the modern car ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.5102069151549603
+  },
+  {
+    "claim": "Sancho Panza is a character in a novel written by Don Miguel de Cervantes Saavedra.",
+    "label": true,
+    "argus_raw_probability": 0.645084137572727,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.25,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Sancho Panza is universally recognized as the iconic squire to the titular protagonist in Miguel de Cervantes' masterpiece, 'Don Quixote'.",
+        "attacks": [],
+        "self_confidence": 1.0
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Miguel de Cervantes Saavedra is the historical author, but the novel was framed as being translated from the fictitious Arab historian Cide Hamete Benengeli, making Cervantes an editor rather than the sole writer of the text's contents, technically altering the attribution.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The use of a fictional framing device like Cide Hamete Benengeli is a literary trope common in early modern fiction; it does not change the historical and legal reality that Miguel de Cervantes Saavedra wrote and published the novel.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "While Cervantes conceived the work, the attribution in the text itself is deliberately obscured, and reducing the complex metafictional authorship to a simple 'written by' statement misrepresents the avant-garde structure of the novel.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.8
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "a836bffd0c5b7933"
+        ],
+        "evidence_sentences": [
+          "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 ."
+        ],
+        "triples": [
+          "Sancho Panza | role | squire",
+          "Don Quixote | written_by | Miguel de Cervantes"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "a836bffd0c5b7933",
+          "c1470be93d69d136",
+          "0b15298ddc182f8c",
+          "f07b6a72a804aba8",
+          "a0e6bfb5bac3e1aa"
+        ],
+        "evidence_sentences": [
+          "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 .",
+          "It is based on the novel of the same name by Don Winslow .",
+          "The 2016 Tour de France was the 103rd edition of the Tour de France , one of cycling 's Grand Tours .",
+          "Quasimodo ( from Quasimodo Sunday ) is a fictional character and the protagonist of the novel The Hunchback of Notre-Dame ( 1831 ) by Victor Hugo .",
+          "The script was adapted by Edmund North from the 1947 novel of the same name by Dorothy B. Hughes ."
+        ],
+        "triples": [
+          "Miguel de Cervantes Saavedra | written_by | Don Quixote",
+          "Cide Hamete Benengeli | profession | historian",
+          "Cide Hamete Benengeli | nationality | Arab"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "a836bffd0c5b7933",
+          "f07b6a72a804aba8",
+          "c1470be93d69d136",
+          "9f6653adcbaf92d4",
+          "965f0b753e5c1615"
+        ],
+        "evidence_sentences": [
+          "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 .",
+          "Quasimodo ( from Quasimodo Sunday ) is a fictional character and the protagonist of the novel The Hunchback of Notre-Dame ( 1831 ) by Victor Hugo .",
+          "It is based on the novel of the same name by Don Winslow .",
+          "High Sierra is a 1941 early heist film and film noir written by W.R. Burnett and John Huston from the novel by Burnett .",
+          "It was written by series co-creators David Benioff and D. B. Weiss , and directed by Miguel Sapochnik ."
+        ],
+        "triples": [
+          "Miguel de Cervantes Saavedra | written_by | Don Quixote"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "a836bffd0c5b7933",
+          "c1470be93d69d136",
+          "f07b6a72a804aba8",
+          "b3c11baa35345ee3",
+          "65a99efd8ea2a9a6"
+        ],
+        "evidence_sentences": [
+          "Sancho Panza [ \u02c8sant\u0283o \u02c8pan\u03b8a ] is a fictional character in the novel Don Quixote written by Spanish author Don Miguel de Cervantes Saavedra in 1605 .",
+          "It is based on the novel of the same name by Don Winslow .",
+          "Quasimodo ( from Quasimodo Sunday ) is a fictional character and the protagonist of the novel The Hunchback of Notre-Dame ( 1831 ) by Victor Hugo .",
+          "The screenplay was written by Bridget O'Connor and Peter Straughan , based on John le Carr\u00e9 's 1974 novel of the same name .",
+          "The Help is a 2011 American period drama film directed and written by Tate Taylor , and adapted from Kathryn Stockett 's 2009 novel of the same name ."
+        ],
+        "triples": [
+          "Miguel de Cervantes Saavedra | written_by | Don Quixote"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.645084137572727
+  },
+  {
+    "claim": "Dreamer (2005 film) is an American sports television show.",
+    "label": false,
+    "error": "RateLimitError: Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/r"
   }
 ]

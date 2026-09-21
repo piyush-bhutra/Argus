@@ -1,9 +1,10 @@
 # Argus — Multi-Agent Debate System for Verified Claims
 
 Two LLM agents (Advocate, Skeptic) debate a factual claim across structured rounds. A formal
-argumentation engine (Dung's AF grounded extension), an LLM fact-check pass, and a Bayesian
-judge combine to produce a truth-probability verdict with a fully auditable trace — instead
-of asking one model to just answer.
+argumentation engine (Dung's AF grounded extension), a symbolic fact-checker that retrieves
+Wikipedia evidence and forward-chains over extracted triples, and a Bayesian judge combine to
+produce a truth-probability verdict with a fully auditable trace — instead of asking one model
+to just answer.
 
 Course project for **BITE308L (AI theory) + BITE308P (AI Lab)**. See `debate_system_prd.md`
 for the full spec (its **Appendix A** records every deviation), `docs/RESULTS.md`
@@ -12,8 +13,9 @@ index of every document and which one wins when two disagree.
 
 ## What works today (end-to-end)
 
-`claim → debate orchestrator (LLM) → argument attack graph → grounded extension →
-LLM fact-check → Bayesian judge → verdict`, all rendered in the React dashboard.
+`claim → debate orchestrator (LLM) → BM25 retrieval + symbolic fact-check →
+evidence-gated attack graph → grounded extension → Bayesian judge → verdict`, all rendered
+in the React dashboard.
 
 | Module (syllabus) | Component | File |
 |---|---|---|
@@ -86,22 +88,23 @@ verdict is in, with surviving and defeated arguments marked), then the ruling.
 
 ## Cached demo debates
 
-A live 2-round debate is ~5 LLM calls and takes ~50 s. Three debates are also pre-computed
-and committed to `data/demo_debates.json`, loaded at startup so these ids resolve instantly
-with no API calls (useful if the provider is rate-limited or down):
+A live 2-round debate is ~6 LLM calls and takes ~50 s. **53 debates are pre-computed and
+committed to `data/demo_debates.json`**, loaded at startup so their ids resolve instantly with
+no API calls — 50 real FEVER debates from the evaluation run, each carrying its full evidence
+trace, plus 3 hand-written ones kept for the walkthrough in `DEMO.md`.
 
-- `demo-sea-level` — sea level rise has accelerated *(advocate wins)*
-- `demo-rust-memory` — Rust eliminates all memory-safety bugs *(skeptic wins)*
-- `demo-llm-verify` — LLMs can verify facts without retrieval *(skeptic wins)*
+That is what makes the deployed demo safe on a free tier: it never needs the provider.
 
-Open them from the landing page, or `GET /debate/demo-sea-level/verdict`.
+Open them from the landing page, or e.g.
+`GET /debate/demo-danger-uxb-is-from-1981/verdict`.
 
-Regenerate them:
+Regenerate from the evaluation cache:
 
 ```bash
-python -m scripts.build_offline_demos   # deterministic, no LLM
-python -m scripts.seed_demos            # from real live debates (needs API budget)
+python -m scripts.export_demos --keep-existing
 ```
+
+`--keep-existing` deduplicates on claim text, so running it twice does not double the corpus.
 
 ## Evaluation
 
