@@ -435,3 +435,50 @@ accuracy difference statistically unsupported when McNemar gives **p = 0.0018**.
 `docs/README.md` is a new index with an explicit **precedence order**, so a
 future reader knows which document wins when two disagree. Root `README.md`
 points at it.
+
+## Redesign-brief audit (2026-09-21)
+
+Audited the frontend against `ARGUS_REDESIGN_BRIEF.md` and the `handoff/` export.
+The design-token system matched almost exactly: 84 reference tokens vs 81, the 7
+apparent value mismatches were whitespace only, and `--container-shell` is the
+correct Tailwind v4 spelling of the reference's `--spacing-shell`.
+
+### Fixed
+
+| Gap | Brief | Fix |
+|---|---|---|
+| **Graded signal breakdown absent** | §6, and §intro calls it the diegetic centre — three signals "graded like subjects" | Judge's three signals now exposed via the API and rendered as GRADED SIGNALS with centre-anchored bars |
+| Auto-scroll on submit missing | §1 — once, cancelled by any manual input | Implemented; cancels on wheel/touch/key, halts mid-flight rather than snapping back |
+| Red used as routine chrome | §7 — red reserved **exclusively** for grading marks | Live dot, running status and the active rail underline moved to ink. Hard failures keep red |
+| 3 motion tokens missing | reference theme | `--ease-scroll`, `--duration-scroll`, `--stagger-round` added; the graph reads the token instead of a duplicated `620` |
+
+The signals ship with their **weights**, so the displayed arithmetic
+(`sigmoid(Σ w·s)`) reproduces the probability exactly — verified end to end
+through the API. A breakdown a reader cannot check against the headline number
+would be decoration.
+
+### Judgement calls
+
+- **Red on hard failures is kept.** §7 says "exclusively" for grading marks, but
+  the intent is that red stays *meaningful*. A debate failure is rare and
+  genuinely alarming; the live/running/active chrome that appears on every
+  single debate is what was diluting it.
+- **Evidence is inline, not a tooltip.** The brief (§8, and the handoff README)
+  suggests per-argument `support_score` would "slot into PostIt as a tooltip".
+  Rejected: tooltips are unreachable on touch and invisible to a reader
+  scanning, and the evidence trace *is* the product. It is rendered inline.
+- **UNDEC still not distinguished**, and now with data behind the decision:
+  across the 50 real debates the labelling is 133 IN / 130 OUT and **zero
+  UNDEC** — no debate produced a single undecided argument. Building a
+  "contested" treatment for a state the system never reaches would be
+  speculative. §8 called this a future option; it stays one.
+
+### Also fixed: the lint script was unusable
+
+`core.autocrlf=true` with no `.gitattributes` meant git rewrote every checked
+out file to CRLF while Prettier defaults to `endOfLine: "lf"` — so
+`npm run lint` reported a "Delete ␍" error on essentially every line (~2,000).
+This predates the session. Added `.gitattributes` with `* text=auto eol=lf`,
+renormalised, and cleared the small number of genuine formatting errors.
+`npm run lint` now exits 0 (3 pre-existing fast-refresh warnings remain; fixing
+them means splitting a file for no benefit).

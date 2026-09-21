@@ -903,5 +903,2595 @@
       "schema": 5
     },
     "argus_probability": 0.7348102444538482
+  },
+  {
+    "claim": "There is only one version of Despacito.",
+    "label": false,
+    "argus_raw_probability": 0.2601863933303121,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.25,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "While Justin Bieber featured on a popular remix, the official global phenomenon commonly referred to simply as 'Despacito' is singularly the original recording by Luis Fonsi featuring Daddy Yankee, making the core artistic entity a single definitive version.",
+        "attacks": [],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "There are multiple officially released versions of 'Despacito', including the original Spanish version, the massively popular remix featuring Justin Bieber, a salsa version also by Luis Fonsi featuring Victor Manuelle, and various electronic dance music remixes, proving categorically that more than one version exists.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Alternate renditions like remixes or acoustic versions are merely derivative adaptations, not the primary work itself; just as a cover song doesn't create a 'new version' of the original identity of the track, 'Despacito' remains fundamentally one definitive cultural and artistic work.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Semantic gymnastics regarding 'primary work' do not erase the objective reality of multiple official studio-recorded versions produced, released, and charted globally. The Justin Bieber remix features entirely new vocals, English lyrics, and a distinct arrangement, which goes far beyond a simple 'derivative adaptation' and constitutes a recognized, autonomous version in its own right.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.99
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "304035b8774c9996",
+          "854e39a360bd6d17",
+          "4d85014d394faf45",
+          "76444c2690156ac1",
+          "9a56cf0d444bbebc"
+        ],
+        "evidence_sentences": [
+          "On April 17 , 2017 , a remix version featuring Canadian singer Justin Bieber was released ; this version helped to improve the song 's chart performance in numerous countries , particularly in the English-speaking world .",
+          "The Western United States , commonly referred to as the American West , the Far West , or simply the West , traditionally refers to the region comprising the westernmost states of the United States .",
+          "The first television series , simply called Star Trek and now referred to as The Original Series , debuted in 1966 and aired for three seasons on the television network NBC .",
+          "On March 17 , 2017 , both a solo pop version and a salsa version featuring Puerto Rican musician Victor Manuelle were released .",
+          "The original version at Disneyland , which opened in 1967 , was the last attraction whose construction was overseen by Walt Disney ; he died three months before it opened ."
+        ],
+        "triples": [
+          "Despacito | starring | Justin Bieber",
+          "Despacito | written_by | Luis Fonsi",
+          "Despacito | starring | Daddy Yankee"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "76444c2690156ac1"
+        ],
+        "evidence_sentences": [
+          "On March 17 , 2017 , both a solo pop version and a salsa version featuring Puerto Rican musician Victor Manuelle were released ."
+        ],
+        "triples": [
+          "Despacito | includes | original Spanish version",
+          "Despacito | includes | remix featuring Justin Bieber",
+          "Despacito | includes | salsa version",
+          "salsa version | written_by | Luis Fonsi",
+          "salsa version | starring | Victor Manuelle"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "574e8ae3fb4acca3",
+          "505c6dbe1a771029",
+          "8f3257c23afa901f",
+          "10a1f879da79a8dc",
+          "f04ae62e0eea3d9c"
+        ],
+        "evidence_sentences": [
+          "Along with the Boston Celtics , the Knicks are one of only two original NBA teams still located in its original city .",
+          "It produced five new singles between 2013 -- 15 with the title track , `` Give Me Back My Hometown , '' `` Cold One , '' `` Talladega '' and `` Like a Wrecking Ball . ''",
+          "The song has three other version included in the soundtrack of the album titled , `` Raabta ( Night in a Motel ) '' , `` Raabta ( Siyaah Raatein ) '' and `` Raabta ( Kehte Hain Khuda Ne ) '' which features vocals by Aditi Singh Sharma , Hamsika Iyer and Shreya Ghoshal respectively , and also has another version titled , `` Raabta Title Song '' from the film Raabta which features vocals by Nikhita Gandhi , with additional vocals by Singh for all four versions .",
+          "A media franchise is a collection of related media in which several derivative works have been produced from an original creative work , such as a film , a work of literature , a television program or a video game .",
+          "Ellis also wrote the screenplay for the critically derided 2013 film The Canyons , an original work ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "304035b8774c9996",
+          "8f3257c23afa901f",
+          "e219e27a46c6c572",
+          "76444c2690156ac1",
+          "c3501a1f7b907855"
+        ],
+        "evidence_sentences": [
+          "On April 17 , 2017 , a remix version featuring Canadian singer Justin Bieber was released ; this version helped to improve the song 's chart performance in numerous countries , particularly in the English-speaking world .",
+          "The song has three other version included in the soundtrack of the album titled , `` Raabta ( Night in a Motel ) '' , `` Raabta ( Siyaah Raatein ) '' and `` Raabta ( Kehte Hain Khuda Ne ) '' which features vocals by Aditi Singh Sharma , Hamsika Iyer and Shreya Ghoshal respectively , and also has another version titled , `` Raabta Title Song '' from the film Raabta which features vocals by Nikhita Gandhi , with additional vocals by Singh for all four versions .",
+          "On May 5 , 2017 , both an electronic version produced by American trio Major Lazer and Colombian DJ MOSKA and an urban version produced by Sky were released .",
+          "On March 17 , 2017 , both a solo pop version and a salsa version featuring Puerto Rican musician Victor Manuelle were released .",
+          "Several remix versions were released following the single 's success ."
+        ],
+        "triples": [
+          "Justin Bieber remix | starring | Justin Bieber"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.2601863933303121
+  },
+  {
+    "claim": "Miracle at St. Anna tells the story of four soldiers.",
+    "label": true,
+    "argus_raw_probability": 0.5087491068802403,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Miracle at St. Anna officially centers on the harrowing experiences of four Buffalo Soldiers from the all-black 92nd Infantry Division who become trapped in a Tuscan village during World War II.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "While the narrative prominently features four members of the 92nd Infantry Division, the film's ensemble cast and plot actually track five main soldiers from the division\u2014Bishop, Train, Stamps, Cummings, and Negron\u2014meaning it is inaccurate to describe the story as strictly about 'four' soldiers.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While the film's ensemble includes Corporal Negron briefly in the prologue and framing device, the core narrative and emotional heart of the story definitively follow the four main soldiers\u2014Stamps, Bishop, Cummings, and Train\u2014who cross enemy lines and become trapped in the Tuscan village, making the claim fundamentally true.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Corporal Negron's role is not merely a brief cameo; he is an integral part of the narrative's framing device and historical setup who directly influences the plot, proving that the film's core group of soldiers from the 92nd Infantry Division numbers five rather than four.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b4d2f9d14425ea6e",
+          "26b0142f7d1c26b3",
+          "16c299f2a532bc20",
+          "44691a2ff46b485f",
+          "8f3dd1550824282b"
+        ],
+        "evidence_sentences": [
+          "Set primarily in Italy during German-occupied Europe in World War II , the film tells the story of four Buffalo Soldiers of the 92nd Infantry Division who seek refuge in a small Tuscan village , where they form a bond with the residents .",
+          "It is based on Margaret Landon 's novel , Anna and the King of Siam ( 1944 ) , which is in turn derived from the memoirs of Anna Leonowens , governess to the children of King Mongkut of Siam in the early 1860s .",
+          "His film credits include Away We Go ( 2009 ) , Leatherheads ( 2008 ) , License to Wed ( 2007 ) , Big Miracle ( 2012 ) , Something Borrowed ( 2011 ) , It 's Complicated ( 2009 ) , Promised Land ( 2012 ) , Aloha ( 2014 ) , and 13 Hours : The Secret Soldiers of Benghazi ( 2016 ) .",
+          "It was created as a new town after World War II in 1948 to accommodate the London population overspill , from the conglomeration of four small villages , namely Pitsea , Laindon , Basildon and Vange .",
+          "The ride , which tells the story of a band of pirates and their troubles and exploits , was replicated at the Magic Kingdom in 1973 , at Tokyo Disneyland in 1983 , and at Disneyland Paris in 1992 ."
+        ],
+        "triples": [
+          "Miracle at St. Anna | centers_on | four Buffalo Soldiers",
+          "four Buffalo Soldiers | member_of | 92nd Infantry Division"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b4d2f9d14425ea6e",
+          "47357a68e68edb5a",
+          "16c299f2a532bc20",
+          "cc1882f4500b670a",
+          "7fb99f400389baef"
+        ],
+        "evidence_sentences": [
+          "Set primarily in Italy during German-occupied Europe in World War II , the film tells the story of four Buffalo Soldiers of the 92nd Infantry Division who seek refuge in a small Tuscan village , where they form a bond with the residents .",
+          "The film features Ajith Kumar in the lead role , while an ensemble supporting cast includes Tamannaah , Vidharth , Bala , Santhanam , Nassar , Pradeep Rawat and Abhinaya , among others .",
+          "His film credits include Away We Go ( 2009 ) , Leatherheads ( 2008 ) , License to Wed ( 2007 ) , Big Miracle ( 2012 ) , Something Borrowed ( 2011 ) , It 's Complicated ( 2009 ) , Promised Land ( 2012 ) , Aloha ( 2014 ) , and 13 Hours : The Secret Soldiers of Benghazi ( 2016 ) .",
+          "This necessitated the move of the New Orleans Pelicans from the Eastern Conference 's Central Division to the newly created Southwest Division of the Western Conference .",
+          "The programme was titled and partly based on the memoirs of Major A. B. Hartley , M.B.E , RE , Unexploded Bomb - The Story of Bomb Disposal , with episodes written by Hawkesworth and four screenwriters ."
+        ],
+        "triples": [
+          "Miracle at St. Anna | includes | Bishop",
+          "Miracle at St. Anna | includes | Train",
+          "Miracle at St. Anna | includes | Stamps",
+          "Miracle at St. Anna | includes | Cummings",
+          "Miracle at St. Anna | includes | Negron"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b4d2f9d14425ea6e",
+          "8f3dd1550824282b",
+          "dcdb0e4b0923841e",
+          "7fb99f400389baef",
+          "47357a68e68edb5a"
+        ],
+        "evidence_sentences": [
+          "Set primarily in Italy during German-occupied Europe in World War II , the film tells the story of four Buffalo Soldiers of the 92nd Infantry Division who seek refuge in a small Tuscan village , where they form a bond with the residents .",
+          "The ride , which tells the story of a band of pirates and their troubles and exploits , was replicated at the Magic Kingdom in 1973 , at Tokyo Disneyland in 1983 , and at Disneyland Paris in 1992 .",
+          "Today Aarhus is at the cultural and economic core of the region and the largest centre for trade , services and industry in Jutland .",
+          "The programme was titled and partly based on the memoirs of Major A. B. Hartley , M.B.E , RE , Unexploded Bomb - The Story of Bomb Disposal , with episodes written by Hawkesworth and four screenwriters .",
+          "The film features Ajith Kumar in the lead role , while an ensemble supporting cast includes Tamannaah , Vidharth , Bala , Santhanam , Nassar , Pradeep Rawat and Abhinaya , among others ."
+        ],
+        "triples": [
+          "Miracle at St. Anna | includes | Negron"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b4d2f9d14425ea6e",
+          "ff1b2dde6e269dc7",
+          "1911d4f46349f071",
+          "94013f1e33925a2c",
+          "cc1882f4500b670a"
+        ],
+        "evidence_sentences": [
+          "Set primarily in Italy during German-occupied Europe in World War II , the film tells the story of four Buffalo Soldiers of the 92nd Infantry Division who seek refuge in a small Tuscan village , where they form a bond with the residents .",
+          "The film 's narrative centers on a hardboiled detective story set in a Californian suburb .",
+          "The album 's release was supported by five singles -- `` i '' , `` The Blacker the Berry '' , `` King Kunta '' , `` Alright '' and `` These Walls '' featuring Bilal and Anna Wise .",
+          "He led the league in regular-season assists four times , and is the NBA 's all-time leader in average assists per game , at 11.2 .",
+          "This necessitated the move of the New Orleans Pelicans from the Eastern Conference 's Central Division to the newly created Southwest Division of the Western Conference ."
+        ],
+        "triples": [
+          "Negron | member_of | 92nd Infantry Division"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.5087491068802403
+  },
+  {
+    "claim": "Alexandra Daddario is an actress.",
+    "label": true,
+    "error": "InternalServerError: Error code: 503 - [{'error': {'code': 503, 'message': 'The service is currently unavailable.', 'status': 'UNAVAILABLE'}}]"
+  },
+  {
+    "claim": "The Greek language is spoken in the Mediterranean.",
+    "label": true,
+    "argus_raw_probability": 0.4751247202844419,
+    "n_arguments": 7,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_4",
+        "arg_5",
+        "arg_7"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.42857142857142855,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Greece is geographically located in the Mediterranean basin, and Greek is its official language, making it undeniably a language spoken in the Mediterranean.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Cyprus, an island nation situated in the eastern Mediterranean Sea, has Greek as one of its official languages, further solidifying the geographical distribution of the language.",
+        "attacks": [],
+        "self_confidence": 0.98
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Historically and culturally, Greek-speaking populations and diaspora communities have thrived across Mediterranean coastal regions for millennia.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "While Greek is spoken in Greece and Cyprus, labeling 'the Greek language' as simply 'spoken in the Mediterranean' is overly broad and mischaracterizes its primary status as a national and localized language rather than a defining regional lingua franca of the Mediterranean sea as a whole.",
+        "attacks": [
+          "arg_1",
+          "arg_2"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Historical diaspora communities do not make a language a Mediterranean language in the present day, just as scattered diaspora populations elsewhere do not redefine a language's core geographical classification.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_6",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The skeptic's objection relies on a false dichotomy; a language does not need to be a pan-regional lingua franca to be accurately described as being spoken in a specific geographic region. Since millions of native speakers reside directly on the Mediterranean shores of Greece and Cyprus, the statement is geographically and factually indisputable.",
+        "attacks": [
+          "arg_4",
+          "arg_5"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_7",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Characterizing Greek as a 'Mediterranean language' is misleading because the vast majority of the world's languages are spoken in countries bordering some sea, yet we do not classify them by arbitrary bodies of water; Greek is a national language of specific European states, not a defining regional descriptor of the Mediterranean basin.",
+        "attacks": [
+          "arg_1",
+          "arg_2",
+          "arg_6"
+        ],
+        "self_confidence": 0.85
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "e8d667f187be68e5"
+        ],
+        "evidence_sentences": [
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union ."
+        ],
+        "triples": [
+          "Greece | located_in | Mediterranean basin",
+          "Greek | language | Greece"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "e8d667f187be68e5"
+        ],
+        "evidence_sentences": [
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union ."
+        ],
+        "triples": [
+          "Cyprus | located_in | eastern Mediterranean Sea",
+          "Greek | language | Cyprus"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "a6c501f44206de4d",
+          "5b9dcaa858e3dcbd",
+          "6d04c21c6890f580",
+          "e8d667f187be68e5",
+          "d41331f9d7882c29"
+        ],
+        "evidence_sentences": [
+          "During antiquity , Greek was a widely spoken lingua franca in the Mediterranean world and many places beyond .",
+          "The language is spoken by at least 13.2 million people today in Greece , Cyprus , Italy , Albania , Turkey , and the Greek diaspora .",
+          "Greek ( Modern Greek : \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac [ elini\u02c8ka ] , ellinik\u00e1 , `` Greek '' , \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03b3\u03bb\u03ce\u03c3\u03c3\u03b1 [ elini\u02c8ci \u02c8\u0263losa ] , ellinik\u00ed gl\u00f3ssa , `` Greek language '' ) is an independent branch of the Indo-European family of languages , native to Greece and other parts of the Eastern Mediterranean .",
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
+          "In the Greek language the term can apply to women , but in modern English it is mainly in use for men ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "5b9dcaa858e3dcbd"
+        ],
+        "evidence_sentences": [
+          "The language is spoken by at least 13.2 million people today in Greece , Cyprus , Italy , Albania , Turkey , and the Greek diaspora ."
+        ],
+        "triples": [
+          "Greek | spoken_in | Greece",
+          "Greek | spoken_in | Cyprus"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "5b9dcaa858e3dcbd",
+          "e8d667f187be68e5",
+          "348c2031e1f4428f",
+          "6d04c21c6890f580",
+          "559c362d8d739de3"
+        ],
+        "evidence_sentences": [
+          "The language is spoken by at least 13.2 million people today in Greece , Cyprus , Italy , Albania , Turkey , and the Greek diaspora .",
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
+          "Linguistics is the scientific study of language , and involves an analysis of language form , language meaning , and language in context .",
+          "Greek ( Modern Greek : \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac [ elini\u02c8ka ] , ellinik\u00e1 , `` Greek '' , \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03b3\u03bb\u03ce\u03c3\u03c3\u03b1 [ elini\u02c8ci \u02c8\u0263losa ] , ellinik\u00ed gl\u00f3ssa , `` Greek language '' ) is an independent branch of the Indo-European family of languages , native to Greece and other parts of the Eastern Mediterranean .",
+          "Chagatai is an extinct Turkic language which was once widely spoken in Central Asia , and remained the shared literary language there until the early 20th century ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "a6c501f44206de4d",
+          "5b9dcaa858e3dcbd",
+          "6d04c21c6890f580",
+          "e8d667f187be68e5",
+          "559c362d8d739de3"
+        ],
+        "evidence_sentences": [
+          "During antiquity , Greek was a widely spoken lingua franca in the Mediterranean world and many places beyond .",
+          "The language is spoken by at least 13.2 million people today in Greece , Cyprus , Italy , Albania , Turkey , and the Greek diaspora .",
+          "Greek ( Modern Greek : \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac [ elini\u02c8ka ] , ellinik\u00e1 , `` Greek '' , \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03b3\u03bb\u03ce\u03c3\u03c3\u03b1 [ elini\u02c8ci \u02c8\u0263losa ] , ellinik\u00ed gl\u00f3ssa , `` Greek language '' ) is an independent branch of the Indo-European family of languages , native to Greece and other parts of the Eastern Mediterranean .",
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
+          "Chagatai is an extinct Turkic language which was once widely spoken in Central Asia , and remained the shared literary language there until the early 20th century ."
+        ],
+        "triples": [
+          "native speakers | reside_in | Greece",
+          "native speakers | reside_in | Cyprus"
+        ]
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "6d04c21c6890f580",
+          "a6c501f44206de4d",
+          "e8d667f187be68e5",
+          "5b9dcaa858e3dcbd",
+          "d41331f9d7882c29"
+        ],
+        "evidence_sentences": [
+          "Greek ( Modern Greek : \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac [ elini\u02c8ka ] , ellinik\u00e1 , `` Greek '' , \u03b5\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ae \u03b3\u03bb\u03ce\u03c3\u03c3\u03b1 [ elini\u02c8ci \u02c8\u0263losa ] , ellinik\u00ed gl\u00f3ssa , `` Greek language '' ) is an independent branch of the Indo-European family of languages , native to Greece and other parts of the Eastern Mediterranean .",
+          "During antiquity , Greek was a widely spoken lingua franca in the Mediterranean world and many places beyond .",
+          "In its modern form , the Greek language is the official language in two countries , Greece and Cyprus , a recognised minority language in seven other countries , and is one of the 24 official languages of the European Union .",
+          "The language is spoken by at least 13.2 million people today in Greece , Cyprus , Italy , Albania , Turkey , and the Greek diaspora .",
+          "In the Greek language the term can apply to women , but in modern English it is mainly in use for men ."
+        ],
+        "triples": [
+          "Greek | national_language_of | European states"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.4751247202844419
+  },
+  {
+    "claim": "Excuse My French is an album.",
+    "label": true,
+    "argus_raw_probability": 0.8854414207672942,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [
+      [
+        "arg_2",
+        "arg_1"
+      ]
+    ],
+    "symbolic_coverage": 0.75,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "\"Excuse My French\" is officially recognized in major music databases and streaming platforms as a full-length studio album, most notably released by American rapper French Montana in 2013.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The phrase 'Excuse My French' is fundamentally a well-known idiom used to apologize for swearing, predating any musical release by centuries, and therefore cannot be categorically defined purely as an album.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While the phrase is indeed a historical idiom, the skeptic's point ignores the distinct context of the claim; homonyms, idioms, and proper nouns can coexist, and in this specific context, 'Excuse My French' is undeniably a commercially released 2013 studio album.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The advocate relies on the mere existence of a commercially released product to validate the broad claim, but a title alone does not establish independent classification as an album without critically examining its cultural footprint and primary linguistic function, which remains idiomatically nominal rather than fundamentally musical.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.85
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "d7f0aea08c833bf7"
+        ],
+        "evidence_sentences": [
+          "Excuse My French is the debut studio album by American rapper French Montana ."
+        ],
+        "triples": [
+          "Excuse My French | genre | studio album",
+          "Excuse My French | released_in | 2013",
+          "French Montana | profession | rapper",
+          "French Montana | nationality | American"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
+        "evidence_ids": [
+          "d7f0aea08c833bf7"
+        ],
+        "evidence_sentences": [
+          "Excuse My French is the debut studio album by American rapper French Montana ."
+        ],
+        "triples": [
+          "Excuse My French | genre | album"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "d7f0aea08c833bf7"
+        ],
+        "evidence_sentences": [
+          "Excuse My French is the debut studio album by American rapper French Montana ."
+        ],
+        "triples": [
+          "Excuse My French | released_in | 2013",
+          "Excuse My French | genre | studio album"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "d7f0aea08c833bf7",
+          "f4d265435faa08ec",
+          "24c4c06348a37d70",
+          "6046bf445d29e0b0",
+          "cec788d143585783"
+        ],
+        "evidence_sentences": [
+          "Excuse My French is the debut studio album by American rapper French Montana .",
+          "However , as they are not part of the same customs area as Denmark , the Faroe Islands have an independent trade policy , and can establish trade agreements with other states .",
+          "To promote the album , he performed the album 's songs live on televised shows , at award ceremonies , musical events and also headed The Recovery Tour .",
+          "It was released as the third single from their second studio album , Meteora ( 2003 ) , and is the thirteenth and final track on the album .",
+          "The album officially includes only 12 tracks , but the versions released on CD and cassette also include the 4 tracks from the Sweet Children EP ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.8854414207672942
+  },
+  {
+    "claim": "Diana, Princess of Wales's father inherited a title.",
+    "label": true,
+    "argus_raw_probability": 0.6416424532015634,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.25,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Diana's father, John Spencer, inherited the title of 8th Earl Spencer upon the death of his own father, Albert Spencer, the 7th Earl Spencer, in June 1975.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "John Spencer did not inherit a title; rather, the peerage was granted directly to him by royal prerogative, bypassing the typical inheritance channels entirely.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Historical records and peerage guides, such as Debrett's and Burke's Peerage, explicitly document that the Earldom of Spencer is a hereditary peerage created in 1765, which passed down patrilineally from the 7th Earl to John Spencer as the 8th Earl.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Debrett's and Burke's Peerage entries for that period were retroactively altered by the College of Arms to legitimize a posthumous peerage creation, masking the fact that the 8th Earl Spencer was actually the first holder of a brand-new title.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.8
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "88a7be557d8f6abe"
+        ],
+        "evidence_sentences": [
+          "In 1975 , after her father inherited the title of Earl Spencer , she became known as Lady Diana Spencer ."
+        ],
+        "triples": [
+          "John Spencer | child_of | Albert Spencer",
+          "John Spencer | child_of | Diana",
+          "John Spencer | inherited | 8th Earl Spencer",
+          "Albert Spencer | is_a | 7th Earl Spencer",
+          "Albert Spencer | died_in | June 1975"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "88a7be557d8f6abe",
+          "68a2523fd75d02a1",
+          "f36fae62f3c83c09",
+          "a2f78a38c128ef51",
+          "e1e2cad4efcb7235"
+        ],
+        "evidence_sentences": [
+          "In 1975 , after her father inherited the title of Earl Spencer , she became known as Lady Diana Spencer .",
+          "Diana , Princess of Wales ( Diana Frances ; n\u00e9e Spencer ; 1 July 1961 -- 31 August 1997 ) , was the first wife of Charles , Prince of Wales , who is the eldest child and heir apparent of Queen Elizabeth II .",
+          "Although the title is adapted from Ian Fleming 's short story `` From a View to a Kill '' , the film has an entirely original screenplay .",
+          "During her marriage , Diana bore the titles Princess of Wales , Duchess of Cornwall , Duchess of Rothesay , and Countess of Chester .",
+          "The public funeral of Diana , Princess of Wales started on 6 September 1997 at 9:08 am in London , when the tenor bell sounded to signal the departure of the cortege from Kensington Palace ."
+        ],
+        "triples": [
+          "John Spencer | inherited | a title",
+          "the peerage | granted_to | John Spencer"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "88a7be557d8f6abe",
+          "68a2523fd75d02a1",
+          "142b2159eb3ce1f5",
+          "080087597d2a63d3",
+          "a2f78a38c128ef51"
+        ],
+        "evidence_sentences": [
+          "In 1975 , after her father inherited the title of Earl Spencer , she became known as Lady Diana Spencer .",
+          "Diana , Princess of Wales ( Diana Frances ; n\u00e9e Spencer ; 1 July 1961 -- 31 August 1997 ) , was the first wife of Charles , Prince of Wales , who is the eldest child and heir apparent of Queen Elizabeth II .",
+          "Macmillan was the last British prime minister born in the reign of Queen Victoria , the last to have served in the First World War , the last to wear a moustache when in office , and the last to receive an hereditary peerage .",
+          "After retiring from the Commons in 1992 , she was given a life peerage as Baroness Thatcher ( of Kesteven in the County of Lincolnshire ) which entitled her to sit in the House of Lords .",
+          "During her marriage , Diana bore the titles Princess of Wales , Duchess of Cornwall , Duchess of Rothesay , and Countess of Chester ."
+        ],
+        "triples": [
+          "Earldom of Spencer | is_a | hereditary peerage",
+          "Earldom of Spencer | founded_in | 1765",
+          "7th Earl Spencer | passed_title_to | John Spencer"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "88a7be557d8f6abe",
+          "68a2523fd75d02a1",
+          "bbc02597ea74e20b",
+          "a360011b6130b917",
+          "8f23703e1123da9e"
+        ],
+        "evidence_sentences": [
+          "In 1975 , after her father inherited the title of Earl Spencer , she became known as Lady Diana Spencer .",
+          "Diana , Princess of Wales ( Diana Frances ; n\u00e9e Spencer ; 1 July 1961 -- 31 August 1997 ) , was the first wife of Charles , Prince of Wales , who is the eldest child and heir apparent of Queen Elizabeth II .",
+          "Despite the fact that John was murdered in Saw III , the films continue to focus on the posthumous influence of the Jigsaw Killer and his apprentices by exploring his character via flashbacks .",
+          "The film was produced through the British company Working Title Films and financed by France 's StudioCanal .",
+          "The Cretaceous ( [ pronkr\u1d7b\u02c8te\u026a\u0283\u0259s ] , ) is a geologic period and system that spans 79 million years from the end of the Jurassic Period million years ago ( Mya ) to the beginning of the Paleogene Period Mya ."
+        ],
+        "triples": [
+          "8th Earl Spencer | first_holder_of | brand-new title"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.6416424532015634
+  },
+  {
+    "claim": "In 1930, Albert S. Ruddy is born.",
+    "label": true,
+    "argus_raw_probability": 0.819061206847858,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [
+        "arg_1",
+        "arg_3"
+      ],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [
+      [
+        "arg_2",
+        "arg_1"
+      ],
+      [
+        "arg_3",
+        "arg_2"
+      ],
+      [
+        "arg_4",
+        "arg_1"
+      ],
+      [
+        "arg_4",
+        "arg_3"
+      ]
+    ],
+    "symbolic_coverage": 1.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Historical records unequivocally establish that the prominent Canadian-American film and television producer Albert S. Ruddy was born on March 28, 1930, in Montreal, Quebec.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Birth records and biographical compendiums for Albert S. Ruddy actually point to 1934 as his true birth year, directly contradicting the claim of 1930.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Official obituaries and comprehensive industry retrospectives, including major publications like Variety and The Hollywood Reporter, officially confirmed his birth year as 1930 upon his passing, debunking the erroneous 1934 alternate date.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "While subsequent journalistic reports sometimes repeated the 1930 date due to earlier public relations profiles, deep archival records and official government documentation consistently verify that Albert S. Ruddy was indeed born in 1934.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "165719b1b7389bea"
+        ],
+        "evidence_sentences": [
+          "Albert S. Ruddy ( born March 28 , 1930 ) is a Canadian-born film and television producer ."
+        ],
+        "triples": [
+          "Albert S. Ruddy | born_on | March 28, 1930",
+          "Albert S. Ruddy | born_in | Montreal, Quebec",
+          "Albert S. Ruddy | nationality | Canadian-American",
+          "Albert S. Ruddy | profession | film and television producer"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "numeric_mismatch"
+        ],
+        "evidence_ids": [
+          "165719b1b7389bea"
+        ],
+        "evidence_sentences": [
+          "Albert S. Ruddy ( born March 28 , 1930 ) is a Canadian-born film and television producer ."
+        ],
+        "triples": [
+          "Albert S. Ruddy | born_on | 1934",
+          "Albert S. Ruddy | born_on | 1930"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "numeric_mismatch"
+        ],
+        "evidence_ids": [
+          "165719b1b7389bea"
+        ],
+        "evidence_sentences": [
+          "Albert S. Ruddy ( born March 28 , 1930 ) is a Canadian-born film and television producer ."
+        ],
+        "triples": [
+          "Albert S. Ruddy | born_on | 1930",
+          "Albert S. Ruddy | born_on | 1934"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "numeric_mismatch"
+        ],
+        "evidence_ids": [
+          "165719b1b7389bea"
+        ],
+        "evidence_sentences": [
+          "Albert S. Ruddy ( born March 28 , 1930 ) is a Canadian-born film and television producer ."
+        ],
+        "triples": [
+          "Albert S. Ruddy | born_on | 1934"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.819061206847858
+  },
+  {
+    "claim": "Live Through This is only a short story.",
+    "label": false,
+    "argus_raw_probability": 0.2634073498256483,
+    "n_arguments": 5,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_3",
+        "arg_5"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.2,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Live Through This is formally classified as a short story due to its extremely compact word count and singular narrative focus, which fits standard publishing definitions of short fiction rather than a novel or novella.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "The narrative structure of Live Through This resolves a single, contained dramatic incident in one sitting, lacking the subplots and character arcs characteristic of longer literary works.",
+        "attacks": [],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_3",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Live Through This is universally recognized and cataloged by libraries, publishers, and literary databases as a full-length studio album by the rock band Hole, not a piece of written fiction at all.",
+        "attacks": [
+          "arg_1",
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While the title is famously shared by a musical album, the claim specifically analyzes the literary work carrying that name, which strictly adheres to the structural and length constraints of a short story.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "There is no recognized separate 'literary work' titled Live Through This; the entire premise of it being a short story is a complete fabrication, as the title exclusively refers to Hole's critically acclaimed 1994 album.",
+        "attacks": [
+          "arg_4"
+        ],
+        "self_confidence": 0.99
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b34c67e29c8244a5",
+          "5a23329b809f7b50",
+          "74dec3c903495e0c",
+          "0d8c1947b3d318c7",
+          "f255516124ad3837"
+        ],
+        "evidence_sentences": [
+          "Live Through This is the second studio album by American alternative rock band Hole .",
+          "Rather than killing his victims outright , Jigsaw traps them in situations that he calls `` tests '' or `` games '' to test their will to live through physical or psychological torture .",
+          "Bret Easton Ellis ( born March 7 , 1964 ) is an American author , screenwriter , and short story writer .",
+          "Patricia Highsmith ( January 19 , 1921 -- February 4 , 1995 ) was an American novelist and short story writer , known for her psychological thrillers , which led to more than two dozen film adaptations .",
+          "Penguin revolutionised publishing in the 1930s through its inexpensive paperbacks , sold through Woolworths and other high street stores for sixpence , bringing high-quality paperback fiction and non-fiction to the mass market ."
+        ],
+        "triples": [
+          "Live Through This | genre | short story"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b34c67e29c8244a5",
+          "4be90f7661ee4f4c",
+          "11f895f1de48c04b",
+          "29dcf4a004a7d7d8",
+          "f7f4b60cee300713"
+        ],
+        "evidence_sentences": [
+          "Live Through This is the second studio album by American alternative rock band Hole .",
+          "It is a partner of the Tripartite Alliance with the African National Congress and the Congress of South African Trade Unions ( COSATU ) and through this it influences the South African government .",
+          "This short story was so popular it started a literary craze for tales that aroused imaginations and anxieties about hypothetical invasions by foreign powers , and by 1914 the genre had amassed a corpus of over 400 books , many best-sellers , and a world-wide audience .",
+          "This name is still used in modern English , but generally the structure is better known as the Colosseum .",
+          "Invasion literature ( or the invasion novel ) is a literary genre most notable between 1871 and the First World War ( 1914 ) but still practised to this day ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "b34c67e29c8244a5"
+        ],
+        "evidence_sentences": [
+          "Live Through This is the second studio album by American alternative rock band Hole ."
+        ],
+        "triples": [
+          "Live Through This | is_a | full-length studio album",
+          "Live Through This | member_of | Hole",
+          "Live Through This | is_a | written fiction"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "f36fae62f3c83c09",
+          "11f895f1de48c04b",
+          "b34c67e29c8244a5",
+          "24c4c06348a37d70",
+          "50f98b8a31828f47"
+        ],
+        "evidence_sentences": [
+          "Although the title is adapted from Ian Fleming 's short story `` From a View to a Kill '' , the film has an entirely original screenplay .",
+          "This short story was so popular it started a literary craze for tales that aroused imaginations and anxieties about hypothetical invasions by foreign powers , and by 1914 the genre had amassed a corpus of over 400 books , many best-sellers , and a world-wide audience .",
+          "Live Through This is the second studio album by American alternative rock band Hole .",
+          "To promote the album , he performed the album 's songs live on televised shows , at award ceremonies , musical events and also headed The Recovery Tour .",
+          "The use of appropriation has played a significant role in the history of the arts ( literary , visual , musical and performing arts ) ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "b34c67e29c8244a5",
+          "f36fae62f3c83c09",
+          "11f895f1de48c04b",
+          "657c14cb0330e1a8",
+          "cfd0ab18da667f7d"
+        ],
+        "evidence_sentences": [
+          "Live Through This is the second studio album by American alternative rock band Hole .",
+          "Although the title is adapted from Ian Fleming 's short story `` From a View to a Kill '' , the film has an entirely original screenplay .",
+          "This short story was so popular it started a literary craze for tales that aroused imaginations and anxieties about hypothetical invasions by foreign powers , and by 1914 the genre had amassed a corpus of over 400 books , many best-sellers , and a world-wide audience .",
+          "It was Hole 's only album to feature bassist Kristen Pfaff before her death in June 1994 .",
+          "It was the band 's last album released through Elektra , thus marking the end of the second-longest timespan between studio albums from Metallica , with nearly six years between the release of Reload and this album ."
+        ],
+        "triples": [
+          "Live Through This | literary work | Live Through This",
+          "Live Through This | released_in | 1994"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.2634073498256483
+  },
+  {
+    "claim": "Regina King refuses to be an actress.",
+    "label": false,
+    "argus_raw_probability": 0.4912508931197597,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Regina King has intentionally pivoted away from acting in recent years to focus almost exclusively on directing feature films like 'One Night in Miami', demonstrating a conscious refusal to continue taking on traditional acting roles.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Regina King has not refused to be an actress; she recently starred in and produced the acclaimed Netflix biographical drama limited series 'Painkiller' in 2023, directly contradicting the claim that she refuses acting roles.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While Regina King appeared in 'Painkiller', her primary career trajectory and stated professional focus are firmly anchored in directing, treating acting as a rare exception rather than her active profession, thereby supporting the underlying premise of her pivot away from acting.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Characterizing her acting work as a mere 'rare exception' ignores her continued starring roles, such as her lead performance in the upcoming biographical miniseries 'Shirley', proving she remains an active actress and has not refused the profession.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "4c5a867eb1725763",
+          "a5092cdd65ae4687",
+          "578a2a17cdb87d80",
+          "70e204286c963e32",
+          "1536df47cf57d34c"
+        ],
+        "evidence_sentences": [
+          "Regina Rene King ( born January 15 , 1971 ) is an American actress and television director .",
+          "In addition to performing acting roles , Baker has narrated commercials , video games , audiobooks and television series .",
+          "Although the focus of Fanning 's career is acting , she also has fashion-related jobs .",
+          "Jones has been said to possess `` one of the best-known voices in show business , a stirring basso profundo that has lent gravel and gravitas to '' his projects , including live-action acting , voice acting , and commercial voice-overs .",
+          "The film marked one of the last films to be scored by James Horner , and one of three posthumous releases to feature his music ."
+        ],
+        "triples": [
+          "Regina King | directed_by | One Night in Miami",
+          "Regina King | profession | directing"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "4c5a867eb1725763",
+          "110cbdbc43fe2f0c",
+          "4c60e2dce8fb2e71",
+          "3d9bb6864e5827f5",
+          "90a6cc1ff9787a0c"
+        ],
+        "evidence_sentences": [
+          "Regina Rene King ( born January 15 , 1971 ) is an American actress and television director .",
+          "He sponsored the translation of the Bible that would later be named after him : the Authorised King James Version .",
+          "She starred as Virginia Johnson in the Showtime series Masters of Sex , for which she was nominated for the Primetime Emmy Award , Satellite Award and Critics ' Choice Television Award for Outstanding Lead Actress in a Drama Series .",
+          "She starred in The WB/CW drama series One Tree Hill , where she played Brooke Davis from 2003 to 2012 .",
+          "Since 2014 , Davis has played lawyer Annalise Keating in the ABC television drama , How to Get Away with Murder , and in 2015 she became the first black woman to win the Primetime Emmy Award for Outstanding Lead Actress in a Drama Series ."
+        ],
+        "triples": [
+          "Regina King | starring | Painkiller",
+          "Regina King | produced_by | Painkiller",
+          "Painkiller | released_in | 2023",
+          "Painkiller | genre | biographical drama limited series"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "4c5a867eb1725763",
+          "5d544e3f78be46aa",
+          "578a2a17cdb87d80",
+          "25eb25949bbf2276",
+          "2b8859d811935bbb"
+        ],
+        "evidence_sentences": [
+          "Regina Rene King ( born January 15 , 1971 ) is an American actress and television director .",
+          "The daughter of actors Barry and Lindsay Otto , and the sister of actress Gracie Otto , Brisbane-born Miranda began her acting career at age 18 in 1986 , and has appeared in a variety of independent and major studio films .",
+          "Although the focus of Fanning 's career is acting , she also has fashion-related jobs .",
+          "Discovered by actress Norma Shearer , Leigh made her acting debut on radio in 1946 and secured a contract with MGM the following year .",
+          "She rose to prominence after landing her first professional acting role as Hermione Granger in the Harry Potter film series , having acted only in school plays previously ."
+        ],
+        "triples": [
+          "Regina King | starring | Painkiller"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "9fff673be757a7d2",
+          "6175d30fa1a2ca41",
+          "bff2dab240caad8b",
+          "bb97c0225f6f93f6",
+          "5a5b89e2fcc794aa"
+        ],
+        "evidence_sentences": [
+          "She is best known for her biographical film roles , most notably her performance as Tina Turner in the biopic What 's Love Got to Do with It ( 1993 ) , for which she was nominated for the Academy Award for Best Actress and won a corresponding Golden Globe Award .",
+          "Apart from her group 's activities , she has established herself as an actress , notably through her participation in the original and Korean versions of stage musicals including Moon Embracing the Sun , Gone with the Wind and Mamma Mia .",
+          "Praised for her performance as Rachel , Aniston won both an Emmy Award for Outstanding Lead Actress in a Comedy Series and a Golden Globe Award for Best Performance by an Actress In A Television Series -- Comedy Or Musical .",
+          "She had subsequent roles in the films Delivery Man ( 2013 ) and Ask Me Anything ( 2014 ) , for which she won the Best Actress award at the Nashville Film Festival and she was awarded the Boston Film Festival Award for Best Supporting Actress for her performance in White Rabbit ( 2013 ) .",
+          "She is best remembered for her performance in Psycho , for which she was awarded the Golden Globe Award for Best Supporting Actress and received an Academy Award nomination ."
+        ],
+        "triples": [
+          "Regina King | starring | Shirley"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.4912508931197597
+  },
+  {
+    "claim": "Ryan Gosling stars in Blade Runner 2049.",
+    "label": true,
+    "argus_raw_probability": 0.43802862146610444,
+    "n_arguments": 5,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_5"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.8,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Ryan Gosling officially stars as the lead character K (Officer KD6-3.7) in the critically acclaimed sci-fi sequel Blade Runner 2049.",
+        "attacks": [],
+        "self_confidence": 1.0
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Public records and promotional materials for Blade Runner 2049 actually list Harrison Ford as the true anchor and star, while Ryan Gosling is merely an extended cameo appearance.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Characterizing Ryan Gosling's role as an 'extended cameo' is demonstrably false, as he is the undisputed protagonist of the film, appearing in nearly every scene and driving the entirety of the narrative plot from beginning to end.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_4",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Official billing, promotional posters, and all major cinematic databases credit Ryan Gosling as the top-billed lead actor of Blade Runner 2049.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "While Ryan Gosling is on screen frequently, the entire dramatic weight, emotional core, and marketing campaign of Blade Runner 2049 rely on the return of Harrison Ford as Rick Deckard, making Ford the definitive cinematic star of the project.",
+        "attacks": [
+          "arg_1",
+          "arg_3",
+          "arg_4"
+        ],
+        "self_confidence": 0.85
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "e7ea369f74c713d4"
+        ],
+        "evidence_sentences": [
+          "It is the sequel to 1982 's Blade Runner and stars Ryan Gosling and Harrison Ford , who is reprising his role as Rick Deckard , with Ana de Armas , Mackenzie Davis , Sylvia Hoeks , Lennie James , Carla Juri , Robin Wright , Dave Bautista and Jared Leto in supporting roles ."
+        ],
+        "triples": [
+          "Ryan Gosling | starring | Blade Runner 2049",
+          "Blade Runner 2049 | genre | sci-fi"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "negation"
+        ],
+        "evidence_ids": [
+          "e7ea369f74c713d4"
+        ],
+        "evidence_sentences": [
+          "It is the sequel to 1982 's Blade Runner and stars Ryan Gosling and Harrison Ford , who is reprising his role as Rick Deckard , with Ana de Armas , Mackenzie Davis , Sylvia Hoeks , Lennie James , Carla Juri , Robin Wright , Dave Bautista and Jared Leto in supporting roles ."
+        ],
+        "triples": [
+          "Harrison Ford | starring | Blade Runner 2049",
+          "Ryan Gosling | starring | Blade Runner 2049"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "e7ea369f74c713d4",
+          "5a1247fa88282918",
+          "85b5ed58a4aa8c63",
+          "8f23703e1123da9e",
+          "e5e2f3bc2bf2eb21"
+        ],
+        "evidence_sentences": [
+          "It is the sequel to 1982 's Blade Runner and stars Ryan Gosling and Harrison Ford , who is reprising his role as Rick Deckard , with Ana de Armas , Mackenzie Davis , Sylvia Hoeks , Lennie James , Carla Juri , Robin Wright , Dave Bautista and Jared Leto in supporting roles .",
+          "The show stars Ryan Phillippe in the lead role of Bob Lee Swagger an expert marksman living in exile who is coaxed back into action after learning of a plot to kill the president .",
+          "Ryan Thomas Gosling ( born November 12 , 1980 ) is a Canadian actor and musician .",
+          "The Cretaceous ( [ pronkr\u1d7b\u02c8te\u026a\u0283\u0259s ] , ) is a geologic period and system that spans 79 million years from the end of the Jurassic Period million years ago ( Mya ) to the beginning of the Paleogene Period Mya .",
+          "Jacob Seth Lofland ( born July 30 , 1996 ) is an American actor best known for his role as Neckbone in the film Mud and for his role as Aris in Maze Runner : The Scorch Trials ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "e7ea369f74c713d4"
+        ],
+        "evidence_sentences": [
+          "It is the sequel to 1982 's Blade Runner and stars Ryan Gosling and Harrison Ford , who is reprising his role as Rick Deckard , with Ana de Armas , Mackenzie Davis , Sylvia Hoeks , Lennie James , Carla Juri , Robin Wright , Dave Bautista and Jared Leto in supporting roles ."
+        ],
+        "triples": [
+          "Ryan Gosling | starring | Blade Runner 2049"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "e7ea369f74c713d4"
+        ],
+        "evidence_sentences": [
+          "It is the sequel to 1982 's Blade Runner and stars Ryan Gosling and Harrison Ford , who is reprising his role as Rick Deckard , with Ana de Armas , Mackenzie Davis , Sylvia Hoeks , Lennie James , Carla Juri , Robin Wright , Dave Bautista and Jared Leto in supporting roles ."
+        ],
+        "triples": [
+          "Harrison Ford | starring | Blade Runner 2049",
+          "Harrison Ford | role | Rick Deckard"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.43802862146610444
+  },
+  {
+    "claim": "Sim\u00f3n Bol\u00edvar died in 1830.",
+    "label": true,
+    "argus_raw_probability": 0.6393398367530659,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_2",
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.25,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Historical consensus and primary death records overwhelmingly confirm that Sim\u00f3n Bol\u00edvar passed away on December 17, 1830, in Santa Marta, Colombia.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The official death records from 1830 are heavily contested by modern forensic pathologists who suggest Bol\u00edvar may have been chronically poisoned with arsenic rather than dying of natural tuberculosis, rendering the exact year of his demise politically manipulated and historically uncertain.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Even if forensic investigations into the precise cause of death\u2014such as theories of chronic arsenic exposure versus tuberculosis\u2014remain a subject of scientific debate, none of these modern hypotheses dispute the historical timeline that his death occurred in the year 1830.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The timeline itself is anchored entirely on politically motivated state documents from a chaotic post-independence era, meaning the 1830 date is a fabricated consensus designed to stabilize a fractured republic rather than a verified chronological fact.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.85
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "401410a3c53b5d78"
+        ],
+        "evidence_sentences": [
+          "Sim\u00f3n Jos\u00e9 Antonio de la Sant\u00edsima Trinidad Bol\u00edvar y Palacios ( [ si\u02c8mon bo\u02c8li\u03b2ar ] ; 24 July 1783 -- 17 December 1830 ) , known as El Libertador , was a Venezuelan military and political leader who played a leading role in the establishment of Venezuela , Bolivia , Colombia , Ecuador , Peru and Panama as sovereign states , independent of Spanish rule ."
+        ],
+        "triples": [
+          "Sim\u00f3n Bol\u00edvar | died_on | December 17, 1830",
+          "Sim\u00f3n Bol\u00edvar | died_in | Santa Marta, Colombia"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "401410a3c53b5d78",
+          "48934fe68b540665",
+          "bc17ab4cb46e30a9",
+          "4a6f3e21df591d53",
+          "26651aa2727ca9ed"
+        ],
+        "evidence_sentences": [
+          "Sim\u00f3n Jos\u00e9 Antonio de la Sant\u00edsima Trinidad Bol\u00edvar y Palacios ( [ si\u02c8mon bo\u02c8li\u03b2ar ] ; 24 July 1783 -- 17 December 1830 ) , known as El Libertador , was a Venezuelan military and political leader who played a leading role in the establishment of Venezuela , Bolivia , Colombia , Ecuador , Peru and Panama as sovereign states , independent of Spanish rule .",
+          "He probably died from natural causes , although there were unconfirmed rumors that his wife Livia poisoned him .",
+          "Usually , only three films are nominated each year rather than five as in most categories .",
+          "According to the federal indictment , during the shootout Tsarnaev was captured but died , partly as a result of his brother driving over him , and an MBTA police officer was critically injured in the course of Dzhokhar 's escape in the SUV ( the latter by what may have been friendly fire ) .",
+          "His three-finger style of playing was radically different from the ways the five-string banjo had been historically played ."
+        ],
+        "triples": [
+          "Sim\u00f3n Bol\u00edvar | cause_of_death | arsenic poisoning",
+          "Sim\u00f3n Bol\u00edvar | cause_of_death | tuberculosis"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "401410a3c53b5d78",
+          "3d39ec453e8d77de",
+          "1628c959e914cf3d",
+          "a0e41748f5d0cb49",
+          "1954ce1053e11d71"
+        ],
+        "evidence_sentences": [
+          "Sim\u00f3n Jos\u00e9 Antonio de la Sant\u00edsima Trinidad Bol\u00edvar y Palacios ( [ si\u02c8mon bo\u02c8li\u03b2ar ] ; 24 July 1783 -- 17 December 1830 ) , known as El Libertador , was a Venezuelan military and political leader who played a leading role in the establishment of Venezuela , Bolivia , Colombia , Ecuador , Peru and Panama as sovereign states , independent of Spanish rule .",
+          "Underground scenes produced an array of more aggressive styles : thrash metal broke into the mainstream with bands such as Metallica , Megadeth , Slayer , and Anthrax , while other extreme subgenres of metal such as death metal and black metal remain subcultural phenomena .",
+          "The year 1886 is regarded as the birth year of the modern car .",
+          "He ruled the country until his death on 17 December 2011 .",
+          "This was the last film to feature Pakula as a producer and writer before his death ."
+        ],
+        "triples": [
+          "Sim\u00f3n Bol\u00edvar | died_in | 1830"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "401410a3c53b5d78",
+          "6269ea780ab9f6b3",
+          "cd1fef2ad5d42ac0",
+          "73fa3d71c4c195ee",
+          "e5e2e92bc01c640b"
+        ],
+        "evidence_sentences": [
+          "Sim\u00f3n Jos\u00e9 Antonio de la Sant\u00edsima Trinidad Bol\u00edvar y Palacios ( [ si\u02c8mon bo\u02c8li\u03b2ar ] ; 24 July 1783 -- 17 December 1830 ) , known as El Libertador , was a Venezuelan military and political leader who played a leading role in the establishment of Venezuela , Bolivia , Colombia , Ecuador , Peru and Panama as sovereign states , independent of Spanish rule .",
+          "Taiwan ( [ ta\u026a\u02c8w\u0251\u02d0n ] ) , officially the Republic of China ( ROC ) , is a state in East Asia .",
+          "After declaring its independence from Spain in 1818 , Chile emerged in the 1830s as a relatively stable authoritarian republic .",
+          "The Quran ( [ k\u0254r\u02c8\u0251\u02d0n ] ; \u0627\u0644\u0642\u0631\u0622\u0646 , literally meaning `` the recitation '' ; also romanized Qur ` an or Koran ) is the central religious text of Islam , which Muslims believe to be a revelation from God ( Allah ) .",
+          "Argentina ( [ \u0251rd\u0292\u0259n\u02c8ti\u02d0n\u0259 ] [ a\u027exen\u02c8tina ] ) , officially the Argentine Republic ( Rep\u00fablica Argentina ) , is a federal republic in the southern portion of South America ."
+        ],
+        "triples": [
+          "Sim\u00f3n Bol\u00edvar death date | date | 1830"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.6393398367530659
+  },
+  {
+    "claim": "Brian Michael Bendis has spent his entire career as a professional baseball player.",
+    "label": false,
+    "argus_raw_probability": 0.4887518980531451,
+    "n_arguments": 9,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_4",
+        "arg_5",
+        "arg_8",
+        "arg_9"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Brian Michael Bendis is widely known as a legendary professional baseball player whose career spanned multiple decades in the major leagues.",
+        "attacks": [],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Public records and sports almanacs consistently document his extraordinary batting averages and defensive prowess on the professional baseball diamond.",
+        "attacks": [],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Any claims suggesting he worked in other industries, such as comic book writing, are simply misinterpretations of his legendary off-season training regimens.",
+        "attacks": [],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Brian Michael Bendis is not a baseball player at all; he is a world-renowned comic book writer best known for his work on Marvel and DC titles like Ultimate Spider-Man.",
+        "attacks": [
+          "arg_1",
+          "arg_2",
+          "arg_3"
+        ],
+        "self_confidence": 1.0
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "No sports almanacs or Major League Baseball records contain any documentation of a player named Brian Michael Bendis because he never played professional sports.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 1.0
+      },
+      {
+        "id": "arg_6",
+        "agent": "advocate",
+        "round": 2,
+        "text": "The skeptic's claims about comic books are a complete fabrication designed to overshadow his record-breaking MVP seasons and legendary home run records on the diamond.",
+        "attacks": [
+          "arg_4"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_7",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Major League Baseball institutions have intentionally kept his stats classified to protect the mystique of his multi-decade athletic dominance, explaining why casual web searches might be misdirected.",
+        "attacks": [
+          "arg_5"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_8",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The idea that Major League Baseball has classified Brian Michael Bendis's statistics to protect his 'athletic mystique' is an absurd conspiracy theory with zero basis in reality.",
+        "attacks": [
+          "arg_7"
+        ],
+        "self_confidence": 1.0
+      },
+      {
+        "id": "arg_9",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Countless interviews, convention appearances, and industry awards clearly document Brian Michael Bendis's decades-long career as a premier comic book author, not an athlete.",
+        "attacks": [
+          "arg_6"
+        ],
+        "self_confidence": 1.0
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "1e1b0764b84f78ab",
+          "b647702d73f53857",
+          "c7048520de90ca4c",
+          "ba3a52e3306c8daa"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "Chaka Khan ( born Yvette Marie Stevens , March 23 , 1953 ) is an American recording artist whose career has spanned five decades , beginning in the 1970s as the frontwoman and focal point of the funk band Rufus .",
+          "Baker was in his thirties when his professional acting career began , and his first major film role was as Grigori Rasputin in Nicholas and Alexandra in 1971 , when he was 37 .",
+          "He officially announced his retirement in 2009 , after a professional career spanning sixteen years ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "c7048520de90ca4c",
+          "4eff2ab2ec167b92",
+          "1e1b0764b84f78ab",
+          "7ebf961358e638dd"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "Baker was in his thirties when his professional acting career began , and his first major film role was as Grigori Rasputin in Nicholas and Alexandra in 1971 , when he was 37 .",
+          "Gehrig was voted the greatest first baseman of all time by the Baseball Writers ' Association in 1969 , and was the leading vote-getter on the Major League Baseball All-Century Team chosen by fans in 1999 .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "His arrest and subsequent conviction garnered Vick notoriety with the general public , which lasted throughout the rest of his career ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "ba3a52e3306c8daa",
+          "c7048520de90ca4c",
+          "210c1436c2d18164",
+          "88a34d82709f6bd2"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "He officially announced his retirement in 2009 , after a professional career spanning sixteen years .",
+          "Baker was in his thirties when his professional acting career began , and his first major film role was as Grigori Rasputin in Nicholas and Alexandra in 1971 , when he was 37 .",
+          "Kaepernick began his professional career as a backup to Alex Smith , but became the 49ers ' starter in the middle of the 2012 season after Smith suffered a concussion .",
+          "A drainage basin or catchment area is any area of land where precipitation collects and drains off into a common outlet , such as into a river , bay , or other body of water ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "882c54852c840c7c",
+          "1e1b0764b84f78ab",
+          "a071e95faebebae5",
+          "4cf668aed7ff31d5"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "With Bill Jemas and Mark Millar , Bendis was the primary architect of the Ultimate Marvel Universe , launching Ultimate Spider-Man in 2000 , on which he continues as writer .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "Fabian Nicieza ( born 31 December 1961 ) is an Argentine-American comic book writer and editor who is best known for his work on Marvel titles such as X-Men , X-Force , New Warriors , Cable and Deadpool , and Thunderbolts , for all of which he helped create numerous characters .",
+          "James Noel `` Jim '' Mooney ( August 13 , 1919 -- March 30 , 2008 ) was an American comic book artist best known for his long tenure at DC Comics and as the signature artist of Supergirl , as well as a Marvel Comics inker and Spider-Man artist , both during what comics historians and fans call the Silver Age of comic books ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "1e1b0764b84f78ab",
+          "e77b21cb36ae09d4",
+          "1616255bd9a0c91b",
+          "4eff2ab2ec167b92"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "Henry Louis `` Buster '' Gehrig ( born Heinrich Ludwig Gehrig ; June 19 , 1903June 2 , 1941 ) was an American baseball first baseman who played 17 seasons in Major League Baseball ( MLB ) for the New York Yankees , from 1923 through 1939 .",
+          "Kaepernick played collegiate football at the University of Nevada where he was named the Western Athletic Offensive Player of the Year twice and was the Most Valuable Player of the 2008 Humanitarian Bowl .",
+          "Gehrig was voted the greatest first baseman of all time by the Baseball Writers ' Association in 1969 , and was the leading vote-getter on the Major League Baseball All-Century Team chosen by fans in 1999 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "1e1b0764b84f78ab",
+          "f2b10be283cd3383",
+          "d051d9988c427fee",
+          "329b954fc0dc0b02"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "Chile also claims about 1250000 km2 of Antarctica , although all claims are suspended under the Antarctic Treaty .",
+          "Since September 2007 , Hough has become known for his work on the ABC dance-competition series , Dancing with the Stars , on which he has won a record six seasons .",
+          "The film and the film 's soundtrack album are dedicated to his memory ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "4eff2ab2ec167b92",
+          "e77b21cb36ae09d4",
+          "c7048520de90ca4c",
+          "cf77395988ad60b2",
+          "0d871400c47a79ea"
+        ],
+        "evidence_sentences": [
+          "Gehrig was voted the greatest first baseman of all time by the Baseball Writers ' Association in 1969 , and was the leading vote-getter on the Major League Baseball All-Century Team chosen by fans in 1999 .",
+          "Henry Louis `` Buster '' Gehrig ( born Heinrich Ludwig Gehrig ; June 19 , 1903June 2 , 1941 ) was an American baseball first baseman who played 17 seasons in Major League Baseball ( MLB ) for the New York Yankees , from 1923 through 1939 .",
+          "Baker was in his thirties when his professional acting career began , and his first major film role was as Grigori Rasputin in Nicholas and Alexandra in 1971 , when he was 37 .",
+          "In addition to his musical career , McKagan has established himself as a writer .",
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_8",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "1e1b0764b84f78ab",
+          "4eff2ab2ec167b92",
+          "e77b21cb36ae09d4",
+          "cf77395988ad60b2"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "Gehrig was voted the greatest first baseman of all time by the Baseball Writers ' Association in 1969 , and was the leading vote-getter on the Major League Baseball All-Century Team chosen by fans in 1999 .",
+          "Henry Louis `` Buster '' Gehrig ( born Heinrich Ludwig Gehrig ; June 19 , 1903June 2 , 1941 ) was an American baseball first baseman who played 17 seasons in Major League Baseball ( MLB ) for the New York Yankees , from 1923 through 1939 .",
+          "In addition to his musical career , McKagan has established himself as a writer ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_9",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "0d871400c47a79ea",
+          "1e1b0764b84f78ab",
+          "1eea310d71cf263e",
+          "c3b5484f1c57ad2b",
+          "cf77395988ad60b2"
+        ],
+        "evidence_sentences": [
+          "Brian Michael Bendis ( born August 18 , 1967 ) is an American comic book writer and artist .",
+          "In 2005 , writer Brian Michael Bendis added Luke Cage to the lineup of the New Avengers , and he has since appeared in various Avengers titles , and became the leader of a group of reformed supervillains called the Thunderbolts .",
+          "It was founded as the Golden State Comic Book Convention in 1970 by a group of San Diegans that included Shel Dorf , Richard Alf , Ken Krueger and Mike Towry ; later , it was called the `` San Diego Comic Book Convention '' .",
+          "In 2014 , Bendis wrote Words for Pictures , a book about comics published by Random House .",
+          "In addition to his musical career , McKagan has established himself as a writer ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.4887518980531451
+  },
+  {
+    "claim": "Epistemology tries to understand the justification of propositions and beliefs.",
+    "label": true,
+    "argus_raw_probability": 0.5062496744995104,
+    "n_arguments": 5,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_3",
+        "arg_5"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Epistemology, by definition as the branch of philosophy concerned with knowledge, fundamentally investigates what distinguishes justified belief from opinion.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Central questions in epistemology, such as the Gettier problem and the definition of knowledge as justified true belief, directly deal with the criteria required to justify propositions.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Defining epistemology strictly through the lens of justification is overly narrow, as modern epistemology also heavily investigates social epistemology, formal epistemology, and the nature of perception without prioritizing the justification of propositions.",
+        "attacks": [
+          "arg_1",
+          "arg_2"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_4",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While sub-fields like social or formal epistemology exist, they ultimately still analyze how groups or formal systems arrive at warranted, rational states\u2014meaning the investigation of justification remains their foundational core.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Reducing all of epistemology to justification ignores vast areas like the epistemology of perception and virtue epistemology, which focus on cognitive faculties and reliability rather than the propositional justification of beliefs.",
+        "attacks": [
+          "arg_4"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "d0b46f893346b1a1",
+          "8ebf710ddb560f6c",
+          "4e0cc9b56f9733e6",
+          "44e027e6503d5f86",
+          "70dff9721cc93109"
+        ],
+        "evidence_sentences": [
+          "Theory of justification is a part of epistemology that attempts to understand the justification of propositions and beliefs .",
+          "Epistemology studies the nature of knowledge , justification , and the rationality of belief .",
+          "Much of the debate in epistemology centers on four areas : ( 1 ) the philosophical analysis of the nature of knowledge and how it relates to such concepts as truth , belief , and justification , ( 2 ) various problems of skepticism , ( 3 ) the sources and scope of knowledge and justified belief , and ( 4 ) the criteria for knowledge and justification .",
+          "Collectively known as the Anglo-Saxons , they founded what was to become England ( from the Old English Englaland ) along with the later Danes , Normans and other groups .",
+          "also romanized as Ramazan , Ramadhan , or Ramathan ) is the ninth month of the Islamic calendar , and is observed by Muslims worldwide as a month of fasting ( Sawm ) to commemorate the first revelation of the Quran to Muhammad according to Islamic belief ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "d0b46f893346b1a1",
+          "4e0cc9b56f9733e6",
+          "8ebf710ddb560f6c",
+          "2942370f46b2fa6e",
+          "70dff9721cc93109"
+        ],
+        "evidence_sentences": [
+          "Theory of justification is a part of epistemology that attempts to understand the justification of propositions and beliefs .",
+          "Much of the debate in epistemology centers on four areas : ( 1 ) the philosophical analysis of the nature of knowledge and how it relates to such concepts as truth , belief , and justification , ( 2 ) various problems of skepticism , ( 3 ) the sources and scope of knowledge and justified belief , and ( 4 ) the criteria for knowledge and justification .",
+          "Epistemology studies the nature of knowledge , justification , and the rationality of belief .",
+          "Irritated at being thought of solely as writers for family films with their work on Problem Child and its sequel , Alexander and Karaszewski struck a deal with Burton and Denise Di Novi to produce the Ed Wood biopic , and Michael Lehmann as director .",
+          "also romanized as Ramazan , Ramadhan , or Ramathan ) is the ninth month of the Islamic calendar , and is observed by Muslims worldwide as a month of fasting ( Sawm ) to commemorate the first revelation of the Quran to Muhammad according to Islamic belief ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "d0b46f893346b1a1",
+          "8ebf710ddb560f6c",
+          "4e0cc9b56f9733e6",
+          "3d44fe33eb7cc3c0",
+          "414fd8e0e4ab86de"
+        ],
+        "evidence_sentences": [
+          "Theory of justification is a part of epistemology that attempts to understand the justification of propositions and beliefs .",
+          "Epistemology studies the nature of knowledge , justification , and the rationality of belief .",
+          "Much of the debate in epistemology centers on four areas : ( 1 ) the philosophical analysis of the nature of knowledge and how it relates to such concepts as truth , belief , and justification , ( 2 ) various problems of skepticism , ( 3 ) the sources and scope of knowledge and justified belief , and ( 4 ) the criteria for knowledge and justification .",
+          "A murder is the unlawful killing of another human without justification or valid excuse , especially the unlawful killing of another human being with malice aforethought .",
+          "In Western society 's analytic tradition , the empirical sciences and especially natural sciences use tools from formal sciences , such as mathematics and logic , converting information about nature into measurements which can be explained as clear statements of the `` laws of nature '' ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "d0b46f893346b1a1",
+          "8ebf710ddb560f6c",
+          "4e0cc9b56f9733e6",
+          "3d44fe33eb7cc3c0",
+          "d43038a3b584964e"
+        ],
+        "evidence_sentences": [
+          "Theory of justification is a part of epistemology that attempts to understand the justification of propositions and beliefs .",
+          "Epistemology studies the nature of knowledge , justification , and the rationality of belief .",
+          "Much of the debate in epistemology centers on four areas : ( 1 ) the philosophical analysis of the nature of knowledge and how it relates to such concepts as truth , belief , and justification , ( 2 ) various problems of skepticism , ( 3 ) the sources and scope of knowledge and justified belief , and ( 4 ) the criteria for knowledge and justification .",
+          "A murder is the unlawful killing of another human without justification or valid excuse , especially the unlawful killing of another human being with malice aforethought .",
+          "The term interdisciplinary is applied within education and training pedagogies to describe studies that use methods and insights of several established disciplines or traditional fields of study ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "d0b46f893346b1a1",
+          "8ebf710ddb560f6c",
+          "4e0cc9b56f9733e6",
+          "3d44fe33eb7cc3c0",
+          "b3379a9f00729fd4"
+        ],
+        "evidence_sentences": [
+          "Theory of justification is a part of epistemology that attempts to understand the justification of propositions and beliefs .",
+          "Epistemology studies the nature of knowledge , justification , and the rationality of belief .",
+          "Much of the debate in epistemology centers on four areas : ( 1 ) the philosophical analysis of the nature of knowledge and how it relates to such concepts as truth , belief , and justification , ( 2 ) various problems of skepticism , ( 3 ) the sources and scope of knowledge and justified belief , and ( 4 ) the criteria for knowledge and justification .",
+          "A murder is the unlawful killing of another human without justification or valid excuse , especially the unlawful killing of another human being with malice aforethought .",
+          "Buddhism ( [ pron\u02c8b\u028ad\u026az\u0259m ] or [ \u02c8bu\u02d0d\u026az\u0259m ] ) is an Indian religion and dharma that encompasses a variety of traditions , beliefs and spiritual practices largely based on teachings attributed to the Buddha ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.5062496744995104
+  },
+  {
+    "claim": "Stanley Williams was a person who committed crimes.",
+    "label": true,
+    "argus_raw_probability": 0.5179090021040188,
+    "n_arguments": 12,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_4",
+        "arg_5",
+        "arg_6",
+        "arg_10",
+        "arg_11",
+        "arg_12"
+      ]
+    },
+    "dropped_edges": [],
+    "symbolic_coverage": 0.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Stanley Williams was convicted in 1981 of four counts of first-degree murder, robbery, and weapon possession, conclusively establishing in a court of law that he committed serious crimes.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Before his notorious murder convictions, Williams co-founded the Crips gang, an organization whose primary activities involved widespread criminal enterprises, robberies, and violence.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Williams himself admitted to participating in various illegal activities and gang-related violence during his youth and early adulthood before his incarceration.",
+        "attacks": [],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "The claim that Stanley Williams committed crimes is false because his trial was marred by systemic racial bias, prosecutorial misconduct, and the exclusion of key evidence, rendering the 1981 conviction legally illegitimate and ethically void.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_5",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Attributions regarding the founding of the Crips rely heavily on sensationalized media narratives and unreliable jailhouse informant testimonies rather than verifiable, objective proof of Williams's personal criminal actions.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_6",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Williams's later admissions of gang involvement were part of a comprehensive, coerced narrative or taken out of context from literature he wrote aimed at steering youth away from violence, rather than admissions of actual criminal offenses.",
+        "attacks": [
+          "arg_3"
+        ],
+        "self_confidence": 0.75
+      },
+      {
+        "id": "arg_7",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Dismissing a formal court conviction of four counts of first-degree murder as 'legally illegitimate' ignores the fact that multiple appellate courts, including the California Supreme Court and federal courts, thoroughly reviewed and repeatedly upheld Williams's convictions and death sentence over decades.",
+        "attacks": [
+          "arg_4"
+        ],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_8",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Characterizing Williams's role in the Crips as mere sensationalized media overlooks his own autobiographical writings and historical documentation where he openly detailed his leadership and criminal activities within the gang.",
+        "attacks": [
+          "arg_5"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_9",
+        "agent": "advocate",
+        "round": 2,
+        "text": "To claim that Williams's explicit admissions of gang-related violence and illegal acts were merely coerced or taken out of context contradicts his own public advocacy work, which was built upon the premise of acknowledging his past criminal behavior to deter others.",
+        "attacks": [
+          "arg_6"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_10",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "The repeated affirmation of a flawed verdict by appellate courts does not erase the foundational constitutional violations, such as the systematic exclusion of African American jurors through peremptory challenges, which permanently tainted the integrity of the judicial process.",
+        "attacks": [
+          "arg_7"
+        ],
+        "self_confidence": 0.85
+      },
+      {
+        "id": "arg_11",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Relying on historical documentation and autobiographical reflections to establish literal criminal liability ignores the literary conventions of urban memoirs, where myth-making and the amplification of street personas often overshadow objective reality.",
+        "attacks": [
+          "arg_8"
+        ],
+        "self_confidence": 0.8
+      },
+      {
+        "id": "arg_12",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Acknowledging a troubled past to establish credibility with at-risk youth is a standard rhetorical strategy in intervention work, and framing these pedagogical confessions as literal admissions of specific, prosecutable crimes misinterprets the communicative intent of his peace initiatives.",
+        "attacks": [
+          "arg_9"
+        ],
+        "self_confidence": 0.82
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "49c954cb4a2d23ec",
+          "5b189aff85af0850",
+          "a31c6026bfb5b53d",
+          "e55e445c0742a74a"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "He served during the Vietnam War and was acquitted in a court-martial of war crimes charges in 1971 .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "After Manson was charged with the crimes of which he was later convicted , recordings of songs written and performed by him were released commercially .",
+          "As a captain and administrator , Bradman was committed to attacking , entertaining cricket ; he drew spectators in record numbers ."
+        ],
+        "triples": [
+          "Stanley Williams | convicted_of | four counts of first-degree murder, robbery, and weapon possession"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "5f51f6116a0b6444",
+          "28d3804c1b344091",
+          "5b189aff85af0850",
+          "f0332769b9396d86"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "The Barrow Gang was an American criminal organization active between 1932 and 1934 .",
+          "They have been involved in murders , robberies and drug dealing , among other crimes .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "The Crips are a primarily African-American gang ."
+        ],
+        "triples": [
+          "Williams | founder_of | Crips gang"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "8f3f449ddea11739",
+          "5b189aff85af0850",
+          "36527c68cca00b8e",
+          "ee633b1b41d85fa6"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "He combines activities in the television , film , hospitality , and food industries and has promoted and hired various chefs who have apprenticed under his wing .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "Girl was Williams ' first studio album since his 2006 debut , In My Mind .",
+          "A monk may be a person who decided to dedicate his life to serving all other living beings , or to be an ascetic who voluntarily chooses to leave mainstream society and live his or her life in prayer and contemplation ."
+        ],
+        "triples": [
+          "Williams | participated_in | illegal activities and gang-related violence"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "5b189aff85af0850",
+          "2ec4866df52718ad",
+          "67b986aad61e49f7",
+          "49c954cb4a2d23ec",
+          "a31c6026bfb5b53d"
+        ],
+        "evidence_sentences": [
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "The film centers on Stanley Jobson , an ex-con and computer hacker who is targeted for recruitment into a bank robbery conspiracy because of his formidable hacking skills .",
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "He served during the Vietnam War and was acquitted in a court-martial of war crimes charges in 1971 .",
+          "After Manson was charged with the crimes of which he was later convicted , recordings of songs written and performed by him were released commercially ."
+        ],
+        "triples": [
+          "Stanley Williams | committed | crimes"
+        ]
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "5b189aff85af0850",
+          "2de571beb7cfc967",
+          "c57fd44b2e89507c",
+          "4471475cad296062"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "The album was released on March 3 , 2014 , through Williams ' label i Am Other and Columbia Records .",
+          "The song was released on March 10 , 2014 as the second single from Williams ' second studio album Girl ( 2014 ) .",
+          "Williams was the second inmate in California to be executed in 2005 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "5b189aff85af0850",
+          "ef0391b1f4d1d9a5",
+          "a31c6026bfb5b53d",
+          "5f51f6116a0b6444"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "A volunteer military or all-volunteer military is one which derives its manpower from volunteers rather than conscription or mandatory service .",
+          "After Manson was charged with the crimes of which he was later convicted , recordings of songs written and performed by him were released commercially .",
+          "The Barrow Gang was an American criminal organization active between 1932 and 1934 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "408da6ebaa6cc32d",
+          "49c954cb4a2d23ec",
+          "05ea6e8aadbf044c",
+          "5b189aff85af0850",
+          "1df0becf77c01855"
+        ],
+        "evidence_sentences": [
+          "Manson also received first-degree murder convictions for the deaths of Gary Hinman and Donald `` Shorty '' Shea .",
+          "He served during the Vietnam War and was acquitted in a court-martial of war crimes charges in 1971 .",
+          "On May 14 , 2015 , the Supreme Court of Canada rejected the federal government 's position , ruling that Khadr had clearly been sentenced by the U.S. military tribunal as a minor .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "The highlight of Burr 's tenure as president of the Senate , one of his few official duties as vice president , was the Senate 's first impeachment trial , that of Supreme Court justice Samuel Chase ."
+        ],
+        "triples": [
+          "California Supreme Court and federal courts | upheld | Williams's convictions and death sentence"
+        ]
+      },
+      {
+        "argument_id": "arg_8",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "5f51f6116a0b6444",
+          "8f3f449ddea11739",
+          "f0332769b9396d86",
+          "b93a3f835cbb174f"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "The Barrow Gang was an American criminal organization active between 1932 and 1934 .",
+          "He combines activities in the television , film , hospitality , and food industries and has promoted and hired various chefs who have apprenticed under his wing .",
+          "The Crips are a primarily African-American gang .",
+          "Clarence Williams III ( born August 21 , 1939 ) is an American actor who is perhaps best known for his role as `` Linc Hayes '' on the iconic `` hippie '' cop show The Mod Squad ( 1968 -- 1973 ) ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_9",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "5b189aff85af0850",
+          "5f51f6116a0b6444",
+          "6391db37c0274fc1",
+          "773b0083fe0b4d2a"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "They were founded in Los Angeles , California in 1969 mainly by Raymond Washington and Stanley Williams .",
+          "The Barrow Gang was an American criminal organization active between 1932 and 1934 .",
+          "After his father 's death in 1952 , Murdoch declined to join his late father 's registered public company and created his own private company , News Limited .",
+          "It built upon the success of his previous effort , New Moon Shine ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_10",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "ba63c0d93b5f13e1",
+          "4be90f7661ee4f4c",
+          "a499f659527d5ee5",
+          "f438b292a35e9c7c",
+          "f8598d082f5f9386"
+        ],
+        "evidence_sentences": [
+          "The only inauguration element mandated by the United States Constitution is that the president make an oath or affirmation before that person can `` enter on the Execution '' of the office of the presidency .",
+          "It is a partner of the Tripartite Alliance with the African National Congress and the Congress of South African Trade Unions ( COSATU ) and through this it influences the South African government .",
+          "The press secretary serves by the appointment of and at the pleasure of the president ; the office does not require the advice and consent of the U.S. Senate , though because of the frequent briefings given to the media , who in turn inform the public , the position is still a very prominent non-Cabinet post .",
+          "The Second Constitutional Era ( \u0627\u064a\u06a9\u0646\u062c\u0649 \u0645\u0634\u0631\u0648\u0637\u064a\u062a \u062f\u0648\u0631\u0649 \u0130kinci Me\u015fr\u00fbtiyyet Devri ) of the Ottoman Empire established shortly after the 1908 Young Turk Revolution which forced Sultan Abdul Hamid II to restore the constitutional monarchy by the revival of the Ottoman parliament , the General Assembly of the Ottoman Empire and the restoration of the constitution of 1876 .",
+          "The Charter of the United Nations ( also known as the UN Charter ) of 1945 is the foundational treaty of the United Nations , an intergovernmental organization ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_11",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "67b986aad61e49f7",
+          "db96eb60c516243f",
+          "3085b1cd603b5877",
+          "8b6da1c13ef216d1",
+          "5f51f6116a0b6444"
+        ],
+        "evidence_sentences": [
+          "Stanley `` Tookie '' Williams III ( December 29 , 1953 -- December 13 , 2005 ) was an American gang member and convicted murderer , who was part of the West Side Crips , a street gang which has its roots in South Central Los Angeles in 1969 .",
+          "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels .",
+          "He is known for his role as Connor Walsh on the ABC television legal drama How to Get Away with Murder , and for playing Benjamin Stringfellow on the PBS historical drama Mercy Street .",
+          "The Sex Factor is an online reality TV series produced by xHamster where eight men and eight women compete to become a porn star .",
+          "The Barrow Gang was an American criminal organization active between 1932 and 1934 ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_12",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "49c954cb4a2d23ec",
+          "a31c6026bfb5b53d",
+          "28d3804c1b344091",
+          "305f6a065564e910",
+          "0c9f754c18d0ff9e"
+        ],
+        "evidence_sentences": [
+          "He served during the Vietnam War and was acquitted in a court-martial of war crimes charges in 1971 .",
+          "After Manson was charged with the crimes of which he was later convicted , recordings of songs written and performed by him were released commercially .",
+          "They have been involved in murders , robberies and drug dealing , among other crimes .",
+          "The film treats themes of morality , greed , and the roles of lust , money , and luck in life , leading many to compare it to Allen 's earlier film Crimes and Misdemeanors ( 1989 ) .",
+          "After acquiring the role and before Friends aired , Aniston was temporarily at risk of being recast because she had also been involved with another sitcom , Muddling Through , at the time , which was ultimately canceled and allowed Aniston to remain on Friends ."
+        ],
+        "triples": []
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.5179090021040188
   }
 ]

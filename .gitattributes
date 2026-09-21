@@ -1,0 +1,23 @@
+# Line endings are normalised to LF in the working tree, not just in the repo.
+#
+# Without this, `core.autocrlf=true` (set on this clone) rewrites every checked
+# out file to CRLF while Prettier defaults to `endOfLine: "lf"` — so
+# `npm run lint` reported a "Delete ␍" error on essentially every line of the
+# frontend and was unusable. Committing this makes the checkout deterministic
+# regardless of each developer's autocrlf setting.
+* text=auto eol=lf
+
+# Windows-only scripts genuinely need CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary: never translate, never diff as text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.pkl binary

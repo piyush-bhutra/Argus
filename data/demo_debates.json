@@ -504,7 +504,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.06333333333333335
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -705,7 +715,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.5,
+        "confidence": 0.19499999999999995
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -934,7 +954,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.013333333333333308
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -1142,7 +1172,17 @@
             "Brazzers | located_in | Montreal"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.3333333333333333,
+        "factcheck": 1.0,
+        "confidence": 0.09499999999999997
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -1339,7 +1379,17 @@
             "music album | is_a | speech"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.5,
+        "factcheck": 0.0,
+        "confidence": -0.020000000000000018
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -1529,7 +1579,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.14500000000000002
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -1715,7 +1775,17 @@
             "Danger UXB | released_in | 1979"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -1.0,
+        "factcheck": -1.0,
+        "confidence": -0.14
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -1985,7 +2055,17 @@
             "Advertising | encompasses | text-based search ads"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": -0.030000000000000027
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -2248,7 +2328,17 @@
             "The original World Trade Center | known_as | Twin Towers complex"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": -0.036666666666666736
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -2465,7 +2555,17 @@
             "Edmund H. North | written_by | Twilight"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.040000000000000036
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -2667,7 +2767,17 @@
             "Glee.com | founded_in | 2010"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.0
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -2887,7 +2997,17 @@
             "Brubaker | released_in | 1980"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.6666666666666666,
+        "factcheck": -0.5,
+        "confidence": -0.09666666666666679
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -3125,7 +3245,17 @@
             "Meteora | created_by | Linkin Park"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.5,
+        "factcheck": -0.16666666666666669,
+        "confidence": 0.08999999999999997
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -3514,7 +3644,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.2,
+        "confidence": 0.07399999999999995
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -3767,7 +3907,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.17500000000000004
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -3963,7 +4113,17 @@
             "Miracle at St. Anna | located_in | France"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.5,
+        "confidence": -0.07500000000000007
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -4210,7 +4370,17 @@
             "Helium-3 | genre | science fiction"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.5,
+        "confidence": 0.036666666666666736
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -4469,7 +4639,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.33333333333333337,
+        "confidence": 0.09666666666666657
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -4744,7 +4924,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.3333333333333333,
+        "confidence": 0.07333333333333336
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -5026,7 +5216,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.15749999999999997
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -5244,7 +5444,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.17499999999999993
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -5436,7 +5646,17 @@
             "Topman | includes | Arnotts"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": -0.5,
+        "confidence": 0.0
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -5745,7 +5965,17 @@
             "Fist of Legend | action_choreography_by | Yuen Woo-ping"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.3333333333333333,
+        "factcheck": 0.26666666666666666,
+        "confidence": 0.08133333333333348
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -6006,7 +6236,17 @@
             "Richard Alf | founder_of | San Diego Comic-Con"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.5,
+        "factcheck": 0.16666666666666663,
+        "confidence": -0.023333333333333317
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -6330,7 +6570,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.008666666666666711
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -6562,7 +6812,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.5,
+        "factcheck": 0.0,
+        "confidence": -0.12
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -6796,7 +7056,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.046666666666666745
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -7012,7 +7282,17 @@
             "the theatre | postal_delivery_tied_to | Victoria Street"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": -0.5,
+        "confidence": -0.07000000000000006
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -7202,7 +7482,17 @@
             "Damon Albarn | issued_refusal_to_work_with | Brian Eno"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": -0.09999999999999998
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -7516,7 +7806,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": -0.05500000000000005
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -7750,7 +8050,17 @@
             "Swordfish | is_a | feature film"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.5,
+        "confidence": -0.04500000000000004
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -8005,7 +8315,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.07250000000000001
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -8225,7 +8545,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.17000000000000004
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -8591,7 +8921,17 @@
             "Juventus Stadium | located_in | Lisbon metropolitan sports district"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": -0.25,
+        "confidence": -0.17100000000000015
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -8876,7 +9216,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.25,
+        "factcheck": 0.5,
+        "confidence": 0.1266666666666666
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -9107,7 +9457,17 @@
             "Miguel de Cervantes | born_in | 16th century"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.3333333333333333,
+        "factcheck": 0.6666666666666666,
+        "confidence": -0.03166666666666673
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -9305,7 +9665,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.16666666666666666,
+        "factcheck": 0.33333333333333337,
+        "confidence": -0.09499999999999997
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -9658,7 +10028,17 @@
             "Aarhus | located_in | east coast of Jutland"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.2,
+        "factcheck": 0.45,
+        "confidence": -0.12300000000000011
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -9908,7 +10288,17 @@
             "Soul Surfer | based_on | Soul Surfer: A True Story of Faith, Family, and Fighting to Get Back on the Board"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.8333333333333334,
+        "factcheck": 1.75,
+        "confidence": 0.16500000000000004
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -10133,7 +10523,17 @@
             "A Milli | is_a | Mos Def song"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.25,
+        "factcheck": 0.5,
+        "confidence": -0.16166666666666663
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -10370,7 +10770,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": -0.16666666666666663,
+        "confidence": 0.17166666666666675
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -10555,7 +10965,17 @@
             "Shane Black | born_on | May 11, 1961"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 1.0,
+        "factcheck": 2.0,
+        "confidence": 0.040000000000000036
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -10816,7 +11236,17 @@
             "Cheese in the Trap | produced_by | Japanese distribution partners"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.5,
+        "confidence": 0.14
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -11030,7 +11460,17 @@
             "Hickam | profession | aerospace engineer"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -0.5,
+        "factcheck": -0.5,
+        "confidence": -0.125
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -11166,7 +11606,17 @@
             "Shadowhunters | premiered_on | 2016"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.0
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -11596,7 +12046,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.07666666666666677
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -11904,7 +12364,17 @@
             "Paul Doumer | employer | Governor-General"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.11333333333333329
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -12127,7 +12597,17 @@
             "franchise | known_as | Capital and Washington Bullets"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": -1.0,
+        "factcheck": -1.0,
+        "confidence": -0.056666666666666754
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -12454,7 +12934,17 @@
             "enterprise | located_in | Cyprus"
           ]
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": -0.4,
+        "confidence": 0.008666666666666711
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [
@@ -12689,7 +13179,17 @@
           ],
           "triples": []
         }
-      ]
+      ],
+      "signals": {
+        "structural": 0.0,
+        "factcheck": 0.0,
+        "confidence": 0.14
+      },
+      "signal_weights": {
+        "structural": 1.0,
+        "factcheck": 1.0,
+        "confidence": 0.5
+      }
     },
     "graph": {
       "nodes": [

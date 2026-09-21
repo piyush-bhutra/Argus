@@ -33,7 +33,9 @@ function Evidence({ fc }: { fc: FactCheck }) {
       <div className="flex flex-wrap items-center gap-2">
         <Mono className="tracking-[.12em] text-ink-muted">EVIDENCE</Mono>
         <span className={`font-mono text-data-sm font-semibold ${tone}`}>
-          {decided ? `${fc.support_score > 0 ? "+" : ""}${fc.support_score.toFixed(2)}` : "ABSTAINED"}
+          {decided
+            ? `${fc.support_score > 0 ? "+" : ""}${fc.support_score.toFixed(2)}`
+            : "ABSTAINED"}
         </span>
         {fc.rules_fired.length > 0 && (
           <span className="font-mono text-data-sm text-ink-muted">
@@ -59,8 +61,8 @@ function Evidence({ fc }: { fc: FactCheck }) {
       ) : (
         !decided && (
           <p className="mt-1.5 mb-0 text-[13.5px] leading-[19px] text-ink-faint">
-            No retrieved evidence matched this argument, so the rules abstained
-            rather than guessing. It contributes nothing to the verdict.
+            No retrieved evidence matched this argument, so the rules abstained rather than
+            guessing. It contributes nothing to the verdict.
           </p>
         )
       )}

@@ -21,11 +21,26 @@ from app.models.schemas import Argument, GraphEdge, GraphNode, GraphResponse, Ve
 from app.services import debate_store
 from app.services.fact_checker import check_transcript, symbolic_coverage
 from app.services.gating import gate_attacks
-from app.services.judge import apply_calibration, compute_raw_probability
+from app.services.judge import (
+    CONFIDENCE_WEIGHT,
+    FACTCHECK_WEIGHT,
+    STRUCTURAL_WEIGHT,
+    apply_calibration,
+    compute_raw_probability,
+    compute_signals,
+)
 from app.services.orchestrator import run_debate
 from app.services.semantics_engine import compute_grounded_extension
 
 _CALIBRATOR_FILE = Path(__file__).resolve().parents[2] / "data" / "calibrator.pkl"
+
+# Shipped with every verdict so the displayed breakdown can be checked
+# against the probability rather than taken on trust.
+SIGNAL_WEIGHTS = {
+    "structural": STRUCTURAL_WEIGHT,
+    "factcheck": FACTCHECK_WEIGHT,
+    "confidence": CONFIDENCE_WEIGHT,
+}
 
 
 def _load_calibrator():
@@ -150,6 +165,8 @@ def assemble_verdict(
         dropped_edges=[[s, t] for s, t in dropped],
         symbolic_coverage=symbolic_coverage(fact_results),
         fact_checks=fact_results,
+        signals=compute_signals(grounded, fact_results, transcript),
+        signal_weights=SIGNAL_WEIGHTS,
     )
 
 

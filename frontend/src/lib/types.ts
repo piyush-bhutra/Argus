@@ -64,5 +64,14 @@ export interface Verdict {
   dropped_edges?: [string, string][];
   /** Fraction of arguments the symbolic rules could decide. The rest abstained. */
   symbolic_coverage?: number | null;
+  /**
+   * The three signals the judge combined, each in [-1, 1], positive favouring
+   * the claim. Rendered as the graded "subjects" of the report card — shown only
+   * a final probability, a reader cannot tell whether it came from the argument
+   * graph, the evidence, or how confident the agents merely sounded.
+   */
+  signals?: { structural: number; factcheck: number; confidence: number };
+  /** Weights those signals were combined with, so the arithmetic can be checked. */
+  signal_weights?: { structural: number; factcheck: number; confidence: number };
   fact_checks?: FactCheck[];
 }

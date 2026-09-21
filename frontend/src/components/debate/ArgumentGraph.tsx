@@ -24,9 +24,21 @@ const HEIGHT = 392;
 const colX = (round: number) => 13 + (round - 1) * COL;
 const rowY = (agent: GraphNode["agent"]) => (agent === "advocate" ? 40 : 214);
 
-const STEP_MS = 620; // one reveal step per debate round
+const STEP_FALLBACK_MS = 620; // used during SSR, where no computed style exists
 
 /** Replay: hides everything, reveals one round per step, then re-applies the marks. */
+/** A duration token from the stylesheet, in ms. Falls back during SSR. */
+function readMs(token: string, fallback: number): number {
+  if (typeof window === "undefined") return fallback;
+  const raw = getComputedStyle(document.documentElement).getPropertyValue(token).trim();
+  const ms = raw.endsWith("ms")
+    ? parseFloat(raw)
+    : raw.endsWith("s")
+      ? parseFloat(raw) * 1000
+      : NaN;
+  return Number.isFinite(ms) && ms > 0 ? ms : fallback;
+}
+
 function useReplay(cols: number) {
   const [stage, setStage] = useState(Infinity); // highest round revealed
   const [marksOn, setMarksOn] = useState(true);
@@ -38,17 +50,24 @@ function useReplay(cols: number) {
   useEffect(() => clear, []);
 
   function replay() {
+    // Read at replay time, not at module scope: a module-level getComputedStyle
+    // runs during SSR where there is no document, and would bake in a value
+    // before the stylesheet is necessarily applied.
+    const step = readMs("--stagger-round", STEP_FALLBACK_MS);
     clear();
     setStage(0);
     setMarksOn(false);
     for (let r = 1; r <= cols; r++) {
-      timers.current.push(setTimeout(() => setStage(r), 260 + (r - 1) * STEP_MS));
+      timers.current.push(setTimeout(() => setStage(r), 260 + (r - 1) * step));
     }
     timers.current.push(
-      setTimeout(() => {
-        setStage(Infinity);
-        setMarksOn(true);
-      }, 260 + (cols - 1) * STEP_MS + 740),
+      setTimeout(
+        () => {
+          setStage(Infinity);
+          setMarksOn(true);
+        },
+        260 + (cols - 1) * step + 740,
+      ),
     );
   }
 
@@ -82,7 +101,11 @@ function Node({
         opacity: visible ? 1 : 0,
         filter: crossed ? "grayscale(1) opacity(.6)" : "none",
         // Swapping the animation restarts it — that's what makes replay work without remounting.
-        animation: !visible ? "none" : marked && survives ? "var(--animate-glow)" : "var(--animate-pop-in)",
+        animation: !visible
+          ? "none"
+          : marked && survives
+            ? "var(--animate-glow)"
+            : "var(--animate-pop-in)",
       }}
       className="postit-sheen absolute z-[3] rounded-postit px-3 pt-2.5 pb-2.5 shadow-postit-sm transition-[opacity,filter] duration-(--duration-fade)"
     >
@@ -161,7 +184,10 @@ export function ArgumentGraph({ graph, survivors, resolved, live, rounds, texts 
                 style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
               >
                 {Array.from({ length: cols }, (_, i) => (
-                  <div key={i} className="flex justify-center border-l border-dashed border-[#ded8ca] pt-0.5">
+                  <div
+                    key={i}
+                    className="flex justify-center border-l border-dashed border-[#ded8ca] pt-0.5"
+                  >
                     <Mono className="tracking-[.16em] text-ink-ghost">ROUND {i + 1}</Mono>
                   </div>
                 ))}
@@ -211,7 +237,8 @@ export function ArgumentGraph({ graph, survivors, resolved, live, rounds, texts 
                       markerEnd="url(#argus-arrow)"
                       style={{
                         opacity: shown ? (dim ? 0.45 : 1) : 0,
-                        transition: "opacity var(--duration-fade) ease, stroke var(--duration-fade) ease",
+                        transition:
+                          "opacity var(--duration-fade) ease, stroke var(--duration-fade) ease",
                       }}
                     />
                   );
@@ -257,8 +284,16 @@ export function ArgumentGraph({ graph, survivors, resolved, live, rounds, texts 
               </div>
               {resolved && (
                 <div className="mt-2.5 font-mono text-[11px] text-ink">
-                  IN {`{${nodes.filter((n) => survivors.has(n.id)).map((n) => n.label ?? n.id).join(", ")}}`} · OUT{" "}
-                  {`{${nodes.filter((n) => !survivors.has(n.id)).map((n) => n.label ?? n.id).join(", ")}}`}
+                  IN{" "}
+                  {`{${nodes
+                    .filter((n) => survivors.has(n.id))
+                    .map((n) => n.label ?? n.id)
+                    .join(", ")}}`}{" "}
+                  · OUT{" "}
+                  {`{${nodes
+                    .filter((n) => !survivors.has(n.id))
+                    .map((n) => n.label ?? n.id)
+                    .join(", ")}}`}
                 </div>
               )}
             </div>

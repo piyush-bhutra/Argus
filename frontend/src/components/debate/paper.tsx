@@ -66,7 +66,13 @@ export function SectionHeader({
 }
 
 /** Pending state: hatched panel + a specific reason (never a generic shimmer). */
-export function LockedPanel({ label = "SECTION LOCKED", reason }: { label?: string; reason: ReactNode }) {
+export function LockedPanel({
+  label = "SECTION LOCKED",
+  reason,
+}: {
+  label?: string;
+  reason: ReactNode;
+}) {
   return (
     <div className="paper-hatched mt-2 rounded-[3px] border-[1.5px] border-dashed border-locked-border px-6 py-9 text-center">
       <Mono className="tracking-data-wide">{label}</Mono>

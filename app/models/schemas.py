@@ -42,6 +42,14 @@ class Verdict(BaseModel):
     # rests on, and a score a reader cannot follow back to a source sentence is
     # an assertion rather than evidence.
     fact_checks: List[FactCheckResult] = []
+    # The three signals the judge combined, each in [-1, 1], positive favouring
+    # the claim. Reported rather than just summed: shown only a final
+    # probability, a reader cannot tell whether it came from the argument graph,
+    # from the evidence, or from how confident the agents merely sounded.
+    signals: Dict[str, float] = {}
+    # The weights those signals were combined with, so the arithmetic on screen
+    # can be checked against the number.
+    signal_weights: Dict[str, float] = {}
 
 # A claim is one sentence to verify, not a document. The cap matters because the
 # claim is embedded in EVERY prompt of the debate — roughly six LLM calls — so an

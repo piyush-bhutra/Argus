@@ -19,8 +19,8 @@ from pathlib import Path
 
 from app.models.schemas import Argument, GraphResponse, Verdict
 from app.services.gating import DEFAULT_TAU, gate_attacks
-from app.services.pipeline import build_graph
-from app.services.judge import compute_raw_probability
+from app.services.pipeline import SIGNAL_WEIGHTS, build_graph
+from app.services.judge import compute_raw_probability, compute_signals
 from app.services.semantics_engine import compute_grounded_extension
 from scripts.rescore import _fact_results, load_artifacts
 
@@ -62,6 +62,8 @@ def to_record(row: dict, taken: set, tau: float = DEFAULT_TAU) -> dict:
         dropped_edges=[[s, t] for s, t in dropped],
         symbolic_coverage=row.get("symbolic_coverage"),
         fact_checks=facts,
+        signals=compute_signals(grounded, facts, arguments),
+        signal_weights=SIGNAL_WEIGHTS,
     )
 
     # The graph is built over the GATED arguments so the rendered edges are the

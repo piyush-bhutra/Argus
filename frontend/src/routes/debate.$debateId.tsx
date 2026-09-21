@@ -95,6 +95,53 @@ function DebateView() {
   // The transcript doesn't carry the claim; the landing page stores it at start.
   const [storedClaim, setStoredClaim] = useState<string | null>(null);
   useEffect(() => setStoredClaim(readStoredClaim(debateId)), [debateId]);
+
+  // Extracted so the dependency below is a plain boolean the linter can check;
+  // an inline `args.length > 0` is a complex expression it cannot verify.
+  const hasArguments = args.length > 0;
+
+  // The ONE auto-scroll (brief §1): when the first argument arrives, bring the
+  // transcript into view exactly once, then never again. Any manual input -
+  // wheel, touch, or a key - cancels it immediately, mid-flight included.
+  // The user must always be free to read elsewhere while the debate streams.
+  useEffect(() => {
+    if (!hasArguments) return;
+    const el = document.getElementById("sec-debate");
+    if (!el) return;
+
+    let cancelled = false;
+    const cancel = () => {
+      cancelled = true;
+      // Interrupting a smooth scroll means stopping where it is, not snapping
+      // back: scrollTo with the current offset halts the animation in place.
+      window.scrollTo({ top: window.scrollY, behavior: "auto" });
+      detach();
+    };
+    const detach = () => {
+      for (const ev of ["wheel", "touchstart", "keydown"] as const) {
+        window.removeEventListener(ev, cancel);
+      }
+    };
+    for (const ev of ["wheel", "touchstart", "keydown"] as const) {
+      window.addEventListener(ev, cancel, { passive: true, once: true });
+    }
+
+    // One frame's grace so the just-arrived card is laid out before measuring.
+    const id = requestAnimationFrame(() => {
+      if (cancelled) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top, behavior: "smooth" });
+      // Release the listeners once the scroll has had time to settle.
+      window.setTimeout(detach, 1200);
+    });
+
+    return () => {
+      cancelAnimationFrame(id);
+      detach();
+    };
+    // Deliberately keyed on "has any argument yet", not on args.length: a
+    // dependency that changes per arriving card would re-scroll every turn.
+  }, [hasArguments]);
   const claim = verdict.data?.claim ?? storedClaim ?? "";
 
   const { start, pending } = useStartDebate();
@@ -251,8 +298,8 @@ function ClaimStickyBar({
         {failed ? (
           <span className={cn(chip, "border-mark-out text-mark-out")}>FAILED</span>
         ) : inProgress ? (
-          <span className={cn(chip, "flex items-center gap-1.5 border-mark-out text-mark-out")}>
-            <span className="size-1.5 animate-pulse rounded-full bg-mark-out" /> LIVE · POLLING
+          <span className={cn(chip, "flex items-center gap-1.5 border-ink-strong text-ink-strong")}>
+            <span className="size-1.5 animate-pulse rounded-full bg-ink-strong" /> LIVE · POLLING
           </span>
         ) : (
           <span className={cn(chip, "border-hairline-dashed text-ink-muted")}>
@@ -267,7 +314,7 @@ function ClaimStickyBar({
                 "size-2.5 rounded-full",
                 pass
                   ? "bg-mark-in shadow-[0_0_0_2px_#fff,0_0_0_3px_var(--color-mark-in)]"
-                  : "bg-mark-out shadow-[0_0_0_2px_#fff,0_0_0_3px_var(--color-mark-out)]",
+                  : "bg-ink-strong shadow-[0_0_0_2px_#fff,0_0_0_3px_var(--color-ink-strong)]",
               )}
             />
             <span className="font-mono text-[17px] font-semibold">
@@ -346,11 +393,18 @@ function ProgressRail({ status }: { status: Record<Section, Status> }) {
 
   const dot: Record<Status, string> = {
     done: "bg-ink-strong border-ink-strong",
-    running: "bg-mark-out border-mark-out",
+    // Live, not alarming: an inked dot that breathes. Red here would appear
+    // on every debate and stop meaning "graded".
+    running: "bg-ink-strong border-ink-strong animate-pulse",
     failed: "bg-transparent border-mark-out",
     pending: "bg-transparent border-ink-ghost",
   };
-  const hint: Record<Status, string> = { done: "", running: "live", failed: "failed", pending: "pending" };
+  const hint: Record<Status, string> = {
+    done: "",
+    running: "live",
+    failed: "failed",
+    pending: "pending",
+  };
 
   return (
     <nav className="sticky top-(--spacing-rail-offset) z-[35] border-b border-hairline bg-paper-card/95 backdrop-blur-[3px]">
@@ -361,12 +415,16 @@ function ProgressRail({ status }: { status: Record<Section, Status> }) {
             onClick={() => jump(key)}
             className={cn(
               "flex shrink-0 items-center gap-[7px] border-b-2 px-3 pt-2.5 pb-[7px] font-mono text-data font-medium tracking-data",
-              active === key ? "border-mark-out text-ink-strong" : "border-transparent text-ink-faint",
+              active === key
+                ? "border-ink-strong text-ink-strong"
+                : "border-transparent text-ink-faint",
             )}
           >
             <span className={cn("size-[7px] rounded-full border", dot[status[key]])} />
             {key.toUpperCase()}
-            <span className="text-[8.5px] tracking-[.08em] text-ink-ghost">{hint[status[key]]}</span>
+            <span className="text-[8.5px] tracking-[.08em] text-ink-ghost">
+              {hint[status[key]]}
+            </span>
           </button>
         ))}
       </div>

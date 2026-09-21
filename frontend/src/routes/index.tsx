@@ -52,7 +52,9 @@ function ClaimScreen() {
           <Mono className="tracking-data-wide">
             MULTI-AGENT DEBATE · GROUNDED EXTENSION · CALIBRATED P(TRUE)
           </Mono>
-          <h1 className="mt-2.5 mb-1.5 font-marker text-hero tracking-[1px] text-ink-strong">Argus</h1>
+          <h1 className="mt-2.5 mb-1.5 font-marker text-hero tracking-[1px] text-ink-strong">
+            Argus
+          </h1>
           <p className="mb-7 max-w-[640px] text-lead text-pretty text-ink-soft">
             An Advocate and a Skeptic argue your claim across rounds. An argumentation engine
             decides which arguments structurally survive — then the judge hands back a calibrated
@@ -101,10 +103,17 @@ function ClaimScreen() {
               </div>
             </div>
             <div>
-              <Mono className="tracking-[.16em]">OR OPEN A CACHED DEBATE · INSTANT, NO RATE LIMIT</Mono>
+              <Mono className="tracking-[.16em]">
+                OR OPEN A CACHED DEBATE · INSTANT, NO RATE LIMIT
+              </Mono>
               <div className="mt-2 flex flex-col gap-2">
                 {CACHED_DEMOS.map((d) => (
-                  <Link key={d.id} to="/debate/$debateId" params={{ debateId: d.id }} className={listItem}>
+                  <Link
+                    key={d.id}
+                    to="/debate/$debateId"
+                    params={{ debateId: d.id }}
+                    className={listItem}
+                  >
                     {d.label}
                   </Link>
                 ))}

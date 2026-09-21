@@ -61,47 +61,51 @@ def structural_signal(
         return 0.0
     return (sum(advocate) - sum(skeptic)) / n_survivors
 
+def compute_signals(
+    grounded_extension: dict[str, list[str]],
+    fact_check_results: list[FactCheckResult],
+    arguments: list[Argument],
+) -> dict[str, float]:
+    """The three signals the judge combines, each in [-1, 1].
+
+    Split out of compute_raw_probability so they can be REPORTED, not just
+    summed. They are the whole of M5 and the substance of the verdict: a reader
+    shown only the final probability cannot see whether it came from the
+    argument graph, from the evidence, or merely from how confident the agents
+    sounded. Positive favours the claim, negative opposes it.
+    """
+    structural = structural_signal(grounded_extension, fact_check_results)
+
+    support = {fc.argument_id: fc.support_score for fc in fact_check_results}
+    side = {arg.id: arg.agent for arg in arguments}
+
+    def mean(values: list[float]) -> float:
+        return sum(values) / len(values) if values else 0.0
+
+    adv_fc = [s for arg_id, s in support.items() if side.get(arg_id) == "advocate"]
+    skp_fc = [s for arg_id, s in support.items() if side.get(arg_id) == "skeptic"]
+
+    adv_conf = [a.self_confidence for a in arguments if a.agent == "advocate"]
+    skp_conf = [a.self_confidence for a in arguments if a.agent == "skeptic"]
+
+    return {
+        "structural": structural,
+        "factcheck": mean(adv_fc) - mean(skp_fc),
+        "confidence": mean(adv_conf) - mean(skp_conf),
+    }
+
+
 def compute_raw_probability(
     grounded_extension: dict[str, list[str]],
     fact_check_results: list[FactCheckResult],
     arguments: list[Argument],
 ) -> float:
-    structural = structural_signal(grounded_extension, fact_check_results)
-
-    fact_check_dict = {fc.argument_id: fc.support_score for fc in fact_check_results}
-    
-    adv_fc_scores = []
-    skp_fc_scores = []
-    
-    arg_side_map = {arg.id: arg.agent for arg in arguments}
-    
-    for arg_id, score in fact_check_dict.items():
-        agent = arg_side_map.get(arg_id)
-        if agent == "advocate":
-            adv_fc_scores.append(score)
-        elif agent == "skeptic":
-            skp_fc_scores.append(score)
-            
-    adv_fc_avg = sum(adv_fc_scores) / len(adv_fc_scores) if adv_fc_scores else 0.0
-    skp_fc_avg = sum(skp_fc_scores) / len(skp_fc_scores) if skp_fc_scores else 0.0
-    
-    factcheck_signal = adv_fc_avg - skp_fc_avg
-
-    adv_conf_scores = [arg.self_confidence for arg in arguments if arg.agent == "advocate"]
-    skp_conf_scores = [arg.self_confidence for arg in arguments if arg.agent == "skeptic"]
-    
-    adv_conf_avg = sum(adv_conf_scores) / len(adv_conf_scores) if adv_conf_scores else 0.0
-    skp_conf_avg = sum(skp_conf_scores) / len(skp_conf_scores) if skp_conf_scores else 0.0
-    
-    confidence_signal = adv_conf_avg - skp_conf_avg
-    
-    raw_probability = sigmoid(
-        STRUCTURAL_WEIGHT * structural +
-        FACTCHECK_WEIGHT * factcheck_signal +
-        CONFIDENCE_WEIGHT * confidence_signal
+    s = compute_signals(grounded_extension, fact_check_results, arguments)
+    return sigmoid(
+        STRUCTURAL_WEIGHT * s["structural"]
+        + FACTCHECK_WEIGHT * s["factcheck"]
+        + CONFIDENCE_WEIGHT * s["confidence"]
     )
-    
-    return raw_probability
 
 def fit_calibrator(raw_probabilities: list[float], true_labels: list[bool]):
     iso_reg = IsotonicRegression(out_of_bounds="clip")
