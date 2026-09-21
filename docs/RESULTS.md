@@ -86,16 +86,25 @@ which is anticonservative at small discordant counts.
 
 ### 3.1 The baseline is a degenerate probability estimator
 
-| | Argus (default) | Baseline |
-|---|---|---|
-| Predictions at ≤0.01 or ≥0.99 | **0 / 50** | **48 / 50** |
-| Distinct probability values | **48** | 3 |
+| | Argus (raw) | Argus (calibrated) | Baseline |
+|---|---|---|---|
+| Predictions at <=0.01 or >=0.99 | **0 / 50** | 6 / 50 | **48 / 50** |
+| Distinct probability values | **54** | 12 | 4 |
 
 The baseline is essentially never uncertain. Its respectable ECE is bought by
 being frequently correct, not by being calibrated — when it is wrong, it is
-wrong at ~100% confidence and offers no way to tell. Argus produces a graded
-distribution with a derivation attached to each value. This is the practical
-difference the calibration metrics are measuring.
+wrong at ~100% confidence and offers no way to tell.
+
+**Calibration costs resolution, and that is worth stating plainly.** Isotonic
+regression is a monotone *step* function, so it collapses 54 distinct raw values
+into 12 levels and saturates at the ends — 6 claims land at 0.00 or 1.00 where
+none did before. That is the price of the ECE improvement in §8, not a free win.
+Argus calibrated remains far less degenerate than the baseline (6 vs 48 at the
+extremes, 12 vs 4 distinct levels), but the "graded, auditable distribution"
+argument is strongest against the **raw** output.
+
+Either way, the meaningful difference is that every Argus value carries a
+derivation; the baseline emits a bare number.
 
 ### 3.2 Structural health
 

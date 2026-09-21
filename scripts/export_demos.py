@@ -19,8 +19,12 @@ from pathlib import Path
 
 from app.models.schemas import Argument, GraphResponse, Verdict
 from app.services.gating import DEFAULT_TAU, gate_attacks
-from app.services.pipeline import SIGNAL_WEIGHTS, build_graph
-from app.services.judge import compute_raw_probability, compute_signals
+from app.services.judge import (
+    apply_calibration,
+    compute_raw_probability,
+    compute_signals,
+)
+from app.services.pipeline import SIGNAL_WEIGHTS, _load_calibrator, build_graph
 from app.services.semantics_engine import compute_grounded_extension
 from scripts.rescore import _fact_results, load_artifacts
 
@@ -40,21 +44,27 @@ def slug(claim: str, taken: set) -> str:
     return candidate
 
 
-def to_record(row: dict, taken: set, tau: float = DEFAULT_TAU) -> dict:
+def to_record(row: dict, taken: set, tau: float = DEFAULT_TAU, calibrator=None) -> dict:
     arguments = [Argument(**a) for a in row["arguments"]]
     facts = _fact_results(row, "symbolic")
 
     gated, dropped = gate_attacks(arguments, facts, tau=tau)
     grounded = compute_grounded_extension(gated)
     raw = compute_raw_probability(grounded, facts, arguments)
+    # Apply the trained calibrator, so a browsed demo shows the same number the
+    # live pipeline would produce for that debate. Leaving it at raw made the
+    # demo corpus silently disagree with the running system.
+    calibrated = apply_calibration(calibrator, raw) if calibrator is not None else raw
 
     verdict = Verdict(
         claim=row["claim"],
         raw_probability=raw,
-        calibrated_probability=raw,
+        calibrated_probability=calibrated,
         grounded_extension=grounded,
         explanation=(
-            f"P(claim true) = {raw:.2f}. "
+            f"P(claim true) = {calibrated:.2f}"
+            + (f" (raw {raw:.2f}, isotonic-calibrated)" if calibrator is not None else "")
+            + ". "
             f"{len(grounded['advocate'])} advocate and {len(grounded['skeptic'])} skeptic "
             f"argument(s) survive the grounded extension; {len(dropped)} asserted attack(s) "
             f"were excluded for lack of supporting evidence."
@@ -113,15 +123,18 @@ def main(argv=None) -> None:
     if skipped:
         print(f"skipping {skipped} debate(s) already present in {args.out.name}")
 
+    calibrator = _load_calibrator()
+    if calibrator is None:
+        print("no data/calibrator.pkl - exporting raw probabilities")
     for row in fresh:
-        records.append(to_record(row, taken, args.tau))
+        records.append(to_record(row, taken, args.tau, calibrator))
 
     args.out.write_text(json.dumps(records, indent=2), encoding="utf-8")
     print(f"wrote {len(records)} demo debate(s) -> {args.out}")
     for r in records[len(records) - len(fresh):]:
         v = r["verdict"]
-        print(f"  {r['debate_id']:52} P={v['raw_probability']:.2f} "
-              f"coverage={v['symbolic_coverage']}")
+        print(f"  {r['debate_id']:52} P={v['calibrated_probability']:.2f} "
+              f"(raw {v['raw_probability']:.2f}) coverage={v['symbolic_coverage']}")
 
 
 if __name__ == "__main__":

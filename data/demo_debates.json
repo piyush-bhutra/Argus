@@ -383,7 +383,7 @@
     "verdict": {
       "claim": "The Columbia River undergoes drainage.",
       "raw_probability": 0.5079160051782152,
-      "calibrated_probability": 0.5079160051782152,
+      "calibrated_probability": 0.6686160374207909,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -391,7 +391,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.51. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.67 (raw 0.51, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -617,7 +617,7 @@
     "verdict": {
       "claim": "Bea Arthur died in 2009.",
       "raw_probability": 0.645084137572727,
-      "calibrated_probability": 0.645084137572727,
+      "calibrated_probability": 0.7692307692307693,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -625,7 +625,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.65. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.77 (raw 0.65, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.25,
       "fact_checks": [
@@ -827,7 +827,7 @@
     "verdict": {
       "claim": "Fidel Castro lost all elections for President of Cuba.",
       "raw_probability": 0.5016666604938546,
-      "calibrated_probability": 0.5016666604938546,
+      "calibrated_probability": 0.5,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -835,7 +835,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.50 (raw 0.50, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -1068,7 +1068,7 @@
     "verdict": {
       "claim": "Brazzers is a pornographic production company based in Montreal.",
       "raw_probability": 0.7991248038881325,
-      "calibrated_probability": 0.7991248038881325,
+      "calibrated_probability": 0.7777777777777778,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -1078,7 +1078,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.80. 2 advocate and 1 skeptic argument(s) survive the grounded extension; 3 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.78 (raw 0.80, isotonic-calibrated). 2 advocate and 1 skeptic argument(s) survive the grounded extension; 3 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_2",
@@ -1267,7 +1267,7 @@
     "verdict": {
       "claim": "Excuse My French is a speech by French Montana.",
       "raw_probability": 0.3751935255315707,
-      "calibrated_probability": 0.3751935255315707,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -1275,7 +1275,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.38. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.38, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.5,
       "fact_checks": [
@@ -1483,7 +1483,7 @@
     "verdict": {
       "claim": "Marcus Bentley is a British voice-over artist.",
       "raw_probability": 0.5181170650431814,
-      "calibrated_probability": 0.5181170650431814,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -1491,7 +1491,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.52. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.52, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -1686,7 +1686,7 @@
     "verdict": {
       "claim": "Danger UXB is from 1981.",
       "raw_probability": 0.11204703855699032,
-      "calibrated_probability": 0.11204703855699032,
+      "calibrated_probability": 0.0,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -1694,7 +1694,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.11. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 1 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.00 (raw 0.11, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 1 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_3",
@@ -1895,7 +1895,7 @@
     "verdict": {
       "claim": "Advertising is an sound-based manner of marketing communication.",
       "raw_probability": 0.496250070310918,
-      "calibrated_probability": 0.496250070310918,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -1904,7 +1904,7 @@
           "arg_6"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.50, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -2197,7 +2197,7 @@
     "verdict": {
       "claim": "The World Trade Center is still standing.",
       "raw_probability": 0.4954167950381235,
-      "calibrated_probability": 0.4954167950381235,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -2205,7 +2205,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.50, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -2446,7 +2446,7 @@
     "verdict": {
       "claim": "Edmund H. North co-wrote the script for Twilight.",
       "raw_probability": 0.5049998333399998,
-      "calibrated_probability": 0.5049998333399998,
+      "calibrated_probability": 0.6095263383580404,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -2454,7 +2454,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.61 (raw 0.50, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -2663,7 +2663,7 @@
     "verdict": {
       "claim": "The website Glee.com was first launched in 2010.",
       "raw_probability": 0.5,
-      "calibrated_probability": 0.5,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -2671,7 +2671,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.50, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -2885,7 +2885,7 @@
     "verdict": {
       "claim": "Brubaker is a 2007 drama.",
       "raw_probability": 0.2288175544441832,
-      "calibrated_probability": 0.2288175544441832,
+      "calibrated_probability": 0.0,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -2894,7 +2894,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.23. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.00 (raw 0.23, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.8,
       "fact_checks": [
@@ -3125,7 +3125,7 @@
     "verdict": {
       "claim": "Meteora is by Linkin Park.",
       "raw_probability": 0.34940248907974447,
-      "calibrated_probability": 0.34940248907974447,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -3133,7 +3133,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.35. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.35, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.4,
       "fact_checks": [
@@ -3423,7 +3423,7 @@
     "verdict": {
       "claim": "The Palace of Caserta is near Naples.",
       "raw_probability": 0.5589742145184536,
-      "calibrated_probability": 0.5589742145184536,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -3434,7 +3434,7 @@
           "arg_10"
         ]
       },
-      "explanation": "P(claim true) = 0.56. 0 advocate and 5 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.56, isotonic-calibrated). 0 advocate and 5 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.1,
       "fact_checks": [
@@ -3803,7 +3803,7 @@
     "verdict": {
       "claim": "Blade Runner 2049 stars the actor Ryan Gosling.",
       "raw_probability": 0.5218610539716015,
-      "calibrated_probability": 0.5218610539716015,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -3811,7 +3811,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.52. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.52, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -4010,7 +4010,7 @@
     "verdict": {
       "claim": "Miracle at St. Anna is set primarily in France.",
       "raw_probability": 0.6136070778047783,
-      "calibrated_probability": 0.6136070778047783,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -4018,7 +4018,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.61. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.61, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.25,
       "fact_checks": [
@@ -4227,7 +4227,7 @@
     "verdict": {
       "claim": "Homer Hickman has written science fiction novels.",
       "raw_probability": 0.6267579613895167,
-      "calibrated_probability": 0.6267579613895167,
+      "calibrated_probability": 0.7435806878944307,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -4236,7 +4236,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.63. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.74 (raw 0.63, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.2,
       "fact_checks": [
@@ -4507,7 +4507,7 @@
     "verdict": {
       "claim": "Excuse My French is an American rapper's album.",
       "raw_probability": 0.5942750196933935,
-      "calibrated_probability": 0.5942750196933935,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [
           "arg_3"
@@ -4517,7 +4517,7 @@
           "arg_6"
         ]
       },
-      "explanation": "P(claim true) = 0.59. 1 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.59, isotonic-calibrated). 1 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.8333333333333334,
       "fact_checks": [
@@ -4783,7 +4783,7 @@
     "verdict": {
       "claim": "Eric Church is an artist.",
       "raw_probability": 0.5914589784327801,
-      "calibrated_probability": 0.5914589784327801,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -4792,7 +4792,7 @@
           "arg_6"
         ]
       },
-      "explanation": "P(claim true) = 0.59. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.59, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.16666666666666666,
       "fact_checks": [
@@ -5069,7 +5069,7 @@
     "verdict": {
       "claim": "Psych takes place in the United States.",
       "raw_probability": 0.5196773318673079,
-      "calibrated_probability": 0.5196773318673079,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -5077,7 +5077,7 @@
           "arg_6"
         ]
       },
-      "explanation": "P(claim true) = 0.52. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.52, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -5339,7 +5339,7 @@
     "verdict": {
       "claim": "Kellogg's products are marketed in only one country.",
       "raw_probability": 0.5218610539716015,
-      "calibrated_probability": 0.5218610539716015,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -5347,7 +5347,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.52. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.52, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -5547,7 +5547,7 @@
     "verdict": {
       "claim": "Topman has outlets in one Irish city.",
       "raw_probability": 0.3775406687981454,
-      "calibrated_probability": 0.3775406687981454,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [
           "arg_1"
@@ -5557,7 +5557,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.38. 1 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.38, isotonic-calibrated). 1 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_2",
@@ -5781,7 +5781,7 @@
     "verdict": {
       "claim": "Fist of Legend is a remake of Fist of Fury.",
       "raw_probability": 0.49350036614191545,
-      "calibrated_probability": 0.49350036614191545,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -5790,7 +5790,7 @@
           "arg_8"
         ]
       },
-      "explanation": "P(claim true) = 0.49. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.49, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.5,
       "fact_checks": [
@@ -6125,7 +6125,7 @@
     "verdict": {
       "claim": "One of the founders of San Diego Comic-Con was not Richard Alf.",
       "raw_probability": 0.4145954308705349,
-      "calibrated_probability": 0.4145954308705349,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -6133,7 +6133,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.41. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.41, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 1.0,
       "fact_checks": [
@@ -6389,7 +6389,7 @@
     "verdict": {
       "claim": "Tom Baker has narrated commercials.",
       "raw_probability": 0.5010833316381205,
-      "calibrated_probability": 0.5010833316381205,
+      "calibrated_probability": 0.34310363567977786,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -6398,7 +6398,7 @@
           "arg_8"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.34 (raw 0.50, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -6721,7 +6721,7 @@
     "verdict": {
       "claim": "Miranda Otto is the son of Barry Otto.",
       "raw_probability": 0.36354745971843366,
-      "calibrated_probability": 0.36354745971843366,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -6729,7 +6729,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.36. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.36, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.5,
       "fact_checks": [
@@ -6927,7 +6927,7 @@
     "verdict": {
       "claim": "Topman sells clothing.",
       "raw_probability": 0.5058330686872481,
-      "calibrated_probability": 0.5058330686872481,
+      "calibrated_probability": 0.6476202520828553,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -6935,7 +6935,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.51. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.65 (raw 0.51, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -7177,7 +7177,7 @@
     "verdict": {
       "claim": "Victoria Palace Theatre is outside of Victoria Street.",
       "raw_probability": 0.36935147434892557,
-      "calibrated_probability": 0.36935147434892557,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [
           "arg_1"
@@ -7187,7 +7187,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.37. 1 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.37, isotonic-calibrated). 1 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_2",
@@ -7377,7 +7377,7 @@
     "verdict": {
       "claim": "Damon Albarn has refused to ever work with Brian Eno.",
       "raw_probability": 0.4875026035157896,
-      "calibrated_probability": 0.4875026035157896,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -7385,7 +7385,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.49. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.49, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -7624,7 +7624,7 @@
     "verdict": {
       "claim": "The Endless River is an album by Danny Devito.",
       "raw_probability": 0.4931254332354657,
-      "calibrated_probability": 0.4931254332354657,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -7634,7 +7634,7 @@
           "arg_8"
         ]
       },
-      "explanation": "P(claim true) = 0.49. 0 advocate and 4 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.49, isotonic-calibrated). 0 advocate and 4 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -7949,7 +7949,7 @@
     "verdict": {
       "claim": "Swordfish (film) is a television show that is about an ex-convict.",
       "raw_probability": 0.6171573626529722,
-      "calibrated_probability": 0.6171573626529722,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -7957,7 +7957,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.62. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.62, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.25,
       "fact_checks": [
@@ -8171,7 +8171,7 @@
     "verdict": {
       "claim": "Boyhood was carved from 2002 to 2013.",
       "raw_probability": 0.5090615077394385,
-      "calibrated_probability": 0.5090615077394385,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -8179,7 +8179,7 @@
           "arg_6"
         ]
       },
-      "explanation": "P(claim true) = 0.51. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.51, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -8438,7 +8438,7 @@
     "verdict": {
       "claim": "Stanley Williams was executed in 2005.",
       "raw_probability": 0.5212372149662741,
-      "calibrated_probability": 0.5212372149662741,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -8446,7 +8446,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.52. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.52, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.25,
       "fact_checks": [
@@ -8698,7 +8698,7 @@
     "verdict": {
       "claim": "Juventus F.C. competes at Juventus Stadium in Lisbon, Portugal.",
       "raw_probability": 0.4169029933072693,
-      "calibrated_probability": 0.4169029933072693,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -8709,7 +8709,7 @@
           "arg_9"
         ]
       },
-      "explanation": "P(claim true) = 0.42. 0 advocate and 5 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.42, isotonic-calibrated). 0 advocate and 5 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.1111111111111111,
       "fact_checks": [
@@ -9087,7 +9087,7 @@
     "verdict": {
       "claim": "Herculaneum's ruins are near Naples.",
       "raw_probability": 0.6928193622042029,
-      "calibrated_probability": 0.6928193622042029,
+      "calibrated_probability": 0.7692307692307693,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -9098,7 +9098,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.69. 2 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.77 (raw 0.69, isotonic-calibrated). 2 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_3",
@@ -9330,7 +9330,7 @@
     "verdict": {
       "claim": "Sancho Panza is a fictional character in a novel written by a Spanish writer born in the 17th century.",
       "raw_probability": 0.7279341912810388,
-      "calibrated_probability": 0.7279341912810388,
+      "calibrated_probability": 0.7692307692307693,
       "grounded_extension": {
         "advocate": [
           "arg_1"
@@ -9340,7 +9340,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.73. 1 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.77 (raw 0.73, isotonic-calibrated). 1 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.6,
       "fact_checks": [
@@ -9571,7 +9571,7 @@
     "verdict": {
       "claim": "Veeru Devgan is only a dance choreographer.",
       "raw_probability": 0.5297564614633781,
-      "calibrated_probability": 0.5297564614633781,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -9579,7 +9579,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.53. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.53, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.5,
       "fact_checks": [
@@ -9822,7 +9822,7 @@
     "verdict": {
       "claim": "Aarhus is in the geographical center of Denmark.",
       "raw_probability": 0.6430209020776431,
-      "calibrated_probability": 0.6430209020776431,
+      "calibrated_probability": 0.7692307692307693,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -9833,7 +9833,7 @@
           "arg_9"
         ]
       },
-      "explanation": "P(claim true) = 0.64. 0 advocate and 5 skeptic argument(s) survive the grounded extension; 1 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.77 (raw 0.64, isotonic-calibrated). 0 advocate and 5 skeptic argument(s) survive the grounded extension; 1 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_9",
@@ -10182,7 +10182,7 @@
     "verdict": {
       "claim": "Bethany Hamilton's autobiography was adapted into a film.",
       "raw_probability": 0.9349801890351404,
-      "calibrated_probability": 0.9349801890351404,
+      "calibrated_probability": 1.0,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -10192,7 +10192,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.93. 2 advocate and 1 skeptic argument(s) survive the grounded extension; 3 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 1.00 (raw 0.93, isotonic-calibrated). 2 advocate and 1 skeptic argument(s) survive the grounded extension; 3 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_2",
@@ -10392,7 +10392,7 @@
     "verdict": {
       "claim": "A Milli is by Mos Def.",
       "raw_probability": 0.6613165368223594,
-      "calibrated_probability": 0.6613165368223594,
+      "calibrated_probability": 0.7692307692307693,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -10403,7 +10403,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.66. 2 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.77 (raw 0.66, isotonic-calibrated). 2 advocate and 2 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_3",
@@ -10637,7 +10637,7 @@
     "verdict": {
       "claim": "Frozen is a film from 2013.",
       "raw_probability": 0.4798026629659886,
-      "calibrated_probability": 0.4798026629659886,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -10648,7 +10648,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.48. 2 advocate and 2 skeptic argument(s) survive the grounded extension; 3 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.48, isotonic-calibrated). 2 advocate and 2 skeptic argument(s) survive the grounded extension; 3 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_3",
@@ -10871,7 +10871,7 @@
     "verdict": {
       "claim": "Shane Black was born on December 16th, 1961.",
       "raw_probability": 0.9534695254852685,
-      "calibrated_probability": 0.9534695254852685,
+      "calibrated_probability": 1.0,
       "grounded_extension": {
         "advocate": [
           "arg_1",
@@ -10881,7 +10881,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.95. 2 advocate and 1 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 1.00 (raw 0.95, isotonic-calibrated). 2 advocate and 1 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_2",
@@ -11078,7 +11078,7 @@
     "verdict": {
       "claim": "Cheese in the Trap (TV series) comes from South Korea",
       "raw_probability": 0.6387631751488418,
-      "calibrated_probability": 0.6387631751488418,
+      "calibrated_probability": 0.7692307692307693,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -11086,7 +11086,7 @@
           "arg_6"
         ]
       },
-      "explanation": "P(claim true) = 0.64. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.77 (raw 0.64, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.3333333333333333,
       "fact_checks": [
@@ -11360,7 +11360,7 @@
     "verdict": {
       "claim": "Homer Hickman is illiterate.",
       "raw_probability": 0.25683199138751883,
-      "calibrated_probability": 0.25683199138751883,
+      "calibrated_probability": 0.0,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -11368,7 +11368,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.26. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.00 (raw 0.26, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.25,
       "fact_checks": [
@@ -11547,14 +11547,14 @@
     "verdict": {
       "claim": "Shadowhunters premiered in 2018.",
       "raw_probability": 0.5,
-      "calibrated_probability": 0.5,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
           "arg_2"
         ]
       },
-      "explanation": "P(claim true) = 0.50. 0 advocate and 1 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.50, isotonic-calibrated). 0 advocate and 1 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -11765,7 +11765,7 @@
     "verdict": {
       "claim": "AMGTV is a television network that is family-oriented.",
       "raw_probability": 0.5095821599910887,
-      "calibrated_probability": 0.5095821599910887,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -11777,7 +11777,7 @@
           "arg_12"
         ]
       },
-      "explanation": "P(claim true) = 0.51. 0 advocate and 6 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.51, isotonic-calibrated). 0 advocate and 6 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -12232,7 +12232,7 @@
     "verdict": {
       "claim": "After 1887, French Indochina was officially known as the Indochinese Union.",
       "raw_probability": 0.514162876988508,
-      "calibrated_probability": 0.514162876988508,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -12240,7 +12240,7 @@
           "arg_5"
         ]
       },
-      "explanation": "P(claim true) = 0.51. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.51, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
@@ -12483,14 +12483,14 @@
     "verdict": {
       "claim": "The Washington Wizards have won zero division titles.",
       "raw_probability": 0.11626005200091223,
-      "calibrated_probability": 0.11626005200091223,
+      "calibrated_probability": 0.0,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.12. 0 advocate and 1 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.00 (raw 0.12, isotonic-calibrated). 0 advocate and 1 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.25,
       "fact_checks": [
@@ -12740,7 +12740,7 @@
     "verdict": {
       "claim": "Brazzers is based in Quebec.",
       "raw_probability": 0.40235391358126477,
-      "calibrated_probability": 0.40235391358126477,
+      "calibrated_probability": 0.27586206896551724,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -12749,7 +12749,7 @@
           "arg_8"
         ]
       },
-      "explanation": "P(claim true) = 0.40. 0 advocate and 3 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.28 (raw 0.40, isotonic-calibrated). 0 advocate and 3 skeptic argument(s) survive the grounded extension; 2 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [
         [
           "arg_6",
@@ -13078,7 +13078,7 @@
     "verdict": {
       "claim": "Syracuse, New York, had a metropolitan area with a population of more than 600,000 residents according to the 2010 Census.",
       "raw_probability": 0.5174928576663897,
-      "calibrated_probability": 0.5174928576663897,
+      "calibrated_probability": 0.6842105263157895,
       "grounded_extension": {
         "advocate": [],
         "skeptic": [
@@ -13086,7 +13086,7 @@
           "arg_4"
         ]
       },
-      "explanation": "P(claim true) = 0.52. 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
+      "explanation": "P(claim true) = 0.68 (raw 0.52, isotonic-calibrated). 0 advocate and 2 skeptic argument(s) survive the grounded extension; 0 asserted attack(s) were excluded for lack of supporting evidence.",
       "dropped_edges": [],
       "symbolic_coverage": 0.0,
       "fact_checks": [
