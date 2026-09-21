@@ -1,3 +1,18 @@
+> ## ARCHIVED — describes a superseded architecture
+>
+> Written **2026-08-30**, before the evidence-grounded redesign of 2026-09-20.
+> Kept as a historical record of the Review-1 system. **Do not use it to
+> understand how Argus works today.**
+>
+> Specifically out of date: it describes an **LLM fact-check pass** (replaced by
+> retrieval plus a symbolic reasoner), a single `attacks_argument_id` per
+> argument (now an `attacks` list with free targeting), and lists the FEVER
+> dataset and evaluation as "not done" (both complete).
+>
+> Current documents: [`docs/RESULTS.md`](../RESULTS.md) ·
+> [`docs/PLAN.md`](../PLAN.md) · [`PROJECT_STATE.md`](../../PROJECT_STATE.md) §4a ·
+> `debate_system_prd.md` Appendix A
+
 # Argus — Project Snapshot
 
 **Generated:** 2026-08-30, from direct inspection of the codebase (not from prior docs).

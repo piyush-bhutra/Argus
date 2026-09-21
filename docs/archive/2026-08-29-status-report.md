@@ -1,3 +1,11 @@
+> ## ARCHIVED — historical status report
+>
+> Automated analysis from **2026-08-29**. Superseded many times over; kept only
+> as a record of the project's early state.
+>
+> Current documents: [`docs/RESULTS.md`](../RESULTS.md) ·
+> [`PROJECT_STATE.md`](../../PROJECT_STATE.md)
+
 # Argus FABLE Repository Status Report
 
 ## 1. PRD-to-Code Mapping

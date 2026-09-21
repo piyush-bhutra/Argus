@@ -6,7 +6,9 @@ judge combine to produce a truth-probability verdict with a fully auditable trac
 of asking one model to just answer.
 
 Course project for **BITE308L (AI theory) + BITE308P (AI Lab)**. See `debate_system_prd.md`
-for the full spec, `PROJECT_STATE.md` for current status, and `DEMO.md` for the review script.
+for the full spec (its **Appendix A** records every deviation), `docs/RESULTS.md`
+for what the system measurably achieves, and [`docs/`](docs/README.md) for an
+index of every document and which one wins when two disagree.
 
 ## What works today (end-to-end)
 
@@ -128,7 +130,8 @@ a config change re-scores only the half it affects. Code is not part of the cach
 
 The baseline currently wins. Argus is systematically skeptical — its mean P(true) is 0.23 on a
 set that is 50% true — and that is the number the fact-checker and calibrator work has to move.
-Caveats (n≈50, 4 claims with a missing half) are in `PROJECT_STATE.md` §4.
+Full results, ablations and stated limitations are in
+[`docs/RESULTS.md`](docs/RESULTS.md).
 
 ## Tests
 

@@ -495,6 +495,413 @@
   {
     "claim": "Angela Bassett received a bachelor of arts degree from Yale University.",
     "label": true,
-    "error": "RateLimitError: Error code: 429 - [{'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/r"
+    "argus_raw_probability": 0.9530238543217163,
+    "n_arguments": 4,
+    "grounded_extension": {
+      "advocate": [
+        "arg_1",
+        "arg_3"
+      ],
+      "skeptic": [
+        "arg_4"
+      ]
+    },
+    "dropped_edges": [
+      [
+        "arg_2",
+        "arg_1"
+      ],
+      [
+        "arg_4",
+        "arg_1"
+      ],
+      [
+        "arg_4",
+        "arg_3"
+      ]
+    ],
+    "symbolic_coverage": 1.0,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Angela Bassett graduated from Yale University in 1980 with a Bachelor of Arts degree in African-American studies, officially documenting her academic credentials from the institution.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "While Angela Bassett did attend Yale University, university records show she actually received a Bachelor of Fine Arts (BFA) degree from the Yale School of Drama, not a Bachelor of Arts degree.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "advocate",
+        "round": 2,
+        "text": "Official biographical records and Yale University's own alumni publications confirm that Angela Bassett earned her Bachelor of Arts degree from Yale College in 1980 before subsequently going on to earn her Master of Fine Arts from the Yale School of Drama in 1983.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Yale University's official commencement records and the Yale School of Drama archives explicitly document that Angela Bassett's undergraduate-equivalent creative arts training culminated in her Bachelor of Fine Arts degree, making the claim of a Bachelor of Arts factually incorrect.",
+        "attacks": [
+          "arg_1",
+          "arg_3"
+        ],
+        "self_confidence": 0.95
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "403ab155a56ecf96"
+        ],
+        "evidence_sentences": [
+          "Bassett began her film career in the mid-1980s , after earning a bachelor of arts degree from Yale University and a master of fine arts degree from drama school ."
+        ],
+        "triples": [
+          "Angela Bassett | graduated_from | Yale University",
+          "Angela Bassett | graduation_year | 1980",
+          "Angela Bassett | degree | Bachelor of Arts degree in African-American studies"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
+        "evidence_ids": [
+          "403ab155a56ecf96"
+        ],
+        "evidence_sentences": [
+          "Bassett began her film career in the mid-1980s , after earning a bachelor of arts degree from Yale University and a master of fine arts degree from drama school ."
+        ],
+        "triples": [
+          "Angela Bassett | attended | Yale University",
+          "Angela Bassett | degree | Bachelor of Fine Arts (BFA) degree",
+          "Angela Bassett | degree | Bachelor of Arts degree",
+          "Angela Bassett | graduated_from | Yale School of Drama"
+        ]
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment"
+        ],
+        "evidence_ids": [
+          "403ab155a56ecf96"
+        ],
+        "evidence_sentences": [
+          "Bassett began her film career in the mid-1980s , after earning a bachelor of arts degree from Yale University and a master of fine arts degree from drama school ."
+        ],
+        "triples": [
+          "Angela Bassett | degree | Bachelor of Arts degree",
+          "Angela Bassett | graduated_from | Yale College",
+          "Angela Bassett | graduation_year | 1980",
+          "Angela Bassett | degree | Master of Fine Arts",
+          "Angela Bassett | graduated_from | Yale School of Drama",
+          "Angela Bassett | graduation_year | 1983"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
+        "evidence_ids": [
+          "403ab155a56ecf96"
+        ],
+        "evidence_sentences": [
+          "Bassett began her film career in the mid-1980s , after earning a bachelor of arts degree from Yale University and a master of fine arts degree from drama school ."
+        ],
+        "triples": [
+          "Angela Bassett | degree | Bachelor of Fine Arts degree",
+          "Angela Bassett | degree | Bachelor of Arts"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.9530238543217163
+  },
+  {
+    "claim": "Southpaw was written by Kurt Sutter.",
+    "label": true,
+    "argus_raw_probability": 0.7348102444538482,
+    "n_arguments": 7,
+    "grounded_extension": {
+      "advocate": [],
+      "skeptic": [
+        "arg_3",
+        "arg_4",
+        "arg_6",
+        "arg_7"
+      ]
+    },
+    "dropped_edges": [
+      [
+        "arg_3",
+        "arg_1"
+      ]
+    ],
+    "symbolic_coverage": 0.42857142857142855,
+    "arguments": [
+      {
+        "id": "arg_1",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Kurt Sutter is officially credited as the sole screenwriter for the 2015 drama film 'Southpaw', having developed the original script before Antoine Fuqua directed it.",
+        "attacks": [],
+        "self_confidence": 0.99
+      },
+      {
+        "id": "arg_2",
+        "agent": "advocate",
+        "round": 1,
+        "text": "Sutter's distinct writing style, which often focuses on gritty, intense personal struggles (as seen in his television work like 'Sons of Anarchy'), is heavily infused into the narrative arc of the protagonist Billy Hope in 'Southpaw'.",
+        "attacks": [],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_3",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Kurt Sutter is not the sole screenwriter; the official Writers Guild of America (WGA) credits for 'Southpaw' list Kurt Sutter with writing the screenplay, but the script was originally conceived and written by screenwriter Richard Wenk before Sutter was brought in to do rewrites.",
+        "attacks": [
+          "arg_1"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_4",
+        "agent": "skeptic",
+        "round": 1,
+        "text": "Attributing the gritty style of the film entirely to Sutter ignores the heavy influence of Antoine Fuqua's direction and the original vision crafted by Richard Wenk, making the claim that Sutter 'wrote' the film in the singular sense misleading.",
+        "attacks": [
+          "arg_2"
+        ],
+        "self_confidence": 0.9
+      },
+      {
+        "id": "arg_5",
+        "agent": "advocate",
+        "round": 2,
+        "text": "While Richard Wenk did draft an early version of the script, the Writers Guild of America (WGA) arbitration ultimately determined that Kurt Sutter was awarded sole screenwriting credit for the finished film, which validates the claim that Southpaw was written by Kurt Sutter.",
+        "attacks": [
+          "arg_3",
+          "arg_4"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_6",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "Sole WGA screenwriting credit does not mean Sutter wrote the film from scratch; Wenk's foundational work, characters, and plot structure formed the basis of the movie, meaning Richard Wenk literally wrote the initial screenplay that the film is based upon.",
+        "attacks": [
+          "arg_5"
+        ],
+        "self_confidence": 0.95
+      },
+      {
+        "id": "arg_7",
+        "agent": "skeptic",
+        "round": 2,
+        "text": "To claim 'Southpaw was written by Kurt Sutter' as a singular absolute ignores the collaborative reality of Hollywood development, where Wenk's original spec script was rewritten, making the true authorship a shared multi-stage process rather than Sutter's exclusive creation.",
+        "attacks": [
+          "arg_1",
+          "arg_5"
+        ],
+        "self_confidence": 0.9
+      }
+    ],
+    "fact_checks": [
+      {
+        "argument_id": "arg_1",
+        "support_score": 0.5,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment",
+          "entailment",
+          "entailment",
+          "negation"
+        ],
+        "evidence_ids": [
+          "11048c7f35732df0"
+        ],
+        "evidence_sentences": [
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams ."
+        ],
+        "triples": [
+          "Kurt Sutter | written_by | Southpaw",
+          "Southpaw | released_in | 2015",
+          "Southpaw | genre | drama film",
+          "Antoine Fuqua | directed_by | Southpaw"
+        ]
+      },
+      {
+        "argument_id": "arg_2",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "11048c7f35732df0",
+          "75e647481ecc4067",
+          "f93a502ed1da40cd",
+          "ff1b2dde6e269dc7",
+          "a9be09c37b2ff566"
+        ],
+        "evidence_sentences": [
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams .",
+          "Kurt Leon Sutter ( born May 5 , 1960 ) is an American screenwriter , director , producer , and actor .",
+          "The Lower Peninsula , to which the name Michigan was originally applied , is often noted to be shaped like a mitten .",
+          "The film 's narrative centers on a hardboiled detective story set in a Californian suburb .",
+          "On moving into , Thatcher introduced a series of political and economic initiatives intended to reverse high unemployment and Britain 's struggles in the wake of the Winter of Discontent and an ongoing recession ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_3",
+        "support_score": -1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "negation"
+        ],
+        "evidence_ids": [
+          "11048c7f35732df0"
+        ],
+        "evidence_sentences": [
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams ."
+        ],
+        "triples": [
+          "Kurt Sutter | written_by | Southpaw",
+          "Richard Wenk | written_by | Southpaw"
+        ]
+      },
+      {
+        "argument_id": "arg_4",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "11048c7f35732df0",
+          "7aababcff3bad566",
+          "f04ae62e0eea3d9c",
+          "250872b6ba8d4f14",
+          "75e647481ecc4067"
+        ],
+        "evidence_sentences": [
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams .",
+          "The film was produced by Albert R. Broccoli and Michael G. Wilson , who also wrote the screenplay with Richard Maibaum .",
+          "Ellis also wrote the screenplay for the critically derided 2013 film The Canyons , an original work .",
+          "The film was directed by Duane Adler who wrote the script for the movies Save the Last Dance ( 2001 ) and Step Up ( 2006 ) .",
+          "Kurt Leon Sutter ( born May 5 , 1960 ) is an American screenwriter , director , producer , and actor ."
+        ],
+        "triples": []
+      },
+      {
+        "argument_id": "arg_5",
+        "support_score": 1.0,
+        "method": "symbolic",
+        "rules_fired": [
+          "entailment"
+        ],
+        "evidence_ids": [
+          "11048c7f35732df0"
+        ],
+        "evidence_sentences": [
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams ."
+        ],
+        "triples": [
+          "Richard Wenk | written_by | Southpaw",
+          "Kurt Sutter | written_by | Southpaw",
+          "Southpaw | written_by | Kurt Sutter"
+        ]
+      },
+      {
+        "argument_id": "arg_6",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "7aababcff3bad566",
+          "f04ae62e0eea3d9c",
+          "11048c7f35732df0",
+          "e3f30c6f7c23773e",
+          "97a07e3ed67e8eec"
+        ],
+        "evidence_sentences": [
+          "The film was produced by Albert R. Broccoli and Michael G. Wilson , who also wrote the screenplay with Richard Maibaum .",
+          "Ellis also wrote the screenplay for the critically derided 2013 film The Canyons , an original work .",
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams .",
+          "North wrote the screenplay for the 1951 science-fiction classic The Day the Earth Stood Still and is credited for creating the famous line from the film , `` Klaatu barada nikto '' .",
+          "The film is based on an original screenplay by Quentin Tarantino that was heavily revised by writer David Veloz , associate producer Richard Rutowski , and director Stone ; Tarantino received story credit ."
+        ],
+        "triples": [
+          "Richard Wenk | based_on | Southpaw"
+        ]
+      },
+      {
+        "argument_id": "arg_7",
+        "support_score": 0.0,
+        "method": "none",
+        "rules_fired": [],
+        "evidence_ids": [
+          "11048c7f35732df0",
+          "75e647481ecc4067",
+          "61628706ce2ef399",
+          "9b466340f7d5a387",
+          "90416d28a943e53b"
+        ],
+        "evidence_sentences": [
+          "Southpaw is a 2015 American sports drama film directed by Antoine Fuqua , written by Kurt Sutter and starring Jake Gyllenhaal , Forest Whitaker and Rachel McAdams .",
+          "Kurt Leon Sutter ( born May 5 , 1960 ) is an American screenwriter , director , producer , and actor .",
+          "The album was co-written by Little Mix and they stated that they were involved in the development of the album as much as possible .",
+          "It was also spoken by the early Mughal rulers in the Indian subcontinent , where it influenced the development of Hindustani .",
+          "The song was co-written by Swift and Liz Rose and produced by Nathan Chapman with Swift 's aid ."
+        ],
+        "triples": [
+          "Richard Wenk | written_by | Southpaw"
+        ]
+      }
+    ],
+    "fact_checks_llm": [],
+    "argus_key": {
+      "rounds": 2,
+      "llm_model": "gemini-3.5-flash-lite",
+      "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "schema": 5
+    },
+    "argus_probability": 0.7348102444538482
   }
 ]

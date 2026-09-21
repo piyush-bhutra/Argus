@@ -1,7 +1,8 @@
 # Argus — Live Work Queue
 
 **Design:** [`docs/superpowers/specs/2026-09-20-argus-evidence-grounded-redesign.md`](superpowers/specs/2026-09-20-argus-evidence-grounded-redesign.md) (approved 2026-09-20)
-**Supersedes:** `ARGUS_HANDOFF.md` as the work queue.
+**Supersedes:** the handoff document, now at
+`docs/archive/2026-09-20-handoff.md`, as the work queue.
 
 Update the status column **in the same commit** as the code it describes.
 
@@ -405,3 +406,32 @@ python -m scripts.fit_calibrator      # refuses on leakage, or under 20 points
 python -m scripts.evaluate            # re-score held-out WITH the calibrator
 python -m scripts.rescore --ablations # concession-bug check on disjoint data
 ```
+
+## Doc consolidation (2026-09-21)
+
+Spec §8 called for consolidating `PROJECT_SNAPSHOT.md`; Phase M was marked done
+without it. Closing that now.
+
+`PROJECT_SNAPSHOT.md` (37 KB, 2026-08-30) was sitting in the repo root with no
+staleness marker while describing the **pre-redesign** system: an LLM fact-check
+pass, a single `attacks_argument_id` per argument, and FEVER listed as "not
+done". Anyone — human or agent — picking the repo up could have read it as
+current, which is the exact failure the handoff document was written to prevent.
+
+Archived rather than rewritten: a 37 KB rewrite is churn, while a banner naming
+what replaced it is the whole of the value.
+
+| Was | Now |
+|---|---|
+| `PROJECT_SNAPSHOT.md` | `docs/archive/2026-08-30-project-snapshot.md` |
+| `status_report_2026-08-29.md` | `docs/archive/2026-08-29-status-report.md` |
+| `ARGUS_HANDOFF.md` | `docs/archive/2026-09-20-handoff.md` |
+
+Each carries a banner stating what superseded it. The handoff's banner also
+records the two claims measurement contradicted: its §3(b) understated the
+structural bug by half (a constant **-2**, not "+1"), and its §2.4 called the
+accuracy difference statistically unsupported when McNemar gives **p = 0.0018**.
+
+`docs/README.md` is a new index with an explicit **precedence order**, so a
+future reader knows which document wins when two disagree. Root `README.md`
+points at it.

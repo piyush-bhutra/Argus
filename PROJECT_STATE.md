@@ -25,7 +25,8 @@ in §4. 2026-09-09: evaluation harness built, FEVER sample integrated (§4, §8)
 Review-1 wiring session — all components wired end-to-end, orchestrator bug fixed, LLM
 fact-checker, in-memory persistence, cached demo debates. Provider: Google Gemini
 `gemini-3.5-flash-lite` (moved off `gemini-3.6-flash` after hitting its 20 req/day free cap).
-Earlier automated analysis preserved as `status_report_2026-08-29.md`.
+Earlier automated analysis preserved as
+`docs/archive/2026-08-29-status-report.md`.
 
 **Repo location:** `C:\AI-Project`
 **Full technical spec:** `debate_system_prd.md` at the project root.
