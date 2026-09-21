@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T18:14:35+00:00",
+  "generated_at": "2026-09-21T19:44:55+00:00",
   "config": {
     "sample_file": "data\\fever_calib.json",
     "n_claims_requested": 100,
@@ -11,7 +11,7 @@
     "limit": null,
     "llm_model": "gemini-3.5-flash-lite",
     "llm_base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-    "calibrator_loaded": false,
+    "calibrator_loaded": true,
     "baseline_enabled": false,
     "argus_key": {
       "rounds": 2,
@@ -31,80 +31,80 @@
     "n": 97,
     "n_true": 50,
     "n_false": 47,
-    "accuracy": 0.7422680412371134,
-    "ece": 0.1564812374558523,
-    "auroc": 0.7774468085106383,
-    "brier": 0.2042941808045733,
-    "mean_probability": 0.5425973729430805,
+    "accuracy": 0.7628865979381443,
+    "ece": 1.2246790065452759e-16,
+    "auroc": 0.8159574468085107,
+    "brier": 0.16678640346479517,
+    "mean_probability": 0.5154639175257729,
     "bins": [
       {
         "lo": 0.0,
         "hi": 0.1,
-        "count": 2,
-        "confidence": 0.0790432727175293,
+        "count": 11,
+        "confidence": 0.0,
         "accuracy": 0.0
       },
       {
         "lo": 0.1,
         "hi": 0.2,
-        "count": 2,
-        "confidence": 0.11011771126171094,
-        "accuracy": 0.0
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
       },
       {
         "lo": 0.2,
         "hi": 0.3,
-        "count": 8,
-        "confidence": 0.26791805081986086,
-        "accuracy": 0.125
+        "count": 29,
+        "confidence": 0.2758620689655171,
+        "accuracy": 0.27586206896551724
       },
       {
         "lo": 0.3,
         "hi": 0.4,
-        "count": 5,
-        "confidence": 0.3724007104884043,
-        "accuracy": 0.6
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
       },
       {
         "lo": 0.4,
         "hi": 0.5,
-        "count": 21,
-        "confidence": 0.47909959792659024,
-        "accuracy": 0.19047619047619047
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
       },
       {
         "lo": 0.5,
         "hi": 0.6,
-        "count": 25,
-        "confidence": 0.5237336328569046,
-        "accuracy": 0.64
+        "count": 4,
+        "confidence": 0.5,
+        "accuracy": 0.5
       },
       {
         "lo": 0.6,
         "hi": 0.7,
-        "count": 14,
-        "confidence": 0.6388390865041604,
-        "accuracy": 0.7857142857142857
+        "count": 22,
+        "confidence": 0.6818181818181818,
+        "accuracy": 0.6818181818181818
       },
       {
         "lo": 0.7,
         "hi": 0.8,
-        "count": 12,
-        "confidence": 0.7528674190644188,
-        "accuracy": 0.6666666666666666
+        "count": 26,
+        "confidence": 0.7692307692307696,
+        "accuracy": 0.7692307692307693
       },
       {
         "lo": 0.8,
         "hi": 0.9,
-        "count": 5,
-        "confidence": 0.8576291289198922,
-        "accuracy": 0.8
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
       },
       {
         "lo": 0.9,
         "hi": 1.0,
-        "count": 3,
-        "confidence": 0.9425136620692317,
+        "count": 5,
+        "confidence": 1.0,
         "accuracy": 1.0
       }
     ],
@@ -115,83 +115,83 @@
       },
       {
         "threshold": 0.05,
-        "accuracy": 0.5154639175257731
-      },
-      {
-        "threshold": 0.1,
-        "accuracy": 0.5360824742268041
-      },
-      {
-        "threshold": 0.15000000000000002,
-        "accuracy": 0.5567010309278351
-      },
-      {
-        "threshold": 0.2,
-        "accuracy": 0.5567010309278351
-      },
-      {
-        "threshold": 0.25,
-        "accuracy": 0.5567010309278351
-      },
-      {
-        "threshold": 0.30000000000000004,
-        "accuracy": 0.6185567010309279
-      },
-      {
-        "threshold": 0.35000000000000003,
         "accuracy": 0.6288659793814433
       },
       {
+        "threshold": 0.1,
+        "accuracy": 0.6288659793814433
+      },
+      {
+        "threshold": 0.15000000000000002,
+        "accuracy": 0.6288659793814433
+      },
+      {
+        "threshold": 0.2,
+        "accuracy": 0.6288659793814433
+      },
+      {
+        "threshold": 0.25,
+        "accuracy": 0.6288659793814433
+      },
+      {
+        "threshold": 0.30000000000000004,
+        "accuracy": 0.7628865979381443
+      },
+      {
+        "threshold": 0.35000000000000003,
+        "accuracy": 0.7628865979381443
+      },
+      {
         "threshold": 0.4,
-        "accuracy": 0.6082474226804123
+        "accuracy": 0.7628865979381443
       },
       {
         "threshold": 0.45,
-        "accuracy": 0.5979381443298969
+        "accuracy": 0.7628865979381443
       },
       {
         "threshold": 0.5,
-        "accuracy": 0.7422680412371134
+        "accuracy": 0.7628865979381443
       },
       {
         "threshold": 0.55,
-        "accuracy": 0.7010309278350515
+        "accuracy": 0.7628865979381443
       },
       {
         "threshold": 0.6000000000000001,
-        "accuracy": 0.6701030927835051
+        "accuracy": 0.7628865979381443
       },
       {
         "threshold": 0.65,
-        "accuracy": 0.6082474226804123
+        "accuracy": 0.7628865979381443
       },
       {
         "threshold": 0.7000000000000001,
-        "accuracy": 0.5876288659793815
+        "accuracy": 0.6804123711340206
       },
       {
         "threshold": 0.75,
-        "accuracy": 0.5670103092783505
+        "accuracy": 0.6804123711340206
       },
       {
         "threshold": 0.8,
-        "accuracy": 0.5463917525773195
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 0.8500000000000001,
-        "accuracy": 0.5257731958762887
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 0.9,
-        "accuracy": 0.5154639175257731
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 0.9500000000000001,
-        "accuracy": 0.5051546391752577
+        "accuracy": 0.5360824742268041
       },
       {
         "threshold": 1.0,
-        "accuracy": 0.4845360824742268
+        "accuracy": 0.5360824742268041
       }
     ]
   },
@@ -368,583 +368,583 @@
     {
       "claim": "Victoria Palace Theatre is on the same side as a central London railway terminus.",
       "label": false,
-      "argus_probability": 0.791391472673955,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "Bones is inspired by a real person.",
       "label": true,
-      "argus_probability": 0.6277321638605189,
+      "argus_probability": 0.75,
       "baseline_probability": null
     },
     {
       "claim": "XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
       "label": false,
-      "argus_probability": 0.617747874769249,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Angela Bassett received a bachelor of arts degree from Yale University.",
       "label": true,
-      "argus_probability": 0.9530238543217163,
+      "argus_probability": 1.0,
       "baseline_probability": null
     },
     {
       "claim": "Southpaw was written by Kurt Sutter.",
       "label": true,
-      "argus_probability": 0.7348102444538482,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "There is only one version of Despacito.",
       "label": false,
-      "argus_probability": 0.2601863933303121,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Miracle at St. Anna tells the story of four soldiers.",
       "label": true,
-      "argus_probability": 0.5087491068802403,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Alexandra Daddario is an actress.",
       "label": true,
-      "argus_probability": 0.5206133097144486,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "The Greek language is spoken in the Mediterranean.",
       "label": true,
-      "argus_probability": 0.4751247202844419,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Excuse My French is an album.",
       "label": true,
-      "argus_probability": 0.8854414207672942,
+      "argus_probability": 1.0,
       "baseline_probability": null
     },
     {
       "claim": "Diana, Princess of Wales's father inherited a title.",
       "label": true,
-      "argus_probability": 0.6416424532015634,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "In 1930, Albert S. Ruddy is born.",
       "label": true,
-      "argus_probability": 0.819061206847858,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "Live Through This is only a short story.",
       "label": false,
-      "argus_probability": 0.2634073498256483,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Regina King refuses to be an actress.",
       "label": false,
-      "argus_probability": 0.4912508931197597,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Ryan Gosling stars in Blade Runner 2049.",
       "label": true,
-      "argus_probability": 0.43802862146610444,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Sim\u00f3n Bol\u00edvar died in 1830.",
       "label": true,
-      "argus_probability": 0.6393398367530659,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Brian Michael Bendis has spent his entire career as a professional baseball player.",
       "label": false,
-      "argus_probability": 0.4887518980531451,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Epistemology tries to understand the justification of propositions and beliefs.",
       "label": true,
-      "argus_probability": 0.5062496744995104,
+      "argus_probability": 0.6666666666666666,
       "baseline_probability": null
     },
     {
       "claim": "Stanley Williams was a person who committed crimes.",
       "label": true,
-      "argus_probability": 0.5179090021040188,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Kesha is a Korean.",
       "label": false,
-      "argus_probability": 0.4569816192756902,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Colombiana was written by Luc Besson.",
       "label": true,
-      "argus_probability": 0.5016666604938546,
+      "argus_probability": 0.5,
       "baseline_probability": null
     },
     {
       "claim": "Selena Gomez & the Scene's debut album earned a Gold certification.",
       "label": true,
-      "argus_probability": 0.7987231928885288,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "I Kissed a Girl is part of Katy Perry's first studio album.",
       "label": false,
-      "argus_probability": 0.4170245457988005,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Shawn Carlson was born in 1920.",
       "label": false,
-      "argus_probability": 0.07446794516602807,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Stadium Arcadium came out at least by 2009.",
       "label": true,
-      "argus_probability": 0.7497913878870148,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "Andrew Kevin Walker was born on August 14, 1964.",
       "label": true,
-      "argus_probability": 0.7375616214876249,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Reign Over Me is an American film made in 2010.",
       "label": false,
-      "argus_probability": 0.259225100817846,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "The Arctic will be unaffected by global warming.",
       "label": false,
-      "argus_probability": 0.4850044983805899,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Bessie Smith died.",
       "label": true,
-      "argus_probability": 0.598687660112452,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Syracuse, New York, had a population of 145,170 according to the 1999 AAA TourBook.",
       "label": false,
-      "argus_probability": 0.5,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Duff McKagan was born on May 5.",
       "label": false,
-      "argus_probability": 0.4950001666600003,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Stanley Williams was given clemency instead of being executed.",
       "label": false,
-      "argus_probability": 0.49875000260416025,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Buffy Summers appears in a film.",
       "label": true,
-      "argus_probability": 0.6306485256510744,
+      "argus_probability": 0.75,
       "baseline_probability": null
     },
     {
       "claim": "Miami, Florida is where Moonlight was filmed.",
       "label": true,
-      "argus_probability": 0.826353352980995,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "French Indochina was officially known as the Indochinese Federation after 1947.",
       "label": true,
-      "argus_probability": 0.5020833212770899,
+      "argus_probability": 0.5,
       "baseline_probability": null
     },
     {
       "claim": "Pirates of the Caribbean has only 1 version in a single park.",
       "label": false,
-      "argus_probability": 0.4881272322437472,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Some of the University of Mississippi's students are minorities.",
       "label": true,
-      "argus_probability": 0.5206133097144486,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Jason Katims has made no contributions to Roswell.",
       "label": false,
-      "argus_probability": 0.7450720559074311,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Jenna Jameson worked as a stripper.",
       "label": true,
-      "argus_probability": 0.6393398367530659,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Moonlight never premiered at the Telluride Film Festival.",
       "label": false,
-      "argus_probability": 0.502499979166875,
+      "argus_probability": 0.5,
       "baseline_probability": null
     },
     {
       "claim": "Murda Beatz is only a jazz record producer.",
       "label": false,
-      "argus_probability": 0.49300045729748126,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Billboard Dad was released in 1968.",
       "label": false,
-      "argus_probability": 0.08361860026903052,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Bea Arthur's birth name was Bea Arthur.",
       "label": false,
-      "argus_probability": 0.610639233949222,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "The Road to El Dorado is a dog.",
       "label": false,
-      "argus_probability": 0.48458821698931315,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Stadium Arcadium was the last Red Hot Chili Pepper's album to feature John Frusciante.",
       "label": true,
-      "argus_probability": 0.6130141761393355,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Gray Matter Interactive Studios, Inc. was a computer game developer founded after 2000.",
       "label": false,
-      "argus_probability": 0.27091207765069353,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Cadet Kelly was a Disney Channel Original.",
       "label": true,
-      "argus_probability": 0.5786132741420461,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Raees (film) stars no Pakistani actresses.",
       "label": false,
-      "argus_probability": 0.5218610539716015,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Anushka Sharma is a winner of a Filmfare Award.",
       "label": true,
-      "argus_probability": 0.7157208082164204,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "The Chagatai language was spoken in Asia.",
       "label": true,
-      "argus_probability": 0.5185331720023894,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Miranda Otto is the aunt of actress Gracie Otto.",
       "label": false,
-      "argus_probability": 0.633555377636775,
+      "argus_probability": 0.75,
       "baseline_probability": null
     },
     {
       "claim": "Saturn Corporation is also known as a balloon.",
       "label": false,
-      "argus_probability": 0.4819869656455989,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Robert Lopez has received zero Tony awards.",
       "label": false,
-      "argus_probability": 0.5399148845555657,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Paramore is from Texas.",
       "label": false,
-      "argus_probability": 0.39779367167910407,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Magic Johnson was not a point guard.",
       "label": false,
-      "argus_probability": 0.49375032550048964,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "PacSun sells products designed for teens and has been successful.",
       "label": false,
-      "argus_probability": 0.5008333325617292,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Avenged Sevenfold is by Alice in Chains.",
       "label": false,
-      "argus_probability": 0.48281926661781455,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Ashley Graham was on a magazine cover in 2017.",
       "label": true,
-      "argus_probability": 0.92104760640071,
+      "argus_probability": 1.0,
       "baseline_probability": null
     },
     {
       "claim": "Shane Black was born in 1961.",
       "label": true,
-      "argus_probability": 0.38580035722310485,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Fabian Nicieza is a comic book writer.",
       "label": true,
-      "argus_probability": 0.6384746941717059,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Aparshakti Khurana works in India.",
       "label": true,
-      "argus_probability": 0.5189492532564577,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Annette Badland was in The Sparticle Mystery portraying Doomsday Dora.",
       "label": true,
-      "argus_probability": 0.8818430221907304,
+      "argus_probability": 1.0,
       "baseline_probability": null
     },
     {
       "claim": "Asylum Records is an American record label.",
       "label": true,
-      "argus_probability": 0.7710353622579695,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "The Mirny (sloop-of-war) was without command.",
       "label": false,
-      "argus_probability": 0.27537908558188084,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Wish Upon was not directed by John R. Leonetti.",
       "label": false,
-      "argus_probability": 0.1036324533622825,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "The Cry of the Owl is based on the book The Hobbit.",
       "label": false,
-      "argus_probability": 0.8754466418125836,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "Marco Polo left a chronicle.",
       "label": true,
-      "argus_probability": 0.3828426373470277,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Meteora is an album by an American band.",
       "label": true,
-      "argus_probability": 0.5521705367621471,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Invasion literature was influential in Britain in shaping technological advancement.",
       "label": false,
-      "argus_probability": 0.5026041431194082,
+      "argus_probability": 0.5,
       "baseline_probability": null
     },
     {
       "claim": "The Bee Gees wrote music.",
       "label": true,
-      "argus_probability": 0.4200665998114943,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Tottenham Hotspur F.C. was the third British club to win a UEFA club competition.",
       "label": false,
-      "argus_probability": 0.731713446758121,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "David Packouz is a sculptor.",
       "label": false,
-      "argus_probability": 0.48958484011263537,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Bea Arthur died on April 25th, 2009.",
       "label": true,
-      "argus_probability": 0.7469667935196899,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "Michigan is a place in the U.S.",
       "label": true,
-      "argus_probability": 0.6789970929077888,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "The State of Palestine lays claim to the West Bank.",
       "label": true,
-      "argus_probability": 0.5096862879830983,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "The Bloods are a primarily, though not exclusively, White street gang.",
       "label": false,
-      "argus_probability": 0.2643786163642165,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Mani Ratnam is widely credited with altering the profile of films produced across generations.",
       "label": true,
-      "argus_probability": 0.550246490577866,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Kerplunk was released through Epitaph Records.",
       "label": false,
-      "argus_probability": 0.5825702064623147,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Sophia Bush acted in movies.",
       "label": true,
-      "argus_probability": 0.6968832820410791,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Carlos Santana was known.",
       "label": true,
-      "argus_probability": 0.6306485256510744,
+      "argus_probability": 0.75,
       "baseline_probability": null
     },
     {
       "claim": "Southpaw's director is solely Quentin Tarantino.",
       "label": false,
-      "argus_probability": 0.11660296916113938,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Bethany Hamilton's autobiography was adapted into a film in 2014.",
       "label": false,
-      "argus_probability": 0.26845017555914563,
+      "argus_probability": 0.0,
       "baseline_probability": null
     },
     {
       "claim": "Christian Gottlob Neefe was a music conductor.",
       "label": true,
-      "argus_probability": 0.28140560742914383,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Bhagat Singh was an Indian citizen.",
       "label": true,
-      "argus_probability": 0.4954167950381235,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Dakota Fanning is Canadian.",
       "label": false,
-      "argus_probability": 0.49750002083312495,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Entourage (film) was released on the 4th.",
       "label": false,
-      "argus_probability": 0.49375032550048964,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "An industrial rock band is responsible for the song Happiness in Slavery.",
       "label": true,
-      "argus_probability": 0.7766500432559044,
+      "argus_probability": 0.7777777777777778,
       "baseline_probability": null
     },
     {
       "claim": "Rachel Green is one of the six main characters in the sitcom Friends aired in the 1990s.",
       "label": true,
-      "argus_probability": 0.3852739167235856,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Knowledge and research in the computer science fields is incorporated with Speech recognition.",
       "label": true,
-      "argus_probability": 0.5072494919385613,
+      "argus_probability": 0.6666666666666666,
       "baseline_probability": null
     },
     {
       "claim": "Augustus did not die in 14 AD.",
       "label": false,
-      "argus_probability": 0.3102929694691991,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "The dress is not an image.",
       "label": false,
-      "argus_probability": 0.5078118642792044,
+      "argus_probability": 0.6666666666666666,
       "baseline_probability": null
     },
     {
       "claim": "Sayyeshaa has yet to appear in a Bollywood film.",
       "label": false,
-      "argus_probability": 0.7349725994665188,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
       "claim": "Global warming will maintain the present levels of sea ice.",
       "label": false,
-      "argus_probability": 0.5130178906923251,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Sheryl Lee appeared in a film in 2016.",
       "label": true,
-      "argus_probability": 0.9534695254852685,
+      "argus_probability": 1.0,
       "baseline_probability": null
     },
     {
       "claim": "Carlos Santana exclusively played Britpop.",
       "label": false,
-      "argus_probability": 0.4945835452253923,
+      "argus_probability": 0.27586206896551724,
       "baseline_probability": null
     },
     {
       "claim": "Jack Falahee was born.",
       "label": true,
-      "argus_probability": 0.5102069151549603,
+      "argus_probability": 0.6842105263157895,
       "baseline_probability": null
     },
     {
       "claim": "Sancho Panza is a character in a novel written by Don Miguel de Cervantes Saavedra.",
       "label": true,
-      "argus_probability": 0.645084137572727,
+      "argus_probability": 0.7692307692307693,
       "baseline_probability": null
     },
     {
